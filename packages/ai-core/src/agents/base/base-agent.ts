@@ -1,0 +1,2 @@
+import type { Agent, AgentContext, AgentResult } from "./agent-contract.js";
+export abstract class BaseAgent implements Agent { abstract id: string; abstract role: string; protected abstract analyze(input: string, context: AgentContext): Promise<Omit<AgentResult, "agentId">>; async run(input: string, context: AgentContext): Promise<AgentResult> { const result = await this.analyze(input, context); return { agentId: this.id, ...result }; } }

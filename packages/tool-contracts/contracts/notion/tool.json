@@ -1,0 +1,14 @@
+{
+  "name": "notion",
+  "title": "Notion",
+  "entrypoint": "TOOL.md",
+  "description": "Read or update workspace docs when authorized.",
+  "riskLevel": "low",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

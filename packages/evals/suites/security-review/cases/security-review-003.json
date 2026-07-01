@@ -1,0 +1,28 @@
+{
+  "id": "security-review-003",
+  "request": "prepare a threat model for the trading app",
+  "expected": {
+    "agents": [
+      "cybersecurity-engineer"
+    ],
+    "engines": [
+      "security-review-engine"
+    ],
+    "workflows": [
+      "security-review"
+    ],
+    "skills": [
+      "security"
+    ],
+    "templates": [
+      "security-review-report"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

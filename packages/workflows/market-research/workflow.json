@@ -1,0 +1,54 @@
+{
+  "name": "market-research",
+  "title": "Market Research Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "business",
+  "description": "Research market landscape, competitors, audience, positioning, opportunities, and risks.",
+  "triggers": [
+    "market research",
+    "competitors",
+    "landscape",
+    "audience",
+    "positioning"
+  ],
+  "agents": [
+    "market-researcher",
+    "product-manager",
+    "growth-marketer",
+    "startup-advisor"
+  ],
+  "skills": [
+    "marketing",
+    "product-strategy",
+    "research",
+    "seo"
+  ],
+  "decisionEngines": [
+    "market-research-engine",
+    "product-strategy-engine",
+    "seo-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Market map",
+    "Competitor table",
+    "Positioning insights",
+    "Opportunity list"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

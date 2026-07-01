@@ -1,0 +1,17 @@
+{
+  "name": "copywriting",
+  "title": "Copywriting",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for persuasive writing, landing pages, ads.",
+  "dependencies": [
+    "marketing",
+    "psychology"
+  ],
+  "tags": [
+    "copy",
+    "writing"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

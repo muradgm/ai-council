@@ -1,0 +1,25 @@
+{
+  "name": "business-model-strategist",
+  "title": "Business Model Strategist",
+  "group": "startup",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design revenue models, pricing logic, customer segments, offer architecture, and unit economics",
+  "skills": [
+    "business-model",
+    "finance",
+    "marketing",
+    "sales",
+    "entrepreneurship"
+  ],
+  "keywords": [
+    "business model",
+    "pricing",
+    "monetization",
+    "offer",
+    "subscription",
+    "unit economics"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

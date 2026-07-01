@@ -1,0 +1,36 @@
+{
+  "name": "product-strategy",
+  "title": "Product Strategy Eval Suite",
+  "category": "product",
+  "threshold": 0.8,
+  "keywords": [
+    "prd",
+    "feature",
+    "product",
+    "roadmap"
+  ],
+  "expectedAgents": [
+    "product-manager",
+    "cpo"
+  ],
+  "expectedEngines": [
+    "product-strategy-engine"
+  ],
+  "expectedWorkflows": [
+    "product-discovery",
+    "feature-planning"
+  ],
+  "expectedSkills": [
+    "product-management",
+    "product-strategy"
+  ],
+  "expectedTemplates": [
+    "prd",
+    "feature-spec"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

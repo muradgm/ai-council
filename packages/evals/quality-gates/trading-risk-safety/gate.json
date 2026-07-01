@@ -1,0 +1,14 @@
+{
+  "name": "trading-risk-safety",
+  "title": "Trading Risk Safety Gate",
+  "summary": "Checks trading work includes risk boundaries and no profit guarantees.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "high",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

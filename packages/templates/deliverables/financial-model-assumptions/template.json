@@ -1,0 +1,32 @@
+{
+  "name": "financial-model-assumptions",
+  "title": "Financial Model Assumptions",
+  "category": "finance",
+  "entrypoint": "packages/templates/deliverables/financial-model-assumptions/TEMPLATE.md",
+  "skills": [
+    "finance",
+    "accounting",
+    "business-model"
+  ],
+  "agents": [
+    "cfo",
+    "financial-analyst",
+    "business-model-strategist"
+  ],
+  "decisionEngines": [
+    "finance-planning-engine",
+    "business-model-engine"
+  ],
+  "workflows": [
+    "investment-analysis"
+  ],
+  "keywords": [
+    "financial model",
+    "assumptions",
+    "forecast",
+    "budget"
+  ],
+  "outputs": [
+    "Financial Model Assumptions document"
+  ]
+}

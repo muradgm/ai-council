@@ -1,0 +1,27 @@
+{
+  "id": "workflow-execution-003",
+  "request": "run a documentation production workflow",
+  "expected": {
+    "agents": [
+      "technical-writer"
+    ],
+    "engines": [
+      "documentation-engine"
+    ],
+    "workflows": [
+      "documentation-production"
+    ],
+    "skills": [
+      "documentation"
+    ],
+    "templates": [
+      "technical-design-doc"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

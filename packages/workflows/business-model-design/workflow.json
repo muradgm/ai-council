@@ -1,0 +1,55 @@
+{
+  "name": "business-model-design",
+  "title": "Business Model Design Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "business",
+  "description": "Design pricing, monetization, cost structure, customer segments, channels, and sustainability of a venture.",
+  "triggers": [
+    "business model",
+    "pricing",
+    "monetization",
+    "revenue",
+    "unit economics"
+  ],
+  "agents": [
+    "business-model-strategist",
+    "cfo",
+    "entrepreneur",
+    "growth-marketer"
+  ],
+  "skills": [
+    "business-model",
+    "finance",
+    "accounting",
+    "growth",
+    "sales"
+  ],
+  "decisionEngines": [
+    "business-model-engine",
+    "finance-planning-engine",
+    "growth-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Business model canvas",
+    "Pricing options",
+    "Unit economics assumptions",
+    "Validation plan"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

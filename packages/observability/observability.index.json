@@ -1,0 +1,59 @@
+{
+  "name": "observability",
+  "version": "0.1.0",
+  "recordTypes": [
+    {
+      "id": "run-trace",
+      "path": "storage/observability/runs",
+      "schema": "packages/observability/run.schema.json"
+    },
+    {
+      "id": "trace-event",
+      "path": "storage/observability/traces",
+      "schema": "packages/observability/trace.schema.json"
+    },
+    {
+      "id": "provider-call",
+      "path": "storage/observability/provider-calls",
+      "schema": "packages/observability/provider-call.schema.json"
+    },
+    {
+      "id": "cost-record",
+      "path": "storage/observability/costs",
+      "schema": "packages/observability/cost.schema.json"
+    },
+    {
+      "id": "artifact-record",
+      "path": "storage/observability/artifacts",
+      "schema": "packages/observability/artifact.schema.json"
+    },
+    {
+      "id": "diagnostic-report",
+      "path": "storage/observability/diagnostics",
+      "schema": "packages/observability/diagnostic.schema.json"
+    },
+    {
+      "id": "incident-report",
+      "path": "storage/observability/incidents",
+      "schema": "packages/observability/incident.schema.json"
+    }
+  ],
+  "policies": [
+    "logging-policy",
+    "privacy-redaction-policy",
+    "retention-policy",
+    "cost-tracking-policy",
+    "trace-sampling-policy",
+    "provider-call-trace-policy"
+  ],
+  "commands": [
+    "observability:init",
+    "observability:status",
+    "trace:run",
+    "trace:provider",
+    "trace:artifact",
+    "trace:cost",
+    "diagnostics:report",
+    "observability:report"
+  ]
+}

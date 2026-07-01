@@ -1,0 +1,17 @@
+{
+  "name": "quantitative-analysis",
+  "title": "Quantitative Analysis",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for backtests, data, statistical testing.",
+  "dependencies": [
+    "python",
+    "risk-management"
+  ],
+  "tags": [
+    "quant",
+    "backtest"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

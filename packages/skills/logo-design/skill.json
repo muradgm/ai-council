@@ -1,0 +1,16 @@
+{
+  "name": "logo-design",
+  "title": "Logo Design",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for symbol design, marks, visual identity.",
+  "dependencies": [
+    "branding"
+  ],
+  "tags": [
+    "logo",
+    "design"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

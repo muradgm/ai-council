@@ -1,0 +1,54 @@
+{
+  "name": "product-discovery",
+  "title": "Product Discovery Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "product",
+  "description": "Clarify target user, problem, jobs-to-be-done, alternatives, wedge, constraints, and MVP scope.",
+  "triggers": [
+    "product idea",
+    "discovery",
+    "user problem",
+    "MVP",
+    "wedge"
+  ],
+  "agents": [
+    "product-manager",
+    "ux-researcher",
+    "market-researcher",
+    "entrepreneur"
+  ],
+  "skills": [
+    "product-strategy",
+    "product-management",
+    "ux-research",
+    "startup-validation"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine",
+    "ux-research-engine",
+    "market-research-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Discovery brief",
+    "JTBD map",
+    "MVP scope",
+    "Risk assumptions"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

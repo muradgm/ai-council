@@ -1,0 +1,14 @@
+{
+  "name": "communication",
+  "title": "Communication",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for clear writing, stakeholder updates, decision framing.",
+  "dependencies": [],
+  "tags": [
+    "communication",
+    "writing"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

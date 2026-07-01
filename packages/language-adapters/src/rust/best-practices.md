@@ -1,0 +1,3 @@
+# Rust Best Practices
+
+Scaffold.

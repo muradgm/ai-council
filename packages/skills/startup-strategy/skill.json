@@ -1,0 +1,14 @@
+{
+  "name": "startup-strategy",
+  "version": "1.0.0",
+  "type": "skill",
+  "tags": [
+    "Market selection",
+    "Positioning",
+    "Moat",
+    "Go-to-market",
+    "Fundraising readiness"
+  ],
+  "entry": "SKILL.md",
+  "dependencies": []
+}

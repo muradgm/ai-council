@@ -1,0 +1,10 @@
+{
+  "name": "@ai-council/decision-engines",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reusable decision engines for AI Council reasoning, tradeoff analysis, and quality gates.",
+  "exports": {
+    "./index": "./index.json"
+  }
+}

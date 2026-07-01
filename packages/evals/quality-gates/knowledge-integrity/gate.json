@@ -1,0 +1,14 @@
+{
+  "name": "knowledge-integrity",
+  "title": "Knowledge Integrity Gate",
+  "summary": "Checks required Council packages, manifests, and indexes.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "medium",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "software-architecture",
+  "title": "Software Architecture",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for system design, boundaries, tradeoffs.",
+  "dependencies": [
+    "core-reasoning"
+  ],
+  "tags": [
+    "architecture",
+    "engineering"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

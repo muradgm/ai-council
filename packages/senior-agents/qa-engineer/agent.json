@@ -1,0 +1,25 @@
+{
+  "name": "qa-engineer",
+  "title": "QA Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "build test strategy, automated testing, regression coverage, acceptance tests, and release confidence",
+  "skills": [
+    "testing",
+    "code-review",
+    "documentation",
+    "project-management"
+  ],
+  "keywords": [
+    "qa",
+    "test",
+    "testing",
+    "regression",
+    "bug",
+    "acceptance test",
+    "quality"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

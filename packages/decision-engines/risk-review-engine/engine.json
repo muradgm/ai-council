@@ -1,0 +1,69 @@
+{
+  "name": "risk-review-engine",
+  "title": "Risk Review Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "risk",
+  "decisionType": "cross-functional risk decision",
+  "purpose": "Assess technical, product, legal, operational, security, financial, and delivery risks with mitigation priorities.",
+  "ownerAgents": [
+    "risk-manager",
+    "legal-risk-spotter",
+    "cybersecurity-engineer"
+  ],
+  "skills": [
+    "risk-management",
+    "legal-basics",
+    "security",
+    "operations"
+  ],
+  "tags": [
+    "risk",
+    "governance",
+    "mitigation",
+    "review"
+  ],
+  "keywords": [
+    "risk",
+    "downside",
+    "mitigation",
+    "security",
+    "legal",
+    "operations",
+    "release"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "likelihood",
+    "impact",
+    "detectability",
+    "mitigation clarity",
+    "reversibility",
+    "owner clarity",
+    "residual risk"
+  ],
+  "guardrails": [
+    "Separate acceptable risk from risk that must be fixed now.",
+    "Escalate legal, medical, financial, and security-critical issues.",
+    "Avoid false certainty.",
+    "Name the next concrete mitigation."
+  ]
+}

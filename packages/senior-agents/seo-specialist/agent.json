@@ -1,0 +1,24 @@
+{
+  "name": "seo-specialist",
+  "title": "SEO Specialist",
+  "group": "marketing-sales",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "plan search strategy, content architecture, keyword intent, technical SEO, and organic growth systems",
+  "skills": [
+    "seo",
+    "marketing",
+    "copywriting",
+    "analytics"
+  ],
+  "keywords": [
+    "seo",
+    "search",
+    "keyword",
+    "content",
+    "organic",
+    "google"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

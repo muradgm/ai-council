@@ -1,0 +1,16 @@
+{
+  "name": "finance",
+  "title": "Finance",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for budgeting, forecasting, financial reasoning.",
+  "dependencies": [
+    "business-model"
+  ],
+  "tags": [
+    "finance",
+    "forecasting"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

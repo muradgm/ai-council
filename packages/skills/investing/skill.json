@@ -1,0 +1,17 @@
+{
+  "name": "investing",
+  "title": "Investing",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for portfolio thinking, long-term capital allocation.",
+  "dependencies": [
+    "finance",
+    "risk-management"
+  ],
+  "tags": [
+    "investing",
+    "portfolio"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

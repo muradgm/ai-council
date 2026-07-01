@@ -1,0 +1,14 @@
+{
+  "name": "psychology",
+  "title": "Psychology",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for behavioral principles, motivation, decision behavior.",
+  "dependencies": [],
+  "tags": [
+    "psychology",
+    "behavior"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

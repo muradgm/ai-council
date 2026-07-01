@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DiagnosticReport",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "status",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "checks": {
+      "type": "array"
+    },
+    "recommendations": {
+      "type": "array"
+    }
+  }
+}

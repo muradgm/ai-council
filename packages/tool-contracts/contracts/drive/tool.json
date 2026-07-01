@@ -1,0 +1,14 @@
+{
+  "name": "drive",
+  "title": "Google Drive",
+  "entrypoint": "TOOL.md",
+  "description": "Read and manage Drive files through explicit connector actions.",
+  "riskLevel": "high",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

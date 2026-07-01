@@ -1,0 +1,24 @@
+{
+  "name": "research-lead",
+  "title": "Research Lead",
+  "group": "research-ops",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "define research questions, evaluate evidence quality, synthesize findings, and separate facts from assumptions",
+  "skills": [
+    "research",
+    "core-reasoning",
+    "documentation",
+    "communication"
+  ],
+  "keywords": [
+    "research",
+    "evidence",
+    "sources",
+    "analyze article",
+    "summarize findings",
+    "compare"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

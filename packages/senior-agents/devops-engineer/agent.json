@@ -1,0 +1,27 @@
+{
+  "name": "devops-engineer",
+  "title": "DevOps Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "handle deployment, CI/CD, Docker, cloud infrastructure, monitoring, secrets, and operational reliability",
+  "skills": [
+    "devops",
+    "docker",
+    "cloud",
+    "security",
+    "backend"
+  ],
+  "keywords": [
+    "devops",
+    "docker",
+    "deployment",
+    "ci",
+    "cd",
+    "cloud",
+    "monitoring",
+    "infra"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

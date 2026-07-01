@@ -1,0 +1,24 @@
+{
+  "name": "legal-ops-advisor",
+  "title": "Legal Ops Advisor",
+  "group": "research-ops",
+  "version": "1.0.0",
+  "phase": "runtime-mvp-hardening",
+  "mission": "spot legal and compliance operations risks, identify documentation needs, and define escalation points without giving legal advice",
+  "skills": [
+    "legal-ops",
+    "operations",
+    "risk-management"
+  ],
+  "keywords": [
+    "legal",
+    "compliance",
+    "contracts",
+    "privacy",
+    "terms",
+    "policy",
+    "risk"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

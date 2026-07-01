@@ -1,0 +1,25 @@
+{
+  "name": "growth-marketer",
+  "title": "Growth Marketer",
+  "group": "marketing-sales",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design acquisition loops, experiments, activation, retention, and growth measurement systems",
+  "skills": [
+    "growth",
+    "marketing",
+    "analytics",
+    "copywriting",
+    "product-strategy"
+  ],
+  "keywords": [
+    "growth",
+    "acquisition",
+    "activation",
+    "retention",
+    "experiment",
+    "funnel"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

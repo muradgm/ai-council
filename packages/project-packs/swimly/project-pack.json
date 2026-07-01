@@ -1,0 +1,57 @@
+{
+  "name": "swimly",
+  "title": "Swimly",
+  "kind": "decision-first pool recommender",
+  "entrypoint": "PROJECT_PACK.md",
+  "projectRoot": "projects/swimly",
+  "memoryRoot": "storage/memory/projects/Swimly",
+  "wedge": "A simple recommender that picks the best pool option based on purpose, district, price, and practical fit instead of overwhelming users with a long list.",
+  "stage": "static-data MVP",
+  "agents": [
+    "product-manager",
+    "senior-frontend-engineer",
+    "ux-researcher",
+    "data-engineer",
+    "qa-engineer"
+  ],
+  "skills": [
+    "product-management",
+    "frontend",
+    "typescript",
+    "ux-research",
+    "analytics",
+    "testing"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine",
+    "ui-review-engine",
+    "data-model-engine",
+    "testing-strategy-engine"
+  ],
+  "workflows": [
+    "feature-planning",
+    "build-execution",
+    "ui-review",
+    "release-readiness"
+  ],
+  "templates": [
+    "prd",
+    "technical-design-doc",
+    "qa-test-plan",
+    "release-readiness-report"
+  ],
+  "keywords": [
+    "analytics",
+    "berlin-swimmers",
+    "budget-sensitive-users",
+    "families",
+    "fitness-swimmers",
+    "frontend",
+    "people-choosing-between-nearby-pools",
+    "product",
+    "swimly",
+    "testing",
+    "typescript",
+    "ux"
+  ]
+}

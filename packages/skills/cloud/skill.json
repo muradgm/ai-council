@@ -1,0 +1,17 @@
+{
+  "name": "cloud",
+  "title": "Cloud Architecture",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for cloud services, cost, deployment topology.",
+  "dependencies": [
+    "devops",
+    "security"
+  ],
+  "tags": [
+    "cloud",
+    "infra"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

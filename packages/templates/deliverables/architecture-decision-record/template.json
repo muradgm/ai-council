@@ -1,0 +1,31 @@
+{
+  "name": "architecture-decision-record",
+  "title": "Architecture Decision Record",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/architecture-decision-record/TEMPLATE.md",
+  "skills": [
+    "software-architecture",
+    "documentation",
+    "risk-management"
+  ],
+  "agents": [
+    "principal-software-architect",
+    "cto",
+    "technical-writer"
+  ],
+  "decisionEngines": [
+    "architecture-engine",
+    "documentation-engine"
+  ],
+  "workflows": [
+    "architecture-review"
+  ],
+  "keywords": [
+    "adr",
+    "architecture decision",
+    "tradeoff"
+  ],
+  "outputs": [
+    "Architecture Decision Record document"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "project-manager",
+  "title": "Project Manager",
+  "group": "research-ops",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "convert objectives into milestones, tasks, dependencies, timelines, risk logs, and delivery cadence",
+  "skills": [
+    "project-management",
+    "operations",
+    "communication",
+    "documentation"
+  ],
+  "keywords": [
+    "project plan",
+    "milestone",
+    "task",
+    "timeline",
+    "delivery",
+    "sprint",
+    "roadmap"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

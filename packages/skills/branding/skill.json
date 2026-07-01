@@ -1,0 +1,17 @@
+{
+  "name": "branding",
+  "title": "Branding",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for brand strategy, identity systems, differentiation.",
+  "dependencies": [
+    "marketing",
+    "psychology"
+  ],
+  "tags": [
+    "brand",
+    "identity"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

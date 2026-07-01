@@ -1,0 +1,33 @@
+{
+  "name": "security-review-report",
+  "title": "Security Review Report",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/security-review-report/TEMPLATE.md",
+  "skills": [
+    "security",
+    "legal-basics",
+    "backend"
+  ],
+  "agents": [
+    "cybersecurity-engineer",
+    "legal-risk-spotter",
+    "senior-backend-engineer"
+  ],
+  "decisionEngines": [
+    "security-review-engine",
+    "privacy-engine",
+    "legal-compliance-engine"
+  ],
+  "workflows": [
+    "security-review"
+  ],
+  "keywords": [
+    "security",
+    "privacy",
+    "vulnerability",
+    "risk"
+  ],
+  "outputs": [
+    "Security Review Report document"
+  ]
+}

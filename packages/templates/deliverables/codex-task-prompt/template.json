@@ -1,0 +1,32 @@
+{
+  "name": "codex-task-prompt",
+  "title": "Codex Task Prompt",
+  "category": "ai",
+  "entrypoint": "packages/templates/deliverables/codex-task-prompt/TEMPLATE.md",
+  "skills": [
+    "prompt-engineering",
+    "software-architecture",
+    "documentation"
+  ],
+  "agents": [
+    "principal-software-architect",
+    "senior-ai-engineer",
+    "technical-writer"
+  ],
+  "decisionEngines": [
+    "architecture-engine",
+    "llm-prompt-evaluation-engine"
+  ],
+  "workflows": [
+    "codex-session",
+    "build-execution"
+  ],
+  "keywords": [
+    "codex",
+    "task prompt",
+    "implementation prompt"
+  ],
+  "outputs": [
+    "Codex Task Prompt document"
+  ]
+}

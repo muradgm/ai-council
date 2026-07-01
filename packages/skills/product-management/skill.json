@@ -1,0 +1,14 @@
+{
+  "name": "product-management",
+  "version": "1.0.0",
+  "category": "product",
+  "owner": "product-manager",
+  "dependencies": [
+    "entrepreneurship"
+  ],
+  "tags": [
+    "product",
+    "roadmap",
+    "prd"
+  ]
+}

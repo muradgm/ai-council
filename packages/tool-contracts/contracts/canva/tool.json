@@ -1,0 +1,14 @@
+{
+  "name": "canva",
+  "title": "Canva",
+  "entrypoint": "TOOL.md",
+  "description": "Create visual assets and presentations through Canva connector actions.",
+  "riskLevel": "low",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

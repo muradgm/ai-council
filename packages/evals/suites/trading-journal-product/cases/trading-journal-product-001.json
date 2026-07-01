@@ -1,0 +1,31 @@
+{
+  "id": "trading-journal-product-001",
+  "request": "build the trading journal MVP for TradeFrame",
+  "expected": {
+    "agents": [
+      "product-manager",
+      "forex-trader"
+    ],
+    "engines": [
+      "product-strategy-engine",
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "feature-planning"
+    ],
+    "skills": [
+      "trading-journal",
+      "product-management"
+    ],
+    "templates": [
+      "prd"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

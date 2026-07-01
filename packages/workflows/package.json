@@ -1,0 +1,10 @@
+{
+  "name": "@ai-council/workflows",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Reusable AI Council workflow orchestration layer.",
+  "exports": {
+    "./index": "./workflows.index.json"
+  }
+}

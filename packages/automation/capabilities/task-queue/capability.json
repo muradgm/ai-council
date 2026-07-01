@@ -1,0 +1,22 @@
+{
+  "name": "task-queue",
+  "title": "Task Queue",
+  "entrypoint": "CAPABILITY.md",
+  "category": "execution",
+  "inputs": [
+    "project",
+    "task id"
+  ],
+  "outputs": [
+    "queued task",
+    "status"
+  ],
+  "riskLevel": "medium",
+  "approvalRequired": false,
+  "keywords": [
+    "queue",
+    "next task",
+    "active task",
+    "done"
+  ]
+}

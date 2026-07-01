@@ -1,0 +1,16 @@
+{
+  "name": "color-systems",
+  "title": "Color Systems",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for palette design, contrast, visual mood.",
+  "dependencies": [
+    "branding"
+  ],
+  "tags": [
+    "color",
+    "design"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

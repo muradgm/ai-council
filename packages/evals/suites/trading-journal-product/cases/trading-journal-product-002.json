@@ -1,0 +1,30 @@
+{
+  "id": "trading-journal-product-002",
+  "request": "design risk dashboard metrics for a trading app",
+  "expected": {
+    "agents": [
+      "risk-manager",
+      "product-manager"
+    ],
+    "engines": [
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "feature-planning"
+    ],
+    "skills": [
+      "risk-management",
+      "trading-journal"
+    ],
+    "templates": [
+      "feature-spec"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

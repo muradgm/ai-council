@@ -1,0 +1,16 @@
+{
+  "name": "business-model",
+  "title": "Business Model",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for monetization, pricing, distribution, unit economics.",
+  "dependencies": [
+    "entrepreneurship"
+  ],
+  "tags": [
+    "business",
+    "pricing"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

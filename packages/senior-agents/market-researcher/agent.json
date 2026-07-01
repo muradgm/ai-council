@@ -1,0 +1,24 @@
+{
+  "name": "market-researcher",
+  "title": "Market Researcher",
+  "group": "startup",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "collect, structure, and synthesize market evidence, competitor patterns, user needs, and demand signals",
+  "skills": [
+    "research",
+    "marketing",
+    "product-strategy",
+    "analytics"
+  ],
+  "keywords": [
+    "market research",
+    "competitor",
+    "demand",
+    "industry",
+    "user research",
+    "market size"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

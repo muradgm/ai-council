@@ -1,0 +1,33 @@
+{
+  "name": "feature-spec",
+  "title": "Feature Spec",
+  "category": "product",
+  "entrypoint": "packages/templates/deliverables/feature-spec/TEMPLATE.md",
+  "skills": [
+    "product-management",
+    "software-architecture",
+    "testing"
+  ],
+  "agents": [
+    "product-manager",
+    "principal-software-architect",
+    "qa-engineer"
+  ],
+  "decisionEngines": [
+    "architecture-engine",
+    "testing-strategy-engine"
+  ],
+  "workflows": [
+    "feature-planning",
+    "build-execution"
+  ],
+  "keywords": [
+    "feature",
+    "spec",
+    "requirements",
+    "acceptance criteria"
+  ],
+  "outputs": [
+    "Feature Spec document"
+  ]
+}

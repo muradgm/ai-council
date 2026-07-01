@@ -1,0 +1,16 @@
+{
+  "name": "database",
+  "title": "Database Design",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for schemas, indexing, consistency, query design.",
+  "dependencies": [
+    "backend"
+  ],
+  "tags": [
+    "database",
+    "data"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

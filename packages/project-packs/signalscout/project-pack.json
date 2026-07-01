@@ -1,0 +1,60 @@
+{
+  "name": "signalscout",
+  "title": "SignalScout",
+  "kind": "AI research, audit, outreach, and opportunity pipeline",
+  "entrypoint": "PROJECT_PACK.md",
+  "projectRoot": "projects/signalscout",
+  "memoryRoot": "storage/memory/projects/SignalScout",
+  "wedge": "A minimal revenue system for finding, qualifying, auditing, and contacting businesses with clear improvement opportunities.",
+  "stage": "monorepo / pipeline design",
+  "agents": [
+    "entrepreneur",
+    "growth-marketer",
+    "market-researcher",
+    "copywriter",
+    "principal-software-architect",
+    "data-engineer"
+  ],
+  "skills": [
+    "entrepreneurship",
+    "go-to-market",
+    "copywriting",
+    "research",
+    "backend",
+    "data-engineering"
+  ],
+  "decisionEngines": [
+    "market-research-engine",
+    "growth-engine",
+    "copywriting-engine",
+    "architecture-engine",
+    "data-model-engine"
+  ],
+  "workflows": [
+    "startup-validation",
+    "feature-planning",
+    "architecture-review",
+    "build-execution",
+    "growth-experiment"
+  ],
+  "templates": [
+    "prd",
+    "market-research-report",
+    "sales-outreach-sequence",
+    "technical-design-doc",
+    "council-session-report"
+  ],
+  "keywords": [
+    "backend",
+    "copywriting",
+    "data",
+    "entrepreneurship",
+    "go",
+    "outreach-heavy-service-businesses",
+    "research",
+    "signalscout",
+    "small-agencies",
+    "solo-founders",
+    "technical-consultants"
+  ]
+}

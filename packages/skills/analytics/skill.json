@@ -1,0 +1,17 @@
+{
+  "name": "analytics",
+  "title": "Analytics",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for metrics, funnels, dashboards, product insight.",
+  "dependencies": [
+    "data-engineering",
+    "growth"
+  ],
+  "tags": [
+    "analytics",
+    "metrics"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

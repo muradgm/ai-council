@@ -1,0 +1,32 @@
+{
+  "name": "prompt-evaluation-report",
+  "title": "Prompt Evaluation Report",
+  "category": "ai",
+  "entrypoint": "packages/templates/deliverables/prompt-evaluation-report/TEMPLATE.md",
+  "skills": [
+    "prompt-engineering",
+    "evals",
+    "agent-design"
+  ],
+  "agents": [
+    "chief-ai-officer",
+    "ai-engineer",
+    "research-lead"
+  ],
+  "decisionEngines": [
+    "llm-prompt-evaluation-engine",
+    "ai-agent-design-engine"
+  ],
+  "workflows": [
+    "prompt-evaluation"
+  ],
+  "keywords": [
+    "prompt",
+    "eval",
+    "llm",
+    "quality"
+  ],
+  "outputs": [
+    "Prompt Evaluation Report document"
+  ]
+}

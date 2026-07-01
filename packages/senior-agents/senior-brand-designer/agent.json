@@ -1,0 +1,25 @@
+{
+  "name": "senior-brand-designer",
+  "title": "Senior Brand Designer",
+  "group": "product-design",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "build brand identity systems, visual direction, logo concepts, typography, color, and identity applications",
+  "skills": [
+    "branding",
+    "logo-design",
+    "typography",
+    "color-systems",
+    "marketing"
+  ],
+  "keywords": [
+    "brand",
+    "logo",
+    "identity",
+    "visual direction",
+    "brand system",
+    "naming"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

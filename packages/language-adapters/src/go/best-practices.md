@@ -1,0 +1,3 @@
+# Go Best Practices
+
+Scaffold.

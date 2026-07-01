@@ -1,0 +1,243 @@
+{
+  "version": "2.0.0-phase-13",
+  "generatedBy": "Phase 13 Project Packs Layer",
+  "packs": [
+    {
+      "name": "tradeframe",
+      "title": "TradeFrame",
+      "kind": "AI-first trading journal and decision review system",
+      "entrypoint": "PROJECT_PACK.md",
+      "projectRoot": "projects/tradeframe",
+      "memoryRoot": "storage/memory/projects/TradeFrame",
+      "wedge": "Risk-first trading journal focused on decision quality, rule discipline, and post-trade learning rather than prediction hype.",
+      "stage": "planning / MVP definition",
+      "agents": [
+        "product-manager",
+        "principal-software-architect",
+        "forex-trader",
+        "risk-manager",
+        "quant-researcher",
+        "senior-fullstack-engineer"
+      ],
+      "skills": [
+        "forex-trading",
+        "risk-management",
+        "product-management",
+        "software-architecture",
+        "database",
+        "fullstack"
+      ],
+      "decisionEngines": [
+        "trading-risk-engine",
+        "forex-trade-review-engine",
+        "product-strategy-engine",
+        "architecture-engine",
+        "database-engine"
+      ],
+      "workflows": [
+        "feature-planning",
+        "architecture-review",
+        "build-execution",
+        "trading-system-review",
+        "release-readiness"
+      ],
+      "templates": [
+        "prd",
+        "architecture-decision-record",
+        "risk-review-report",
+        "trade-journal-entry",
+        "technical-design-doc"
+      ],
+      "keywords": [
+        "database",
+        "forex",
+        "fullstack",
+        "multi-asset-discretionary-traders",
+        "product",
+        "retail-forex-traders",
+        "risk",
+        "software",
+        "tradeframe",
+        "traders-trying-to-reduce-repeated-mistakes"
+      ]
+    },
+    {
+      "name": "signalscout",
+      "title": "SignalScout",
+      "kind": "AI research, audit, outreach, and opportunity pipeline",
+      "entrypoint": "PROJECT_PACK.md",
+      "projectRoot": "projects/signalscout",
+      "memoryRoot": "storage/memory/projects/SignalScout",
+      "wedge": "A minimal revenue system for finding, qualifying, auditing, and contacting businesses with clear improvement opportunities.",
+      "stage": "monorepo / pipeline design",
+      "agents": [
+        "entrepreneur",
+        "growth-marketer",
+        "market-researcher",
+        "copywriter",
+        "principal-software-architect",
+        "data-engineer"
+      ],
+      "skills": [
+        "entrepreneurship",
+        "go-to-market",
+        "copywriting",
+        "research",
+        "backend",
+        "data-engineering"
+      ],
+      "decisionEngines": [
+        "market-research-engine",
+        "growth-engine",
+        "copywriting-engine",
+        "architecture-engine",
+        "data-model-engine"
+      ],
+      "workflows": [
+        "startup-validation",
+        "feature-planning",
+        "architecture-review",
+        "build-execution",
+        "growth-experiment"
+      ],
+      "templates": [
+        "prd",
+        "market-research-report",
+        "sales-outreach-sequence",
+        "technical-design-doc",
+        "council-session-report"
+      ],
+      "keywords": [
+        "backend",
+        "copywriting",
+        "data",
+        "entrepreneurship",
+        "go",
+        "outreach-heavy-service-businesses",
+        "research",
+        "signalscout",
+        "small-agencies",
+        "solo-founders",
+        "technical-consultants"
+      ]
+    },
+    {
+      "name": "navo",
+      "title": "NAVO / Flowday",
+      "kind": "route-aware city trip planning app",
+      "entrypoint": "PROJECT_PACK.md",
+      "projectRoot": "projects/navo",
+      "memoryRoot": "storage/memory/projects/NAVO",
+      "wedge": "Turns scattered city ideas into a practical route-aware day plan for families, short visits, and free-time exploration.",
+      "stage": "prototype / travel planner evolution",
+      "agents": [
+        "product-manager",
+        "ux-designer",
+        "ui-designer",
+        "senior-frontend-engineer",
+        "brand-strategist",
+        "research-lead"
+      ],
+      "skills": [
+        "product-management",
+        "ux-design",
+        "ui-design",
+        "frontend",
+        "branding",
+        "accessibility"
+      ],
+      "decisionEngines": [
+        "product-strategy-engine",
+        "ui-review-engine",
+        "ux-research-engine",
+        "brand-engine",
+        "accessibility-engine"
+      ],
+      "workflows": [
+        "feature-planning",
+        "ui-review",
+        "brand-identity",
+        "build-execution",
+        "release-readiness"
+      ],
+      "templates": [
+        "prd",
+        "ux-research-plan",
+        "brand-brief",
+        "technical-design-doc",
+        "release-readiness-report"
+      ],
+      "keywords": [
+        "accessibility",
+        "branding",
+        "business-travelers-with-free-time",
+        "families-on-city-trips",
+        "frontend",
+        "local-explorers",
+        "navo",
+        "navo-/-flowday",
+        "product",
+        "ui",
+        "ux",
+        "weekend-travelers"
+      ]
+    },
+    {
+      "name": "swimly",
+      "title": "Swimly",
+      "kind": "decision-first pool recommender",
+      "entrypoint": "PROJECT_PACK.md",
+      "projectRoot": "projects/swimly",
+      "memoryRoot": "storage/memory/projects/Swimly",
+      "wedge": "A simple recommender that picks the best pool option based on purpose, district, price, and practical fit instead of overwhelming users with a long list.",
+      "stage": "static-data MVP",
+      "agents": [
+        "product-manager",
+        "senior-frontend-engineer",
+        "ux-researcher",
+        "data-engineer",
+        "qa-engineer"
+      ],
+      "skills": [
+        "product-management",
+        "frontend",
+        "typescript",
+        "ux-research",
+        "analytics",
+        "testing"
+      ],
+      "decisionEngines": [
+        "product-strategy-engine",
+        "ui-review-engine",
+        "data-model-engine",
+        "testing-strategy-engine"
+      ],
+      "workflows": [
+        "feature-planning",
+        "build-execution",
+        "ui-review",
+        "release-readiness"
+      ],
+      "templates": [
+        "prd",
+        "technical-design-doc",
+        "qa-test-plan",
+        "release-readiness-report"
+      ],
+      "keywords": [
+        "analytics",
+        "berlin-swimmers",
+        "budget-sensitive-users",
+        "families",
+        "fitness-swimmers",
+        "frontend",
+        "people-choosing-between-nearby-pools",
+        "product",
+        "swimly",
+        "testing",
+        "typescript",
+        "ux"
+      ]
+    }
+  ]
+}

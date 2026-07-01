@@ -1,0 +1,27 @@
+{
+  "name": "senior-fullstack-engineer",
+  "title": "Senior Full-Stack Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "implement complete product features across frontend, backend, API, database, tests, and documentation",
+  "skills": [
+    "fullstack",
+    "react",
+    "node",
+    "typescript",
+    "database",
+    "testing"
+  ],
+  "keywords": [
+    "fullstack",
+    "feature",
+    "frontend and backend",
+    "api",
+    "react",
+    "node",
+    "implementation"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

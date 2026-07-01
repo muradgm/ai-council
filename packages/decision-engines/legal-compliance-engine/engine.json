@@ -1,0 +1,67 @@
+{
+  "name": "legal-compliance-engine",
+  "title": "Legal Compliance Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "governance",
+  "decisionType": "legal/compliance triage decision",
+  "purpose": "Surface legal/compliance issues, documentation gaps, consent needs, and escalation points.",
+  "ownerAgents": [
+    "risk-manager",
+    "cfo",
+    "ceo"
+  ],
+  "skills": [
+    "legal-basics",
+    "risk-management"
+  ],
+  "tags": [
+    "legal",
+    "compliance",
+    "risk",
+    "governance"
+  ],
+  "keywords": [
+    "legal",
+    "contract",
+    "terms",
+    "privacy",
+    "compliance",
+    "gdpr",
+    "policy"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "jurisdiction clarity",
+    "data sensitivity",
+    "contract risk",
+    "user consent",
+    "record keeping",
+    "escalation need",
+    "operational impact"
+  ],
+  "guardrails": [
+    "Not legal advice. Identify issues and recommend consulting a qualified professional when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

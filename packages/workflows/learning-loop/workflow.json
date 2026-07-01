@@ -1,0 +1,53 @@
+{
+  "name": "learning-loop",
+  "title": "Learning Loop Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "meta",
+  "description": "Capture lessons, failures, decisions, reusable patterns, and repo updates after a completed task.",
+  "triggers": [
+    "retrospective",
+    "lessons",
+    "learning loop",
+    "postmortem",
+    "improve process"
+  ],
+  "agents": [
+    "research-lead",
+    "project-manager",
+    "technical-writer",
+    "ceo"
+  ],
+  "skills": [
+    "core-reasoning",
+    "documentation",
+    "project-management",
+    "research"
+  ],
+  "decisionEngines": [
+    "documentation-engine",
+    "product-strategy-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Retrospective",
+    "Lessons learned",
+    "Knowledge updates",
+    "Next improvements"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

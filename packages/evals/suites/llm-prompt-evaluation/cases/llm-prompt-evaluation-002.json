@@ -1,0 +1,27 @@
+{
+  "id": "llm-prompt-evaluation-002",
+  "request": "design an agent workflow for the Council",
+  "expected": {
+    "agents": [
+      "senior-ai-engineer"
+    ],
+    "engines": [
+      "ai-agent-design-engine"
+    ],
+    "workflows": [
+      "ai-agent-build"
+    ],
+    "skills": [
+      "agent-design"
+    ],
+    "templates": [
+      "agent-spec"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

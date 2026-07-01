@@ -1,0 +1,28 @@
+{
+  "id": "brand-identity-003",
+  "request": "review a logo direction and typography system",
+  "expected": {
+    "agents": [
+      "senior-brand-designer"
+    ],
+    "engines": [
+      "brand-engine"
+    ],
+    "workflows": [
+      "brand-identity"
+    ],
+    "skills": [
+      "logo-design",
+      "typography"
+    ],
+    "templates": [
+      "brand-brief"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

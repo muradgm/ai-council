@@ -1,0 +1,54 @@
+{
+  "name": "brand-identity",
+  "title": "Brand Identity Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "design",
+  "description": "Create a coherent brand strategy, visual direction, identity cues, voice, and deliverables brief.",
+  "triggers": [
+    "brand identity",
+    "logo",
+    "visual direction",
+    "brand system",
+    "identity"
+  ],
+  "agents": [
+    "senior-brand-designer",
+    "copywriter",
+    "chief-design-officer"
+  ],
+  "skills": [
+    "branding",
+    "logo-design",
+    "typography",
+    "color-systems",
+    "copywriting"
+  ],
+  "decisionEngines": [
+    "brand-engine",
+    "naming-engine",
+    "copywriting-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Brand brief",
+    "Visual directions",
+    "Voice guidance",
+    "Deliverables checklist"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

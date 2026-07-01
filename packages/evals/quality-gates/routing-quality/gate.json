@@ -1,0 +1,14 @@
+{
+  "name": "routing-quality",
+  "title": "Routing Quality Gate",
+  "summary": "Checks that core domain requests route to expected assets.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "medium",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

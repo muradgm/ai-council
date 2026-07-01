@@ -1,0 +1,32 @@
+{
+  "name": "rag-evaluation-report",
+  "title": "RAG Evaluation Report",
+  "category": "ai",
+  "entrypoint": "packages/templates/deliverables/rag-evaluation-report/TEMPLATE.md",
+  "skills": [
+    "rag",
+    "evals",
+    "data-engineering"
+  ],
+  "agents": [
+    "senior-ai-engineer",
+    "data-engineer",
+    "research-lead"
+  ],
+  "decisionEngines": [
+    "llm-prompt-evaluation-engine",
+    "data-model-engine"
+  ],
+  "workflows": [
+    "rag-system-build"
+  ],
+  "keywords": [
+    "rag",
+    "retrieval",
+    "knowledge base",
+    "evaluation"
+  ],
+  "outputs": [
+    "RAG Evaluation Report document"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "name": "navo",
+  "title": "NAVO / Flowday",
+  "kind": "route-aware city trip planning app",
+  "entrypoint": "PROJECT_PACK.md",
+  "projectRoot": "projects/navo",
+  "memoryRoot": "storage/memory/projects/NAVO",
+  "wedge": "Turns scattered city ideas into a practical route-aware day plan for families, short visits, and free-time exploration.",
+  "stage": "prototype / travel planner evolution",
+  "agents": [
+    "product-manager",
+    "ux-designer",
+    "ui-designer",
+    "senior-frontend-engineer",
+    "brand-strategist",
+    "research-lead"
+  ],
+  "skills": [
+    "product-management",
+    "ux-design",
+    "ui-design",
+    "frontend",
+    "branding",
+    "accessibility"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine",
+    "ui-review-engine",
+    "ux-research-engine",
+    "brand-engine",
+    "accessibility-engine"
+  ],
+  "workflows": [
+    "feature-planning",
+    "ui-review",
+    "brand-identity",
+    "build-execution",
+    "release-readiness"
+  ],
+  "templates": [
+    "prd",
+    "ux-research-plan",
+    "brand-brief",
+    "technical-design-doc",
+    "release-readiness-report"
+  ],
+  "keywords": [
+    "accessibility",
+    "branding",
+    "business-travelers-with-free-time",
+    "families-on-city-trips",
+    "frontend",
+    "local-explorers",
+    "navo",
+    "navo-/-flowday",
+    "product",
+    "ui",
+    "ux",
+    "weekend-travelers"
+  ]
+}

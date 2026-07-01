@@ -1,0 +1,72 @@
+{
+  "name": "product-strategy-engine",
+  "title": "Product Strategy Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "product",
+  "decisionType": "product strategy decision",
+  "purpose": "Evaluate product direction, feature priority, user value, positioning, and roadmap logic.",
+  "ownerAgents": [
+    "product-manager",
+    "ux-researcher",
+    "entrepreneur",
+    "startup-advisor"
+  ],
+  "skills": [
+    "product-management",
+    "product-strategy",
+    "ux-research",
+    "entrepreneurship",
+    "business-model"
+  ],
+  "tags": [
+    "product",
+    "strategy",
+    "roadmap",
+    "user-value"
+  ],
+  "keywords": [
+    "product",
+    "feature",
+    "roadmap",
+    "mvp",
+    "user",
+    "priority",
+    "scope",
+    "requirements"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "user pain clarity",
+    "differentiation",
+    "feasibility",
+    "time-to-value",
+    "retention potential",
+    "strategic fit",
+    "learning value"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

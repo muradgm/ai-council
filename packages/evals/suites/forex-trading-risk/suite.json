@@ -1,0 +1,43 @@
+{
+  "name": "forex-trading-risk",
+  "title": "Forex Trading Risk Eval Suite",
+  "category": "trading",
+  "threshold": 0.9,
+  "keywords": [
+    "forex",
+    "trade",
+    "risk",
+    "backtest",
+    "drawdown"
+  ],
+  "expectedAgents": [
+    "forex-trader",
+    "risk-manager",
+    "quant-researcher"
+  ],
+  "expectedEngines": [
+    "forex-trade-review-engine",
+    "trading-risk-engine",
+    "quant-research-engine"
+  ],
+  "expectedWorkflows": [
+    "forex-trade-review",
+    "trading-system-review",
+    "risk-review"
+  ],
+  "expectedSkills": [
+    "forex-trading",
+    "risk-management",
+    "technical-analysis"
+  ],
+  "expectedTemplates": [
+    "forex-trading-plan",
+    "trade-journal-entry",
+    "risk-review-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

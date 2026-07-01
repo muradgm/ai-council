@@ -1,0 +1,28 @@
+{
+  "id": "workflow-execution-002",
+  "request": "prepare release readiness for the repo",
+  "expected": {
+    "agents": [
+      "qa-engineer",
+      "project-manager"
+    ],
+    "engines": [
+      "release-readiness-engine"
+    ],
+    "workflows": [
+      "release-readiness"
+    ],
+    "skills": [
+      "testing"
+    ],
+    "templates": [
+      "release-readiness-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

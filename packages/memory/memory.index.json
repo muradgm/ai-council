@@ -1,0 +1,32 @@
+{
+  "name": "ai-council-memory-runtime",
+  "version": "0.7.0",
+  "description": "Runtime context, project memory, decision history, session summaries, task state, and Codex context packs.",
+  "recordTypes": [
+    "project-context",
+    "session-summary",
+    "decision-record",
+    "task-state",
+    "context-pack",
+    "risk-register",
+    "handoff-note"
+  ],
+  "templates": [
+    "PROJECT_CONTEXT.md",
+    "SESSION_SUMMARY.md",
+    "DECISION_RECORD.md",
+    "TASK_STATE.md",
+    "CONTEXT_PACK.md",
+    "HANDOFF_NOTE.md",
+    "RISK_REGISTER.md",
+    "CHANGELOG_ENTRY.md"
+  ],
+  "loaderPolicies": [
+    "context-priority",
+    "freshness-policy",
+    "conflict-resolution",
+    "token-budgeting"
+  ],
+  "storageRoot": "storage/memory",
+  "contextPackRoot": "storage/context-packs"
+}

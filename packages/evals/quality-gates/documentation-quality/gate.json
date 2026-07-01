@@ -1,0 +1,14 @@
+{
+  "name": "documentation-quality",
+  "title": "Documentation Quality Gate",
+  "summary": "Checks core docs exist and are useful.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "medium",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

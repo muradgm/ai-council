@@ -1,0 +1,1 @@
+export const workflow = { id: "bug-investigation", description: "Bug Investigation workflow scaffold", steps: ["classify-request", "select-council", "run-agents", "validate-output", "return-result"] };

@@ -1,0 +1,28 @@
+{
+  "id": "startup-validation-001",
+  "request": "validate a startup idea for AI travel planning",
+  "expected": {
+    "agents": [
+      "entrepreneur",
+      "startup-advisor"
+    ],
+    "engines": [
+      "startup-evaluation-engine"
+    ],
+    "workflows": [
+      "startup-validation"
+    ],
+    "skills": [
+      "startup-validation"
+    ],
+    "templates": [
+      "startup-validation-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

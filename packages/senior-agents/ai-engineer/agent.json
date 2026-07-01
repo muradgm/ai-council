@@ -1,0 +1,29 @@
+{
+  "name": "ai-engineer",
+  "title": "Senior AI Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "build LLM applications, agent flows, retrieval systems, prompts, model integrations, and evaluation harnesses",
+  "skills": [
+    "ai-engineering",
+    "agent-design",
+    "prompt-engineering",
+    "rag",
+    "evals",
+    "python"
+  ],
+  "keywords": [
+    "ai engineer",
+    "llm",
+    "agent",
+    "rag",
+    "prompt",
+    "openai",
+    "claude",
+    "gemini",
+    "retrieval"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

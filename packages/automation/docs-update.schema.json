@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Documentation Update Plan",
+  "type": "object",
+  "required": [
+    "id",
+    "project",
+    "scope",
+    "documents",
+    "createdAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

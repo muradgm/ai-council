@@ -1,0 +1,32 @@
+{
+  "name": "forex-trading-plan",
+  "title": "Forex Trading Plan",
+  "category": "trading",
+  "entrypoint": "packages/templates/deliverables/forex-trading-plan/TEMPLATE.md",
+  "skills": [
+    "forex-trading",
+    "risk-management",
+    "technical-analysis"
+  ],
+  "agents": [
+    "forex-trader",
+    "risk-manager",
+    "macro-analyst"
+  ],
+  "decisionEngines": [
+    "forex-trade-review-engine",
+    "trading-risk-engine"
+  ],
+  "workflows": [
+    "forex-trade-review"
+  ],
+  "keywords": [
+    "forex",
+    "trading plan",
+    "currency",
+    "trade"
+  ],
+  "outputs": [
+    "Forex Trading Plan document"
+  ]
+}

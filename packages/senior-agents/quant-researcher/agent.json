@@ -1,0 +1,25 @@
+{
+  "name": "quant-researcher",
+  "title": "Quantitative Researcher",
+  "group": "finance-trading",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "turn hypotheses into measurable backtests, statistical checks, validation plans, and robustness reviews",
+  "skills": [
+    "quantitative-analysis",
+    "python",
+    "risk-management",
+    "technical-analysis",
+    "data-engineering"
+  ],
+  "keywords": [
+    "quant",
+    "backtest",
+    "strategy test",
+    "statistics",
+    "edge",
+    "historical data"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

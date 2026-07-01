@@ -1,0 +1,32 @@
+{
+  "name": "sales-outreach-sequence",
+  "title": "Sales Outreach Sequence",
+  "category": "sales",
+  "entrypoint": "packages/templates/deliverables/sales-outreach-sequence/TEMPLATE.md",
+  "skills": [
+    "sales",
+    "copywriting",
+    "negotiation"
+  ],
+  "agents": [
+    "sales-strategist",
+    "copywriter",
+    "negotiation-coach"
+  ],
+  "decisionEngines": [
+    "sales-engine",
+    "copywriting-engine"
+  ],
+  "workflows": [
+    "sales-funnel"
+  ],
+  "keywords": [
+    "sales",
+    "outreach",
+    "email",
+    "sequence"
+  ],
+  "outputs": [
+    "Sales Outreach Sequence document"
+  ]
+}

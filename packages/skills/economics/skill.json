@@ -1,0 +1,16 @@
+{
+  "name": "economics",
+  "title": "Economics",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for macro drivers, rates, inflation, cycles.",
+  "dependencies": [
+    "finance"
+  ],
+  "tags": [
+    "economics",
+    "macro"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

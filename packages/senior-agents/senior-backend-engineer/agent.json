@@ -1,0 +1,29 @@
+{
+  "name": "senior-backend-engineer",
+  "title": "Senior Backend Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "build APIs, services, workers, data flows, security controls, queues, and backend reliability",
+  "skills": [
+    "backend",
+    "node",
+    "typescript",
+    "database",
+    "api-design",
+    "redis",
+    "security"
+  ],
+  "keywords": [
+    "backend",
+    "api",
+    "server",
+    "database",
+    "worker",
+    "queue",
+    "express",
+    "service"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

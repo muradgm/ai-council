@@ -1,0 +1,17 @@
+{
+  "name": "ux-research",
+  "title": "UX Research",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for user interviews, journeys, usability research.",
+  "dependencies": [
+    "research",
+    "product-strategy"
+  ],
+  "tags": [
+    "ux",
+    "research"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

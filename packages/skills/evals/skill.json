@@ -1,0 +1,17 @@
+{
+  "name": "evals",
+  "title": "AI Evaluations",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for quality scoring, regression tests, rubrics.",
+  "dependencies": [
+    "ai-engineering",
+    "testing"
+  ],
+  "tags": [
+    "evals",
+    "quality"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

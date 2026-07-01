@@ -1,0 +1,17 @@
+{
+  "name": "nextjs",
+  "title": "Next.js",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for routing, server components, deployment patterns.",
+  "dependencies": [
+    "react",
+    "backend"
+  ],
+  "tags": [
+    "nextjs",
+    "react"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

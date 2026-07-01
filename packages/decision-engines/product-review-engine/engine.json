@@ -1,0 +1,69 @@
+{
+  "name": "product-review-engine",
+  "title": "Product Review Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "product",
+  "decisionType": "product quality and direction decision",
+  "purpose": "Review product usefulness, workflow clarity, scope discipline, user value, and release readiness.",
+  "ownerAgents": [
+    "product-manager",
+    "cpo",
+    "qa-engineer"
+  ],
+  "skills": [
+    "product-management",
+    "product-strategy",
+    "ux-research",
+    "testing"
+  ],
+  "tags": [
+    "product",
+    "review",
+    "workflow",
+    "scope"
+  ],
+  "keywords": [
+    "product",
+    "review",
+    "mvp",
+    "workflow",
+    "scope",
+    "feature",
+    "user value"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "user value",
+    "workflow clarity",
+    "scope fit",
+    "evidence quality",
+    "usability risk",
+    "delivery risk",
+    "validation clarity"
+  ],
+  "guardrails": [
+    "Do not reward feature volume over workflow clarity.",
+    "State assumptions explicitly.",
+    "Prefer testable MVP steps.",
+    "Call out generic or ungrounded product claims."
+  ]
+}

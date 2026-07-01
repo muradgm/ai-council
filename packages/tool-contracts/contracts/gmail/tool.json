@@ -1,0 +1,14 @@
+{
+  "name": "gmail",
+  "title": "Gmail",
+  "entrypoint": "TOOL.md",
+  "description": "Read or write email only after explicit user intent.",
+  "riskLevel": "high",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

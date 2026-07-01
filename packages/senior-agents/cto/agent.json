@@ -1,0 +1,25 @@
+{
+  "name": "cto",
+  "title": "Chief Technology Officer",
+  "group": "executive",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "make technology strategy decisions, technical standards, architecture direction, and engineering tradeoffs",
+  "skills": [
+    "software-architecture",
+    "ai-engineering",
+    "security",
+    "devops",
+    "documentation"
+  ],
+  "keywords": [
+    "cto",
+    "tech strategy",
+    "architecture",
+    "technical",
+    "platform",
+    "engineering direction"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

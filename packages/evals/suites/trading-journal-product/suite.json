@@ -1,0 +1,40 @@
+{
+  "name": "trading-journal-product",
+  "title": "Trading Journal Product Eval Suite",
+  "category": "product-trading",
+  "threshold": 0.85,
+  "keywords": [
+    "trading journal",
+    "tradeframe",
+    "analytics",
+    "risk dashboard"
+  ],
+  "expectedAgents": [
+    "product-manager",
+    "forex-trader",
+    "risk-manager"
+  ],
+  "expectedEngines": [
+    "product-strategy-engine",
+    "trading-risk-engine"
+  ],
+  "expectedWorkflows": [
+    "feature-planning",
+    "trading-system-review"
+  ],
+  "expectedSkills": [
+    "trading-journal",
+    "product-management",
+    "risk-management"
+  ],
+  "expectedTemplates": [
+    "prd",
+    "trade-journal-entry",
+    "risk-review-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

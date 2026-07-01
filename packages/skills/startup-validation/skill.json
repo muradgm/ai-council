@@ -1,0 +1,17 @@
+{
+  "name": "startup-validation",
+  "title": "Startup Validation",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for customer discovery, MVP scope, traction signals.",
+  "dependencies": [
+    "entrepreneurship",
+    "research"
+  ],
+  "tags": [
+    "startup",
+    "validation"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

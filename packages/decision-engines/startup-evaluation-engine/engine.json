@@ -1,0 +1,71 @@
+{
+  "name": "startup-evaluation-engine",
+  "title": "Startup Evaluation Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "business",
+  "decisionType": "startup viability decision",
+  "purpose": "Evaluate startup concepts, wedges, market timing, customer pain, defensibility, and execution path.",
+  "ownerAgents": [
+    "entrepreneur",
+    "startup-advisor",
+    "venture-builder",
+    "ceo",
+    "market-researcher"
+  ],
+  "skills": [
+    "entrepreneurship",
+    "business-model",
+    "product-strategy"
+  ],
+  "tags": [
+    "startup",
+    "wedge",
+    "market",
+    "business"
+  ],
+  "keywords": [
+    "startup",
+    "idea",
+    "wedge",
+    "business",
+    "market",
+    "competitors",
+    "mvp",
+    "venture"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "pain intensity",
+    "buyer clarity",
+    "wedge strength",
+    "speed to revenue",
+    "competitive pressure",
+    "defensibility",
+    "founder fit"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

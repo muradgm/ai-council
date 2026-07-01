@@ -1,0 +1,25 @@
+{
+  "name": "negotiation-coach",
+  "title": "Negotiation Coach",
+  "group": "marketing-sales",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "prepare negotiation strategy, offers, concessions, BATNA, scripts, and conflict framing",
+  "skills": [
+    "negotiation",
+    "communication",
+    "psychology",
+    "sales"
+  ],
+  "keywords": [
+    "negotiate",
+    "negotiation",
+    "offer",
+    "salary",
+    "deal",
+    "terms",
+    "objection"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

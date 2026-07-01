@@ -1,0 +1,31 @@
+{
+  "name": "legal-risk-note",
+  "title": "Legal Risk Note",
+  "category": "risk",
+  "entrypoint": "packages/templates/deliverables/legal-risk-note/TEMPLATE.md",
+  "skills": [
+    "legal-basics",
+    "risk-management",
+    "documentation"
+  ],
+  "agents": [
+    "legal-risk-spotter",
+    "risk-manager",
+    "communications-advisor"
+  ],
+  "decisionEngines": [
+    "legal-compliance-engine",
+    "privacy-engine"
+  ],
+  "workflows": [
+    "risk-review"
+  ],
+  "keywords": [
+    "legal",
+    "compliance",
+    "risk note"
+  ],
+  "outputs": [
+    "Legal Risk Note document"
+  ]
+}

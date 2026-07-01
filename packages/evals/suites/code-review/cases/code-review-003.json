@@ -1,0 +1,27 @@
+{
+  "id": "code-review-003",
+  "request": "plan a refactor for shared packages",
+  "expected": {
+    "agents": [
+      "principal-software-architect"
+    ],
+    "engines": [
+      "architecture-engine"
+    ],
+    "workflows": [
+      "refactor-system"
+    ],
+    "skills": [
+      "software-architecture"
+    ],
+    "templates": [
+      "technical-design-doc"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

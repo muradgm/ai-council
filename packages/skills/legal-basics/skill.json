@@ -1,0 +1,16 @@
+{
+  "name": "legal-basics",
+  "title": "Legal Basics",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for non-lawyer legal risk awareness and documentation.",
+  "dependencies": [
+    "risk-management"
+  ],
+  "tags": [
+    "legal",
+    "compliance"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

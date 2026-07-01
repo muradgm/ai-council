@@ -1,0 +1,10 @@
+{
+  "name": "@ai-council/memory",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "description": "File-based memory, project runtime, and context-pack system for AI Council.",
+  "exports": {
+    "./registry": "./memory.index.json"
+  }
+}

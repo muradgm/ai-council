@@ -1,0 +1,29 @@
+{
+  "name": "secrets-scan",
+  "title": "Secrets Scan",
+  "entrypoint": "CAPABILITY.md",
+  "category": "security",
+  "riskLevel": "high",
+  "approvalRequired": false,
+  "keywords": [
+    "secret",
+    "api key",
+    "token",
+    "password",
+    "env",
+    "credential"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Scan local text files for common secret patterns and produce a local report."
+}

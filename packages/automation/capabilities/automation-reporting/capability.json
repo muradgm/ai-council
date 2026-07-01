@@ -1,0 +1,19 @@
+{
+  "name": "automation-reporting",
+  "title": "Automation Reporting",
+  "entrypoint": "CAPABILITY.md",
+  "category": "reporting",
+  "inputs": [
+    "project optional"
+  ],
+  "outputs": [
+    "automation report"
+  ],
+  "riskLevel": "low",
+  "approvalRequired": false,
+  "keywords": [
+    "report",
+    "status",
+    "summary"
+  ]
+}

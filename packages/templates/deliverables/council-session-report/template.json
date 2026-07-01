@@ -1,0 +1,33 @@
+{
+  "name": "council-session-report",
+  "title": "Council Session Report",
+  "category": "operations",
+  "entrypoint": "packages/templates/deliverables/council-session-report/TEMPLATE.md",
+  "skills": [
+    "documentation",
+    "project-management",
+    "communication"
+  ],
+  "agents": [
+    "project-manager",
+    "communications-advisor",
+    "technical-writer"
+  ],
+  "decisionEngines": [
+    "documentation-engine",
+    "operations-engine"
+  ],
+  "workflows": [
+    "codex-session",
+    "learning-loop"
+  ],
+  "keywords": [
+    "council",
+    "session",
+    "summary",
+    "report"
+  ],
+  "outputs": [
+    "Council Session Report document"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "figma",
+  "title": "Figma",
+  "entrypoint": "TOOL.md",
+  "description": "Inspect or generate design artifacts through Figma connector actions.",
+  "riskLevel": "low",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

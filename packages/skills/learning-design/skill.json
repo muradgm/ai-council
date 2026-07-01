@@ -1,0 +1,14 @@
+{
+  "name": "learning-design",
+  "version": "1.0.0",
+  "type": "skill",
+  "tags": [
+    "Curriculum",
+    "Practice loops",
+    "Feedback",
+    "Retention",
+    "Assessment"
+  ],
+  "entry": "SKILL.md",
+  "dependencies": []
+}

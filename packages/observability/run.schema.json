@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CouncilRunTrace",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "task",
+    "status",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "agents": {
+      "type": "array"
+    },
+    "skills": {
+      "type": "array"
+    },
+    "engines": {
+      "type": "array"
+    },
+    "workflows": {
+      "type": "array"
+    },
+    "templates": {
+      "type": "array"
+    },
+    "artifacts": {
+      "type": "array"
+    },
+    "validations": {
+      "type": "array"
+    },
+    "risks": {
+      "type": "array"
+    },
+    "nextActions": {
+      "type": "array"
+    }
+  }
+}

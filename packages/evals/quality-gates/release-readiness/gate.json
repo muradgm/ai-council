@@ -1,0 +1,14 @@
+{
+  "name": "release-readiness",
+  "title": "Release Readiness Gate",
+  "summary": "Checks validation, evals, and reports before release.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "medium",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

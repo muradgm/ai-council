@@ -1,0 +1,16 @@
+{
+  "name": "prompt-engineering",
+  "title": "Prompt Engineering",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for task framing, system prompts, agent prompts.",
+  "dependencies": [
+    "ai-engineering"
+  ],
+  "tags": [
+    "prompt",
+    "ai"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

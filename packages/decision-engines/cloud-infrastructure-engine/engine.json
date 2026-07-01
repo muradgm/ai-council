@@ -1,0 +1,66 @@
+{
+  "name": "cloud-infrastructure-engine",
+  "title": "Cloud Infrastructure Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "engineering",
+  "decisionType": "cloud infrastructure decision",
+  "purpose": "Evaluate cloud architecture, service choices, costs, reliability, scaling, and security defaults.",
+  "ownerAgents": [
+    "devops-engineer",
+    "cto"
+  ],
+  "skills": [
+    "devops"
+  ],
+  "tags": [
+    "cloud",
+    "infrastructure",
+    "cost",
+    "reliability"
+  ],
+  "keywords": [
+    "aws",
+    "azure",
+    "gcp",
+    "cloud",
+    "hosting",
+    "server",
+    "infrastructure",
+    "cost"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "managed-service fit",
+    "security defaults",
+    "reliability targets",
+    "scaling path",
+    "cost visibility",
+    "vendor lock-in",
+    "operational burden"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

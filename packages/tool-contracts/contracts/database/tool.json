@@ -1,0 +1,14 @@
+{
+  "name": "database",
+  "title": "Database",
+  "entrypoint": "TOOL.md",
+  "description": "Inspect schemas and run safe read-only queries by default.",
+  "riskLevel": "high",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

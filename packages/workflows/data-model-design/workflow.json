@@ -1,0 +1,55 @@
+{
+  "name": "data-model-design",
+  "title": "Data Model Design Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "engineering",
+  "description": "Design data models, entities, relationships, indexing, migrations, and storage boundaries.",
+  "triggers": [
+    "data model",
+    "schema",
+    "database design",
+    "entities",
+    "migration"
+  ],
+  "agents": [
+    "data-engineer",
+    "senior-backend-engineer",
+    "principal-software-architect",
+    "cto"
+  ],
+  "skills": [
+    "database",
+    "postgres",
+    "mongodb",
+    "data-engineering",
+    "api-design"
+  ],
+  "decisionEngines": [
+    "data-model-engine",
+    "database-engine",
+    "api-design-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Entity model",
+    "Schema proposal",
+    "Index plan",
+    "Migration risks"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

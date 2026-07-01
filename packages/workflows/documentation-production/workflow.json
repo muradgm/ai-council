@@ -1,0 +1,53 @@
+{
+  "name": "documentation-production",
+  "title": "Documentation Production Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "documentation",
+  "description": "Create or improve documentation with audience, structure, examples, commands, maintenance notes, and review gates.",
+  "triggers": [
+    "docs",
+    "documentation",
+    "README",
+    "guide",
+    "manual"
+  ],
+  "agents": [
+    "technical-writer",
+    "principal-software-architect",
+    "product-manager",
+    "qa-engineer"
+  ],
+  "skills": [
+    "documentation",
+    "project-management",
+    "software-architecture",
+    "testing"
+  ],
+  "decisionEngines": [
+    "documentation-engine",
+    "code-review-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Documentation outline",
+    "Updated docs",
+    "Examples",
+    "Maintenance checklist"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

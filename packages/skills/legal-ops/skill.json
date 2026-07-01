@@ -1,0 +1,14 @@
+{
+  "name": "legal-ops",
+  "version": "1.0.0",
+  "type": "skill",
+  "tags": [
+    "Contracts",
+    "Compliance awareness",
+    "Privacy",
+    "IP",
+    "Escalation"
+  ],
+  "entry": "SKILL.md",
+  "dependencies": []
+}

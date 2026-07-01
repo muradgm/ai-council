@@ -1,0 +1,35 @@
+{
+  "name": "council-routing",
+  "title": "Council Routing Eval Suite",
+  "category": "core",
+  "threshold": 0.8,
+  "keywords": [
+    "route",
+    "orchestrator",
+    "council",
+    "agent",
+    "skill"
+  ],
+  "expectedAgents": [
+    "router",
+    "project-manager"
+  ],
+  "expectedEngines": [
+    "ai-agent-design-engine"
+  ],
+  "expectedWorkflows": [
+    "codex-session"
+  ],
+  "expectedSkills": [
+    "core-reasoning",
+    "agent-design"
+  ],
+  "expectedTemplates": [
+    "council-session-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

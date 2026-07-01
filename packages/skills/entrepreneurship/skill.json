@@ -1,0 +1,16 @@
+{
+  "name": "entrepreneurship",
+  "title": "Entrepreneurship",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for venture building, wedge, validation, execution.",
+  "dependencies": [
+    "product-strategy"
+  ],
+  "tags": [
+    "startup",
+    "business"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

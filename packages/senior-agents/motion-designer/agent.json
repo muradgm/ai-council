@@ -1,0 +1,22 @@
+{
+  "name": "motion-designer",
+  "title": "Motion Designer",
+  "group": "product-design",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design interaction motion, transitions, product animation, brand motion, and motion guidelines",
+  "skills": [
+    "motion-design",
+    "ui-design",
+    "branding"
+  ],
+  "keywords": [
+    "motion",
+    "animation",
+    "transition",
+    "microinteraction",
+    "gsap"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "security-review-002",
+  "request": "check privacy risks in user memory storage",
+  "expected": {
+    "agents": [
+      "cybersecurity-engineer",
+      "legal-risk-spotter"
+    ],
+    "engines": [
+      "privacy-engine"
+    ],
+    "workflows": [
+      "risk-review"
+    ],
+    "skills": [
+      "security",
+      "legal-basics"
+    ],
+    "templates": [
+      "risk-review-report"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

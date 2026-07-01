@@ -1,0 +1,14 @@
+{
+  "name": "risk-management",
+  "title": "Risk Management",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for position sizing, drawdown control, constraints.",
+  "dependencies": [],
+  "tags": [
+    "risk",
+    "safety"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

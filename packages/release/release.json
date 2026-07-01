@@ -1,0 +1,24 @@
+{
+  "name": "AI Council",
+  "version": "2.0.0",
+  "codename": "Architecture and Knowledge Foundation",
+  "phase": 16,
+  "status": "architecture-and-knowledge-complete-runtime-mvp",
+  "recommendedNextAction": "Harden one end-to-end runtime loop on a real project before expanding the foundation.",
+  "primaryProjects": [
+    "TradeFrame",
+    "SignalScout",
+    "NAVO/Flowday",
+    "Swimly"
+  ],
+  "requiredValidationCommands": [
+    "pnpm build",
+    "pnpm test",
+    "pnpm validate:knowledge",
+    "pnpm final:validate",
+    "pnpm evals:run",
+    "pnpm gates:run",
+    "pnpm council status"
+  ],
+  "releaseDate": "2026-06-29"
+}

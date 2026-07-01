@@ -1,0 +1,14 @@
+{
+  "name": "security-baseline",
+  "title": "Security Baseline Gate",
+  "summary": "Checks security-sensitive work routes to security review.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "high",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "naming-report",
+  "title": "Naming Report",
+  "category": "brand",
+  "entrypoint": "packages/templates/deliverables/naming-report/TEMPLATE.md",
+  "skills": [
+    "branding",
+    "copywriting",
+    "marketing"
+  ],
+  "agents": [
+    "brand-strategist",
+    "copywriter",
+    "market-researcher"
+  ],
+  "decisionEngines": [
+    "naming-engine",
+    "brand-engine"
+  ],
+  "workflows": [
+    "naming-system"
+  ],
+  "keywords": [
+    "name",
+    "naming",
+    "brand name"
+  ],
+  "outputs": [
+    "Naming Report document"
+  ]
+}

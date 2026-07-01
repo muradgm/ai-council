@@ -1,0 +1,16 @@
+{
+  "name": "api-design",
+  "title": "API Design",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for contracts, REST, RPC, versioning.",
+  "dependencies": [
+    "backend"
+  ],
+  "tags": [
+    "api",
+    "contracts"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

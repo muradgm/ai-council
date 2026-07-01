@@ -1,0 +1,17 @@
+{
+  "name": "accessibility",
+  "title": "Accessibility",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for inclusive UX, WCAG-aware design and engineering.",
+  "dependencies": [
+    "ui-design",
+    "frontend"
+  ],
+  "tags": [
+    "a11y",
+    "accessibility"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

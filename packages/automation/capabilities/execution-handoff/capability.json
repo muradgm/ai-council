@@ -1,0 +1,20 @@
+{
+  "name": "execution-handoff",
+  "title": "Execution Handoff",
+  "entrypoint": "CAPABILITY.md",
+  "category": "handoff",
+  "inputs": [
+    "task",
+    "assignee"
+  ],
+  "outputs": [
+    "handoff brief"
+  ],
+  "riskLevel": "medium",
+  "approvalRequired": false,
+  "keywords": [
+    "handoff",
+    "delegate",
+    "assign"
+  ]
+}

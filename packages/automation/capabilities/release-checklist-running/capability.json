@@ -1,0 +1,21 @@
+{
+  "name": "release-checklist-running",
+  "title": "Release Checklist Running",
+  "entrypoint": "CAPABILITY.md",
+  "category": "release",
+  "inputs": [
+    "project",
+    "scope"
+  ],
+  "outputs": [
+    "release checklist"
+  ],
+  "riskLevel": "medium",
+  "approvalRequired": true,
+  "keywords": [
+    "release",
+    "ship",
+    "deploy",
+    "readiness"
+  ]
+}

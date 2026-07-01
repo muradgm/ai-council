@@ -1,0 +1,25 @@
+{
+  "name": "risk-manager",
+  "title": "Risk Manager",
+  "group": "finance-trading",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "define risk limits, position sizing, drawdown controls, scenario analysis, and capital preservation rules",
+  "skills": [
+    "risk-management",
+    "finance",
+    "forex-trading",
+    "investing"
+  ],
+  "keywords": [
+    "risk",
+    "drawdown",
+    "position size",
+    "leverage",
+    "capital",
+    "stop loss",
+    "risk reward"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

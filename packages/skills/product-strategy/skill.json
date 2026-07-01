@@ -1,0 +1,16 @@
+{
+  "name": "product-strategy",
+  "title": "Product Strategy",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for product direction, value propositions, positioning.",
+  "dependencies": [
+    "research"
+  ],
+  "tags": [
+    "product",
+    "strategy"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

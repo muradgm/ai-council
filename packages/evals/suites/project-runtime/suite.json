@@ -1,0 +1,33 @@
+{
+  "name": "project-runtime",
+  "title": "Project Runtime Eval Suite",
+  "category": "memory",
+  "threshold": 0.8,
+  "keywords": [
+    "project",
+    "memory",
+    "context",
+    "runtime"
+  ],
+  "expectedAgents": [
+    "project-manager"
+  ],
+  "expectedEngines": [
+    "documentation-engine"
+  ],
+  "expectedWorkflows": [
+    "project-kickoff"
+  ],
+  "expectedSkills": [
+    "project-management",
+    "documentation"
+  ],
+  "expectedTemplates": [
+    "project-brief"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

@@ -1,0 +1,3 @@
+# Php Best Practices
+
+Scaffold.

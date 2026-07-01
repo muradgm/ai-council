@@ -1,0 +1,17 @@
+{
+  "name": "trading-journal",
+  "title": "Trading Journal",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for trade records, post-analysis, discipline.",
+  "dependencies": [
+    "forex-trading",
+    "risk-management"
+  ],
+  "tags": [
+    "journal",
+    "trading"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

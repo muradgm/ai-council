@@ -1,0 +1,19 @@
+flowchart TD
+    A[User Request] --> B[Council CLI / Codex / Web Console]
+    B --> C[Orchestrator]
+    C --> D[Project Context + Memory]
+    D --> E[Routing]
+    E --> F[Senior Agents]
+    E --> G[Skills]
+    E --> H[Decision Engines]
+    E --> I[Workflows]
+    E --> J[Templates]
+    F --> K[Execution Plan]
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+    K --> L[Governance + Approval Gates]
+    L --> M[Execution / Deliverable]
+    M --> N[Validation + Evals + Gates]
+    N --> O[Trace + Memory + Docs Update]

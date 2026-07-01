@@ -1,0 +1,54 @@
+{
+  "name": "ux-research",
+  "title": "UX Research Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "design",
+  "description": "Plan and synthesize user research, usability testing, interview guides, personas, and opportunity mapping.",
+  "triggers": [
+    "UX research",
+    "usability",
+    "interviews",
+    "user testing",
+    "persona"
+  ],
+  "agents": [
+    "ux-researcher",
+    "product-manager",
+    "ux-designer",
+    "market-researcher"
+  ],
+  "skills": [
+    "ux-research",
+    "ux-design",
+    "product-management",
+    "research",
+    "psychology"
+  ],
+  "decisionEngines": [
+    "ux-research-engine",
+    "product-strategy-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Research plan",
+    "Interview guide",
+    "Synthesis map",
+    "Product recommendations"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

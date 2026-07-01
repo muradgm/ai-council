@@ -1,0 +1,32 @@
+{
+  "name": "marketing-plan",
+  "title": "Marketing Plan",
+  "category": "marketing",
+  "entrypoint": "packages/templates/deliverables/marketing-plan/TEMPLATE.md",
+  "skills": [
+    "marketing",
+    "go-to-market",
+    "growth"
+  ],
+  "agents": [
+    "growth-marketer",
+    "market-researcher",
+    "sales-strategist"
+  ],
+  "decisionEngines": [
+    "growth-engine",
+    "market-research-engine"
+  ],
+  "workflows": [
+    "growth-experiment",
+    "market-research"
+  ],
+  "keywords": [
+    "marketing",
+    "campaign",
+    "go to market"
+  ],
+  "outputs": [
+    "Marketing Plan document"
+  ]
+}

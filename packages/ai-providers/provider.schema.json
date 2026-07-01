@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Council Provider Manifest",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "tier",
+    "category",
+    "strengths",
+    "models",
+    "env",
+    "risk"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tier": {
+      "enum": [
+        "local",
+        "freemium",
+        "premium"
+      ]
+    },
+    "category": {
+      "type": "string"
+    },
+    "strengths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "env": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "risk": {
+      "type": "string"
+    }
+  }
+}

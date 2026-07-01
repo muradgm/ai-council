@@ -1,0 +1,54 @@
+{
+  "name": "naming-system",
+  "title": "Naming System Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "brand",
+  "description": "Generate, filter, score, and select names using strategic fit, memorability, linguistic risk, and positioning.",
+  "triggers": [
+    "name",
+    "naming",
+    "brand name",
+    "product name",
+    "company name"
+  ],
+  "agents": [
+    "copywriter",
+    "market-researcher",
+    "entrepreneur"
+  ],
+  "skills": [
+    "branding",
+    "copywriting",
+    "marketing",
+    "psychology",
+    "research"
+  ],
+  "decisionEngines": [
+    "naming-engine",
+    "brand-engine",
+    "market-research-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Naming territory map",
+    "Shortlist",
+    "Scoring matrix",
+    "Final recommendation"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

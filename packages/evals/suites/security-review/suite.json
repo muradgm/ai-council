@@ -1,0 +1,33 @@
+{
+  "name": "security-review",
+  "title": "Security Review Eval Suite",
+  "category": "security",
+  "threshold": 0.85,
+  "keywords": [
+    "security",
+    "privacy",
+    "auth",
+    "threat model"
+  ],
+  "expectedAgents": [
+    "cybersecurity-engineer"
+  ],
+  "expectedEngines": [
+    "security-review-engine",
+    "privacy-engine"
+  ],
+  "expectedWorkflows": [
+    "security-review"
+  ],
+  "expectedSkills": [
+    "security"
+  ],
+  "expectedTemplates": [
+    "security-review-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

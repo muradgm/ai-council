@@ -1,0 +1,26 @@
+{
+  "name": "sales-strategist",
+  "title": "Sales Strategist",
+  "group": "marketing-sales",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "create offers, pipelines, outreach systems, qualification, objection handling, and closing strategy",
+  "skills": [
+    "sales",
+    "negotiation",
+    "communication",
+    "marketing",
+    "business-model"
+  ],
+  "keywords": [
+    "sales",
+    "outreach",
+    "closing",
+    "pipeline",
+    "lead",
+    "objection",
+    "offer"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

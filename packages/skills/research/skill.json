@@ -1,0 +1,16 @@
+{
+  "name": "research",
+  "title": "Research",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for source discovery, synthesis, evidence grading.",
+  "dependencies": [
+    "core-reasoning"
+  ],
+  "tags": [
+    "research",
+    "evidence"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

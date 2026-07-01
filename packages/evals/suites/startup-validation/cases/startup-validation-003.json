@@ -1,0 +1,28 @@
+{
+  "id": "startup-validation-003",
+  "request": "find wedge and target segment for SignalScout",
+  "expected": {
+    "agents": [
+      "entrepreneur",
+      "market-researcher"
+    ],
+    "engines": [
+      "market-research-engine"
+    ],
+    "workflows": [
+      "market-research"
+    ],
+    "skills": [
+      "entrepreneurship"
+    ],
+    "templates": [
+      "market-research-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

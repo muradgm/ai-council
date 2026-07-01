@@ -1,0 +1,16 @@
+{
+  "name": "ux-design",
+  "title": "UX Design",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for flows, information architecture, interaction design.",
+  "dependencies": [
+    "ux-research"
+  ],
+  "tags": [
+    "ux",
+    "design"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

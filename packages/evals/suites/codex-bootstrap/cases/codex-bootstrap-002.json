@@ -1,0 +1,27 @@
+{
+  "id": "codex-bootstrap-002",
+  "request": "prepare context for Codex to implement a feature",
+  "expected": {
+    "agents": [
+      "project-manager"
+    ],
+    "engines": [
+      "documentation-engine"
+    ],
+    "workflows": [
+      "codex-session"
+    ],
+    "skills": [
+      "documentation"
+    ],
+    "templates": [
+      "council-session-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

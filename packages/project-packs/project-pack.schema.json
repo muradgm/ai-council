@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Council Project Pack Manifest",
+  "type": "object",
+  "required": [
+    "name",
+    "title",
+    "kind",
+    "entrypoint",
+    "projectRoot",
+    "memoryRoot",
+    "wedge",
+    "stage",
+    "agents",
+    "skills",
+    "decisionEngines",
+    "workflows",
+    "templates",
+    "keywords"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "kind": {
+      "type": "string"
+    },
+    "entrypoint": {
+      "type": "string"
+    },
+    "projectRoot": {
+      "type": "string"
+    },
+    "memoryRoot": {
+      "type": "string"
+    },
+    "wedge": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decisionEngines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "workflows": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "templates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+import type { CouncilRequest } from "../../../shared/src/index.js";
+export class CouncilSelector { select(request: CouncilRequest) { const text = request.input.toLowerCase(); if (request.riskLevel === "high" || request.riskLevel === "critical") return "security-council"; if (text.includes("architecture") || text.includes("database") || text.includes("system")) return "architecture-council"; if (text.includes("ux") || text.includes("product") || text.includes("user")) return "product-council"; return "coding-council"; } }

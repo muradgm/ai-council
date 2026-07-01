@@ -1,0 +1,21 @@
+{
+  "name": "task-routing",
+  "title": "Task Routing",
+  "entrypoint": "CAPABILITY.md",
+  "category": "routing",
+  "inputs": [
+    "request"
+  ],
+  "outputs": [
+    "suggested project",
+    "agents",
+    "workflow"
+  ],
+  "riskLevel": "low",
+  "approvalRequired": false,
+  "keywords": [
+    "route",
+    "triage",
+    "classify"
+  ]
+}

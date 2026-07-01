@@ -1,0 +1,69 @@
+{
+  "name": "negotiation-engine",
+  "title": "Negotiation Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "business",
+  "decisionType": "negotiation decision",
+  "purpose": "Evaluate negotiation strategy, BATNA, concessions, framing, leverage, and ethical pressure boundaries.",
+  "ownerAgents": [
+    "sales-strategist",
+    "ceo",
+    "entrepreneur"
+  ],
+  "skills": [
+    "negotiation",
+    "communication",
+    "sales",
+    "psychology",
+    "leadership"
+  ],
+  "tags": [
+    "negotiation",
+    "communication",
+    "strategy"
+  ],
+  "keywords": [
+    "negotiate",
+    "offer",
+    "counteroffer",
+    "salary",
+    "deal",
+    "client",
+    "terms"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "interests clarity",
+    "BATNA realism",
+    "concession plan",
+    "relationship risk",
+    "leverage evidence",
+    "message framing",
+    "ethical boundaries"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

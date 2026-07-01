@@ -1,0 +1,54 @@
+{
+  "name": "security-review",
+  "title": "Security Review Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "security",
+  "description": "Review an app, API, workflow, or architecture for threat model, auth, data protection, and abuse risks.",
+  "triggers": [
+    "security",
+    "vulnerability",
+    "threat model",
+    "auth",
+    "privacy risk"
+  ],
+  "agents": [
+    "cybersecurity-engineer",
+    "principal-software-architect",
+    "legal-risk-spotter"
+  ],
+  "skills": [
+    "security",
+    "api-design",
+    "database",
+    "legal-basics"
+  ],
+  "decisionEngines": [
+    "security-review-engine",
+    "privacy-engine",
+    "legal-compliance-engine",
+    "api-design-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Threat model",
+    "Security findings",
+    "Mitigation plan",
+    "Compliance notes"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

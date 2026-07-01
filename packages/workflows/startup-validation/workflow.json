@@ -1,0 +1,54 @@
+{
+  "name": "startup-validation",
+  "title": "Startup Validation Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "business",
+  "description": "Validate a startup idea using problem intensity, market, wedge, distribution, monetization, and execution risk.",
+  "triggers": [
+    "startup",
+    "business idea",
+    "validate idea",
+    "entrepreneur",
+    "venture"
+  ],
+  "agents": [
+    "entrepreneur",
+    "startup-advisor",
+    "venture-builder",
+    "market-researcher"
+  ],
+  "skills": [
+    "entrepreneurship",
+    "startup-validation",
+    "business-model",
+    "go-to-market"
+  ],
+  "decisionEngines": [
+    "startup-evaluation-engine",
+    "business-model-engine",
+    "market-research-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Startup evaluation",
+    "Assumption map",
+    "Validation tests",
+    "Next milestone"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

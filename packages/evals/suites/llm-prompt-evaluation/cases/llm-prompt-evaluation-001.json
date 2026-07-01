@@ -1,0 +1,29 @@
+{
+  "id": "llm-prompt-evaluation-001",
+  "request": "evaluate a prompt for a Senior Designer GPT",
+  "expected": {
+    "agents": [
+      "chief-ai-officer",
+      "senior-ai-engineer"
+    ],
+    "engines": [
+      "llm-prompt-evaluation-engine"
+    ],
+    "workflows": [
+      "prompt-evaluation"
+    ],
+    "skills": [
+      "prompt-engineering",
+      "evals"
+    ],
+    "templates": [
+      "prompt-evaluation-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

@@ -1,0 +1,28 @@
+{
+  "id": "startup-validation-002",
+  "request": "design a business model for TradeFrame",
+  "expected": {
+    "agents": [
+      "business-model-strategist"
+    ],
+    "engines": [
+      "business-model-engine"
+    ],
+    "workflows": [
+      "business-model-design"
+    ],
+    "skills": [
+      "business-model"
+    ],
+    "templates": [
+      "business-model-canvas"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

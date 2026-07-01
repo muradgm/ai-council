@@ -1,0 +1,26 @@
+{
+  "name": "coo",
+  "title": "Chief Operating Officer",
+  "group": "executive",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "turn strategy into operating systems, SOPs, cadence, execution rhythm, and accountability loops",
+  "skills": [
+    "operations",
+    "project-management",
+    "leadership",
+    "communication",
+    "documentation"
+  ],
+  "keywords": [
+    "operations",
+    "process",
+    "sop",
+    "delivery",
+    "execution",
+    "workflow",
+    "cadence"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

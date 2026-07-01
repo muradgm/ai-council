@@ -1,0 +1,69 @@
+{
+  "name": "code-review-engine",
+  "title": "Code Review Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "engineering",
+  "decisionType": "code quality decision",
+  "purpose": "Review implementation quality, correctness, maintainability, readability, and integration risk.",
+  "ownerAgents": [
+    "principal-software-architect"
+  ],
+  "skills": [
+    "typescript",
+    "javascript",
+    "react",
+    "testing",
+    "software-architecture"
+  ],
+  "tags": [
+    "code-review",
+    "quality",
+    "maintainability",
+    "bugs"
+  ],
+  "keywords": [
+    "review code",
+    "bug",
+    "refactor",
+    "typescript",
+    "react",
+    "node",
+    "pull request",
+    "implementation"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "correctness",
+    "clarity",
+    "type safety",
+    "error handling",
+    "testability",
+    "integration risk",
+    "reuse of existing code"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "name": "branding-engine",
+  "title": "Branding Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "design",
+  "decisionType": "branding direction decision",
+  "purpose": "Evaluate brand positioning, identity coherence, memorability, audience fit, and execution risk.",
+  "ownerAgents": [
+    "senior-brand-designer",
+    "brand-strategist"
+  ],
+  "skills": [
+    "branding",
+    "marketing",
+    "logo-design",
+    "copywriting"
+  ],
+  "tags": [
+    "brand",
+    "identity",
+    "positioning",
+    "design"
+  ],
+  "keywords": [
+    "brand",
+    "branding",
+    "identity",
+    "positioning",
+    "visual",
+    "logo",
+    "voice"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "strategic fit",
+    "distinctiveness",
+    "audience resonance",
+    "memorability",
+    "visual coherence",
+    "voice coherence",
+    "execution risk"
+  ],
+  "guardrails": [
+    "Separate evidence from taste.",
+    "Avoid generic brand advice.",
+    "State assumptions and confidence.",
+    "Recommend validation when audience evidence is weak."
+  ]
+}

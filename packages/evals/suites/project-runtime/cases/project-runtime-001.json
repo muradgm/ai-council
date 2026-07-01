@@ -1,0 +1,27 @@
+{
+  "id": "project-runtime-001",
+  "request": "initialize a new app project with memory",
+  "expected": {
+    "agents": [
+      "project-manager"
+    ],
+    "engines": [
+      "documentation-engine"
+    ],
+    "workflows": [
+      "project-kickoff"
+    ],
+    "skills": [
+      "project-management"
+    ],
+    "templates": [
+      "project-brief"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

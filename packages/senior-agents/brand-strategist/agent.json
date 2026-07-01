@@ -1,0 +1,19 @@
+{
+  "name": "brand-strategist",
+  "version": "1.0.0",
+  "title": "Brand Strategist",
+  "skills": [
+    "branding",
+    "copywriting",
+    "marketing"
+  ],
+  "decision_engines": [],
+  "entrypoint": "AGENT.md",
+  "keywords": [
+    "brand",
+    "strategist",
+    "branding",
+    "copywriting",
+    "marketing"
+  ]
+}

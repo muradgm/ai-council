@@ -1,0 +1,24 @@
+{
+  "name": "venture-builder",
+  "title": "Venture Builder",
+  "group": "startup",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "assemble ventures from idea to MVP to go-to-market system using structured validation and operating discipline",
+  "skills": [
+    "startup-validation",
+    "project-management",
+    "growth",
+    "sales",
+    "operations"
+  ],
+  "keywords": [
+    "venture",
+    "build company",
+    "launch",
+    "prototype",
+    "go to market"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

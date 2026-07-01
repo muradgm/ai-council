@@ -1,0 +1,35 @@
+{
+  "name": "technical-design-doc",
+  "title": "Technical Design Doc",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/technical-design-doc/TEMPLATE.md",
+  "skills": [
+    "software-architecture",
+    "backend",
+    "database"
+  ],
+  "agents": [
+    "principal-software-architect",
+    "senior-backend-engineer",
+    "cto"
+  ],
+  "decisionEngines": [
+    "architecture-engine",
+    "api-design-engine",
+    "database-engine"
+  ],
+  "workflows": [
+    "architecture-review",
+    "api-design",
+    "data-model-design"
+  ],
+  "keywords": [
+    "technical design",
+    "tdd",
+    "architecture",
+    "implementation"
+  ],
+  "outputs": [
+    "Technical Design Doc document"
+  ]
+}

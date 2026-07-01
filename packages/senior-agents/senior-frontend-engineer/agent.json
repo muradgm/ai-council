@@ -1,0 +1,29 @@
+{
+  "name": "senior-frontend-engineer",
+  "title": "Senior Frontend Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "build browser applications, React architecture, state management, performance, accessibility, and UI quality",
+  "skills": [
+    "frontend",
+    "react",
+    "typescript",
+    "ui-design",
+    "accessibility",
+    "performance",
+    "testing"
+  ],
+  "keywords": [
+    "frontend",
+    "react",
+    "component",
+    "ui implementation",
+    "vite",
+    "nextjs",
+    "css",
+    "tailwind"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

@@ -1,0 +1,1179 @@
+{
+  "generatedAt": "2026-06-29T18:00:05.665720Z",
+  "engineCount": 37,
+  "engines": [
+    {
+      "name": "architecture-engine",
+      "title": "Architecture Engine",
+      "category": "engineering",
+      "decisionType": "technical architecture decision",
+      "purpose": "Evaluate system architecture options, tradeoffs, constraints, risks, and implementation paths.",
+      "tags": [
+        "architecture",
+        "systems",
+        "tradeoffs",
+        "scalability",
+        "technical-decision"
+      ],
+      "keywords": [
+        "architecture",
+        "system design",
+        "monorepo",
+        "database",
+        "scalability",
+        "technical stack",
+        "microservice",
+        "backend"
+      ],
+      "skills": [
+        "software-architecture",
+        "devops"
+      ],
+      "ownerAgents": [
+        "principal-software-architect",
+        "cto",
+        "devops-engineer"
+      ]
+    },
+    {
+      "name": "code-review-engine",
+      "title": "Code Review Engine",
+      "category": "engineering",
+      "decisionType": "code quality decision",
+      "purpose": "Review implementation quality, correctness, maintainability, readability, and integration risk.",
+      "tags": [
+        "code-review",
+        "quality",
+        "maintainability",
+        "bugs"
+      ],
+      "keywords": [
+        "review code",
+        "bug",
+        "refactor",
+        "typescript",
+        "react",
+        "node",
+        "pull request",
+        "implementation"
+      ],
+      "skills": [
+        "typescript",
+        "javascript",
+        "react",
+        "testing",
+        "software-architecture"
+      ],
+      "ownerAgents": [
+        "principal-software-architect"
+      ]
+    },
+    {
+      "name": "security-review-engine",
+      "title": "Security Review Engine",
+      "category": "engineering",
+      "decisionType": "security risk decision",
+      "purpose": "Identify security risks, abuse cases, unsafe defaults, data exposure, and mitigation priorities.",
+      "tags": [
+        "security",
+        "threat-model",
+        "privacy",
+        "risk"
+      ],
+      "keywords": [
+        "security",
+        "vulnerability",
+        "auth",
+        "permissions",
+        "secret",
+        "token",
+        "privacy",
+        "attack"
+      ],
+      "skills": [
+        "api-design"
+      ],
+      "ownerAgents": [
+        "cto",
+        "principal-software-architect"
+      ]
+    },
+    {
+      "name": "product-strategy-engine",
+      "title": "Product Strategy Engine",
+      "category": "product",
+      "decisionType": "product strategy decision",
+      "purpose": "Evaluate product direction, feature priority, user value, positioning, and roadmap logic.",
+      "tags": [
+        "product",
+        "strategy",
+        "roadmap",
+        "user-value"
+      ],
+      "keywords": [
+        "product",
+        "feature",
+        "roadmap",
+        "mvp",
+        "user",
+        "priority",
+        "scope",
+        "requirements"
+      ],
+      "skills": [
+        "product-management",
+        "product-strategy",
+        "ux-research",
+        "entrepreneurship",
+        "business-model"
+      ],
+      "ownerAgents": [
+        "product-manager",
+        "ux-researcher",
+        "entrepreneur",
+        "startup-advisor"
+      ]
+    },
+    {
+      "name": "brand-engine",
+      "title": "Brand Engine",
+      "category": "design",
+      "decisionType": "brand direction decision",
+      "purpose": "Evaluate brand strategy, identity coherence, differentiation, emotional position, and visual direction.",
+      "tags": [
+        "brand",
+        "identity",
+        "positioning",
+        "design"
+      ],
+      "keywords": [
+        "brand",
+        "identity",
+        "logo",
+        "visual",
+        "style",
+        "tone",
+        "positioning",
+        "naming"
+      ],
+      "skills": [
+        "branding",
+        "logo-design",
+        "typography",
+        "copywriting"
+      ],
+      "ownerAgents": [
+        "senior-brand-designer",
+        "copywriter"
+      ]
+    },
+    {
+      "name": "naming-engine",
+      "title": "Naming Engine",
+      "category": "design",
+      "decisionType": "naming decision",
+      "purpose": "Generate and evaluate product, company, feature, and campaign names against strategy and constraints.",
+      "tags": [
+        "naming",
+        "brand",
+        "language",
+        "positioning"
+      ],
+      "keywords": [
+        "name",
+        "naming",
+        "brand name",
+        "product name",
+        "domain",
+        "slogan"
+      ],
+      "skills": [
+        "branding",
+        "copywriting",
+        "seo"
+      ],
+      "ownerAgents": [
+        "copywriter",
+        "market-researcher",
+        "entrepreneur"
+      ]
+    },
+    {
+      "name": "ui-review-engine",
+      "title": "UI Review Engine",
+      "category": "design",
+      "decisionType": "interface quality decision",
+      "purpose": "Review interface hierarchy, layout, interaction clarity, visual polish, and component consistency.",
+      "tags": [
+        "ui",
+        "design-review",
+        "interface",
+        "visual-quality"
+      ],
+      "keywords": [
+        "ui",
+        "interface",
+        "screen",
+        "layout",
+        "component",
+        "figma",
+        "visual review",
+        "design"
+      ],
+      "skills": [
+        "ux-ui-design",
+        "ui-design",
+        "design-systems",
+        "typography",
+        "accessibility"
+      ],
+      "ownerAgents": [
+        "ui-designer",
+        "senior-brand-designer"
+      ]
+    },
+    {
+      "name": "ux-research-engine",
+      "title": "UX Research Engine",
+      "category": "product",
+      "decisionType": "user research decision",
+      "purpose": "Plan and interpret user research, usability checks, persona assumptions, and behavioral evidence.",
+      "tags": [
+        "ux",
+        "research",
+        "usability",
+        "evidence"
+      ],
+      "keywords": [
+        "research",
+        "user test",
+        "persona",
+        "usability",
+        "journey",
+        "interview",
+        "survey"
+      ],
+      "skills": [
+        "ux-research",
+        "product-management",
+        "psychology",
+        "analytics"
+      ],
+      "ownerAgents": [
+        "ux-researcher",
+        "product-manager"
+      ]
+    },
+    {
+      "name": "startup-evaluation-engine",
+      "title": "Startup Evaluation Engine",
+      "category": "business",
+      "decisionType": "startup viability decision",
+      "purpose": "Evaluate startup concepts, wedges, market timing, customer pain, defensibility, and execution path.",
+      "tags": [
+        "startup",
+        "wedge",
+        "market",
+        "business"
+      ],
+      "keywords": [
+        "startup",
+        "idea",
+        "wedge",
+        "business",
+        "market",
+        "competitors",
+        "mvp",
+        "venture"
+      ],
+      "skills": [
+        "entrepreneurship",
+        "business-model",
+        "product-strategy"
+      ],
+      "ownerAgents": [
+        "entrepreneur",
+        "startup-advisor",
+        "venture-builder",
+        "ceo",
+        "market-researcher"
+      ]
+    },
+    {
+      "name": "business-model-engine",
+      "title": "Business Model Engine",
+      "category": "business",
+      "decisionType": "business model decision",
+      "purpose": "Evaluate monetization models, revenue mechanics, pricing logic, margins, and operating constraints.",
+      "tags": [
+        "business-model",
+        "revenue",
+        "pricing",
+        "monetization"
+      ],
+      "keywords": [
+        "business model",
+        "revenue",
+        "pricing",
+        "subscription",
+        "unit economics",
+        "monetization"
+      ],
+      "skills": [
+        "business-model",
+        "finance",
+        "entrepreneurship",
+        "sales"
+      ],
+      "ownerAgents": [
+        "cfo",
+        "entrepreneur",
+        "startup-advisor",
+        "sales-strategist",
+        "ceo"
+      ]
+    },
+    {
+      "name": "market-research-engine",
+      "title": "Market Research Engine",
+      "category": "business",
+      "decisionType": "market research decision",
+      "purpose": "Analyze market categories, competitors, positioning gaps, customer segments, and evidence quality.",
+      "tags": [
+        "market",
+        "competition",
+        "research",
+        "positioning"
+      ],
+      "keywords": [
+        "market",
+        "competitor",
+        "competition",
+        "research",
+        "category",
+        "positioning",
+        "trends"
+      ],
+      "skills": [
+        "seo",
+        "product-strategy",
+        "entrepreneurship"
+      ],
+      "ownerAgents": [
+        "market-researcher",
+        "startup-advisor",
+        "product-manager"
+      ]
+    },
+    {
+      "name": "growth-engine",
+      "title": "Growth Engine",
+      "category": "marketing",
+      "decisionType": "growth strategy decision",
+      "purpose": "Evaluate acquisition loops, channels, experiments, retention levers, and growth bottlenecks.",
+      "tags": [
+        "growth",
+        "marketing",
+        "acquisition",
+        "retention"
+      ],
+      "keywords": [
+        "growth",
+        "marketing",
+        "acquisition",
+        "retention",
+        "funnel",
+        "channel",
+        "campaign"
+      ],
+      "skills": [
+        "seo",
+        "analytics",
+        "copywriting",
+        "sales",
+        "product-management"
+      ],
+      "ownerAgents": [
+        "growth-marketer",
+        "seo-specialist",
+        "product-manager",
+        "copywriter"
+      ]
+    },
+    {
+      "name": "seo-engine",
+      "title": "SEO Engine",
+      "category": "marketing",
+      "decisionType": "SEO decision",
+      "purpose": "Evaluate search strategy, keyword intent, content architecture, technical SEO, and discoverability.",
+      "tags": [
+        "seo",
+        "search",
+        "content",
+        "discoverability"
+      ],
+      "keywords": [
+        "seo",
+        "keyword",
+        "content",
+        "search",
+        "ranking",
+        "metadata",
+        "page speed"
+      ],
+      "skills": [
+        "seo",
+        "copywriting",
+        "analytics"
+      ],
+      "ownerAgents": [
+        "seo-specialist",
+        "growth-marketer",
+        "copywriter"
+      ]
+    },
+    {
+      "name": "copywriting-engine",
+      "title": "Copywriting Engine",
+      "category": "marketing",
+      "decisionType": "copy decision",
+      "purpose": "Evaluate message clarity, persuasion, tone, positioning, conversion logic, and audience fit.",
+      "tags": [
+        "copywriting",
+        "messaging",
+        "conversion",
+        "tone"
+      ],
+      "keywords": [
+        "copy",
+        "headline",
+        "landing page",
+        "message",
+        "tone",
+        "email",
+        "ad",
+        "slogan"
+      ],
+      "skills": [
+        "copywriting",
+        "marketing",
+        "psychology",
+        "sales"
+      ],
+      "ownerAgents": [
+        "copywriter",
+        "growth-marketer",
+        "sales-strategist"
+      ]
+    },
+    {
+      "name": "sales-engine",
+      "title": "Sales Engine",
+      "category": "business",
+      "decisionType": "sales strategy decision",
+      "purpose": "Evaluate sales motions, qualification, objections, offers, outreach, and deal progression.",
+      "tags": [
+        "sales",
+        "outreach",
+        "qualification",
+        "objections"
+      ],
+      "keywords": [
+        "sales",
+        "outreach",
+        "lead",
+        "deal",
+        "objection",
+        "pitch",
+        "client"
+      ],
+      "skills": [
+        "sales",
+        "negotiation",
+        "copywriting",
+        "business-model"
+      ],
+      "ownerAgents": [
+        "sales-strategist",
+        "copywriter",
+        "entrepreneur",
+        "ceo"
+      ]
+    },
+    {
+      "name": "trading-risk-engine",
+      "title": "Trading Risk Engine",
+      "category": "finance",
+      "decisionType": "trading risk decision",
+      "purpose": "Evaluate trading plans through risk, position sizing, invalidation, exposure, and discipline controls.",
+      "tags": [
+        "trading",
+        "risk",
+        "forex",
+        "position-sizing"
+      ],
+      "keywords": [
+        "trade",
+        "forex",
+        "risk",
+        "position size",
+        "stop loss",
+        "leverage",
+        "entry",
+        "exit"
+      ],
+      "skills": [
+        "forex-trading",
+        "risk-management",
+        "technical-analysis",
+        "quantitative-analysis"
+      ],
+      "ownerAgents": [
+        "forex-trader",
+        "risk-manager",
+        "quant-researcher",
+        "financial-analyst"
+      ]
+    },
+    {
+      "name": "forex-trade-review-engine",
+      "title": "Forex Trade Review Engine",
+      "category": "finance",
+      "decisionType": "forex setup review",
+      "purpose": "Review forex setups, market structure, session context, execution plan, and post-trade learning.",
+      "tags": [
+        "forex",
+        "trade-review",
+        "risk",
+        "journal"
+      ],
+      "keywords": [
+        "eurusd",
+        "gbpusd",
+        "xauusd",
+        "forex setup",
+        "pips",
+        "lot size",
+        "session"
+      ],
+      "skills": [
+        "forex-trading",
+        "technical-analysis",
+        "risk-management"
+      ],
+      "ownerAgents": [
+        "forex-trader",
+        "risk-manager",
+        "quant-researcher"
+      ]
+    },
+    {
+      "name": "investment-analysis-engine",
+      "title": "Investment Analysis Engine",
+      "category": "finance",
+      "decisionType": "investment analysis decision",
+      "purpose": "Evaluate investment ideas through fundamentals, risk, time horizon, valuation, and portfolio fit.",
+      "tags": [
+        "investment",
+        "finance",
+        "valuation",
+        "risk"
+      ],
+      "keywords": [
+        "investment",
+        "stock",
+        "valuation",
+        "portfolio",
+        "financials",
+        "risk",
+        "fundamental"
+      ],
+      "skills": [
+        "finance",
+        "investing",
+        "risk-management"
+      ],
+      "ownerAgents": [
+        "financial-analyst",
+        "portfolio-manager",
+        "risk-manager",
+        "cfo"
+      ]
+    },
+    {
+      "name": "quant-research-engine",
+      "title": "Quant Research Engine",
+      "category": "finance",
+      "decisionType": "quant research decision",
+      "purpose": "Evaluate hypotheses, backtests, datasets, leakage risk, statistical edge, and robustness.",
+      "tags": [
+        "quant",
+        "backtesting",
+        "statistics",
+        "edge"
+      ],
+      "keywords": [
+        "backtest",
+        "strategy",
+        "quant",
+        "dataset",
+        "signal",
+        "edge",
+        "statistics"
+      ],
+      "skills": [
+        "quantitative-analysis",
+        "python",
+        "risk-management"
+      ],
+      "ownerAgents": [
+        "quant-researcher",
+        "risk-manager"
+      ]
+    },
+    {
+      "name": "data-model-engine",
+      "title": "Data Model Engine",
+      "category": "engineering",
+      "decisionType": "data model decision",
+      "purpose": "Evaluate domain models, entity relationships, schema design, data ownership, and migration risk.",
+      "tags": [
+        "database",
+        "schema",
+        "data-model",
+        "domain"
+      ],
+      "keywords": [
+        "schema",
+        "database",
+        "model",
+        "entity",
+        "relation",
+        "migration",
+        "data"
+      ],
+      "skills": [
+        "postgres",
+        "mongodb",
+        "api-design"
+      ],
+      "ownerAgents": [
+        "data-engineer",
+        "principal-software-architect"
+      ]
+    },
+    {
+      "name": "api-design-engine",
+      "title": "API Design Engine",
+      "category": "engineering",
+      "decisionType": "API design decision",
+      "purpose": "Evaluate API boundaries, contracts, error semantics, versioning, and developer experience.",
+      "tags": [
+        "api",
+        "contracts",
+        "backend",
+        "dx"
+      ],
+      "keywords": [
+        "api",
+        "endpoint",
+        "contract",
+        "rest",
+        "graphql",
+        "schema",
+        "response"
+      ],
+      "skills": [
+        "api-design",
+        "typescript",
+        "documentation"
+      ],
+      "ownerAgents": [
+        "principal-software-architect"
+      ]
+    },
+    {
+      "name": "database-engine",
+      "title": "Database Engine",
+      "category": "engineering",
+      "decisionType": "database decision",
+      "purpose": "Evaluate database choice, indexing, query patterns, consistency needs, and operational risk.",
+      "tags": [
+        "database",
+        "storage",
+        "indexing",
+        "consistency"
+      ],
+      "keywords": [
+        "postgres",
+        "mongodb",
+        "redis",
+        "index",
+        "query",
+        "database",
+        "storage"
+      ],
+      "skills": [
+        "postgres",
+        "mongodb",
+        "redis"
+      ],
+      "ownerAgents": [
+        "data-engineer",
+        "principal-software-architect"
+      ]
+    },
+    {
+      "name": "devops-engine",
+      "title": "DevOps Engine",
+      "category": "engineering",
+      "decisionType": "delivery operations decision",
+      "purpose": "Evaluate CI/CD, environments, deployment flow, observability, infrastructure reliability, and rollback plans.",
+      "tags": [
+        "devops",
+        "cicd",
+        "deployment",
+        "ops"
+      ],
+      "keywords": [
+        "deploy",
+        "ci",
+        "cd",
+        "docker",
+        "kubernetes",
+        "pipeline",
+        "environment",
+        "rollback"
+      ],
+      "skills": [
+        "devops",
+        "docker"
+      ],
+      "ownerAgents": [
+        "devops-engineer",
+        "cto",
+        "principal-software-architect"
+      ]
+    },
+    {
+      "name": "cloud-infrastructure-engine",
+      "title": "Cloud Infrastructure Engine",
+      "category": "engineering",
+      "decisionType": "cloud infrastructure decision",
+      "purpose": "Evaluate cloud architecture, service choices, costs, reliability, scaling, and security defaults.",
+      "tags": [
+        "cloud",
+        "infrastructure",
+        "cost",
+        "reliability"
+      ],
+      "keywords": [
+        "aws",
+        "azure",
+        "gcp",
+        "cloud",
+        "hosting",
+        "server",
+        "infrastructure",
+        "cost"
+      ],
+      "skills": [
+        "devops"
+      ],
+      "ownerAgents": [
+        "devops-engineer",
+        "cto"
+      ]
+    },
+    {
+      "name": "testing-strategy-engine",
+      "title": "Testing Strategy Engine",
+      "category": "engineering",
+      "decisionType": "testing decision",
+      "purpose": "Evaluate test coverage strategy, test types, confidence gaps, and release-risk reduction.",
+      "tags": [
+        "testing",
+        "qa",
+        "quality",
+        "release"
+      ],
+      "keywords": [
+        "test",
+        "testing",
+        "qa",
+        "coverage",
+        "e2e",
+        "unit",
+        "integration"
+      ],
+      "skills": [
+        "testing",
+        "typescript"
+      ],
+      "ownerAgents": [
+        "qa-engineer"
+      ]
+    },
+    {
+      "name": "performance-engine",
+      "title": "Performance Engine",
+      "category": "engineering",
+      "decisionType": "performance decision",
+      "purpose": "Evaluate performance bottlenecks, load behavior, frontend speed, backend latency, and optimization tradeoffs.",
+      "tags": [
+        "performance",
+        "optimization",
+        "latency",
+        "speed"
+      ],
+      "keywords": [
+        "performance",
+        "slow",
+        "latency",
+        "speed",
+        "optimize",
+        "bundle",
+        "query"
+      ],
+      "skills": [],
+      "ownerAgents": []
+    },
+    {
+      "name": "accessibility-engine",
+      "title": "Accessibility Engine",
+      "category": "design",
+      "decisionType": "accessibility decision",
+      "purpose": "Review accessibility, inclusive design, keyboard flow, semantic structure, contrast, and assistive technology fit.",
+      "tags": [
+        "accessibility",
+        "a11y",
+        "inclusive-design",
+        "ui"
+      ],
+      "keywords": [
+        "accessibility",
+        "a11y",
+        "contrast",
+        "keyboard",
+        "screen reader",
+        "wcag"
+      ],
+      "skills": [
+        "accessibility",
+        "ux-ui-design",
+        "design-systems"
+      ],
+      "ownerAgents": [
+        "ui-designer"
+      ]
+    },
+    {
+      "name": "release-readiness-engine",
+      "title": "Release Readiness Engine",
+      "category": "operations",
+      "decisionType": "release decision",
+      "purpose": "Evaluate whether a product, feature, or system is ready to ship safely.",
+      "tags": [
+        "release",
+        "qa",
+        "launch",
+        "readiness"
+      ],
+      "keywords": [
+        "release",
+        "ship",
+        "launch",
+        "deploy",
+        "production",
+        "readiness",
+        "checklist"
+      ],
+      "skills": [
+        "devops",
+        "documentation",
+        "product-management"
+      ],
+      "ownerAgents": [
+        "qa-engineer",
+        "product-manager",
+        "devops-engineer"
+      ]
+    },
+    {
+      "name": "legal-compliance-engine",
+      "title": "Legal Compliance Engine",
+      "category": "governance",
+      "decisionType": "legal/compliance triage decision",
+      "purpose": "Surface legal/compliance issues, documentation gaps, consent needs, and escalation points.",
+      "tags": [
+        "legal",
+        "compliance",
+        "risk",
+        "governance"
+      ],
+      "keywords": [
+        "legal",
+        "contract",
+        "terms",
+        "privacy",
+        "compliance",
+        "gdpr",
+        "policy"
+      ],
+      "skills": [
+        "legal-basics",
+        "risk-management"
+      ],
+      "ownerAgents": [
+        "risk-manager",
+        "cfo",
+        "ceo"
+      ]
+    },
+    {
+      "name": "privacy-engine",
+      "title": "Privacy Engine",
+      "category": "governance",
+      "decisionType": "privacy decision",
+      "purpose": "Evaluate personal data flows, retention, consent, minimization, access control, and deletion logic.",
+      "tags": [
+        "privacy",
+        "data-protection",
+        "gdpr",
+        "security"
+      ],
+      "keywords": [
+        "privacy",
+        "personal data",
+        "gdpr",
+        "consent",
+        "retention",
+        "delete data"
+      ],
+      "skills": [
+        "legal-basics"
+      ],
+      "ownerAgents": []
+    },
+    {
+      "name": "ai-agent-design-engine",
+      "title": "AI Agent Design Engine",
+      "category": "ai",
+      "decisionType": "AI agent architecture decision",
+      "purpose": "Evaluate agent roles, tool boundaries, memory, planning loops, safety, and orchestration design.",
+      "tags": [
+        "ai-agents",
+        "orchestration",
+        "tools",
+        "memory"
+      ],
+      "keywords": [
+        "agent",
+        "orchestrator",
+        "tool",
+        "memory",
+        "llm",
+        "codex",
+        "ai workflow"
+      ],
+      "skills": [
+        "ai-engineering",
+        "prompt-engineering",
+        "software-architecture"
+      ],
+      "ownerAgents": [
+        "chief-ai-officer",
+        "ai-engineer",
+        "principal-software-architect"
+      ]
+    },
+    {
+      "name": "llm-prompt-evaluation-engine",
+      "title": "LLM Prompt Evaluation Engine",
+      "category": "ai",
+      "decisionType": "prompt quality decision",
+      "purpose": "Evaluate prompts, instruction hierarchy, output contracts, test cases, and failure modes.",
+      "tags": [
+        "prompts",
+        "llm",
+        "evaluation",
+        "instructions"
+      ],
+      "keywords": [
+        "prompt",
+        "instruction",
+        "system prompt",
+        "evaluation",
+        "llm",
+        "output format"
+      ],
+      "skills": [
+        "prompt-engineering",
+        "ai-engineering",
+        "copywriting",
+        "documentation"
+      ],
+      "ownerAgents": [
+        "ai-engineer",
+        "chief-ai-officer",
+        "technical-writer"
+      ]
+    },
+    {
+      "name": "ai-safety-engine",
+      "title": "AI Safety Engine",
+      "category": "ai",
+      "decisionType": "AI safety decision",
+      "purpose": "Evaluate AI workflows for harmful misuse, overclaiming, unsafe automation, privacy leakage, and high-stakes boundaries.",
+      "tags": [
+        "ai-safety",
+        "risk",
+        "guardrails",
+        "policy"
+      ],
+      "keywords": [
+        "ai safety",
+        "guardrail",
+        "unsafe",
+        "risk",
+        "policy",
+        "automation",
+        "high stakes"
+      ],
+      "skills": [
+        "risk-management"
+      ],
+      "ownerAgents": [
+        "chief-ai-officer",
+        "risk-manager"
+      ]
+    },
+    {
+      "name": "documentation-engine",
+      "title": "Documentation Engine",
+      "category": "operations",
+      "decisionType": "documentation quality decision",
+      "purpose": "Evaluate documentation completeness, clarity, structure, onboarding value, and maintenance burden.",
+      "tags": [
+        "documentation",
+        "technical-writing",
+        "onboarding"
+      ],
+      "keywords": [
+        "docs",
+        "documentation",
+        "readme",
+        "guide",
+        "manual",
+        "spec"
+      ],
+      "skills": [
+        "documentation",
+        "product-management"
+      ],
+      "ownerAgents": [
+        "technical-writer",
+        "product-manager"
+      ]
+    },
+    {
+      "name": "finance-planning-engine",
+      "title": "Finance Planning Engine",
+      "category": "finance",
+      "decisionType": "financial planning decision",
+      "purpose": "Evaluate budgets, runway, costs, unit economics, funding needs, and cash-flow risk.",
+      "tags": [
+        "finance",
+        "budget",
+        "runway",
+        "unit-economics"
+      ],
+      "keywords": [
+        "budget",
+        "runway",
+        "cost",
+        "cash flow",
+        "financial plan",
+        "unit economics"
+      ],
+      "skills": [
+        "finance",
+        "accounting",
+        "business-model",
+        "risk-management",
+        "entrepreneurship"
+      ],
+      "ownerAgents": [
+        "cfo",
+        "financial-analyst",
+        "entrepreneur",
+        "risk-manager"
+      ]
+    },
+    {
+      "name": "operations-engine",
+      "title": "Operations Engine",
+      "category": "operations",
+      "decisionType": "operations decision",
+      "purpose": "Evaluate workflows, handoffs, responsibilities, bottlenecks, SOPs, and operational reliability.",
+      "tags": [
+        "operations",
+        "process",
+        "sop",
+        "handoff"
+      ],
+      "keywords": [
+        "operations",
+        "process",
+        "workflow",
+        "sop",
+        "handoff",
+        "bottleneck"
+      ],
+      "skills": [
+        "operations",
+        "project-management",
+        "leadership",
+        "documentation"
+      ],
+      "ownerAgents": [
+        "coo",
+        "project-manager",
+        "technical-writer"
+      ]
+    },
+    {
+      "name": "negotiation-engine",
+      "title": "Negotiation Engine",
+      "category": "business",
+      "decisionType": "negotiation decision",
+      "purpose": "Evaluate negotiation strategy, BATNA, concessions, framing, leverage, and ethical pressure boundaries.",
+      "tags": [
+        "negotiation",
+        "communication",
+        "strategy"
+      ],
+      "keywords": [
+        "negotiate",
+        "offer",
+        "counteroffer",
+        "salary",
+        "deal",
+        "client",
+        "terms"
+      ],
+      "skills": [
+        "negotiation",
+        "communication",
+        "sales",
+        "psychology",
+        "leadership"
+      ],
+      "ownerAgents": [
+        "sales-strategist",
+        "ceo",
+        "entrepreneur"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "name": "architecture-review",
+  "title": "Architecture Review Eval Suite",
+  "category": "engineering",
+  "threshold": 0.8,
+  "keywords": [
+    "architecture",
+    "system design",
+    "database",
+    "api"
+  ],
+  "expectedAgents": [
+    "principal-software-architect",
+    "cto"
+  ],
+  "expectedEngines": [
+    "architecture-engine",
+    "database-engine"
+  ],
+  "expectedWorkflows": [
+    "architecture-review"
+  ],
+  "expectedSkills": [
+    "software-architecture",
+    "database"
+  ],
+  "expectedTemplates": [
+    "architecture-decision-record",
+    "technical-design-doc"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

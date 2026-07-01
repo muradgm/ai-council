@@ -1,0 +1,26 @@
+node_modules/
+dist/
+.env
+.DS_Store
+*.local
+
+# Local runtime output and generated reports
+storage/logs/
+storage/traces/
+storage/runtime/
+storage/evals/
+storage/observability/
+storage/governance/
+storage/web-console/
+storage/context-packs/
+storage/learning/feedback/
+storage/learning/latest-learning-report.*
+storage/memory/sessions/
+storage/automation/**/*.json
+storage/automation/**/*.md
+storage/memory/private/
+
+# Keep storage documentation tracked while excluding generated contents.
+!storage/README.md
+!storage/*/README.md
+!storage/*/*/README.md

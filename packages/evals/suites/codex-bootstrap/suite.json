@@ -1,0 +1,34 @@
+{
+  "name": "codex-bootstrap",
+  "title": "Codex Bootstrap Eval Suite",
+  "category": "developer-experience",
+  "threshold": 0.8,
+  "keywords": [
+    "codex",
+    "bootstrap",
+    "context",
+    "startup"
+  ],
+  "expectedAgents": [
+    "router",
+    "technical-writer"
+  ],
+  "expectedEngines": [
+    "documentation-engine"
+  ],
+  "expectedWorkflows": [
+    "codex-session"
+  ],
+  "expectedSkills": [
+    "documentation",
+    "prompt-engineering"
+  ],
+  "expectedTemplates": [
+    "codex-task-prompt"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

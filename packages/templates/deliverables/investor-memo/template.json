@@ -1,0 +1,32 @@
+{
+  "name": "investor-memo",
+  "title": "Investor Memo",
+  "category": "finance",
+  "entrypoint": "packages/templates/deliverables/investor-memo/TEMPLATE.md",
+  "skills": [
+    "finance",
+    "startup-validation",
+    "copywriting"
+  ],
+  "agents": [
+    "cfo",
+    "venture-builder",
+    "copywriter"
+  ],
+  "decisionEngines": [
+    "investment-analysis-engine",
+    "startup-evaluation-engine"
+  ],
+  "workflows": [
+    "investment-analysis"
+  ],
+  "keywords": [
+    "investor",
+    "memo",
+    "fundraising",
+    "pitch"
+  ],
+  "outputs": [
+    "Investor Memo document"
+  ]
+}

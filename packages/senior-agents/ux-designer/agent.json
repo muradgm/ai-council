@@ -1,0 +1,24 @@
+{
+  "name": "ux-designer",
+  "title": "UX Designer",
+  "group": "product-design",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design flows, information architecture, user journeys, wireframes, and interaction models",
+  "skills": [
+    "ux-design",
+    "ux-research",
+    "product-strategy",
+    "accessibility"
+  ],
+  "keywords": [
+    "ux",
+    "flow",
+    "wireframe",
+    "information architecture",
+    "journey",
+    "interaction"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

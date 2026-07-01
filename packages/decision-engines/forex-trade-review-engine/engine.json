@@ -1,0 +1,68 @@
+{
+  "name": "forex-trade-review-engine",
+  "title": "Forex Trade Review Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "finance",
+  "decisionType": "forex setup review",
+  "purpose": "Review forex setups, market structure, session context, execution plan, and post-trade learning.",
+  "ownerAgents": [
+    "forex-trader",
+    "risk-manager",
+    "quant-researcher"
+  ],
+  "skills": [
+    "forex-trading",
+    "technical-analysis",
+    "risk-management"
+  ],
+  "tags": [
+    "forex",
+    "trade-review",
+    "risk",
+    "journal"
+  ],
+  "keywords": [
+    "eurusd",
+    "gbpusd",
+    "xauusd",
+    "forex setup",
+    "pips",
+    "lot size",
+    "session"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "market structure",
+    "session context",
+    "liquidity",
+    "invalidation",
+    "position sizing",
+    "execution rules",
+    "post-trade review"
+  ],
+  "guardrails": [
+    "For education and journaling. Do not treat engine output as financial advice or a signal service.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

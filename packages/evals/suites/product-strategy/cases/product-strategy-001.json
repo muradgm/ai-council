@@ -1,0 +1,28 @@
+{
+  "id": "product-strategy-001",
+  "request": "write a PRD for an AI trading journal",
+  "expected": {
+    "agents": [
+      "product-manager"
+    ],
+    "engines": [
+      "product-strategy-engine"
+    ],
+    "workflows": [
+      "feature-planning"
+    ],
+    "skills": [
+      "product-management"
+    ],
+    "templates": [
+      "prd"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

@@ -1,0 +1,55 @@
+{
+  "name": "sales-funnel",
+  "title": "Sales Funnel Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "sales",
+  "description": "Design messaging, funnel steps, objections, outreach sequence, and conversion improvements.",
+  "triggers": [
+    "sales",
+    "funnel",
+    "outreach",
+    "objection",
+    "lead generation"
+  ],
+  "agents": [
+    "sales-strategist",
+    "copywriter",
+    "growth-marketer",
+    "entrepreneur"
+  ],
+  "skills": [
+    "sales",
+    "copywriting",
+    "growth",
+    "negotiation",
+    "communication"
+  ],
+  "decisionEngines": [
+    "sales-engine",
+    "copywriting-engine",
+    "growth-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Funnel map",
+    "Offer messaging",
+    "Outreach sequence",
+    "Objection handling"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

@@ -1,0 +1,27 @@
+{
+  "id": "product-strategy-003",
+  "request": "define acceptance criteria for a route planner",
+  "expected": {
+    "agents": [
+      "product-manager"
+    ],
+    "engines": [
+      "product-strategy-engine"
+    ],
+    "workflows": [
+      "feature-planning"
+    ],
+    "skills": [
+      "product-management"
+    ],
+    "templates": [
+      "feature-spec"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

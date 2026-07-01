@@ -1,0 +1,67 @@
+{
+  "name": "database-engine",
+  "title": "Database Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "engineering",
+  "decisionType": "database decision",
+  "purpose": "Evaluate database choice, indexing, query patterns, consistency needs, and operational risk.",
+  "ownerAgents": [
+    "data-engineer",
+    "principal-software-architect"
+  ],
+  "skills": [
+    "postgres",
+    "mongodb",
+    "redis"
+  ],
+  "tags": [
+    "database",
+    "storage",
+    "indexing",
+    "consistency"
+  ],
+  "keywords": [
+    "postgres",
+    "mongodb",
+    "redis",
+    "index",
+    "query",
+    "database",
+    "storage"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "workload fit",
+    "consistency model",
+    "query efficiency",
+    "operational complexity",
+    "migration path",
+    "backup strategy",
+    "cost"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

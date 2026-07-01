@@ -1,0 +1,55 @@
+{
+  "name": "growth-experiment",
+  "title": "Growth Experiment Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "growth",
+  "description": "Design measurable growth experiments with hypotheses, audience, channel, metric, execution plan, and learning loop.",
+  "triggers": [
+    "growth",
+    "experiment",
+    "acquisition",
+    "activation",
+    "retention"
+  ],
+  "agents": [
+    "growth-marketer",
+    "product-manager",
+    "data-engineer",
+    "copywriter"
+  ],
+  "skills": [
+    "growth",
+    "analytics",
+    "marketing",
+    "copywriting",
+    "product-management"
+  ],
+  "decisionEngines": [
+    "growth-engine",
+    "copywriting-engine",
+    "product-strategy-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Experiment brief",
+    "Hypothesis",
+    "Metric plan",
+    "Learning report template"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

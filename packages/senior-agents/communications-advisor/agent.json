@@ -1,0 +1,25 @@
+{
+  "name": "communications-advisor",
+  "title": "Communications Advisor",
+  "group": "marketing-sales",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "craft clear internal and external communication, stakeholder updates, memos, and decision framing",
+  "skills": [
+    "communication",
+    "documentation",
+    "leadership",
+    "copywriting"
+  ],
+  "keywords": [
+    "message",
+    "email",
+    "memo",
+    "communication",
+    "stakeholder",
+    "update",
+    "explain"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

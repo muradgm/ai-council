@@ -1,0 +1,70 @@
+{
+  "name": "ui-review-engine",
+  "title": "UI Review Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "design",
+  "decisionType": "interface quality decision",
+  "purpose": "Review interface hierarchy, layout, interaction clarity, visual polish, and component consistency.",
+  "ownerAgents": [
+    "ui-designer",
+    "senior-brand-designer"
+  ],
+  "skills": [
+    "ux-ui-design",
+    "ui-design",
+    "design-systems",
+    "typography",
+    "accessibility"
+  ],
+  "tags": [
+    "ui",
+    "design-review",
+    "interface",
+    "visual-quality"
+  ],
+  "keywords": [
+    "ui",
+    "interface",
+    "screen",
+    "layout",
+    "component",
+    "figma",
+    "visual review",
+    "design"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "hierarchy",
+    "clarity",
+    "consistency",
+    "accessibility",
+    "responsiveness",
+    "visual rhythm",
+    "component reuse"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

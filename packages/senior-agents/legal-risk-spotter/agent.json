@@ -1,0 +1,23 @@
+{
+  "name": "legal-risk-spotter",
+  "title": "Legal Risk Spotter",
+  "group": "research-ops",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "identify non-lawyer legal risk areas, documentation needs, compliance concerns, and escalation points",
+  "skills": [
+    "legal-basics",
+    "risk-management",
+    "documentation"
+  ],
+  "keywords": [
+    "legal",
+    "contract",
+    "terms",
+    "privacy",
+    "compliance",
+    "risk"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

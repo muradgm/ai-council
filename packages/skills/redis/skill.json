@@ -1,0 +1,16 @@
+{
+  "name": "redis",
+  "title": "Redis",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for cache, queues, rate limiting.",
+  "dependencies": [
+    "backend"
+  ],
+  "tags": [
+    "redis",
+    "cache"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

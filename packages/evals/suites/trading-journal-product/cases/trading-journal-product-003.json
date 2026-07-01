@@ -1,0 +1,28 @@
+{
+  "id": "trading-journal-product-003",
+  "request": "create a trade journal entry template",
+  "expected": {
+    "agents": [
+      "forex-trader"
+    ],
+    "engines": [
+      "forex-trade-review-engine"
+    ],
+    "workflows": [
+      "forex-trade-review"
+    ],
+    "skills": [
+      "trading-journal"
+    ],
+    "templates": [
+      "trade-journal-entry"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

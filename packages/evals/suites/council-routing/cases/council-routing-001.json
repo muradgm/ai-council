@@ -1,0 +1,30 @@
+{
+  "id": "council-routing-001",
+  "request": "route a request to build a React trading dashboard",
+  "expected": {
+    "agents": [
+      "router",
+      "project-manager"
+    ],
+    "engines": [
+      "ai-agent-design-engine"
+    ],
+    "workflows": [
+      "codex-session"
+    ],
+    "skills": [
+      "react",
+      "frontend"
+    ],
+    "templates": [
+      "codex-task-prompt"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

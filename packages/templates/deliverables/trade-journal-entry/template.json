@@ -1,0 +1,32 @@
+{
+  "name": "trade-journal-entry",
+  "title": "Trade Journal Entry",
+  "category": "trading",
+  "entrypoint": "packages/templates/deliverables/trade-journal-entry/TEMPLATE.md",
+  "skills": [
+    "trading-journal",
+    "forex-trading",
+    "risk-management"
+  ],
+  "agents": [
+    "forex-trader",
+    "risk-manager",
+    "quant-researcher"
+  ],
+  "decisionEngines": [
+    "forex-trade-review-engine",
+    "trading-risk-engine"
+  ],
+  "workflows": [
+    "forex-trade-review"
+  ],
+  "keywords": [
+    "journal",
+    "trade journal",
+    "trade entry",
+    "review"
+  ],
+  "outputs": [
+    "Trade Journal Entry document"
+  ]
+}

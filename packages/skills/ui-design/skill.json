@@ -1,0 +1,17 @@
+{
+  "name": "ui-design",
+  "title": "UI Design",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for interfaces, layouts, visual systems.",
+  "dependencies": [
+    "ux-design",
+    "design-systems"
+  ],
+  "tags": [
+    "ui",
+    "design"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "quant-research",
+  "version": "1.0.0",
+  "type": "skill",
+  "tags": [
+    "Hypothesis",
+    "Data hygiene",
+    "Backtesting",
+    "Overfitting control",
+    "Statistical review"
+  ],
+  "entry": "SKILL.md",
+  "dependencies": []
+}

@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-manager",
+  "title": "Portfolio Manager",
+  "group": "finance-trading",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "reason about portfolio construction, diversification, allocation, scenario risk, and long-term constraints",
+  "skills": [
+    "investing",
+    "finance",
+    "risk-management",
+    "economics"
+  ],
+  "keywords": [
+    "portfolio",
+    "allocation",
+    "diversification",
+    "investment",
+    "asset",
+    "rebalance"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

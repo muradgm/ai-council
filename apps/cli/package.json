@@ -1,0 +1,8 @@
+{
+  "name": "@ai-council/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "ai-council": "src/index.ts"
+  }
+}

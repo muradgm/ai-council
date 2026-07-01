@@ -1,0 +1,32 @@
+{
+  "name": "agent-spec",
+  "title": "Agent Spec",
+  "category": "ai",
+  "entrypoint": "packages/templates/deliverables/agent-spec/TEMPLATE.md",
+  "skills": [
+    "agent-design",
+    "ai-engineering",
+    "prompt-engineering"
+  ],
+  "agents": [
+    "chief-ai-officer",
+    "senior-ai-engineer",
+    "ai-engineer"
+  ],
+  "decisionEngines": [
+    "ai-agent-design-engine",
+    "ai-safety-engine"
+  ],
+  "workflows": [
+    "ai-agent-build"
+  ],
+  "keywords": [
+    "agent",
+    "ai agent",
+    "persona",
+    "instructions"
+  ],
+  "outputs": [
+    "Agent Spec document"
+  ]
+}

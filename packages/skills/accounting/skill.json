@@ -1,0 +1,16 @@
+{
+  "name": "accounting",
+  "title": "Accounting",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for records, financial statements, cost tracking.",
+  "dependencies": [
+    "finance"
+  ],
+  "tags": [
+    "accounting",
+    "operations"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

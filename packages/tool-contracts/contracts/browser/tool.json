@@ -1,0 +1,14 @@
+{
+  "name": "browser",
+  "title": "Browser",
+  "entrypoint": "TOOL.md",
+  "description": "Open local or approved web pages for inspection.",
+  "riskLevel": "medium",
+  "allowedByDefault": true,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

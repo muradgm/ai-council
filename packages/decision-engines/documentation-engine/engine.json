@@ -1,0 +1,64 @@
+{
+  "name": "documentation-engine",
+  "title": "Documentation Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "operations",
+  "decisionType": "documentation quality decision",
+  "purpose": "Evaluate documentation completeness, clarity, structure, onboarding value, and maintenance burden.",
+  "ownerAgents": [
+    "technical-writer",
+    "product-manager"
+  ],
+  "skills": [
+    "documentation",
+    "product-management"
+  ],
+  "tags": [
+    "documentation",
+    "technical-writing",
+    "onboarding"
+  ],
+  "keywords": [
+    "docs",
+    "documentation",
+    "readme",
+    "guide",
+    "manual",
+    "spec"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "audience clarity",
+    "navigation",
+    "accuracy",
+    "examples",
+    "maintenance ownership",
+    "decision traceability",
+    "onboarding speed"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

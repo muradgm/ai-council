@@ -1,0 +1,3 @@
+# Ruby Best Practices
+
+Scaffold.

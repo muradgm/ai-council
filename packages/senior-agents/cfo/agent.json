@@ -1,0 +1,27 @@
+{
+  "name": "cfo",
+  "title": "Chief Financial Officer",
+  "group": "executive",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "handle financial models, budgets, forecasts, unit economics, capital allocation, and financial risk",
+  "skills": [
+    "finance",
+    "accounting",
+    "business-model",
+    "risk-management",
+    "economics"
+  ],
+  "keywords": [
+    "finance",
+    "budget",
+    "forecast",
+    "pricing",
+    "unit economics",
+    "revenue",
+    "cost",
+    "cfo"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

@@ -1,0 +1,59 @@
+{
+  "name": "tradeframe",
+  "title": "TradeFrame",
+  "kind": "AI-first trading journal and decision review system",
+  "entrypoint": "PROJECT_PACK.md",
+  "projectRoot": "projects/tradeframe",
+  "memoryRoot": "storage/memory/projects/TradeFrame",
+  "wedge": "Risk-first trading journal focused on decision quality, rule discipline, and post-trade learning rather than prediction hype.",
+  "stage": "planning / MVP definition",
+  "agents": [
+    "product-manager",
+    "principal-software-architect",
+    "forex-trader",
+    "risk-manager",
+    "quant-researcher",
+    "senior-fullstack-engineer"
+  ],
+  "skills": [
+    "forex-trading",
+    "risk-management",
+    "product-management",
+    "software-architecture",
+    "database",
+    "fullstack"
+  ],
+  "decisionEngines": [
+    "trading-risk-engine",
+    "forex-trade-review-engine",
+    "product-strategy-engine",
+    "architecture-engine",
+    "database-engine"
+  ],
+  "workflows": [
+    "feature-planning",
+    "architecture-review",
+    "build-execution",
+    "trading-system-review",
+    "release-readiness"
+  ],
+  "templates": [
+    "prd",
+    "architecture-decision-record",
+    "risk-review-report",
+    "trade-journal-entry",
+    "technical-design-doc"
+  ],
+  "keywords": [
+    "database",
+    "forex",
+    "fullstack",
+    "multi-asset-discretionary-traders",
+    "product",
+    "retail-forex-traders",
+    "risk",
+    "software",
+    "tradeframe",
+    "traders-trying-to-reduce-repeated-mistakes"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "workflow-execution-001",
+  "request": "execute a feature build workflow",
+  "expected": {
+    "agents": [
+      "project-manager",
+      "senior-fullstack-engineer"
+    ],
+    "engines": [
+      "release-readiness-engine"
+    ],
+    "workflows": [
+      "build-execution"
+    ],
+    "skills": [
+      "project-management"
+    ],
+    "templates": [
+      "feature-spec"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

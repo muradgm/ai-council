@@ -1,0 +1,29 @@
+{
+  "name": "permission-check",
+  "title": "Permission Check",
+  "entrypoint": "CAPABILITY.md",
+  "category": "permissions",
+  "riskLevel": "medium",
+  "approvalRequired": false,
+  "keywords": [
+    "permission",
+    "allowed",
+    "denied",
+    "role",
+    "access",
+    "action"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Classify whether a requested Council action is allowed, restricted, approval-gated, or disallowed."
+}

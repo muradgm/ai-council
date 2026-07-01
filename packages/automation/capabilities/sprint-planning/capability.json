@@ -1,0 +1,22 @@
+{
+  "name": "sprint-planning",
+  "title": "Sprint Planning",
+  "entrypoint": "CAPABILITY.md",
+  "category": "planning",
+  "inputs": [
+    "project",
+    "goal",
+    "days"
+  ],
+  "outputs": [
+    "sprint plan",
+    "selected tasks"
+  ],
+  "riskLevel": "low",
+  "approvalRequired": false,
+  "keywords": [
+    "sprint",
+    "milestone",
+    "weekly plan"
+  ]
+}

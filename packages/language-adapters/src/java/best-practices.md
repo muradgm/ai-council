@@ -1,0 +1,3 @@
+# Java Best Practices
+
+Scaffold.

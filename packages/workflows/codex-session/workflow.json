@@ -1,0 +1,54 @@
+{
+  "name": "codex-session",
+  "title": "Codex Session Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "orchestration",
+  "description": "Start and manage a Codex session using repo-local Council knowledge, agent routing, engines, workflows, and validation.",
+  "triggers": [
+    "codex",
+    "start codex",
+    "initialize orchestrator",
+    "AI Council session",
+    "council init"
+  ],
+  "agents": [
+    "principal-software-architect",
+    "technical-writer",
+    "project-manager"
+  ],
+  "skills": [
+    "agent-design",
+    "prompt-engineering",
+    "documentation",
+    "software-architecture",
+    "project-management"
+  ],
+  "decisionEngines": [
+    "architecture-engine",
+    "documentation-engine",
+    "code-review-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Session prompt",
+    "Selected workflow",
+    "Execution protocol",
+    "Validation commands"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

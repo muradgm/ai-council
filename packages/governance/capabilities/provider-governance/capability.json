@@ -1,0 +1,30 @@
+{
+  "name": "provider-governance",
+  "title": "Provider Governance",
+  "entrypoint": "CAPABILITY.md",
+  "category": "providers",
+  "riskLevel": "medium",
+  "approvalRequired": false,
+  "keywords": [
+    "provider",
+    "openai",
+    "claude",
+    "gemini",
+    "ollama",
+    "cloud",
+    "local"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Select model/provider tiers while respecting privacy, cost, and task criticality."
+}

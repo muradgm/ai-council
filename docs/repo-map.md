@@ -1,0 +1,160 @@
+# AI Council Repository Map
+
+Generated: 2026-06-29T18:15:05.098Z
+
+## Counts
+
+- Skills: 70
+- Senior agents: 50
+- Decision engines: 37
+- Workflows: 33
+- Templates: 40
+- Projects: 7
+
+## Top-Level Tree
+
+```text
+ai-council/
+  - .github/
+    - workflows/
+  - .vscode/
+    - extensions.json
+    - tasks.json
+  - apps/
+    - api-server/
+    - cli/
+    - web-console/
+  - docs/
+    - architecture/
+    - milestones/
+    - specs/
+    - standards/
+    - cli-reference.md
+    - codex-deliverables-guide.md
+    - codex-init.md
+    - codex-one-command-setup.md
+    - codex-runtime-guide.md
+    - codex-workflow-init.md
+    - decision-engines-system.md
+    - developer-experience.md
+    - memory-project-runtime-system.md
+    - phase-08-cli-developer-experience.md
+    - phases.md
+    - project-initialization.md
+    - repo-diagnostics.md
+    - repo-map.md
+    - senior-agents-system.md
+    - skills-system.md
+    - templates-deliverables-system.md
+    - workflow-orchestration-system.md
+  - evals/
+    - coding/
+    - datasets/
+    - golden/
+    - product/
+    - reasoning/
+    - regression/
+    - reports/
+    - security/
+  - infra/
+    - ci-cd/
+    - docker/
+    - monitoring/
+    - secrets/
+    - README.md
+  - packages/
+    - ai-core/
+    - ai-providers/
+    - cli/
+    - decision-engines/
+    - language-adapters/
+    - memory/
+    - orchestrator/
+    - project-runtime/
+    - senior-agents/
+    - shared/
+    - skills/
+    - templates/
+    - workflows/
+  - projects/
+    - _template/
+    - future-project-template/
+    - gatezero/
+    - lango/
+    - motio/
+    - navo-flowday/
+    - signalscout/
+  - scripts/
+    - lib/
+    - build-context-pack.mjs
+    - codex-bootstrap.mjs
+    - codex-context.mjs
+    - council-doctor.mjs
+    - council-health.mjs
+    - council-route.mjs
+    - council.mjs
+    - generate-deliverable.mjs
+    - generate-repo-map.mjs
+    - init-project.mjs
+    - list-agents.mjs
+    - list-engines.mjs
+    - list-projects.mjs
+    - list-skills.mjs
+    - list-templates.mjs
+    - list-workflows.mjs
+    - memory-init.mjs
+    - memory-status.mjs
+    - project-context.mjs
+    - project-doctor.mjs
+    - record-decision.mjs
+    - route-agent.mjs
+    - route-engine.mjs
+    - route-template.mjs
+    - route-workflow.mjs
+    - run-engine.mjs
+    - run-evals.ts
+    - run-workflow.mjs
+    - session-summary.mjs
+    - setup.ts
+    - task-state.mjs
+    - validate-knowledge.mjs
+  - storage/
+    - artifacts/
+    - backups/
+    - context-packs/
+    - deliverables/
+    - embeddings/
+    - logs/
+    - memory/
+    - traces/
+    - README.md
+  - tests/
+    - smoke.test.ts
+  - workflows/
+    - architecture-review.workflow.ts
+    - bug-investigation.workflow.ts
+    - code-review.workflow.ts
+    - design-review.workflow.ts
+    - feature-planning.workflow.ts
+    - learning-loop.workflow.ts
+    - refactor.workflow.ts
+    - release-readiness.workflow.ts
+    - security-review.workflow.ts
+  - .env.example
+  - .gitignore
+  - AGENTS.md
+  - docker-compose.yml
+  - package.json
+  - pnpm-workspace.yaml
+  - PROJECT.md
+  - README.md
+  - tsconfig.json
+```
+
+## Core Entry Points
+
+- AGENTS.md
+- packages/orchestrator/bootstrap.md
+- docs/codex-one-command-setup.md
+- docs/cli-reference.md
+- scripts/council.mjs

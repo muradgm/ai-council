@@ -1,0 +1,32 @@
+{
+  "name": "api-spec",
+  "title": "API Spec",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/api-spec/TEMPLATE.md",
+  "skills": [
+    "api-design",
+    "backend",
+    "security"
+  ],
+  "agents": [
+    "senior-backend-engineer",
+    "principal-software-architect",
+    "cybersecurity-engineer"
+  ],
+  "decisionEngines": [
+    "api-design-engine",
+    "security-review-engine"
+  ],
+  "workflows": [
+    "api-design"
+  ],
+  "keywords": [
+    "api",
+    "endpoint",
+    "contract",
+    "openapi"
+  ],
+  "outputs": [
+    "API Spec document"
+  ]
+}

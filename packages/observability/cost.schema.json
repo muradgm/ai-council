@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CostRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "category",
+    "amount",
+    "currency",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "runId": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  }
+}

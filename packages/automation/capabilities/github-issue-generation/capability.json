@@ -1,0 +1,20 @@
+{
+  "name": "github-issue-generation",
+  "title": "GitHub Issue Generation",
+  "entrypoint": "CAPABILITY.md",
+  "category": "handoff",
+  "inputs": [
+    "project",
+    "task"
+  ],
+  "outputs": [
+    "issue draft"
+  ],
+  "riskLevel": "medium",
+  "approvalRequired": true,
+  "keywords": [
+    "github",
+    "issue",
+    "ticket"
+  ]
+}

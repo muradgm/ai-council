@@ -1,0 +1,54 @@
+{
+  "name": "ui-review",
+  "title": "UI Review Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "design",
+  "description": "Review interfaces for hierarchy, layout, spacing, visual system, accessibility, content, and user flow.",
+  "triggers": [
+    "UI review",
+    "screen review",
+    "interface",
+    "design critique",
+    "landing page"
+  ],
+  "agents": [
+    "ui-designer",
+    "ux-designer",
+    "design-systems-lead"
+  ],
+  "skills": [
+    "ui-design",
+    "ux-design",
+    "design-systems",
+    "accessibility",
+    "typography"
+  ],
+  "decisionEngines": [
+    "ui-review-engine",
+    "accessibility-engine",
+    "brand-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "UI critique",
+    "Severity-ranked fixes",
+    "Accessibility notes",
+    "Design-system recommendations"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

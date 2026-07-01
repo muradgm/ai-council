@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Council Memory Record",
+  "type": "object",
+  "required": [
+    "type",
+    "project",
+    "title",
+    "createdAt",
+    "status"
+  ],
+  "properties": {
+    "type": {
+      "enum": [
+        "project-context",
+        "session-summary",
+        "decision-record",
+        "task-state",
+        "context-pack",
+        "risk-register",
+        "handoff-note"
+      ]
+    },
+    "project": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "active",
+        "superseded",
+        "archived"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedAgents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedSkills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedEngines": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "relatedWorkflows": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "node",
+  "title": "Node.js",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for server runtime, APIs, workers, scripting.",
+  "dependencies": [
+    "backend",
+    "typescript"
+  ],
+  "tags": [
+    "node",
+    "backend"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

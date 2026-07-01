@@ -1,0 +1,5 @@
+# Communication
+
+Reusable AI Council skill for clear writing, stakeholder updates, decision framing.
+
+Start with `SKILL.md`, then use the workflow, checklist, and templates in this folder.

@@ -1,0 +1,1 @@
+Use `branding-engine`. Read `ENGINE.md`, `workflows/standard.workflow.md`, `rubrics/scoring-rubric.md`, and `templates/decision-memo.template.md`. Produce a brand decision memo with evidence, tradeoffs, risks, confidence, and next validation step.

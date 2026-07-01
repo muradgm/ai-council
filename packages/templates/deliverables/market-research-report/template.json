@@ -1,0 +1,32 @@
+{
+  "name": "market-research-report",
+  "title": "Market Research Report",
+  "category": "business",
+  "entrypoint": "packages/templates/deliverables/market-research-report/TEMPLATE.md",
+  "skills": [
+    "research",
+    "marketing",
+    "business-model"
+  ],
+  "agents": [
+    "market-researcher",
+    "business-model-strategist",
+    "startup-advisor"
+  ],
+  "decisionEngines": [
+    "market-research-engine",
+    "business-model-engine"
+  ],
+  "workflows": [
+    "market-research"
+  ],
+  "keywords": [
+    "market",
+    "research",
+    "competitors",
+    "landscape"
+  ],
+  "outputs": [
+    "Market Research Report document"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "build-execution",
+  "title": "Build Execution Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "engineering",
+  "description": "Execute a planned implementation safely with repo inspection, minimal changes, validation, and documentation.",
+  "triggers": [
+    "implement",
+    "build",
+    "code this",
+    "add module",
+    "execute plan"
+  ],
+  "agents": [
+    "senior-fullstack-engineer",
+    "senior-frontend-engineer",
+    "senior-backend-engineer",
+    "qa-engineer"
+  ],
+  "skills": [
+    "fullstack",
+    "frontend",
+    "backend",
+    "testing",
+    "documentation"
+  ],
+  "decisionEngines": [
+    "code-review-engine",
+    "testing-strategy-engine",
+    "release-readiness-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Code changes",
+    "Validation log",
+    "Docs updates",
+    "Follow-up issues"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

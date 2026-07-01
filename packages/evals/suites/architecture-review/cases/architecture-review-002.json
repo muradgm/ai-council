@@ -1,0 +1,30 @@
+{
+  "id": "architecture-review-002",
+  "request": "decide PostgreSQL or MongoDB for SignalScout",
+  "expected": {
+    "agents": [
+      "principal-software-architect",
+      "data-engineer"
+    ],
+    "engines": [
+      "database-engine"
+    ],
+    "workflows": [
+      "data-model-design"
+    ],
+    "skills": [
+      "database",
+      "postgres",
+      "mongodb"
+    ],
+    "templates": [
+      "database-schema-spec"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

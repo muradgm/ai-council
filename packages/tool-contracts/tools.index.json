@@ -1,0 +1,138 @@
+{
+  "version": "0.10.0",
+  "phase": "10-provider-tool-integration-layer",
+  "contracts": [
+    {
+      "name": "filesystem",
+      "title": "Filesystem",
+      "entrypoint": "contracts/filesystem/TOOL.md",
+      "description": "Read/write project files inside an approved workspace only."
+    },
+    {
+      "name": "shell",
+      "title": "Shell",
+      "entrypoint": "contracts/shell/TOOL.md",
+      "description": "Run shell commands with explicit working directory and bounded scope."
+    },
+    {
+      "name": "git",
+      "title": "Git",
+      "entrypoint": "contracts/git/TOOL.md",
+      "description": "Inspect diffs, branches, commits, and status without destructive operations by default."
+    },
+    {
+      "name": "package-manager",
+      "title": "Package Manager",
+      "entrypoint": "contracts/package-manager/TOOL.md",
+      "description": "Install and run project dependencies with lockfile awareness."
+    },
+    {
+      "name": "test-runner",
+      "title": "Test Runner",
+      "entrypoint": "contracts/test-runner/TOOL.md",
+      "description": "Run unit, integration, smoke, and eval tests."
+    },
+    {
+      "name": "browser",
+      "title": "Browser",
+      "entrypoint": "contracts/browser/TOOL.md",
+      "description": "Open local or approved web pages for inspection."
+    },
+    {
+      "name": "web-search",
+      "title": "Web Search",
+      "entrypoint": "contracts/web-search/TOOL.md",
+      "description": "Retrieve current external information when allowed."
+    },
+    {
+      "name": "database",
+      "title": "Database",
+      "entrypoint": "contracts/database/TOOL.md",
+      "description": "Inspect schemas and run safe read-only queries by default."
+    },
+    {
+      "name": "docker",
+      "title": "Docker",
+      "entrypoint": "contracts/docker/TOOL.md",
+      "description": "Build and run isolated services with explicit ports and cleanup."
+    },
+    {
+      "name": "github",
+      "title": "GitHub",
+      "entrypoint": "contracts/github/TOOL.md",
+      "description": "Read repository data, issues, PRs, and create changes when authorized."
+    },
+    {
+      "name": "gmail",
+      "title": "Gmail",
+      "entrypoint": "contracts/gmail/TOOL.md",
+      "description": "Read or write email only after explicit user intent."
+    },
+    {
+      "name": "calendar",
+      "title": "Calendar",
+      "entrypoint": "contracts/calendar/TOOL.md",
+      "description": "Search and modify events only on explicit user request."
+    },
+    {
+      "name": "drive",
+      "title": "Google Drive",
+      "entrypoint": "contracts/drive/TOOL.md",
+      "description": "Read and manage Drive files through explicit connector actions."
+    },
+    {
+      "name": "figma",
+      "title": "Figma",
+      "entrypoint": "contracts/figma/TOOL.md",
+      "description": "Inspect or generate design artifacts through Figma connector actions."
+    },
+    {
+      "name": "canva",
+      "title": "Canva",
+      "entrypoint": "contracts/canva/TOOL.md",
+      "description": "Create visual assets and presentations through Canva connector actions."
+    },
+    {
+      "name": "notion",
+      "title": "Notion",
+      "entrypoint": "contracts/notion/TOOL.md",
+      "description": "Read or update workspace docs when authorized."
+    },
+    {
+      "name": "slack",
+      "title": "Slack",
+      "entrypoint": "contracts/slack/TOOL.md",
+      "description": "Read or post workspace messages only with clear user direction."
+    },
+    {
+      "name": "linear",
+      "title": "Linear",
+      "entrypoint": "contracts/linear/TOOL.md",
+      "description": "Read or modify product issues with project-specific authorization."
+    },
+    {
+      "name": "jira",
+      "title": "Jira",
+      "entrypoint": "contracts/jira/TOOL.md",
+      "description": "Read or modify tickets with project-specific authorization."
+    },
+    {
+      "name": "monitoring",
+      "title": "Monitoring",
+      "entrypoint": "contracts/monitoring/TOOL.md",
+      "description": "Read logs, metrics, traces, and alerts in bounded scopes."
+    },
+    {
+      "name": "secrets",
+      "title": "Secrets",
+      "entrypoint": "contracts/secrets/TOOL.md",
+      "description": "Read secret metadata only; never print secret values."
+    },
+    {
+      "name": "artifact-generation",
+      "title": "Artifact Generation",
+      "entrypoint": "contracts/artifact-generation/TOOL.md",
+      "description": "Generate files, docs, images, decks, reports, and ZIPs with clear user-facing outputs."
+    }
+  ]
+}

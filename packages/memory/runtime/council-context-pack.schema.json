@@ -1,0 +1,37 @@
+{
+  "title": "Council Context Pack",
+  "type": "object",
+  "required": [
+    "project",
+    "task",
+    "loadedContext",
+    "recommendedAgents",
+    "recommendedSkills"
+  ],
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "loadedContext": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendedAgents": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "recommendedSkills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

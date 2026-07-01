@@ -1,0 +1,16 @@
+{
+  "name": "mongodb",
+  "title": "MongoDB",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for document modeling and indexes.",
+  "dependencies": [
+    "database"
+  ],
+  "tags": [
+    "mongodb",
+    "nosql"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

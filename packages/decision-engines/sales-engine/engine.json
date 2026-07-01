@@ -1,0 +1,70 @@
+{
+  "name": "sales-engine",
+  "title": "Sales Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "business",
+  "decisionType": "sales strategy decision",
+  "purpose": "Evaluate sales motions, qualification, objections, offers, outreach, and deal progression.",
+  "ownerAgents": [
+    "sales-strategist",
+    "copywriter",
+    "entrepreneur",
+    "ceo"
+  ],
+  "skills": [
+    "sales",
+    "negotiation",
+    "copywriting",
+    "business-model"
+  ],
+  "tags": [
+    "sales",
+    "outreach",
+    "qualification",
+    "objections"
+  ],
+  "keywords": [
+    "sales",
+    "outreach",
+    "lead",
+    "deal",
+    "objection",
+    "pitch",
+    "client"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "buyer fit",
+    "pain qualification",
+    "offer clarity",
+    "objection coverage",
+    "next step strength",
+    "follow-up cadence",
+    "ethical pressure"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

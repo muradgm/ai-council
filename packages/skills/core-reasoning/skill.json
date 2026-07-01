@@ -1,0 +1,14 @@
+{
+  "name": "core-reasoning",
+  "title": "Core Reasoning",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for thinking, assumption testing, tradeoff analysis.",
+  "dependencies": [],
+  "tags": [
+    "critical-thinking",
+    "planning"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

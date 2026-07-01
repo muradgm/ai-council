@@ -1,0 +1,17 @@
+{
+  "name": "senior-designer",
+  "version": "1.0.0",
+  "title": "Senior Designer",
+  "skills": [
+    "ux-ui-design",
+    "branding"
+  ],
+  "decision_engines": [],
+  "entrypoint": "AGENT.md",
+  "keywords": [
+    "senior",
+    "designer",
+    "ux-ui-design",
+    "branding"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "name": "forex-trade-review",
+  "title": "Forex Trade Review Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "trading",
+  "description": "Review a forex trade plan or journal entry for setup quality, risk, invalidation, execution, and post-trade learning.",
+  "triggers": [
+    "forex",
+    "trade review",
+    "currency pair",
+    "entry",
+    "stop loss"
+  ],
+  "agents": [
+    "forex-trader",
+    "risk-manager",
+    "quant-researcher",
+    "macro-analyst"
+  ],
+  "skills": [
+    "forex-trading",
+    "technical-analysis",
+    "risk-management",
+    "trading-journal",
+    "economics"
+  ],
+  "decisionEngines": [
+    "forex-trade-review-engine",
+    "trading-risk-engine",
+    "quant-research-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Trade review",
+    "Risk score",
+    "Execution critique",
+    "Journal notes"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Educational and analytical only. No personalized financial advice or instruction to place trades."
+}

@@ -1,0 +1,16 @@
+{
+  "name": "docker",
+  "title": "Docker",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for containers, compose, reproducible environments.",
+  "dependencies": [
+    "devops"
+  ],
+  "tags": [
+    "docker",
+    "infra"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

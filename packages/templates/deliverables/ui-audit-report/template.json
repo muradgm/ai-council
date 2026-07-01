@@ -1,0 +1,33 @@
+{
+  "name": "ui-audit-report",
+  "title": "UI Audit Report",
+  "category": "design",
+  "entrypoint": "packages/templates/deliverables/ui-audit-report/TEMPLATE.md",
+  "skills": [
+    "ui-design",
+    "ux-design",
+    "accessibility"
+  ],
+  "agents": [
+    "ui-designer",
+    "ux-designer",
+    "senior-designer"
+  ],
+  "decisionEngines": [
+    "ui-review-engine",
+    "accessibility-engine"
+  ],
+  "workflows": [
+    "ui-review",
+    "ui-review"
+  ],
+  "keywords": [
+    "ui",
+    "audit",
+    "interface",
+    "visual design"
+  ],
+  "outputs": [
+    "UI Audit Report document"
+  ]
+}

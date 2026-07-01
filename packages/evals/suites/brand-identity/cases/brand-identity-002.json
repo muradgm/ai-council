@@ -1,0 +1,29 @@
+{
+  "id": "brand-identity-002",
+  "request": "run a naming workflow for a travel app",
+  "expected": {
+    "agents": [
+      "brand-strategist",
+      "copywriter"
+    ],
+    "engines": [
+      "naming-engine"
+    ],
+    "workflows": [
+      "naming-system"
+    ],
+    "skills": [
+      "branding",
+      "copywriting"
+    ],
+    "templates": [
+      "naming-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

@@ -1,0 +1,31 @@
+{
+  "name": "tool-action-guard",
+  "title": "Tool Action Guard",
+  "entrypoint": "CAPABILITY.md",
+  "category": "tools",
+  "riskLevel": "high",
+  "approvalRequired": true,
+  "keywords": [
+    "tool",
+    "shell",
+    "file",
+    "git",
+    "email",
+    "browser",
+    "delete",
+    "send"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Gate tool execution by impact, reversibility, data sensitivity, and user approval."
+}

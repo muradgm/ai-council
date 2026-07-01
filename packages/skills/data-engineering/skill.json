@@ -1,0 +1,17 @@
+{
+  "name": "data-engineering",
+  "title": "Data Engineering",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for pipelines, schemas, transformations.",
+  "dependencies": [
+    "database",
+    "python"
+  ],
+  "tags": [
+    "data",
+    "pipelines"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

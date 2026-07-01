@@ -1,0 +1,32 @@
+{
+  "name": "backtest-report",
+  "title": "Backtest Report",
+  "category": "trading",
+  "entrypoint": "packages/templates/deliverables/backtest-report/TEMPLATE.md",
+  "skills": [
+    "quantitative-analysis",
+    "technical-analysis",
+    "risk-management"
+  ],
+  "agents": [
+    "quant-researcher",
+    "forex-trader",
+    "risk-manager"
+  ],
+  "decisionEngines": [
+    "quant-research-engine",
+    "trading-risk-engine"
+  ],
+  "workflows": [
+    "trading-system-review"
+  ],
+  "keywords": [
+    "backtest",
+    "strategy",
+    "quant",
+    "trading"
+  ],
+  "outputs": [
+    "Backtest Report document"
+  ]
+}

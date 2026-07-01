@@ -1,0 +1,3 @@
+# Typescript Best Practices
+
+Scaffold.

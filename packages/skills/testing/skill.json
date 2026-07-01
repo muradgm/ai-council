@@ -1,0 +1,16 @@
+{
+  "name": "testing",
+  "title": "Testing",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for unit, integration, e2e, test strategy.",
+  "dependencies": [
+    "software-architecture"
+  ],
+  "tags": [
+    "testing",
+    "qa"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

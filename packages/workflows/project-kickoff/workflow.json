@@ -1,0 +1,54 @@
+{
+  "name": "project-kickoff",
+  "title": "Project Kickoff Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "foundation",
+  "description": "Convert a vague product or repo request into a scoped, documented, executable project start.",
+  "triggers": [
+    "start a project",
+    "new app",
+    "setup repo",
+    "kickoff",
+    "plan project"
+  ],
+  "agents": [
+    "project-manager",
+    "product-manager",
+    "principal-software-architect",
+    "technical-writer"
+  ],
+  "skills": [
+    "project-management",
+    "product-management",
+    "software-architecture",
+    "documentation",
+    "core-reasoning"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine",
+    "architecture-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Project brief",
+    "Initial backlog",
+    "Technical assumptions",
+    "Risks and open questions"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

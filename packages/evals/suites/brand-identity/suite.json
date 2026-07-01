@@ -1,0 +1,38 @@
+{
+  "name": "brand-identity",
+  "title": "Brand Identity Eval Suite",
+  "category": "design",
+  "threshold": 0.8,
+  "keywords": [
+    "brand",
+    "logo",
+    "identity",
+    "naming"
+  ],
+  "expectedAgents": [
+    "senior-brand-designer",
+    "brand-strategist"
+  ],
+  "expectedEngines": [
+    "brand-engine",
+    "naming-engine"
+  ],
+  "expectedWorkflows": [
+    "brand-identity",
+    "naming-system"
+  ],
+  "expectedSkills": [
+    "branding",
+    "logo-design",
+    "typography"
+  ],
+  "expectedTemplates": [
+    "brand-brief",
+    "naming-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

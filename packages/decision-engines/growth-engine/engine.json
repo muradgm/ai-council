@@ -1,0 +1,71 @@
+{
+  "name": "growth-engine",
+  "title": "Growth Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "marketing",
+  "decisionType": "growth strategy decision",
+  "purpose": "Evaluate acquisition loops, channels, experiments, retention levers, and growth bottlenecks.",
+  "ownerAgents": [
+    "growth-marketer",
+    "seo-specialist",
+    "product-manager",
+    "copywriter"
+  ],
+  "skills": [
+    "seo",
+    "analytics",
+    "copywriting",
+    "sales",
+    "product-management"
+  ],
+  "tags": [
+    "growth",
+    "marketing",
+    "acquisition",
+    "retention"
+  ],
+  "keywords": [
+    "growth",
+    "marketing",
+    "acquisition",
+    "retention",
+    "funnel",
+    "channel",
+    "campaign"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "channel fit",
+    "experiment clarity",
+    "measurement quality",
+    "cost efficiency",
+    "retention leverage",
+    "speed of learning",
+    "compounding potential"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

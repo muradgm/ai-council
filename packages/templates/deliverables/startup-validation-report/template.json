@@ -1,0 +1,33 @@
+{
+  "name": "startup-validation-report",
+  "title": "Startup Validation Report",
+  "category": "business",
+  "entrypoint": "packages/templates/deliverables/startup-validation-report/TEMPLATE.md",
+  "skills": [
+    "startup-validation",
+    "entrepreneurship",
+    "business-model"
+  ],
+  "agents": [
+    "startup-advisor",
+    "entrepreneur",
+    "venture-builder"
+  ],
+  "decisionEngines": [
+    "startup-evaluation-engine",
+    "business-model-engine"
+  ],
+  "workflows": [
+    "startup-validation",
+    "business-model-design"
+  ],
+  "keywords": [
+    "startup",
+    "validation",
+    "idea",
+    "venture"
+  ],
+  "outputs": [
+    "Startup Validation Report document"
+  ]
+}

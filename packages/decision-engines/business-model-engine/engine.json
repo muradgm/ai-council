@@ -1,0 +1,70 @@
+{
+  "name": "business-model-engine",
+  "title": "Business Model Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "business",
+  "decisionType": "business model decision",
+  "purpose": "Evaluate monetization models, revenue mechanics, pricing logic, margins, and operating constraints.",
+  "ownerAgents": [
+    "cfo",
+    "entrepreneur",
+    "startup-advisor",
+    "sales-strategist",
+    "ceo"
+  ],
+  "skills": [
+    "business-model",
+    "finance",
+    "entrepreneurship",
+    "sales"
+  ],
+  "tags": [
+    "business-model",
+    "revenue",
+    "pricing",
+    "monetization"
+  ],
+  "keywords": [
+    "business model",
+    "revenue",
+    "pricing",
+    "subscription",
+    "unit economics",
+    "monetization"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "customer willingness to pay",
+    "margin structure",
+    "repeatability",
+    "sales complexity",
+    "cash flow timing",
+    "scalability",
+    "risk concentration"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

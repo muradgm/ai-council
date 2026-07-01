@@ -1,0 +1,232 @@
+{
+  "name": "governance",
+  "version": "0.15.0",
+  "phase": 15,
+  "description": "Security, permissions, approval gates, prompt-injection defenses, trading/finance governance, and audit rules for AI Council.",
+  "capabilities": [
+    {
+      "id": "permission-check",
+      "title": "Permission Check",
+      "category": "permissions",
+      "riskLevel": "medium",
+      "approvalRequired": false,
+      "keywords": [
+        "permission",
+        "allowed",
+        "denied",
+        "role",
+        "access",
+        "action"
+      ],
+      "summary": "Classify whether a requested Council action is allowed, restricted, approval-gated, or disallowed."
+    },
+    {
+      "id": "approval-gate",
+      "title": "Approval Gate",
+      "category": "approvals",
+      "riskLevel": "high",
+      "approvalRequired": true,
+      "keywords": [
+        "approval",
+        "confirm",
+        "dangerous",
+        "high risk",
+        "execute",
+        "send",
+        "delete"
+      ],
+      "summary": "Create a structured approval request before high-impact actions are executed."
+    },
+    {
+      "id": "secrets-scan",
+      "title": "Secrets Scan",
+      "category": "security",
+      "riskLevel": "high",
+      "approvalRequired": false,
+      "keywords": [
+        "secret",
+        "api key",
+        "token",
+        "password",
+        "env",
+        "credential"
+      ],
+      "summary": "Scan local text files for common secret patterns and produce a local report."
+    },
+    {
+      "id": "prompt-injection-check",
+      "title": "Prompt Injection Check",
+      "category": "security",
+      "riskLevel": "high",
+      "approvalRequired": false,
+      "keywords": [
+        "prompt injection",
+        "ignore instructions",
+        "system prompt",
+        "tool misuse",
+        "untrusted text"
+      ],
+      "summary": "Review user-provided or document-provided instructions for prompt-injection patterns."
+    },
+    {
+      "id": "trading-finance-governance",
+      "title": "Trading + Finance Governance",
+      "category": "finance-trading",
+      "riskLevel": "high",
+      "approvalRequired": true,
+      "keywords": [
+        "forex",
+        "trading",
+        "investment",
+        "risk",
+        "leverage",
+        "signals",
+        "financial advice"
+      ],
+      "summary": "Apply finance/trading boundaries: education only, no guarantees, risk-first, no personalized financial advice."
+    },
+    {
+      "id": "data-classification",
+      "title": "Data Classification",
+      "category": "privacy",
+      "riskLevel": "medium",
+      "approvalRequired": false,
+      "keywords": [
+        "privacy",
+        "pii",
+        "personal data",
+        "sensitive",
+        "confidential",
+        "data"
+      ],
+      "summary": "Classify data sensitivity and decide local/cloud handling constraints."
+    },
+    {
+      "id": "tool-action-guard",
+      "title": "Tool Action Guard",
+      "category": "tools",
+      "riskLevel": "high",
+      "approvalRequired": true,
+      "keywords": [
+        "tool",
+        "shell",
+        "file",
+        "git",
+        "email",
+        "browser",
+        "delete",
+        "send"
+      ],
+      "summary": "Gate tool execution by impact, reversibility, data sensitivity, and user approval."
+    },
+    {
+      "id": "provider-governance",
+      "title": "Provider Governance",
+      "category": "providers",
+      "riskLevel": "medium",
+      "approvalRequired": false,
+      "keywords": [
+        "provider",
+        "openai",
+        "claude",
+        "gemini",
+        "ollama",
+        "cloud",
+        "local"
+      ],
+      "summary": "Select model/provider tiers while respecting privacy, cost, and task criticality."
+    },
+    {
+      "id": "audit-record",
+      "title": "Audit Record",
+      "category": "audit",
+      "riskLevel": "medium",
+      "approvalRequired": false,
+      "keywords": [
+        "audit",
+        "record",
+        "trace",
+        "log",
+        "decision",
+        "governance"
+      ],
+      "summary": "Write local governance audit records for decisions, approvals, refusals, and escalations."
+    },
+    {
+      "id": "release-governance",
+      "title": "Release Governance",
+      "category": "release",
+      "riskLevel": "high",
+      "approvalRequired": true,
+      "keywords": [
+        "release",
+        "deploy",
+        "production",
+        "publish",
+        "merge",
+        "ship"
+      ],
+      "summary": "Run release-level safety checks before deployment, publishing, or production changes."
+    },
+    {
+      "id": "incident-escalation",
+      "title": "Incident Escalation",
+      "category": "incident",
+      "riskLevel": "critical",
+      "approvalRequired": true,
+      "keywords": [
+        "incident",
+        "breach",
+        "leak",
+        "compromise",
+        "abuse",
+        "critical"
+      ],
+      "summary": "Escalate serious security, privacy, finance, or destructive-action incidents."
+    },
+    {
+      "id": "human-review-gate",
+      "title": "Human Review Gate",
+      "category": "human-review",
+      "riskLevel": "high",
+      "approvalRequired": true,
+      "keywords": [
+        "human review",
+        "approval",
+        "review",
+        "confirm",
+        "manual",
+        "gate"
+      ],
+      "summary": "Force human review for irreversible, external, regulated, or materially risky actions."
+    }
+  ],
+  "policies": [
+    "permission-model",
+    "approval-gates",
+    "risky-actions-policy",
+    "secrets-policy",
+    "prompt-injection-defense",
+    "data-classification-policy",
+    "tool-permissions-policy",
+    "provider-governance-policy",
+    "trading-finance-governance",
+    "human-approval-policy",
+    "audit-log-policy",
+    "governance-escalation-policy"
+  ],
+  "commands": [
+    "governance:init",
+    "governance:status",
+    "permissions:check",
+    "approvals:request",
+    "approvals:list",
+    "secrets:scan",
+    "prompt-injection:check",
+    "finance:governance",
+    "audit:record",
+    "governance:report",
+    "governance:doctor"
+  ],
+  "storage": "storage/governance"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "architecture-review",
+  "title": "Architecture Review Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "engineering",
+  "description": "Review a system architecture against scale, maintainability, data, security, and operational constraints.",
+  "triggers": [
+    "architecture review",
+    "system design",
+    "monorepo",
+    "tech stack",
+    "architecture"
+  ],
+  "agents": [
+    "principal-software-architect",
+    "cto",
+    "senior-backend-engineer",
+    "devops-engineer"
+  ],
+  "skills": [
+    "software-architecture",
+    "backend",
+    "database",
+    "devops",
+    "security"
+  ],
+  "decisionEngines": [
+    "architecture-engine",
+    "database-engine",
+    "security-review-engine",
+    "cloud-infrastructure-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Architecture memo",
+    "Tradeoff analysis",
+    "Risk register",
+    "Recommended changes"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

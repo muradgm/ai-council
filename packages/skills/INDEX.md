@@ -1,0 +1,74 @@
+# AI Council Skills Index
+
+Total skills: **70**
+
+- [`accessibility`](./accessibility/SKILL.md) — Accessibility
+- [`accounting`](./accounting/SKILL.md) — Accounting
+- [`agent-design`](./agent-design/SKILL.md) — Agent Design
+- [`ai-engineering`](./ai-engineering/SKILL.md) — AI Engineering
+- [`analytics`](./analytics/SKILL.md) — Analytics
+- [`api-design`](./api-design/SKILL.md) — API Design
+- [`backend`](./backend/SKILL.md) — Backend Engineering
+- [`branding`](./branding/SKILL.md) — Branding
+- [`business-model`](./business-model/SKILL.md) — Business Model
+- [`cloud`](./cloud/SKILL.md) — Cloud Architecture
+- [`code-review`](./code-review/SKILL.md) — Code Review
+- [`color-systems`](./color-systems/SKILL.md) — Color Systems
+- [`communication`](./communication/SKILL.md) — Communication
+- [`copywriting`](./copywriting/SKILL.md) — Copywriting
+- [`core-reasoning`](./core-reasoning/SKILL.md) — Core Reasoning
+- [`data-engineering`](./data-engineering/SKILL.md) — Data Engineering
+- [`database`](./database/SKILL.md) — Database Design
+- [`design-systems`](./design-systems/SKILL.md) — Design Systems
+- [`devops`](./devops/SKILL.md) — DevOps
+- [`docker`](./docker/SKILL.md) — Docker
+- [`documentation`](./documentation/SKILL.md) — Documentation
+- [`economics`](./economics/SKILL.md) — Economics
+- [`entrepreneurship`](./entrepreneurship/SKILL.md) — Entrepreneurship
+- [`evals`](./evals/SKILL.md) — AI Evaluations
+- [`finance`](./finance/SKILL.md) — Finance
+- [`forex-trading`](./forex-trading/SKILL.md) — Forex Trading
+- [`frontend`](./frontend/SKILL.md) — Frontend Engineering
+- [`fullstack`](./fullstack/SKILL.md) — Full-Stack Engineering
+- [`go-to-market`](./go-to-market/SKILL.md) — Go To Market
+- [`growth`](./growth/SKILL.md) — Growth
+- [`investing`](./investing/SKILL.md) — Investing
+- [`javascript`](./javascript/SKILL.md) — JavaScript
+- [`leadership`](./leadership/SKILL.md) — Leadership
+- [`legal-basics`](./legal-basics/SKILL.md) — Legal Basics
+- [`logo-design`](./logo-design/SKILL.md) — Logo Design
+- [`marketing`](./marketing/SKILL.md) — Marketing
+- [`mongodb`](./mongodb/SKILL.md) — MongoDB
+- [`motion-design`](./motion-design/SKILL.md) — Motion Design
+- [`negotiation`](./negotiation/SKILL.md) — Negotiation
+- [`nextjs`](./nextjs/SKILL.md) — Next.js
+- [`node`](./node/SKILL.md) — Node.js
+- [`operations`](./operations/SKILL.md) — Operations
+- [`performance`](./performance/SKILL.md) — Performance
+- [`postgres`](./postgres/SKILL.md) — PostgreSQL
+- [`product-management`](./product-management/SKILL.md) — product-management
+- [`product-strategy`](./product-strategy/SKILL.md) — Product Strategy
+- [`project-management`](./project-management/SKILL.md) — Project Management
+- [`prompt-engineering`](./prompt-engineering/SKILL.md) — Prompt Engineering
+- [`psychology`](./psychology/SKILL.md) — Psychology
+- [`python`](./python/SKILL.md) — Python
+- [`quantitative-analysis`](./quantitative-analysis/SKILL.md) — Quantitative Analysis
+- [`rag`](./rag/SKILL.md) — RAG
+- [`react`](./react/SKILL.md) — React
+- [`redis`](./redis/SKILL.md) — Redis
+- [`research`](./research/SKILL.md) — Research
+- [`risk-management`](./risk-management/SKILL.md) — Risk Management
+- [`sales`](./sales/SKILL.md) — Sales
+- [`security`](./security/SKILL.md) — Cybersecurity
+- [`seo`](./seo/SKILL.md) — SEO
+- [`software-architecture`](./software-architecture/SKILL.md) — Software Architecture
+- [`startup-validation`](./startup-validation/SKILL.md) — Startup Validation
+- [`technical-analysis`](./technical-analysis/SKILL.md) — Technical Analysis
+- [`testing`](./testing/SKILL.md) — Testing
+- [`trading-journal`](./trading-journal/SKILL.md) — Trading Journal
+- [`typescript`](./typescript/SKILL.md) — TypeScript
+- [`typography`](./typography/SKILL.md) — Typography
+- [`ui-design`](./ui-design/SKILL.md) — UI Design
+- [`ux-design`](./ux-design/SKILL.md) — UX Design
+- [`ux-research`](./ux-research/SKILL.md) — UX Research
+- [`ux-ui-design`](./ux-ui-design/SKILL.md) — ux-ui-design

@@ -1,0 +1,32 @@
+{
+  "name": "investment-analysis-report",
+  "title": "Investment Analysis Report",
+  "category": "finance",
+  "entrypoint": "packages/templates/deliverables/investment-analysis-report/TEMPLATE.md",
+  "skills": [
+    "investing",
+    "finance",
+    "risk-management"
+  ],
+  "agents": [
+    "financial-analyst",
+    "portfolio-manager",
+    "risk-manager"
+  ],
+  "decisionEngines": [
+    "investment-analysis-engine",
+    "trading-risk-engine"
+  ],
+  "workflows": [
+    "investment-analysis"
+  ],
+  "keywords": [
+    "investment",
+    "analysis",
+    "asset",
+    "portfolio"
+  ],
+  "outputs": [
+    "Investment Analysis Report document"
+  ]
+}

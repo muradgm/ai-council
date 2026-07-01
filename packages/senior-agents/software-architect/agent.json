@@ -1,0 +1,25 @@
+{
+  "name": "software-architect",
+  "title": "Software Architect",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "runtime-mvp-hardening",
+  "mission": "protect system boundaries, technical coherence, dependency direction, and architectural decision quality",
+  "skills": [
+    "software-architecture",
+    "full-stack-engineering",
+    "devops",
+    "cybersecurity"
+  ],
+  "keywords": [
+    "architecture",
+    "system design",
+    "boundaries",
+    "dependency direction",
+    "technical decision",
+    "platform",
+    "maintainability"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

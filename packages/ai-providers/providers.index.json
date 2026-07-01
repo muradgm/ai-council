@@ -1,0 +1,302 @@
+{
+  "version": "0.10.0",
+  "phase": "10-provider-tool-integration-layer",
+  "defaultPolicy": "local-first-with-premium-escalation",
+  "providers": [
+    {
+      "id": "ollama",
+      "name": "Ollama Local",
+      "tier": "local",
+      "category": "local",
+      "strengths": [
+        "private tasks",
+        "local coding",
+        "drafting",
+        "offline experiments"
+      ],
+      "models": [
+        "llama3.1",
+        "qwen2.5-coder",
+        "mistral"
+      ],
+      "env": [
+        "OLLAMA_BASE_URL"
+      ],
+      "risk": "low-to-medium"
+    },
+    {
+      "id": "lmstudio",
+      "name": "LM Studio",
+      "tier": "local",
+      "category": "local",
+      "strengths": [
+        "local chat",
+        "model testing",
+        "private drafts"
+      ],
+      "models": [
+        "local-openai-compatible"
+      ],
+      "env": [
+        "LMSTUDIO_BASE_URL"
+      ],
+      "risk": "low-to-medium"
+    },
+    {
+      "id": "llamacpp",
+      "name": "llama.cpp",
+      "tier": "local",
+      "category": "local",
+      "strengths": [
+        "embedded local inference",
+        "small model experiments"
+      ],
+      "models": [
+        "gguf-local"
+      ],
+      "env": [
+        "LLAMACPP_BASE_URL"
+      ],
+      "risk": "low"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "tier": "premium",
+      "category": "premium",
+      "strengths": [
+        "deep reasoning",
+        "coding",
+        "architecture",
+        "multi-step planning",
+        "high-stakes review"
+      ],
+      "models": [
+        "gpt-5.5-thinking",
+        "gpt-5.5",
+        "gpt-5.4"
+      ],
+      "env": [
+        "OPENAI_API_KEY"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic Claude",
+      "tier": "premium",
+      "category": "premium",
+      "strengths": [
+        "long-context reasoning",
+        "code review",
+        "writing",
+        "architecture"
+      ],
+      "models": [
+        "claude-opus",
+        "claude-sonnet"
+      ],
+      "env": [
+        "ANTHROPIC_API_KEY"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "gemini-pro",
+      "name": "Gemini Pro",
+      "tier": "premium",
+      "category": "premium",
+      "strengths": [
+        "long context",
+        "multimodal reasoning",
+        "research synthesis"
+      ],
+      "models": [
+        "gemini-pro",
+        "gemini-ultra"
+      ],
+      "env": [
+        "GEMINI_API_KEY"
+      ],
+      "risk": "high"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "tier": "freemium",
+      "category": "freemium",
+      "strengths": [
+        "coding",
+        "algorithmic help",
+        "cost-efficient implementation"
+      ],
+      "models": [
+        "deepseek-coder",
+        "deepseek-reasoner"
+      ],
+      "env": [
+        "DEEPSEEK_API_KEY"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "grok",
+      "name": "Grok / xAI",
+      "tier": "freemium",
+      "category": "freemium",
+      "strengths": [
+        "general reasoning",
+        "current context when available",
+        "alternative perspective"
+      ],
+      "models": [
+        "grok"
+      ],
+      "env": [
+        "XAI_API_KEY"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral",
+      "tier": "freemium",
+      "category": "freemium",
+      "strengths": [
+        "European-hosted options",
+        "fast drafting",
+        "classification"
+      ],
+      "models": [
+        "mistral-large",
+        "codestral"
+      ],
+      "env": [
+        "MISTRAL_API_KEY"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "tier": "freemium",
+      "category": "freemium",
+      "strengths": [
+        "model brokerage",
+        "fallback access",
+        "cost comparisons"
+      ],
+      "models": [
+        "openrouter-selected-model"
+      ],
+      "env": [
+        "OPENROUTER_API_KEY"
+      ],
+      "risk": "medium"
+    },
+    {
+      "id": "gemini-free",
+      "name": "Gemini Free Tier",
+      "tier": "freemium",
+      "category": "freemium",
+      "strengths": [
+        "free-tier planning",
+        "summaries",
+        "general drafts"
+      ],
+      "models": [
+        "gemini-free"
+      ],
+      "env": [
+        "GEMINI_API_KEY"
+      ],
+      "risk": "low-to-medium"
+    },
+    {
+      "id": "together",
+      "name": "Together AI",
+      "tier": "premium",
+      "category": "premium",
+      "strengths": [
+        "open-weight hosted models",
+        "batch inference",
+        "experiments"
+      ],
+      "models": [
+        "together-selected-model"
+      ],
+      "env": [
+        "TOGETHER_API_KEY"
+      ],
+      "risk": "medium"
+    }
+  ],
+  "routingRules": [
+    {
+      "when": "privacyLevel == local-only",
+      "prefer": [
+        "ollama",
+        "lmstudio",
+        "llamacpp"
+      ],
+      "forbid": [
+        "openai",
+        "anthropic",
+        "gemini-pro",
+        "deepseek",
+        "grok",
+        "mistral",
+        "openrouter",
+        "together"
+      ]
+    },
+    {
+      "when": "riskLevel in [high, critical]",
+      "prefer": [
+        "openai",
+        "anthropic",
+        "gemini-pro"
+      ],
+      "requires": [
+        "human review",
+        "source-grounded output",
+        "decision memo"
+      ]
+    },
+    {
+      "when": "taskType includes coding and costCap is low",
+      "prefer": [
+        "deepseek",
+        "ollama",
+        "openrouter"
+      ],
+      "requires": [
+        "tests",
+        "code review gate"
+      ]
+    },
+    {
+      "when": "task contains private repository secrets or credentials",
+      "prefer": [
+        "ollama"
+      ],
+      "requires": [
+        "redaction",
+        "no external upload"
+      ]
+    },
+    {
+      "when": "task contains trading or financial analysis",
+      "prefer": [
+        "openai",
+        "anthropic",
+        "gemini-pro"
+      ],
+      "requires": [
+        "risk disclaimer",
+        "no guarantees",
+        "risk engine"
+      ]
+    }
+  ]
+}

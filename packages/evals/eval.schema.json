@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Council Eval Case",
+  "type": "object",
+  "required": [
+    "id",
+    "request",
+    "expected",
+    "riskLevel"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "request": {
+      "type": "string"
+    },
+    "expected": {
+      "type": "object",
+      "properties": {
+        "agents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "engines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "workflows": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "templates": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "riskLevel": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "mustInclude": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

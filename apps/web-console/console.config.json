@@ -1,0 +1,21 @@
+{
+  "name": "AI Council Web Console",
+  "phase": 16,
+  "defaultApiBase": "http://localhost:3333",
+  "panels": [
+    "overview",
+    "chat",
+    "catalog",
+    "router",
+    "projectPacks",
+    "projects",
+    "observability",
+    "providers",
+    "evals",
+    "runtime",
+    "governance",
+    "artifacts"
+  ],
+  "privacy": "local-first; reads local repository state through the local API server",
+  "writeActions": "read-first by default; governance approvals are explicit local records before risky execution"
+}

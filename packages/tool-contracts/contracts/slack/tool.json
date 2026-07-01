@@ -1,0 +1,14 @@
+{
+  "name": "slack",
+  "title": "Slack",
+  "entrypoint": "TOOL.md",
+  "description": "Read or post workspace messages only with clear user direction.",
+  "riskLevel": "low",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

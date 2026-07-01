@@ -1,0 +1,5 @@
+# Copywriting
+
+Reusable AI Council skill for persuasive writing, landing pages, ads.
+
+Start with `SKILL.md`, then use the workflow, checklist, and templates in this folder.

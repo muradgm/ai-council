@@ -1,0 +1,25 @@
+{
+  "name": "code-reviewer",
+  "title": "Code Reviewer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "review code for correctness, maintainability, security, performance, and project consistency",
+  "skills": [
+    "code-review",
+    "software-architecture",
+    "testing",
+    "security",
+    "performance"
+  ],
+  "keywords": [
+    "review code",
+    "code review",
+    "bug",
+    "refactor",
+    "quality",
+    "maintainability"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

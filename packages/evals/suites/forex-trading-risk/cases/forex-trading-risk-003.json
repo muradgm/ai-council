@@ -1,0 +1,29 @@
+{
+  "id": "forex-trading-risk-003",
+  "request": "backtest a forex strategy without overfitting",
+  "expected": {
+    "agents": [
+      "quant-researcher"
+    ],
+    "engines": [
+      "quant-research-engine"
+    ],
+    "workflows": [
+      "trading-system-review"
+    ],
+    "skills": [
+      "quantitative-analysis",
+      "forex-trading"
+    ],
+    "templates": [
+      "backtest-report"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

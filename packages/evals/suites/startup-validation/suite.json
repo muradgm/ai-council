@@ -1,0 +1,39 @@
+{
+  "name": "startup-validation",
+  "title": "Startup Validation Eval Suite",
+  "category": "business",
+  "threshold": 0.8,
+  "keywords": [
+    "startup",
+    "validation",
+    "business model",
+    "customer"
+  ],
+  "expectedAgents": [
+    "entrepreneur",
+    "startup-advisor",
+    "venture-builder"
+  ],
+  "expectedEngines": [
+    "startup-evaluation-engine",
+    "business-model-engine"
+  ],
+  "expectedWorkflows": [
+    "startup-validation",
+    "business-model-design"
+  ],
+  "expectedSkills": [
+    "entrepreneurship",
+    "startup-validation",
+    "business-model"
+  ],
+  "expectedTemplates": [
+    "startup-validation-report",
+    "business-model-canvas"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

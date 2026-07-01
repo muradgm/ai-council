@@ -1,0 +1,33 @@
+{
+  "name": "prd",
+  "title": "PRD",
+  "category": "product",
+  "entrypoint": "packages/templates/deliverables/prd/TEMPLATE.md",
+  "skills": [
+    "product-management",
+    "product-strategy",
+    "ux-design"
+  ],
+  "agents": [
+    "product-manager",
+    "cpo",
+    "ux-designer"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine",
+    "ux-research-engine"
+  ],
+  "workflows": [
+    "product-discovery",
+    "feature-planning"
+  ],
+  "keywords": [
+    "prd",
+    "requirements",
+    "product",
+    "feature"
+  ],
+  "outputs": [
+    "PRD document"
+  ]
+}

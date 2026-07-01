@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ArtifactRecord",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "artifactPath",
+    "artifactType",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "runId": {
+      "type": "string"
+    },
+    "artifactPath": {
+      "type": "string"
+    },
+    "artifactType": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "hash": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "package-manager",
+  "title": "Package Manager",
+  "entrypoint": "TOOL.md",
+  "description": "Install and run project dependencies with lockfile awareness.",
+  "riskLevel": "medium",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

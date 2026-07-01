@@ -1,0 +1,30 @@
+{
+  "name": "trading-finance-governance",
+  "title": "Trading + Finance Governance",
+  "entrypoint": "CAPABILITY.md",
+  "category": "finance-trading",
+  "riskLevel": "high",
+  "approvalRequired": true,
+  "keywords": [
+    "forex",
+    "trading",
+    "investment",
+    "risk",
+    "leverage",
+    "signals",
+    "financial advice"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Apply finance/trading boundaries: education only, no guarantees, risk-first, no personalized financial advice."
+}

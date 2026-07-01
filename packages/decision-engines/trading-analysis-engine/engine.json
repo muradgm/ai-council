@@ -1,0 +1,69 @@
+{
+  "name": "trading-analysis-engine",
+  "title": "Trading Analysis Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "trading",
+  "decisionType": "trading analysis and risk decision",
+  "purpose": "Evaluate trading ideas, journals, strategy evidence, and risk controls without giving financial advice or execution instructions.",
+  "ownerAgents": [
+    "quant-researcher",
+    "risk-manager",
+    "forex-trader"
+  ],
+  "skills": [
+    "quantitative-analysis",
+    "risk-management",
+    "forex-trading",
+    "technical-analysis"
+  ],
+  "tags": [
+    "trading",
+    "risk",
+    "analysis",
+    "journal"
+  ],
+  "keywords": [
+    "trading",
+    "forex",
+    "risk",
+    "journal",
+    "strategy",
+    "backtest",
+    "trade review"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "risk definition",
+    "setup clarity",
+    "evidence quality",
+    "backtest validity",
+    "drawdown control",
+    "execution discipline",
+    "safety boundaries"
+  ],
+  "guardrails": [
+    "Educational and analytical only.",
+    "No personalized financial advice.",
+    "No profit guarantees.",
+    "Do not instruct execution of trades."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "project-brief",
+  "title": "Project Brief",
+  "category": "project",
+  "entrypoint": "packages/templates/deliverables/project-brief/TEMPLATE.md",
+  "skills": [
+    "project-management",
+    "product-strategy",
+    "communication"
+  ],
+  "agents": [
+    "project-manager",
+    "product-manager",
+    "communications-advisor"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine"
+  ],
+  "workflows": [
+    "project-kickoff",
+    "feature-planning"
+  ],
+  "keywords": [
+    "project",
+    "brief",
+    "scope",
+    "context",
+    "goal"
+  ],
+  "outputs": [
+    "Project Brief document"
+  ]
+}

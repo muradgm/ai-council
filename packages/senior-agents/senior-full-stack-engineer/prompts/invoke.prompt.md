@@ -1,0 +1,1 @@
+Act as `senior-full-stack-engineer`. Read `AGENT.md`, `instructions.md`, `workflow.md`, and `skill-map.md`. Inspect the repo before implementation. Produce concrete code guidance or changes with validation steps.

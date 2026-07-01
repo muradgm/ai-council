@@ -1,0 +1,54 @@
+{
+  "name": "ai-agent-build",
+  "title": "AI Agent Build Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "ai",
+  "description": "Design and implement AI agents with role boundaries, tools, memory, evals, safety limits, and handoffs.",
+  "triggers": [
+    "AI agent",
+    "agent",
+    "orchestrator",
+    "tools",
+    "memory"
+  ],
+  "agents": [
+    "chief-ai-officer",
+    "ai-engineer",
+    "principal-software-architect"
+  ],
+  "skills": [
+    "ai-engineering",
+    "agent-design",
+    "prompt-engineering",
+    "evals",
+    "rag"
+  ],
+  "decisionEngines": [
+    "ai-agent-design-engine",
+    "ai-safety-engine",
+    "llm-prompt-evaluation-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Agent spec",
+    "Tool boundaries",
+    "Memory policy",
+    "Eval plan"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

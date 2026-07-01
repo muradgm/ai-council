@@ -1,0 +1,33 @@
+{
+  "title": "Task State",
+  "type": "object",
+  "required": [
+    "project",
+    "task",
+    "status",
+    "acceptanceCriteria"
+  ],
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "todo",
+        "in-progress",
+        "blocked",
+        "review",
+        "done"
+      ]
+    },
+    "acceptanceCriteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

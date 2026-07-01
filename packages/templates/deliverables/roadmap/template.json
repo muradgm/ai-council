@@ -1,0 +1,32 @@
+{
+  "name": "roadmap",
+  "title": "Roadmap",
+  "category": "project",
+  "entrypoint": "packages/templates/deliverables/roadmap/TEMPLATE.md",
+  "skills": [
+    "project-management",
+    "product-strategy",
+    "startup-validation"
+  ],
+  "agents": [
+    "product-manager",
+    "project-manager",
+    "cpo"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine",
+    "startup-evaluation-engine"
+  ],
+  "workflows": [
+    "feature-planning",
+    "project-kickoff"
+  ],
+  "keywords": [
+    "roadmap",
+    "milestones",
+    "plan"
+  ],
+  "outputs": [
+    "Roadmap document"
+  ]
+}

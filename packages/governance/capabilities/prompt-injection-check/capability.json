@@ -1,0 +1,28 @@
+{
+  "name": "prompt-injection-check",
+  "title": "Prompt Injection Check",
+  "entrypoint": "CAPABILITY.md",
+  "category": "security",
+  "riskLevel": "high",
+  "approvalRequired": false,
+  "keywords": [
+    "prompt injection",
+    "ignore instructions",
+    "system prompt",
+    "tool misuse",
+    "untrusted text"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Review user-provided or document-provided instructions for prompt-injection patterns."
+}

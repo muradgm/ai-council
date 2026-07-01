@@ -1,0 +1,68 @@
+{
+  "name": "ai-agent-design-engine",
+  "title": "AI Agent Design Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "ai",
+  "decisionType": "AI agent architecture decision",
+  "purpose": "Evaluate agent roles, tool boundaries, memory, planning loops, safety, and orchestration design.",
+  "ownerAgents": [
+    "chief-ai-officer",
+    "ai-engineer",
+    "principal-software-architect"
+  ],
+  "skills": [
+    "ai-engineering",
+    "prompt-engineering",
+    "software-architecture"
+  ],
+  "tags": [
+    "ai-agents",
+    "orchestration",
+    "tools",
+    "memory"
+  ],
+  "keywords": [
+    "agent",
+    "orchestrator",
+    "tool",
+    "memory",
+    "llm",
+    "codex",
+    "ai workflow"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "role clarity",
+    "tool boundaries",
+    "context loading",
+    "failure handling",
+    "evaluation plan",
+    "safety limits",
+    "cost control"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

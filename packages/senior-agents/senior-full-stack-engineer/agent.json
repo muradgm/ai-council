@@ -1,0 +1,24 @@
+{
+  "name": "senior-full-stack-engineer",
+  "title": "Senior Full-Stack Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "runtime-mvp-hardening",
+  "mission": "implement reliable product workflows across frontend, backend, APIs, shared types, tests, and documentation",
+  "skills": [
+    "full-stack-engineering",
+    "software-architecture",
+    "cybersecurity"
+  ],
+  "keywords": [
+    "full stack",
+    "frontend",
+    "backend",
+    "api",
+    "typescript",
+    "implementation",
+    "tests"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

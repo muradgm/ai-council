@@ -1,0 +1,36 @@
+{
+  "commands": [
+    {
+      "name": "council help",
+      "purpose": "Show CLI help"
+    },
+    {
+      "name": "council status",
+      "purpose": "Show knowledge counts"
+    },
+    {
+      "name": "council doctor",
+      "purpose": "Run repository diagnostics"
+    },
+    {
+      "name": "council route",
+      "purpose": "Route a task to Council resources"
+    },
+    {
+      "name": "council bootstrap",
+      "purpose": "Generate Codex startup prompt"
+    },
+    {
+      "name": "council context",
+      "purpose": "Generate Codex context pack"
+    },
+    {
+      "name": "project:init",
+      "purpose": "Create a new project"
+    },
+    {
+      "name": "project:doctor",
+      "purpose": "Check project readiness"
+    }
+  ]
+}

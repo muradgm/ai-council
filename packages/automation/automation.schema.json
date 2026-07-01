@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Council Automation Capability",
+  "type": "object",
+  "required": [
+    "name",
+    "title",
+    "entrypoint",
+    "category",
+    "inputs",
+    "outputs",
+    "riskLevel",
+    "approvalRequired"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "entrypoint": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "riskLevel": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "approvalRequired": {
+      "type": "boolean"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

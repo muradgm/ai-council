@@ -1,0 +1,32 @@
+{
+  "name": "release-readiness-report",
+  "title": "Release Readiness Report",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/release-readiness-report/TEMPLATE.md",
+  "skills": [
+    "testing",
+    "devops",
+    "project-management"
+  ],
+  "agents": [
+    "project-manager",
+    "qa-engineer",
+    "devops-engineer"
+  ],
+  "decisionEngines": [
+    "release-readiness-engine",
+    "testing-strategy-engine"
+  ],
+  "workflows": [
+    "release-readiness"
+  ],
+  "keywords": [
+    "release",
+    "readiness",
+    "deploy",
+    "qa"
+  ],
+  "outputs": [
+    "Release Readiness Report document"
+  ]
+}

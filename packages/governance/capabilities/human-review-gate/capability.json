@@ -1,0 +1,29 @@
+{
+  "name": "human-review-gate",
+  "title": "Human Review Gate",
+  "entrypoint": "CAPABILITY.md",
+  "category": "human-review",
+  "riskLevel": "high",
+  "approvalRequired": true,
+  "keywords": [
+    "human review",
+    "approval",
+    "review",
+    "confirm",
+    "manual",
+    "gate"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Force human review for irreversible, external, regulated, or materially risky actions."
+}

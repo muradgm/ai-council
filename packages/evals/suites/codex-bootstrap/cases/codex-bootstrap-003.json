@@ -1,0 +1,27 @@
+{
+  "id": "codex-bootstrap-003",
+  "request": "generate a context pack for SignalScout",
+  "expected": {
+    "agents": [
+      "router"
+    ],
+    "engines": [
+      "documentation-engine"
+    ],
+    "workflows": [
+      "codex-session"
+    ],
+    "skills": [
+      "prompt-engineering"
+    ],
+    "templates": [
+      "codex-task-prompt"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

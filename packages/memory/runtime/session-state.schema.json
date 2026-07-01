@@ -1,0 +1,34 @@
+{
+  "title": "Session State",
+  "type": "object",
+  "required": [
+    "project",
+    "date",
+    "goal",
+    "completed",
+    "nextActions"
+  ],
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string"
+    },
+    "goal": {
+      "type": "string"
+    },
+    "completed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "nextActions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

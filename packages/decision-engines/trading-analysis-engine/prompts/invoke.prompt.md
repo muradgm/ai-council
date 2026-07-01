@@ -1,0 +1,1 @@
+Use `trading-analysis-engine`. Provide educational trading analysis only. Center risk, evidence quality, limitations, and journaling next steps. Do not provide personalized financial advice or instructions to place trades.

@@ -1,0 +1,24 @@
+{
+  "name": "technical-writer",
+  "title": "Technical Writer",
+  "group": "research-ops",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "create docs, READMEs, specs, tutorials, decision records, and maintainable knowledge artifacts",
+  "skills": [
+    "documentation",
+    "communication",
+    "software-architecture"
+  ],
+  "keywords": [
+    "documentation",
+    "readme",
+    "docs",
+    "guide",
+    "tutorial",
+    "spec",
+    "write docs"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

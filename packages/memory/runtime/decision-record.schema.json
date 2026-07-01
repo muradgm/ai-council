@@ -1,0 +1,35 @@
+{
+  "title": "Decision Record",
+  "type": "object",
+  "required": [
+    "project",
+    "decision",
+    "status",
+    "rationale"
+  ],
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "decision": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "proposed",
+        "accepted",
+        "rejected",
+        "superseded"
+      ]
+    },
+    "rationale": {
+      "type": "string"
+    },
+    "consequences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

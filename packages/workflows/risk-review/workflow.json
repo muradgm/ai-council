@@ -1,0 +1,56 @@
+{
+  "name": "risk-review",
+  "title": "Risk Review Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "finance",
+  "description": "Assess project, business, legal, financial, operational, and trading risks using severity and mitigation planning.",
+  "triggers": [
+    "risk",
+    "risk review",
+    "downside",
+    "exposure",
+    "mitigation"
+  ],
+  "agents": [
+    "risk-manager",
+    "cfo",
+    "legal-risk-spotter",
+    "operations-architect"
+  ],
+  "skills": [
+    "risk-management",
+    "finance",
+    "legal-basics",
+    "operations",
+    "security"
+  ],
+  "decisionEngines": [
+    "trading-risk-engine",
+    "finance-planning-engine",
+    "legal-compliance-engine",
+    "operations-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Risk register",
+    "Severity matrix",
+    "Mitigation plan",
+    "Decision recommendation"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

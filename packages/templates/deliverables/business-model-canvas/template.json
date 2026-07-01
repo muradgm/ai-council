@@ -1,0 +1,31 @@
+{
+  "name": "business-model-canvas",
+  "title": "Business Model Canvas",
+  "category": "business",
+  "entrypoint": "packages/templates/deliverables/business-model-canvas/TEMPLATE.md",
+  "skills": [
+    "business-model",
+    "entrepreneurship",
+    "finance"
+  ],
+  "agents": [
+    "business-model-strategist",
+    "entrepreneur",
+    "cfo"
+  ],
+  "decisionEngines": [
+    "business-model-engine",
+    "finance-planning-engine"
+  ],
+  "workflows": [
+    "business-model-design"
+  ],
+  "keywords": [
+    "business model",
+    "canvas",
+    "revenue"
+  ],
+  "outputs": [
+    "Business Model Canvas document"
+  ]
+}

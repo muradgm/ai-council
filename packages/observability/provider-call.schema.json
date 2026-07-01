@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProviderCallTrace",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "provider",
+    "purpose",
+    "redaction"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "runId": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "model": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "inputTokens": {
+      "type": "number"
+    },
+    "outputTokens": {
+      "type": "number"
+    },
+    "estimatedCost": {
+      "type": "number"
+    },
+    "redaction": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}

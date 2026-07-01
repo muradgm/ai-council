@@ -1,0 +1,1 @@
+export const workflow = { id: "release-readiness", description: "Release Readiness workflow scaffold", steps: ["classify-request", "select-council", "run-agents", "validate-output", "return-result"] };

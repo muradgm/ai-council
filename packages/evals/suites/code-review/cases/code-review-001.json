@@ -1,0 +1,27 @@
+{
+  "id": "code-review-001",
+  "request": "review this pull request for bugs and maintainability",
+  "expected": {
+    "agents": [
+      "code-reviewer"
+    ],
+    "engines": [
+      "code-review-engine"
+    ],
+    "workflows": [
+      "code-review"
+    ],
+    "skills": [
+      "code-review"
+    ],
+    "templates": [
+      "code-review-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

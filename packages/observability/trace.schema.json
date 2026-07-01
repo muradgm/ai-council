@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TraceEvent",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "runId",
+    "event",
+    "summary"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "runId": {
+      "type": "string"
+    },
+    "event": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "level": {
+      "type": "string"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}

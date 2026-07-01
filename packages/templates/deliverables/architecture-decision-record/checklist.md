@@ -1,0 +1,12 @@
+# Architecture Decision Record Quality Checklist
+
+Before delivery, verify:
+
+- [ ] The template selected is appropriate for the user's request.
+- [ ] Required inputs are present or assumptions are stated.
+- [ ] The selected agents are relevant: principal-software-architect, cto, technical-writer.
+- [ ] The selected skills are relevant: software-architecture, documentation, risk-management.
+- [ ] The decision engines are relevant: architecture-engine, documentation-engine.
+- [ ] The output includes risks, constraints, and open questions.
+- [ ] The output is specific enough to execute or review.
+- [ ] No unsupported claim is presented as fact.

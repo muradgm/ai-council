@@ -1,0 +1,5 @@
+# Startup Validation
+
+Reusable AI Council skill for customer discovery, MVP scope, traction signals.
+
+Start with `SKILL.md`, then use the workflow, checklist, and templates in this folder.

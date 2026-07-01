@@ -1,0 +1,32 @@
+{
+  "name": "copywriting-brief",
+  "title": "Copywriting Brief",
+  "category": "marketing",
+  "entrypoint": "packages/templates/deliverables/copywriting-brief/TEMPLATE.md",
+  "skills": [
+    "copywriting",
+    "marketing",
+    "psychology"
+  ],
+  "agents": [
+    "copywriter",
+    "brand-strategist",
+    "growth-marketer"
+  ],
+  "decisionEngines": [
+    "copywriting-engine",
+    "brand-engine"
+  ],
+  "workflows": [
+    "documentation-production"
+  ],
+  "keywords": [
+    "copy",
+    "writing",
+    "landing page",
+    "message"
+  ],
+  "outputs": [
+    "Copywriting Brief document"
+  ]
+}

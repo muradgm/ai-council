@@ -1,0 +1,28 @@
+{
+  "id": "council-routing-002",
+  "request": "choose experts for a brand identity system",
+  "expected": {
+    "agents": [
+      "senior-brand-designer",
+      "brand-strategist"
+    ],
+    "engines": [
+      "brand-engine"
+    ],
+    "workflows": [
+      "brand-identity"
+    ],
+    "skills": [
+      "branding"
+    ],
+    "templates": [
+      "brand-brief"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

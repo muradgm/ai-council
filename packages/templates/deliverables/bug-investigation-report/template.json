@@ -1,0 +1,32 @@
+{
+  "name": "bug-investigation-report",
+  "title": "Bug Investigation Report",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/bug-investigation-report/TEMPLATE.md",
+  "skills": [
+    "testing",
+    "code-review",
+    "documentation"
+  ],
+  "agents": [
+    "qa-engineer",
+    "code-reviewer",
+    "senior-fullstack-engineer"
+  ],
+  "decisionEngines": [
+    "testing-strategy-engine",
+    "code-review-engine"
+  ],
+  "workflows": [
+    "bug-investigation"
+  ],
+  "keywords": [
+    "bug",
+    "defect",
+    "investigation",
+    "root cause"
+  ],
+  "outputs": [
+    "Bug Investigation Report document"
+  ]
+}

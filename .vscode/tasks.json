@@ -1,0 +1,53 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AI Council: Doctor",
+      "type": "shell",
+      "command": "pnpm council doctor",
+      "problemMatcher": []
+    },
+    {
+      "label": "AI Council: Validate Knowledge",
+      "type": "shell",
+      "command": "pnpm validate:knowledge",
+      "problemMatcher": []
+    },
+    {
+      "label": "AI Council: Generate Repo Map",
+      "type": "shell",
+      "command": "pnpm council map",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run evals",
+      "type": "shell",
+      "command": "pnpm evals:run",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run quality gates",
+      "type": "shell",
+      "command": "pnpm gates:run",
+      "problemMatcher": []
+    },
+    {
+      "label": "dev:api",
+      "type": "shell",
+      "command": "pnpm dev:api",
+      "problemMatcher": []
+    },
+    {
+      "label": "dev:web",
+      "type": "shell",
+      "command": "pnpm dev:web",
+      "problemMatcher": []
+    },
+    {
+      "label": "console:status",
+      "type": "shell",
+      "command": "pnpm console:status",
+      "problemMatcher": []
+    }
+  ]
+}

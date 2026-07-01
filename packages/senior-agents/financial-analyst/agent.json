@@ -1,0 +1,25 @@
+{
+  "name": "financial-analyst",
+  "title": "Financial Analyst",
+  "group": "finance-trading",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "analyze numbers, forecasts, budgets, cash flow, margins, and financial decision quality",
+  "skills": [
+    "finance",
+    "accounting",
+    "analytics",
+    "business-model"
+  ],
+  "keywords": [
+    "financial analysis",
+    "cash flow",
+    "margin",
+    "budget",
+    "forecast",
+    "p&l",
+    "profit"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

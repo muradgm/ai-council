@@ -1,0 +1,24 @@
+{
+  "name": "ux-researcher",
+  "title": "UX Researcher",
+  "group": "product-design",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "plan research, interview users, map journeys, test usability, and convert findings into design decisions",
+  "skills": [
+    "ux-research",
+    "research",
+    "psychology",
+    "product-strategy"
+  ],
+  "keywords": [
+    "ux research",
+    "interview",
+    "journey",
+    "usability",
+    "persona",
+    "user testing"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

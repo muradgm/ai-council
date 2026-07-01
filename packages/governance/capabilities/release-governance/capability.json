@@ -1,0 +1,29 @@
+{
+  "name": "release-governance",
+  "title": "Release Governance",
+  "entrypoint": "CAPABILITY.md",
+  "category": "release",
+  "riskLevel": "high",
+  "approvalRequired": true,
+  "keywords": [
+    "release",
+    "deploy",
+    "production",
+    "publish",
+    "merge",
+    "ship"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Run release-level safety checks before deployment, publishing, or production changes."
+}

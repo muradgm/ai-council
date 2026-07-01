@@ -1,0 +1,14 @@
+{
+  "name": "monitoring",
+  "title": "Monitoring",
+  "entrypoint": "TOOL.md",
+  "description": "Read logs, metrics, traces, and alerts in bounded scopes.",
+  "riskLevel": "low",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

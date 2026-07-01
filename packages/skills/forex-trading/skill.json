@@ -1,0 +1,17 @@
+{
+  "name": "forex-trading",
+  "title": "Forex Trading",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for FX market structure, setups, journaling.",
+  "dependencies": [
+    "risk-management",
+    "technical-analysis"
+  ],
+  "tags": [
+    "forex",
+    "trading"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

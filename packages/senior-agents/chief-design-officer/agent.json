@@ -1,0 +1,23 @@
+{
+  "name": "chief-design-officer",
+  "title": "Chief Design Officer",
+  "group": "executive",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "shape design quality, identity coherence, UX standards, and product experience direction",
+  "skills": [
+    "branding",
+    "design-systems",
+    "ux-design",
+    "ui-design",
+    "leadership"
+  ],
+  "keywords": [
+    "design direction",
+    "brand experience",
+    "design standards",
+    "visual direction"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

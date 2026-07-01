@@ -1,0 +1,3 @@
+# Bash Best Practices
+
+Scaffold.

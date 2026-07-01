@@ -1,0 +1,20 @@
+{
+  "name": "codex-task-generation",
+  "title": "Codex Task Generation",
+  "entrypoint": "CAPABILITY.md",
+  "category": "handoff",
+  "inputs": [
+    "project",
+    "task"
+  ],
+  "outputs": [
+    "codex prompt"
+  ],
+  "riskLevel": "medium",
+  "approvalRequired": false,
+  "keywords": [
+    "codex",
+    "implementation prompt",
+    "coding task"
+  ]
+}

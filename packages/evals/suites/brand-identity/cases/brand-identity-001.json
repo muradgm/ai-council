@@ -1,0 +1,28 @@
+{
+  "id": "brand-identity-001",
+  "request": "create a brand identity brief for Flowday",
+  "expected": {
+    "agents": [
+      "brand-strategist",
+      "senior-brand-designer"
+    ],
+    "engines": [
+      "brand-engine"
+    ],
+    "workflows": [
+      "brand-identity"
+    ],
+    "skills": [
+      "branding"
+    ],
+    "templates": [
+      "brand-brief"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

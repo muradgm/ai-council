@@ -1,0 +1,21 @@
+{
+  "name": "docs-update-planning",
+  "title": "Docs Update Planning",
+  "entrypoint": "CAPABILITY.md",
+  "category": "documentation",
+  "inputs": [
+    "project",
+    "change"
+  ],
+  "outputs": [
+    "docs update plan"
+  ],
+  "riskLevel": "low",
+  "approvalRequired": false,
+  "keywords": [
+    "documentation",
+    "docs",
+    "readme",
+    "project md"
+  ]
+}

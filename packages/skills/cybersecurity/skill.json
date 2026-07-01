@@ -1,0 +1,14 @@
+{
+  "name": "cybersecurity",
+  "version": "1.0.0",
+  "type": "skill",
+  "tags": [
+    "Threat modeling",
+    "Secure coding",
+    "Secrets",
+    "Auth",
+    "Abuse prevention"
+  ],
+  "entry": "SKILL.md",
+  "dependencies": []
+}

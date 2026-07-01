@@ -1,0 +1,55 @@
+{
+  "name": "investment-analysis",
+  "title": "Investment Analysis Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "finance",
+  "description": "Analyze an investment thesis with fundamentals, valuation assumptions, risks, alternatives, and evidence quality.",
+  "triggers": [
+    "investment",
+    "portfolio",
+    "stock analysis",
+    "thesis",
+    "valuation"
+  ],
+  "agents": [
+    "financial-analyst",
+    "portfolio-manager",
+    "risk-manager",
+    "macro-analyst"
+  ],
+  "skills": [
+    "investing",
+    "finance",
+    "risk-management",
+    "economics",
+    "research"
+  ],
+  "decisionEngines": [
+    "investment-analysis-engine",
+    "finance-planning-engine",
+    "market-research-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Investment memo",
+    "Risk factors",
+    "Assumption list",
+    "Information gaps"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Educational analysis only. Not financial advice."
+}

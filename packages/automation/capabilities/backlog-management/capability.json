@@ -1,0 +1,23 @@
+{
+  "name": "backlog-management",
+  "title": "Backlog Management",
+  "entrypoint": "CAPABILITY.md",
+  "category": "planning",
+  "inputs": [
+    "project",
+    "title",
+    "description"
+  ],
+  "outputs": [
+    "task record",
+    "backlog entry"
+  ],
+  "riskLevel": "low",
+  "approvalRequired": false,
+  "keywords": [
+    "backlog",
+    "todo",
+    "task",
+    "prioritize"
+  ]
+}

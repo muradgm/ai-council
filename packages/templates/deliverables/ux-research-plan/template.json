@@ -1,0 +1,33 @@
+{
+  "name": "ux-research-plan",
+  "title": "UX Research Plan",
+  "category": "design",
+  "entrypoint": "packages/templates/deliverables/ux-research-plan/TEMPLATE.md",
+  "skills": [
+    "ux-research",
+    "psychology",
+    "product-management"
+  ],
+  "agents": [
+    "ux-researcher",
+    "product-manager",
+    "research-lead"
+  ],
+  "decisionEngines": [
+    "ux-research-engine",
+    "product-strategy-engine"
+  ],
+  "workflows": [
+    "ux-research",
+    "product-discovery"
+  ],
+  "keywords": [
+    "ux research",
+    "research plan",
+    "interviews",
+    "usability"
+  ],
+  "outputs": [
+    "UX Research Plan document"
+  ]
+}

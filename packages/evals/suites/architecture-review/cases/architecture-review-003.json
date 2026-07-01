@@ -1,0 +1,28 @@
+{
+  "id": "architecture-review-003",
+  "request": "design API boundaries for the orchestrator",
+  "expected": {
+    "agents": [
+      "senior-backend-engineer"
+    ],
+    "engines": [
+      "api-design-engine"
+    ],
+    "workflows": [
+      "api-design"
+    ],
+    "skills": [
+      "api-design",
+      "backend"
+    ],
+    "templates": [
+      "api-spec"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

@@ -1,0 +1,1801 @@
+[
+  {
+    "name": "project-kickoff",
+    "title": "Project Kickoff Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "foundation",
+    "description": "Convert a vague product or repo request into a scoped, documented, executable project start.",
+    "triggers": [
+      "start a project",
+      "new app",
+      "setup repo",
+      "kickoff",
+      "plan project"
+    ],
+    "agents": [
+      "project-manager",
+      "product-manager",
+      "principal-software-architect",
+      "technical-writer"
+    ],
+    "skills": [
+      "project-management",
+      "product-management",
+      "software-architecture",
+      "documentation",
+      "core-reasoning"
+    ],
+    "decisionEngines": [
+      "product-strategy-engine",
+      "architecture-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Project brief",
+      "Initial backlog",
+      "Technical assumptions",
+      "Risks and open questions"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "feature-planning",
+    "title": "Feature Planning Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "product-engineering",
+    "description": "Turn a feature idea into requirements, acceptance criteria, technical plan, and implementation sequence.",
+    "triggers": [
+      "feature",
+      "user story",
+      "acceptance criteria",
+      "build feature",
+      "scope feature"
+    ],
+    "agents": [
+      "product-manager",
+      "principal-software-architect",
+      "senior-fullstack-engineer",
+      "qa-engineer"
+    ],
+    "skills": [
+      "product-management",
+      "software-architecture",
+      "fullstack",
+      "testing",
+      "documentation"
+    ],
+    "decisionEngines": [
+      "product-strategy-engine",
+      "architecture-engine",
+      "testing-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Feature spec",
+      "Acceptance criteria",
+      "Implementation tasks",
+      "Test plan"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "architecture-review",
+    "title": "Architecture Review Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Review a system architecture against scale, maintainability, data, security, and operational constraints.",
+    "triggers": [
+      "architecture review",
+      "system design",
+      "monorepo",
+      "tech stack",
+      "architecture"
+    ],
+    "agents": [
+      "principal-software-architect",
+      "cto",
+      "senior-backend-engineer",
+      "devops-engineer"
+    ],
+    "skills": [
+      "software-architecture",
+      "backend",
+      "database",
+      "devops",
+      "security"
+    ],
+    "decisionEngines": [
+      "architecture-engine",
+      "database-engine",
+      "security-review-engine",
+      "cloud-infrastructure-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Architecture memo",
+      "Tradeoff analysis",
+      "Risk register",
+      "Recommended changes"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "build-execution",
+    "title": "Build Execution Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Execute a planned implementation safely with repo inspection, minimal changes, validation, and documentation.",
+    "triggers": [
+      "implement",
+      "build",
+      "code this",
+      "add module",
+      "execute plan"
+    ],
+    "agents": [
+      "senior-fullstack-engineer",
+      "senior-frontend-engineer",
+      "senior-backend-engineer",
+      "qa-engineer"
+    ],
+    "skills": [
+      "fullstack",
+      "frontend",
+      "backend",
+      "testing",
+      "documentation"
+    ],
+    "decisionEngines": [
+      "code-review-engine",
+      "testing-strategy-engine",
+      "release-readiness-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Code changes",
+      "Validation log",
+      "Docs updates",
+      "Follow-up issues"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "code-review",
+    "title": "Code Review Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Review code for correctness, maintainability, architecture fit, security, tests, and developer ergonomics.",
+    "triggers": [
+      "review code",
+      "pull request",
+      "PR review",
+      "code quality",
+      "bug risk"
+    ],
+    "agents": [
+      "code-reviewer",
+      "principal-software-architect",
+      "cybersecurity-engineer",
+      "qa-engineer"
+    ],
+    "skills": [
+      "code-review",
+      "software-architecture",
+      "security",
+      "testing",
+      "performance"
+    ],
+    "decisionEngines": [
+      "code-review-engine",
+      "security-review-engine",
+      "performance-engine",
+      "testing-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Code review report",
+      "Severity-ranked findings",
+      "Suggested fixes",
+      "Test gaps"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "bug-investigation",
+    "title": "Bug Investigation Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Investigate bugs using reproduction, trace isolation, hypothesis testing, patch planning, and regression tests.",
+    "triggers": [
+      "bug",
+      "debug",
+      "error",
+      "fails",
+      "broken",
+      "investigate"
+    ],
+    "agents": [
+      "senior-fullstack-engineer",
+      "senior-backend-engineer",
+      "qa-engineer",
+      "principal-software-architect"
+    ],
+    "skills": [
+      "testing",
+      "backend",
+      "frontend",
+      "fullstack",
+      "documentation"
+    ],
+    "decisionEngines": [
+      "code-review-engine",
+      "testing-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Bug diagnosis",
+      "Reproduction steps",
+      "Patch plan",
+      "Regression test plan"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "refactor-system",
+    "title": "Refactor System Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Refactor code with clear boundaries, behavior preservation, tests, migration steps, and documentation.",
+    "triggers": [
+      "refactor",
+      "clean up",
+      "modularize",
+      "technical debt",
+      "restructure"
+    ],
+    "agents": [
+      "principal-software-architect",
+      "senior-fullstack-engineer",
+      "code-reviewer",
+      "qa-engineer"
+    ],
+    "skills": [
+      "software-architecture",
+      "code-review",
+      "testing",
+      "documentation",
+      "performance"
+    ],
+    "decisionEngines": [
+      "architecture-engine",
+      "code-review-engine",
+      "testing-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Refactor plan",
+      "Migration sequence",
+      "Safety checks",
+      "Updated docs"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "release-readiness",
+    "title": "Release Readiness Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "delivery",
+    "description": "Check whether a feature, app, or system is safe to release against quality, security, docs, and rollback criteria.",
+    "triggers": [
+      "release",
+      "deploy",
+      "launch",
+      "go live",
+      "ship"
+    ],
+    "agents": [
+      "project-manager",
+      "qa-engineer",
+      "devops-engineer",
+      "cybersecurity-engineer"
+    ],
+    "skills": [
+      "testing",
+      "devops",
+      "security",
+      "documentation",
+      "operations"
+    ],
+    "decisionEngines": [
+      "release-readiness-engine",
+      "security-review-engine",
+      "testing-strategy-engine",
+      "devops-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Release checklist",
+      "Go/no-go decision",
+      "Rollback plan",
+      "Known risks"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "security-review",
+    "title": "Security Review Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "security",
+    "description": "Review an app, API, workflow, or architecture for threat model, auth, data protection, and abuse risks.",
+    "triggers": [
+      "security",
+      "vulnerability",
+      "threat model",
+      "auth",
+      "privacy risk"
+    ],
+    "agents": [
+      "cybersecurity-engineer",
+      "principal-software-architect",
+      "legal-risk-spotter"
+    ],
+    "skills": [
+      "security",
+      "api-design",
+      "database",
+      "legal-basics"
+    ],
+    "decisionEngines": [
+      "security-review-engine",
+      "privacy-engine",
+      "legal-compliance-engine",
+      "api-design-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Threat model",
+      "Security findings",
+      "Mitigation plan",
+      "Compliance notes"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "performance-audit",
+    "title": "Performance Audit Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Audit frontend, backend, database, and infrastructure performance bottlenecks with measurable fixes.",
+    "triggers": [
+      "performance",
+      "slow",
+      "optimize",
+      "latency",
+      "speed"
+    ],
+    "agents": [
+      "senior-frontend-engineer",
+      "senior-backend-engineer",
+      "devops-engineer",
+      "data-engineer"
+    ],
+    "skills": [
+      "performance",
+      "frontend",
+      "backend",
+      "database",
+      "devops"
+    ],
+    "decisionEngines": [
+      "performance-engine",
+      "database-engine",
+      "cloud-infrastructure-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Performance diagnosis",
+      "Bottleneck map",
+      "Fix priority list",
+      "Measurement plan"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "data-model-design",
+    "title": "Data Model Design Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Design data models, entities, relationships, indexing, migrations, and storage boundaries.",
+    "triggers": [
+      "data model",
+      "schema",
+      "database design",
+      "entities",
+      "migration"
+    ],
+    "agents": [
+      "data-engineer",
+      "senior-backend-engineer",
+      "principal-software-architect",
+      "cto"
+    ],
+    "skills": [
+      "database",
+      "postgres",
+      "mongodb",
+      "data-engineering",
+      "api-design"
+    ],
+    "decisionEngines": [
+      "data-model-engine",
+      "database-engine",
+      "api-design-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Entity model",
+      "Schema proposal",
+      "Index plan",
+      "Migration risks"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "api-design",
+    "title": "API Design Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "engineering",
+    "description": "Design clear API contracts, resources, error states, auth boundaries, and versioning strategy.",
+    "triggers": [
+      "api",
+      "endpoint",
+      "contract",
+      "REST",
+      "GraphQL"
+    ],
+    "agents": [
+      "senior-backend-engineer",
+      "principal-software-architect",
+      "senior-fullstack-engineer",
+      "technical-writer"
+    ],
+    "skills": [
+      "api-design",
+      "backend",
+      "security",
+      "documentation",
+      "testing"
+    ],
+    "decisionEngines": [
+      "api-design-engine",
+      "security-review-engine",
+      "testing-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "API contract",
+      "Endpoint map",
+      "Error model",
+      "Test cases"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "ai-agent-build",
+    "title": "AI Agent Build Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "ai",
+    "description": "Design and implement AI agents with role boundaries, tools, memory, evals, safety limits, and handoffs.",
+    "triggers": [
+      "AI agent",
+      "agent",
+      "orchestrator",
+      "tools",
+      "memory"
+    ],
+    "agents": [
+      "chief-ai-officer",
+      "ai-engineer",
+      "principal-software-architect"
+    ],
+    "skills": [
+      "ai-engineering",
+      "agent-design",
+      "prompt-engineering",
+      "evals",
+      "rag"
+    ],
+    "decisionEngines": [
+      "ai-agent-design-engine",
+      "ai-safety-engine",
+      "llm-prompt-evaluation-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Agent spec",
+      "Tool boundaries",
+      "Memory policy",
+      "Eval plan"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "rag-system-build",
+    "title": "RAG System Build Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "ai",
+    "description": "Design retrieval-augmented generation systems with ingestion, chunking, indexing, retrieval, evaluation, and safety.",
+    "triggers": [
+      "RAG",
+      "retrieval",
+      "vector",
+      "knowledge base",
+      "embeddings"
+    ],
+    "agents": [
+      "data-engineer",
+      "ai-engineer",
+      "research-lead"
+    ],
+    "skills": [
+      "rag",
+      "ai-engineering",
+      "data-engineering",
+      "evals",
+      "prompt-engineering"
+    ],
+    "decisionEngines": [
+      "ai-agent-design-engine",
+      "llm-prompt-evaluation-engine",
+      "data-model-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "RAG architecture",
+      "Retrieval strategy",
+      "Evaluation suite",
+      "Failure modes"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "prompt-evaluation",
+    "title": "Prompt Evaluation Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "ai",
+    "description": "Evaluate prompts and agent instructions against accuracy, consistency, safety, format, and task success.",
+    "triggers": [
+      "prompt",
+      "instruction",
+      "evaluate prompt",
+      "system prompt",
+      "GPT instructions"
+    ],
+    "agents": [
+      "chief-ai-officer",
+      "research-lead",
+      "technical-writer"
+    ],
+    "skills": [
+      "prompt-engineering",
+      "evals",
+      "core-reasoning",
+      "documentation"
+    ],
+    "decisionEngines": [
+      "llm-prompt-evaluation-engine",
+      "ai-safety-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Prompt scorecard",
+      "Failure cases",
+      "Revised prompt",
+      "Eval checklist"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "product-discovery",
+    "title": "Product Discovery Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "product",
+    "description": "Clarify target user, problem, jobs-to-be-done, alternatives, wedge, constraints, and MVP scope.",
+    "triggers": [
+      "product idea",
+      "discovery",
+      "user problem",
+      "MVP",
+      "wedge"
+    ],
+    "agents": [
+      "product-manager",
+      "ux-researcher",
+      "market-researcher",
+      "entrepreneur"
+    ],
+    "skills": [
+      "product-strategy",
+      "product-management",
+      "ux-research",
+      "startup-validation"
+    ],
+    "decisionEngines": [
+      "product-strategy-engine",
+      "ux-research-engine",
+      "market-research-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Discovery brief",
+      "JTBD map",
+      "MVP scope",
+      "Risk assumptions"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "startup-validation",
+    "title": "Startup Validation Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "business",
+    "description": "Validate a startup idea using problem intensity, market, wedge, distribution, monetization, and execution risk.",
+    "triggers": [
+      "startup",
+      "business idea",
+      "validate idea",
+      "entrepreneur",
+      "venture"
+    ],
+    "agents": [
+      "entrepreneur",
+      "startup-advisor",
+      "venture-builder",
+      "market-researcher"
+    ],
+    "skills": [
+      "entrepreneurship",
+      "startup-validation",
+      "business-model",
+      "go-to-market"
+    ],
+    "decisionEngines": [
+      "startup-evaluation-engine",
+      "business-model-engine",
+      "market-research-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Startup evaluation",
+      "Assumption map",
+      "Validation tests",
+      "Next milestone"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "business-model-design",
+    "title": "Business Model Design Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "business",
+    "description": "Design pricing, monetization, cost structure, customer segments, channels, and sustainability of a venture.",
+    "triggers": [
+      "business model",
+      "pricing",
+      "monetization",
+      "revenue",
+      "unit economics"
+    ],
+    "agents": [
+      "business-model-strategist",
+      "cfo",
+      "entrepreneur",
+      "growth-marketer"
+    ],
+    "skills": [
+      "business-model",
+      "finance",
+      "accounting",
+      "growth",
+      "sales"
+    ],
+    "decisionEngines": [
+      "business-model-engine",
+      "finance-planning-engine",
+      "growth-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Business model canvas",
+      "Pricing options",
+      "Unit economics assumptions",
+      "Validation plan"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "market-research",
+    "title": "Market Research Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "business",
+    "description": "Research market landscape, competitors, audience, positioning, opportunities, and risks.",
+    "triggers": [
+      "market research",
+      "competitors",
+      "landscape",
+      "audience",
+      "positioning"
+    ],
+    "agents": [
+      "market-researcher",
+      "product-manager",
+      "growth-marketer",
+      "startup-advisor"
+    ],
+    "skills": [
+      "marketing",
+      "product-strategy",
+      "research",
+      "seo"
+    ],
+    "decisionEngines": [
+      "market-research-engine",
+      "product-strategy-engine",
+      "seo-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Market map",
+      "Competitor table",
+      "Positioning insights",
+      "Opportunity list"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "brand-identity",
+    "title": "Brand Identity Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "design",
+    "description": "Create a coherent brand strategy, visual direction, identity cues, voice, and deliverables brief.",
+    "triggers": [
+      "brand identity",
+      "logo",
+      "visual direction",
+      "brand system",
+      "identity"
+    ],
+    "agents": [
+      "senior-brand-designer",
+      "copywriter",
+      "chief-design-officer"
+    ],
+    "skills": [
+      "branding",
+      "logo-design",
+      "typography",
+      "color-systems",
+      "copywriting"
+    ],
+    "decisionEngines": [
+      "brand-engine",
+      "naming-engine",
+      "copywriting-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Brand brief",
+      "Visual directions",
+      "Voice guidance",
+      "Deliverables checklist"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "naming-system",
+    "title": "Naming System Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "brand",
+    "description": "Generate, filter, score, and select names using strategic fit, memorability, linguistic risk, and positioning.",
+    "triggers": [
+      "name",
+      "naming",
+      "brand name",
+      "product name",
+      "company name"
+    ],
+    "agents": [
+      "copywriter",
+      "market-researcher",
+      "entrepreneur"
+    ],
+    "skills": [
+      "branding",
+      "copywriting",
+      "marketing",
+      "psychology",
+      "research"
+    ],
+    "decisionEngines": [
+      "naming-engine",
+      "brand-engine",
+      "market-research-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Naming territory map",
+      "Shortlist",
+      "Scoring matrix",
+      "Final recommendation"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "ui-review",
+    "title": "UI Review Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "design",
+    "description": "Review interfaces for hierarchy, layout, spacing, visual system, accessibility, content, and user flow.",
+    "triggers": [
+      "UI review",
+      "screen review",
+      "interface",
+      "design critique",
+      "landing page"
+    ],
+    "agents": [
+      "ui-designer",
+      "ux-designer",
+      "design-systems-lead"
+    ],
+    "skills": [
+      "ui-design",
+      "ux-design",
+      "design-systems",
+      "accessibility",
+      "typography"
+    ],
+    "decisionEngines": [
+      "ui-review-engine",
+      "accessibility-engine",
+      "brand-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "UI critique",
+      "Severity-ranked fixes",
+      "Accessibility notes",
+      "Design-system recommendations"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "ux-research",
+    "title": "UX Research Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "design",
+    "description": "Plan and synthesize user research, usability testing, interview guides, personas, and opportunity mapping.",
+    "triggers": [
+      "UX research",
+      "usability",
+      "interviews",
+      "user testing",
+      "persona"
+    ],
+    "agents": [
+      "ux-researcher",
+      "product-manager",
+      "ux-designer",
+      "market-researcher"
+    ],
+    "skills": [
+      "ux-research",
+      "ux-design",
+      "product-management",
+      "research",
+      "psychology"
+    ],
+    "decisionEngines": [
+      "ux-research-engine",
+      "product-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Research plan",
+      "Interview guide",
+      "Synthesis map",
+      "Product recommendations"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "growth-experiment",
+    "title": "Growth Experiment Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "growth",
+    "description": "Design measurable growth experiments with hypotheses, audience, channel, metric, execution plan, and learning loop.",
+    "triggers": [
+      "growth",
+      "experiment",
+      "acquisition",
+      "activation",
+      "retention"
+    ],
+    "agents": [
+      "growth-marketer",
+      "product-manager",
+      "data-engineer",
+      "copywriter"
+    ],
+    "skills": [
+      "growth",
+      "analytics",
+      "marketing",
+      "copywriting",
+      "product-management"
+    ],
+    "decisionEngines": [
+      "growth-engine",
+      "copywriting-engine",
+      "product-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Experiment brief",
+      "Hypothesis",
+      "Metric plan",
+      "Learning report template"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "seo-content",
+    "title": "SEO Content Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "marketing",
+    "description": "Plan SEO content with search intent, topical map, page structure, internal links, and quality standards.",
+    "triggers": [
+      "SEO",
+      "content plan",
+      "keywords",
+      "blog",
+      "landing page copy"
+    ],
+    "agents": [
+      "seo-specialist",
+      "copywriter",
+      "growth-marketer",
+      "technical-writer"
+    ],
+    "skills": [
+      "seo",
+      "copywriting",
+      "marketing",
+      "documentation",
+      "analytics"
+    ],
+    "decisionEngines": [
+      "seo-engine",
+      "copywriting-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Keyword map",
+      "Content brief",
+      "Page outline",
+      "SEO QA checklist"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "sales-funnel",
+    "title": "Sales Funnel Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "sales",
+    "description": "Design messaging, funnel steps, objections, outreach sequence, and conversion improvements.",
+    "triggers": [
+      "sales",
+      "funnel",
+      "outreach",
+      "objection",
+      "lead generation"
+    ],
+    "agents": [
+      "sales-strategist",
+      "copywriter",
+      "growth-marketer",
+      "entrepreneur"
+    ],
+    "skills": [
+      "sales",
+      "copywriting",
+      "growth",
+      "negotiation",
+      "communication"
+    ],
+    "decisionEngines": [
+      "sales-engine",
+      "copywriting-engine",
+      "growth-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Funnel map",
+      "Offer messaging",
+      "Outreach sequence",
+      "Objection handling"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "forex-trade-review",
+    "title": "Forex Trade Review Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "trading",
+    "description": "Review a forex trade plan or journal entry for setup quality, risk, invalidation, execution, and post-trade learning.",
+    "triggers": [
+      "forex",
+      "trade review",
+      "currency pair",
+      "entry",
+      "stop loss"
+    ],
+    "agents": [
+      "forex-trader",
+      "risk-manager",
+      "quant-researcher",
+      "macro-analyst"
+    ],
+    "skills": [
+      "forex-trading",
+      "technical-analysis",
+      "risk-management",
+      "trading-journal",
+      "economics"
+    ],
+    "decisionEngines": [
+      "forex-trade-review-engine",
+      "trading-risk-engine",
+      "quant-research-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Trade review",
+      "Risk score",
+      "Execution critique",
+      "Journal notes"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Educational and analytical only. No personalized financial advice or instruction to place trades."
+  },
+  {
+    "name": "trading-system-review",
+    "title": "Trading System Review Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "trading",
+    "description": "Review a trading system for edge hypothesis, risk controls, data quality, backtest validity, and operational discipline.",
+    "triggers": [
+      "trading system",
+      "strategy",
+      "backtest",
+      "edge",
+      "signals"
+    ],
+    "agents": [
+      "quant-researcher",
+      "risk-manager",
+      "forex-trader",
+      "data-engineer"
+    ],
+    "skills": [
+      "quantitative-analysis",
+      "risk-management",
+      "technical-analysis",
+      "trading-journal",
+      "data-engineering"
+    ],
+    "decisionEngines": [
+      "quant-research-engine",
+      "trading-risk-engine",
+      "forex-trade-review-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Strategy review",
+      "Backtest critique",
+      "Risk controls",
+      "Improvement roadmap"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Research and risk-management use only. Do not present outputs as guaranteed profit systems."
+  },
+  {
+    "name": "risk-review",
+    "title": "Risk Review Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "finance",
+    "description": "Assess project, business, legal, financial, operational, and trading risks using severity and mitigation planning.",
+    "triggers": [
+      "risk",
+      "risk review",
+      "downside",
+      "exposure",
+      "mitigation"
+    ],
+    "agents": [
+      "risk-manager",
+      "cfo",
+      "legal-risk-spotter",
+      "operations-architect"
+    ],
+    "skills": [
+      "risk-management",
+      "finance",
+      "legal-basics",
+      "operations",
+      "security"
+    ],
+    "decisionEngines": [
+      "trading-risk-engine",
+      "finance-planning-engine",
+      "legal-compliance-engine",
+      "operations-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Risk register",
+      "Severity matrix",
+      "Mitigation plan",
+      "Decision recommendation"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "investment-analysis",
+    "title": "Investment Analysis Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "finance",
+    "description": "Analyze an investment thesis with fundamentals, valuation assumptions, risks, alternatives, and evidence quality.",
+    "triggers": [
+      "investment",
+      "portfolio",
+      "stock analysis",
+      "thesis",
+      "valuation"
+    ],
+    "agents": [
+      "financial-analyst",
+      "portfolio-manager",
+      "risk-manager",
+      "macro-analyst"
+    ],
+    "skills": [
+      "investing",
+      "finance",
+      "risk-management",
+      "economics",
+      "research"
+    ],
+    "decisionEngines": [
+      "investment-analysis-engine",
+      "finance-planning-engine",
+      "market-research-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Investment memo",
+      "Risk factors",
+      "Assumption list",
+      "Information gaps"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Educational analysis only. Not financial advice."
+  },
+  {
+    "name": "documentation-production",
+    "title": "Documentation Production Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "documentation",
+    "description": "Create or improve documentation with audience, structure, examples, commands, maintenance notes, and review gates.",
+    "triggers": [
+      "docs",
+      "documentation",
+      "README",
+      "guide",
+      "manual"
+    ],
+    "agents": [
+      "technical-writer",
+      "principal-software-architect",
+      "product-manager",
+      "qa-engineer"
+    ],
+    "skills": [
+      "documentation",
+      "project-management",
+      "software-architecture",
+      "testing"
+    ],
+    "decisionEngines": [
+      "documentation-engine",
+      "code-review-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Documentation outline",
+      "Updated docs",
+      "Examples",
+      "Maintenance checklist"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "learning-loop",
+    "title": "Learning Loop Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "meta",
+    "description": "Capture lessons, failures, decisions, reusable patterns, and repo updates after a completed task.",
+    "triggers": [
+      "retrospective",
+      "lessons",
+      "learning loop",
+      "postmortem",
+      "improve process"
+    ],
+    "agents": [
+      "research-lead",
+      "project-manager",
+      "technical-writer",
+      "ceo"
+    ],
+    "skills": [
+      "core-reasoning",
+      "documentation",
+      "project-management",
+      "research"
+    ],
+    "decisionEngines": [
+      "documentation-engine",
+      "product-strategy-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Retrospective",
+      "Lessons learned",
+      "Knowledge updates",
+      "Next improvements"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  },
+  {
+    "name": "codex-session",
+    "title": "Codex Session Workflow",
+    "version": "1.0.0",
+    "entrypoint": "WORKFLOW.md",
+    "category": "orchestration",
+    "description": "Start and manage a Codex session using repo-local Council knowledge, agent routing, engines, workflows, and validation.",
+    "triggers": [
+      "codex",
+      "start codex",
+      "initialize orchestrator",
+      "AI Council session",
+      "council init"
+    ],
+    "agents": [
+      "principal-software-architect",
+      "technical-writer",
+      "project-manager"
+    ],
+    "skills": [
+      "agent-design",
+      "prompt-engineering",
+      "documentation",
+      "software-architecture",
+      "project-management"
+    ],
+    "decisionEngines": [
+      "architecture-engine",
+      "documentation-engine",
+      "code-review-engine"
+    ],
+    "phases": [
+      "01-intake",
+      "02-routing",
+      "03-analysis",
+      "04-plan",
+      "05-execute",
+      "06-review"
+    ],
+    "outputs": [
+      "Session prompt",
+      "Selected workflow",
+      "Execution protocol",
+      "Validation commands"
+    ],
+    "qualityGates": [
+      "scope-is-clear",
+      "references-exist",
+      "risks-are-visible",
+      "validation-is-defined",
+      "documentation-updated"
+    ],
+    "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+  }
+]

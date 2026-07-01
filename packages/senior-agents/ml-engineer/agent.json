@@ -1,0 +1,26 @@
+{
+  "name": "ml-engineer",
+  "title": "Machine Learning Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design model pipelines, data preparation, evaluation logic, inference workflows, and ML system reliability",
+  "skills": [
+    "python",
+    "data-engineering",
+    "evals",
+    "ai-engineering",
+    "testing"
+  ],
+  "keywords": [
+    "ml",
+    "machine learning",
+    "model",
+    "training",
+    "inference",
+    "dataset",
+    "evaluation"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

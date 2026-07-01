@@ -1,0 +1,33 @@
+{
+  "name": "code-review-report",
+  "title": "Code Review Report",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/code-review-report/TEMPLATE.md",
+  "skills": [
+    "code-review",
+    "testing",
+    "security"
+  ],
+  "agents": [
+    "code-reviewer",
+    "qa-engineer",
+    "cybersecurity-engineer"
+  ],
+  "decisionEngines": [
+    "code-review-engine",
+    "security-review-engine",
+    "testing-strategy-engine"
+  ],
+  "workflows": [
+    "code-review"
+  ],
+  "keywords": [
+    "code review",
+    "review",
+    "quality",
+    "pull request"
+  ],
+  "outputs": [
+    "Code Review Report document"
+  ]
+}

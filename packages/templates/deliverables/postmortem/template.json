@@ -1,0 +1,32 @@
+{
+  "name": "postmortem",
+  "title": "Postmortem",
+  "category": "operations",
+  "entrypoint": "packages/templates/deliverables/postmortem/TEMPLATE.md",
+  "skills": [
+    "operations",
+    "documentation",
+    "leadership"
+  ],
+  "agents": [
+    "operations-architect",
+    "project-manager",
+    "cto"
+  ],
+  "decisionEngines": [
+    "operations-engine",
+    "documentation-engine"
+  ],
+  "workflows": [
+    "learning-loop"
+  ],
+  "keywords": [
+    "postmortem",
+    "incident",
+    "failure",
+    "retrospective"
+  ],
+  "outputs": [
+    "Postmortem document"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "full-stack-engineering",
+  "version": "1.0.0",
+  "type": "skill",
+  "tags": [
+    "Frontend",
+    "Backend",
+    "API",
+    "Database",
+    "Testing"
+  ],
+  "entry": "SKILL.md",
+  "dependencies": []
+}

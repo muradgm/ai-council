@@ -1,0 +1,13 @@
+{
+  "name": "@ai-council/orchestrator",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "main": "src/index.ts",
+  "scripts": {
+    "validate": "tsx src/validate.ts",
+    "init": "tsx src/index.ts init",
+    "plan": "tsx src/index.ts plan"
+  },
+  "dependencies": {}
+}

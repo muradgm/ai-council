@@ -1,0 +1,29 @@
+{
+  "name": "incident-escalation",
+  "title": "Incident Escalation",
+  "entrypoint": "CAPABILITY.md",
+  "category": "incident",
+  "riskLevel": "critical",
+  "approvalRequired": true,
+  "keywords": [
+    "incident",
+    "breach",
+    "leak",
+    "compromise",
+    "abuse",
+    "critical"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Escalate serious security, privacy, finance, or destructive-action incidents."
+}

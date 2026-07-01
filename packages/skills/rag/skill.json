@@ -1,0 +1,17 @@
+{
+  "name": "rag",
+  "title": "RAG",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for retrieval, embeddings, context engineering.",
+  "dependencies": [
+    "ai-engineering",
+    "database"
+  ],
+  "tags": [
+    "rag",
+    "retrieval"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

@@ -1,0 +1,17 @@
+# Senior Brand Designer Agent Brief
+
+## Task
+
+## Context
+
+## Selected skills
+
+## Assumptions
+
+## Recommendation
+
+## Execution plan
+
+## Risks
+
+## Handoff

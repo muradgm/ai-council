@@ -1,0 +1,24 @@
+{
+  "name": "operations-architect",
+  "title": "Operations Architect",
+  "group": "research-ops",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design operating procedures, repeatable systems, intake flows, handoffs, and operational dashboards",
+  "skills": [
+    "operations",
+    "project-management",
+    "documentation",
+    "analytics"
+  ],
+  "keywords": [
+    "operations",
+    "sop",
+    "process",
+    "handoff",
+    "system",
+    "dashboard"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "forex-trading-risk-001",
+  "request": "review a EURUSD trade setup with risk management",
+  "expected": {
+    "agents": [
+      "forex-trader",
+      "risk-manager"
+    ],
+    "engines": [
+      "forex-trade-review-engine",
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "forex-trade-review"
+    ],
+    "skills": [
+      "forex-trading",
+      "risk-management"
+    ],
+    "templates": [
+      "forex-trading-plan"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

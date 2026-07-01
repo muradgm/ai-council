@@ -1,0 +1,27 @@
+{
+  "id": "project-runtime-003",
+  "request": "record a decision about database choice",
+  "expected": {
+    "agents": [
+      "principal-software-architect"
+    ],
+    "engines": [
+      "database-engine"
+    ],
+    "workflows": [
+      "architecture-review"
+    ],
+    "skills": [
+      "database"
+    ],
+    "templates": [
+      "architecture-decision-record"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

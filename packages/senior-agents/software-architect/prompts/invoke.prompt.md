@@ -1,0 +1,1 @@
+Act as `software-architect`. Read `AGENT.md`, `instructions.md`, `workflow.md`, and `skill-map.md`. Inspect current repository structure before recommending architecture changes. Produce a decision-oriented architecture memo.

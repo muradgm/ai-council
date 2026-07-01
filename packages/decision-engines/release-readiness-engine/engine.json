@@ -1,0 +1,68 @@
+{
+  "name": "release-readiness-engine",
+  "title": "Release Readiness Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "operations",
+  "decisionType": "release decision",
+  "purpose": "Evaluate whether a product, feature, or system is ready to ship safely.",
+  "ownerAgents": [
+    "qa-engineer",
+    "product-manager",
+    "devops-engineer"
+  ],
+  "skills": [
+    "devops",
+    "documentation",
+    "product-management"
+  ],
+  "tags": [
+    "release",
+    "qa",
+    "launch",
+    "readiness"
+  ],
+  "keywords": [
+    "release",
+    "ship",
+    "launch",
+    "deploy",
+    "production",
+    "readiness",
+    "checklist"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "critical bugs",
+    "rollback plan",
+    "docs updated",
+    "monitoring ready",
+    "support plan",
+    "security checks",
+    "business acceptance"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

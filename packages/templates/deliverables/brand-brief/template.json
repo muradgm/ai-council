@@ -1,0 +1,33 @@
+{
+  "name": "brand-brief",
+  "title": "Brand Brief",
+  "category": "brand",
+  "entrypoint": "packages/templates/deliverables/brand-brief/TEMPLATE.md",
+  "skills": [
+    "branding",
+    "logo-design",
+    "copywriting"
+  ],
+  "agents": [
+    "brand-strategist",
+    "senior-brand-designer",
+    "copywriter"
+  ],
+  "decisionEngines": [
+    "brand-engine",
+    "naming-engine"
+  ],
+  "workflows": [
+    "brand-identity",
+    "naming-system"
+  ],
+  "keywords": [
+    "brand",
+    "brief",
+    "identity",
+    "logo"
+  ],
+  "outputs": [
+    "Brand Brief document"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "agent-design",
+  "title": "Agent Design",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for tool use, orchestration, planning loops.",
+  "dependencies": [
+    "ai-engineering",
+    "prompt-engineering"
+  ],
+  "tags": [
+    "agents",
+    "orchestration"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

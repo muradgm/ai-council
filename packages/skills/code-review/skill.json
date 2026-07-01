@@ -1,0 +1,17 @@
+{
+  "name": "code-review",
+  "title": "Code Review",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for review quality, maintainability, bug detection.",
+  "dependencies": [
+    "software-architecture",
+    "testing"
+  ],
+  "tags": [
+    "review",
+    "quality"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

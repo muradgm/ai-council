@@ -1,0 +1,1 @@
+export const workflow = { id: "architecture-review", description: "Architecture Review workflow scaffold", steps: ["classify-request", "select-council", "run-agents", "validate-output", "return-result"] };

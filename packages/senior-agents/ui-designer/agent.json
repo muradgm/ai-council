@@ -1,0 +1,25 @@
+{
+  "name": "ui-designer",
+  "title": "UI Designer",
+  "group": "product-design",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design polished user interfaces, layout systems, hierarchy, responsive views, and visual quality passes",
+  "skills": [
+    "ui-design",
+    "design-systems",
+    "typography",
+    "color-systems",
+    "accessibility"
+  ],
+  "keywords": [
+    "ui",
+    "interface",
+    "layout",
+    "screen",
+    "responsive",
+    "visual design"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

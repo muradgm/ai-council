@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Council Tool Contract",
+  "type": "object",
+  "required": [
+    "name",
+    "title",
+    "entrypoint",
+    "description",
+    "riskLevel",
+    "allowedByDefault",
+    "requiresApprovalFor"
+  ],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "entrypoint": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "riskLevel": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ]
+    },
+    "allowedByDefault": {
+      "type": "boolean"
+    },
+    "requiresApprovalFor": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

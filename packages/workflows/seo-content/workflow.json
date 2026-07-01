@@ -1,0 +1,54 @@
+{
+  "name": "seo-content",
+  "title": "SEO Content Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "marketing",
+  "description": "Plan SEO content with search intent, topical map, page structure, internal links, and quality standards.",
+  "triggers": [
+    "SEO",
+    "content plan",
+    "keywords",
+    "blog",
+    "landing page copy"
+  ],
+  "agents": [
+    "seo-specialist",
+    "copywriter",
+    "growth-marketer",
+    "technical-writer"
+  ],
+  "skills": [
+    "seo",
+    "copywriting",
+    "marketing",
+    "documentation",
+    "analytics"
+  ],
+  "decisionEngines": [
+    "seo-engine",
+    "copywriting-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Keyword map",
+    "Content brief",
+    "Page outline",
+    "SEO QA checklist"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

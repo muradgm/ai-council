@@ -1,0 +1,29 @@
+{
+  "id": "codex-bootstrap-001",
+  "request": "create a Codex startup prompt for TradeFrame",
+  "expected": {
+    "agents": [
+      "router",
+      "technical-writer"
+    ],
+    "engines": [
+      "documentation-engine"
+    ],
+    "workflows": [
+      "codex-session"
+    ],
+    "skills": [
+      "prompt-engineering"
+    ],
+    "templates": [
+      "codex-task-prompt"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

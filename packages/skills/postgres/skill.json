@@ -1,0 +1,16 @@
+{
+  "name": "postgres",
+  "title": "PostgreSQL",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for relational modeling, SQL, performance.",
+  "dependencies": [
+    "database"
+  ],
+  "tags": [
+    "postgres",
+    "sql"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

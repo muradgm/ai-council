@@ -1,0 +1,29 @@
+{
+  "name": "audit-record",
+  "title": "Audit Record",
+  "entrypoint": "CAPABILITY.md",
+  "category": "audit",
+  "riskLevel": "medium",
+  "approvalRequired": false,
+  "keywords": [
+    "audit",
+    "record",
+    "trace",
+    "log",
+    "decision",
+    "governance"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Write local governance audit records for decisions, approvals, refusals, and escalations."
+}

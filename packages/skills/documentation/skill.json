@@ -1,0 +1,16 @@
+{
+  "name": "documentation",
+  "title": "Documentation",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for technical docs, README, decision records.",
+  "dependencies": [
+    "communication"
+  ],
+  "tags": [
+    "docs",
+    "writing"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

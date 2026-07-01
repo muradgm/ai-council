@@ -1,0 +1,31 @@
+{
+  "name": "performance-audit-report",
+  "title": "Performance Audit Report",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/performance-audit-report/TEMPLATE.md",
+  "skills": [
+    "performance",
+    "frontend",
+    "backend"
+  ],
+  "agents": [
+    "senior-frontend-engineer",
+    "senior-backend-engineer",
+    "qa-engineer"
+  ],
+  "decisionEngines": [
+    "performance-engine"
+  ],
+  "workflows": [
+    "performance-audit"
+  ],
+  "keywords": [
+    "performance",
+    "speed",
+    "latency",
+    "audit"
+  ],
+  "outputs": [
+    "Performance Audit Report document"
+  ]
+}

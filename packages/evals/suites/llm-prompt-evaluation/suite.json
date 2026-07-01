@@ -1,0 +1,37 @@
+{
+  "name": "llm-prompt-evaluation",
+  "title": "LLM Prompt Evaluation Suite",
+  "category": "ai",
+  "threshold": 0.8,
+  "keywords": [
+    "prompt",
+    "llm",
+    "agent",
+    "evaluation"
+  ],
+  "expectedAgents": [
+    "chief-ai-officer",
+    "senior-ai-engineer"
+  ],
+  "expectedEngines": [
+    "llm-prompt-evaluation-engine",
+    "ai-agent-design-engine"
+  ],
+  "expectedWorkflows": [
+    "prompt-evaluation",
+    "ai-agent-build"
+  ],
+  "expectedSkills": [
+    "prompt-engineering",
+    "evals",
+    "agent-design"
+  ],
+  "expectedTemplates": [
+    "prompt-evaluation-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

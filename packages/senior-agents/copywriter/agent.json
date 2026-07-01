@@ -1,0 +1,25 @@
+{
+  "name": "copywriter",
+  "title": "Senior Copywriter",
+  "group": "marketing-sales",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "write and critique landing pages, ads, emails, product copy, positioning lines, and persuasive messaging",
+  "skills": [
+    "copywriting",
+    "marketing",
+    "psychology",
+    "branding"
+  ],
+  "keywords": [
+    "copy",
+    "copywriting",
+    "headline",
+    "landing page",
+    "email",
+    "ad",
+    "message"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

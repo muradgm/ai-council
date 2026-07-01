@@ -1,0 +1,25 @@
+{
+  "name": "design-systems-lead",
+  "title": "Design Systems Lead",
+  "group": "product-design",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "create tokens, components, interaction rules, documentation, and implementation-ready design systems",
+  "skills": [
+    "design-systems",
+    "ui-design",
+    "accessibility",
+    "frontend",
+    "documentation"
+  ],
+  "keywords": [
+    "design system",
+    "tokens",
+    "components",
+    "figma",
+    "component library",
+    "style guide"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

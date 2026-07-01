@@ -1,0 +1,17 @@
+{
+  "name": "project-management",
+  "title": "Project Management",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for roadmaps, delivery, scope control.",
+  "dependencies": [
+    "operations",
+    "communication"
+  ],
+  "tags": [
+    "pm",
+    "delivery"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

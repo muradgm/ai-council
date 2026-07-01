@@ -1,0 +1,26 @@
+{
+  "name": "cybersecurity-engineer",
+  "title": "Cybersecurity Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "review threats, secure coding, authentication, authorization, data protection, and defensive security controls",
+  "skills": [
+    "security",
+    "software-architecture",
+    "backend",
+    "devops",
+    "risk-management"
+  ],
+  "keywords": [
+    "security",
+    "auth",
+    "vulnerability",
+    "threat",
+    "privacy",
+    "encryption",
+    "secure"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

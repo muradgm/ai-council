@@ -1,0 +1,29 @@
+{
+  "name": "data-classification",
+  "title": "Data Classification",
+  "entrypoint": "CAPABILITY.md",
+  "category": "privacy",
+  "riskLevel": "medium",
+  "approvalRequired": false,
+  "keywords": [
+    "privacy",
+    "pii",
+    "personal data",
+    "sensitive",
+    "confidential",
+    "data"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Classify data sensitivity and decide local/cloud handling constraints."
+}

@@ -1,0 +1,25 @@
+{
+  "name": "macro-analyst",
+  "title": "Macro Analyst",
+  "group": "finance-trading",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "interpret macro drivers, rates, inflation, central banks, economic cycles, and market regime context",
+  "skills": [
+    "economics",
+    "finance",
+    "risk-management",
+    "research"
+  ],
+  "keywords": [
+    "macro",
+    "rates",
+    "inflation",
+    "central bank",
+    "fed",
+    "ecb",
+    "economy"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "typescript",
+  "title": "TypeScript",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for types, safety, maintainability.",
+  "dependencies": [
+    "frontend",
+    "backend"
+  ],
+  "tags": [
+    "typescript",
+    "code"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

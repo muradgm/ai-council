@@ -1,0 +1,68 @@
+{
+  "name": "operations-engine",
+  "title": "Operations Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "operations",
+  "decisionType": "operations decision",
+  "purpose": "Evaluate workflows, handoffs, responsibilities, bottlenecks, SOPs, and operational reliability.",
+  "ownerAgents": [
+    "coo",
+    "project-manager",
+    "technical-writer"
+  ],
+  "skills": [
+    "operations",
+    "project-management",
+    "leadership",
+    "documentation"
+  ],
+  "tags": [
+    "operations",
+    "process",
+    "sop",
+    "handoff"
+  ],
+  "keywords": [
+    "operations",
+    "process",
+    "workflow",
+    "sop",
+    "handoff",
+    "bottleneck"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "role clarity",
+    "handoff quality",
+    "failure recovery",
+    "measurement",
+    "documentation",
+    "automation opportunity",
+    "bottleneck removal"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

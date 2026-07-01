@@ -1,0 +1,17 @@
+{
+  "name": "growth",
+  "title": "Growth",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for experimentation, activation, retention, loops.",
+  "dependencies": [
+    "marketing",
+    "product-strategy"
+  ],
+  "tags": [
+    "growth",
+    "experiments"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

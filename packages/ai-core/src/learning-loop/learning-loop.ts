@@ -1,0 +1,1 @@
+export class LearningLoop { collectFeedback(feedback: string) { return { feedback, nextAction: "Store feedback, mine failures, generate evals, then propose changes for human review." }; } proposeImprovement(lesson: string) { return { lesson, requiresHumanReview: true, releaseGate: "Run regression evals before applying." }; } }

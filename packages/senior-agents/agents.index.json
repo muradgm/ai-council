@@ -1,0 +1,1035 @@
+[
+  {
+    "slug": "ceo",
+    "title": "Chief Executive Officer",
+    "group": "executive",
+    "mission": "set company direction, prioritize opportunities, resolve tradeoffs, and maintain strategic focus",
+    "skills": [
+      "entrepreneurship",
+      "product-strategy",
+      "leadership",
+      "finance",
+      "go-to-market",
+      "risk-management"
+    ],
+    "keywords": [
+      "strategy",
+      "vision",
+      "company",
+      "ceo",
+      "direction",
+      "priority",
+      "focus",
+      "business"
+    ]
+  },
+  {
+    "slug": "coo",
+    "title": "Chief Operating Officer",
+    "group": "executive",
+    "mission": "turn strategy into operating systems, SOPs, cadence, execution rhythm, and accountability loops",
+    "skills": [
+      "operations",
+      "project-management",
+      "leadership",
+      "communication",
+      "documentation"
+    ],
+    "keywords": [
+      "operations",
+      "process",
+      "sop",
+      "delivery",
+      "execution",
+      "workflow",
+      "cadence"
+    ]
+  },
+  {
+    "slug": "cfo",
+    "title": "Chief Financial Officer",
+    "group": "executive",
+    "mission": "handle financial models, budgets, forecasts, unit economics, capital allocation, and financial risk",
+    "skills": [
+      "finance",
+      "accounting",
+      "business-model",
+      "risk-management",
+      "economics"
+    ],
+    "keywords": [
+      "finance",
+      "budget",
+      "forecast",
+      "pricing",
+      "unit economics",
+      "revenue",
+      "cost",
+      "cfo"
+    ]
+  },
+  {
+    "slug": "cto",
+    "title": "Chief Technology Officer",
+    "group": "executive",
+    "mission": "make technology strategy decisions, technical standards, architecture direction, and engineering tradeoffs",
+    "skills": [
+      "software-architecture",
+      "ai-engineering",
+      "security",
+      "devops",
+      "documentation"
+    ],
+    "keywords": [
+      "cto",
+      "tech strategy",
+      "architecture",
+      "technical",
+      "platform",
+      "engineering direction"
+    ]
+  },
+  {
+    "slug": "cpo",
+    "title": "Chief Product Officer",
+    "group": "executive",
+    "mission": "define product strategy, roadmap, user value, prioritization, and product quality standards",
+    "skills": [
+      "product-strategy",
+      "product-management",
+      "ux-research",
+      "analytics",
+      "growth"
+    ],
+    "keywords": [
+      "product",
+      "roadmap",
+      "feature",
+      "scope",
+      "mvp",
+      "user value",
+      "cpo"
+    ]
+  },
+  {
+    "slug": "chief-design-officer",
+    "title": "Chief Design Officer",
+    "group": "executive",
+    "mission": "shape design quality, identity coherence, UX standards, and product experience direction",
+    "skills": [
+      "branding",
+      "design-systems",
+      "ux-design",
+      "ui-design",
+      "leadership"
+    ],
+    "keywords": [
+      "design direction",
+      "brand experience",
+      "design standards",
+      "visual direction"
+    ]
+  },
+  {
+    "slug": "chief-ai-officer",
+    "title": "Chief AI Officer",
+    "group": "executive",
+    "mission": "own AI product strategy, agent systems, model selection, evaluation, and AI safety boundaries",
+    "skills": [
+      "ai-engineering",
+      "agent-design",
+      "evals",
+      "rag",
+      "prompt-engineering",
+      "risk-management"
+    ],
+    "keywords": [
+      "ai strategy",
+      "agent",
+      "llm",
+      "rag",
+      "models",
+      "evals",
+      "ai system"
+    ]
+  },
+  {
+    "slug": "entrepreneur",
+    "title": "Entrepreneur",
+    "group": "startup",
+    "mission": "turn ideas into validated opportunities with a wedge, business model, distribution path, and concrete next actions",
+    "skills": [
+      "entrepreneurship",
+      "startup-validation",
+      "business-model",
+      "go-to-market",
+      "sales",
+      "risk-management"
+    ],
+    "keywords": [
+      "startup",
+      "business idea",
+      "entrepreneur",
+      "wedge",
+      "mvp",
+      "validate",
+      "market",
+      "customers"
+    ]
+  },
+  {
+    "slug": "startup-advisor",
+    "title": "Startup Advisor",
+    "group": "startup",
+    "mission": "pressure-test startup assumptions, traction strategy, positioning, fundraising readiness, and execution sequencing",
+    "skills": [
+      "entrepreneurship",
+      "product-strategy",
+      "business-model",
+      "go-to-market",
+      "finance"
+    ],
+    "keywords": [
+      "startup advisor",
+      "traction",
+      "fundraising",
+      "pitch",
+      "investor",
+      "market entry"
+    ]
+  },
+  {
+    "slug": "venture-builder",
+    "title": "Venture Builder",
+    "group": "startup",
+    "mission": "assemble ventures from idea to MVP to go-to-market system using structured validation and operating discipline",
+    "skills": [
+      "startup-validation",
+      "project-management",
+      "growth",
+      "sales",
+      "operations"
+    ],
+    "keywords": [
+      "venture",
+      "build company",
+      "launch",
+      "prototype",
+      "go to market"
+    ]
+  },
+  {
+    "slug": "business-model-strategist",
+    "title": "Business Model Strategist",
+    "group": "startup",
+    "mission": "design revenue models, pricing logic, customer segments, offer architecture, and unit economics",
+    "skills": [
+      "business-model",
+      "finance",
+      "marketing",
+      "sales",
+      "entrepreneurship"
+    ],
+    "keywords": [
+      "business model",
+      "pricing",
+      "monetization",
+      "offer",
+      "subscription",
+      "unit economics"
+    ]
+  },
+  {
+    "slug": "market-researcher",
+    "title": "Market Researcher",
+    "group": "startup",
+    "mission": "collect, structure, and synthesize market evidence, competitor patterns, user needs, and demand signals",
+    "skills": [
+      "research",
+      "marketing",
+      "product-strategy",
+      "analytics"
+    ],
+    "keywords": [
+      "market research",
+      "competitor",
+      "demand",
+      "industry",
+      "user research",
+      "market size"
+    ]
+  },
+  {
+    "slug": "product-manager",
+    "title": "Senior Product Manager",
+    "group": "product-design",
+    "mission": "translate goals into roadmap, requirements, acceptance criteria, metrics, and delivery plans",
+    "skills": [
+      "product-management",
+      "product-strategy",
+      "project-management",
+      "analytics",
+      "communication"
+    ],
+    "keywords": [
+      "pm",
+      "product manager",
+      "requirements",
+      "acceptance criteria",
+      "roadmap",
+      "feature spec"
+    ]
+  },
+  {
+    "slug": "ux-researcher",
+    "title": "UX Researcher",
+    "group": "product-design",
+    "mission": "plan research, interview users, map journeys, test usability, and convert findings into design decisions",
+    "skills": [
+      "ux-research",
+      "research",
+      "psychology",
+      "product-strategy"
+    ],
+    "keywords": [
+      "ux research",
+      "interview",
+      "journey",
+      "usability",
+      "persona",
+      "user testing"
+    ]
+  },
+  {
+    "slug": "ux-designer",
+    "title": "UX Designer",
+    "group": "product-design",
+    "mission": "design flows, information architecture, user journeys, wireframes, and interaction models",
+    "skills": [
+      "ux-design",
+      "ux-research",
+      "product-strategy",
+      "accessibility"
+    ],
+    "keywords": [
+      "ux",
+      "flow",
+      "wireframe",
+      "information architecture",
+      "journey",
+      "interaction"
+    ]
+  },
+  {
+    "slug": "ui-designer",
+    "title": "UI Designer",
+    "group": "product-design",
+    "mission": "design polished user interfaces, layout systems, hierarchy, responsive views, and visual quality passes",
+    "skills": [
+      "ui-design",
+      "design-systems",
+      "typography",
+      "color-systems",
+      "accessibility"
+    ],
+    "keywords": [
+      "ui",
+      "interface",
+      "layout",
+      "screen",
+      "responsive",
+      "visual design"
+    ]
+  },
+  {
+    "slug": "senior-brand-designer",
+    "title": "Senior Brand Designer",
+    "group": "product-design",
+    "mission": "build brand identity systems, visual direction, logo concepts, typography, color, and identity applications",
+    "skills": [
+      "branding",
+      "logo-design",
+      "typography",
+      "color-systems",
+      "marketing"
+    ],
+    "keywords": [
+      "brand",
+      "logo",
+      "identity",
+      "visual direction",
+      "brand system",
+      "naming"
+    ]
+  },
+  {
+    "slug": "design-systems-lead",
+    "title": "Design Systems Lead",
+    "group": "product-design",
+    "mission": "create tokens, components, interaction rules, documentation, and implementation-ready design systems",
+    "skills": [
+      "design-systems",
+      "ui-design",
+      "accessibility",
+      "frontend",
+      "documentation"
+    ],
+    "keywords": [
+      "design system",
+      "tokens",
+      "components",
+      "figma",
+      "component library",
+      "style guide"
+    ]
+  },
+  {
+    "slug": "motion-designer",
+    "title": "Motion Designer",
+    "group": "product-design",
+    "mission": "design interaction motion, transitions, product animation, brand motion, and motion guidelines",
+    "skills": [
+      "motion-design",
+      "ui-design",
+      "branding"
+    ],
+    "keywords": [
+      "motion",
+      "animation",
+      "transition",
+      "microinteraction",
+      "gsap"
+    ]
+  },
+  {
+    "slug": "principal-software-architect",
+    "title": "Principal Software Architect",
+    "group": "engineering",
+    "mission": "design system architecture, boundaries, data flow, scalability, reliability, and technical decision records",
+    "skills": [
+      "software-architecture",
+      "backend",
+      "frontend",
+      "database",
+      "security",
+      "devops",
+      "documentation"
+    ],
+    "keywords": [
+      "architecture",
+      "system design",
+      "monorepo",
+      "technical decision",
+      "adr",
+      "scalability",
+      "integration"
+    ]
+  },
+  {
+    "slug": "senior-fullstack-engineer",
+    "title": "Senior Full-Stack Engineer",
+    "group": "engineering",
+    "mission": "implement complete product features across frontend, backend, API, database, tests, and documentation",
+    "skills": [
+      "fullstack",
+      "react",
+      "node",
+      "typescript",
+      "database",
+      "testing"
+    ],
+    "keywords": [
+      "fullstack",
+      "feature",
+      "frontend and backend",
+      "api",
+      "react",
+      "node",
+      "implementation"
+    ]
+  },
+  {
+    "slug": "senior-frontend-engineer",
+    "title": "Senior Frontend Engineer",
+    "group": "engineering",
+    "mission": "build browser applications, React architecture, state management, performance, accessibility, and UI quality",
+    "skills": [
+      "frontend",
+      "react",
+      "typescript",
+      "ui-design",
+      "accessibility",
+      "performance",
+      "testing"
+    ],
+    "keywords": [
+      "frontend",
+      "react",
+      "component",
+      "ui implementation",
+      "vite",
+      "nextjs",
+      "css",
+      "tailwind"
+    ]
+  },
+  {
+    "slug": "senior-backend-engineer",
+    "title": "Senior Backend Engineer",
+    "group": "engineering",
+    "mission": "build APIs, services, workers, data flows, security controls, queues, and backend reliability",
+    "skills": [
+      "backend",
+      "node",
+      "typescript",
+      "database",
+      "api-design",
+      "redis",
+      "security"
+    ],
+    "keywords": [
+      "backend",
+      "api",
+      "server",
+      "database",
+      "worker",
+      "queue",
+      "express",
+      "service"
+    ]
+  },
+  {
+    "slug": "ai-engineer",
+    "title": "Senior AI Engineer",
+    "group": "engineering",
+    "mission": "build LLM applications, agent flows, retrieval systems, prompts, model integrations, and evaluation harnesses",
+    "skills": [
+      "ai-engineering",
+      "agent-design",
+      "prompt-engineering",
+      "rag",
+      "evals",
+      "python"
+    ],
+    "keywords": [
+      "ai engineer",
+      "llm",
+      "agent",
+      "rag",
+      "prompt",
+      "openai",
+      "claude",
+      "gemini",
+      "retrieval"
+    ]
+  },
+  {
+    "slug": "ml-engineer",
+    "title": "Machine Learning Engineer",
+    "group": "engineering",
+    "mission": "design model pipelines, data preparation, evaluation logic, inference workflows, and ML system reliability",
+    "skills": [
+      "python",
+      "data-engineering",
+      "evals",
+      "ai-engineering",
+      "testing"
+    ],
+    "keywords": [
+      "ml",
+      "machine learning",
+      "model",
+      "training",
+      "inference",
+      "dataset",
+      "evaluation"
+    ]
+  },
+  {
+    "slug": "data-engineer",
+    "title": "Data Engineer",
+    "group": "engineering",
+    "mission": "build data pipelines, schemas, transformations, warehouse models, and reliable analytics foundations",
+    "skills": [
+      "data-engineering",
+      "database",
+      "postgres",
+      "python",
+      "analytics"
+    ],
+    "keywords": [
+      "data pipeline",
+      "etl",
+      "warehouse",
+      "analytics",
+      "schema",
+      "postgres",
+      "data engineering"
+    ]
+  },
+  {
+    "slug": "devops-engineer",
+    "title": "DevOps Engineer",
+    "group": "engineering",
+    "mission": "handle deployment, CI/CD, Docker, cloud infrastructure, monitoring, secrets, and operational reliability",
+    "skills": [
+      "devops",
+      "docker",
+      "cloud",
+      "security",
+      "backend"
+    ],
+    "keywords": [
+      "devops",
+      "docker",
+      "deployment",
+      "ci",
+      "cd",
+      "cloud",
+      "monitoring",
+      "infra"
+    ]
+  },
+  {
+    "slug": "cybersecurity-engineer",
+    "title": "Cybersecurity Engineer",
+    "group": "engineering",
+    "mission": "review threats, secure coding, authentication, authorization, data protection, and defensive security controls",
+    "skills": [
+      "security",
+      "software-architecture",
+      "backend",
+      "devops",
+      "risk-management"
+    ],
+    "keywords": [
+      "security",
+      "auth",
+      "vulnerability",
+      "threat",
+      "privacy",
+      "encryption",
+      "secure"
+    ]
+  },
+  {
+    "slug": "qa-engineer",
+    "title": "QA Engineer",
+    "group": "engineering",
+    "mission": "build test strategy, automated testing, regression coverage, acceptance tests, and release confidence",
+    "skills": [
+      "testing",
+      "code-review",
+      "documentation",
+      "project-management"
+    ],
+    "keywords": [
+      "qa",
+      "test",
+      "testing",
+      "regression",
+      "bug",
+      "acceptance test",
+      "quality"
+    ]
+  },
+  {
+    "slug": "code-reviewer",
+    "title": "Code Reviewer",
+    "group": "engineering",
+    "mission": "review code for correctness, maintainability, security, performance, and project consistency",
+    "skills": [
+      "code-review",
+      "software-architecture",
+      "testing",
+      "security",
+      "performance"
+    ],
+    "keywords": [
+      "review code",
+      "code review",
+      "bug",
+      "refactor",
+      "quality",
+      "maintainability"
+    ]
+  },
+  {
+    "slug": "growth-marketer",
+    "title": "Growth Marketer",
+    "group": "marketing-sales",
+    "mission": "design acquisition loops, experiments, activation, retention, and growth measurement systems",
+    "skills": [
+      "growth",
+      "marketing",
+      "analytics",
+      "copywriting",
+      "product-strategy"
+    ],
+    "keywords": [
+      "growth",
+      "acquisition",
+      "activation",
+      "retention",
+      "experiment",
+      "funnel"
+    ]
+  },
+  {
+    "slug": "seo-specialist",
+    "title": "SEO Specialist",
+    "group": "marketing-sales",
+    "mission": "plan search strategy, content architecture, keyword intent, technical SEO, and organic growth systems",
+    "skills": [
+      "seo",
+      "marketing",
+      "copywriting",
+      "analytics"
+    ],
+    "keywords": [
+      "seo",
+      "search",
+      "keyword",
+      "content",
+      "organic",
+      "google"
+    ]
+  },
+  {
+    "slug": "copywriter",
+    "title": "Senior Copywriter",
+    "group": "marketing-sales",
+    "mission": "write and critique landing pages, ads, emails, product copy, positioning lines, and persuasive messaging",
+    "skills": [
+      "copywriting",
+      "marketing",
+      "psychology",
+      "branding"
+    ],
+    "keywords": [
+      "copy",
+      "copywriting",
+      "headline",
+      "landing page",
+      "email",
+      "ad",
+      "message"
+    ]
+  },
+  {
+    "slug": "sales-strategist",
+    "title": "Sales Strategist",
+    "group": "marketing-sales",
+    "mission": "create offers, pipelines, outreach systems, qualification, objection handling, and closing strategy",
+    "skills": [
+      "sales",
+      "negotiation",
+      "communication",
+      "marketing",
+      "business-model"
+    ],
+    "keywords": [
+      "sales",
+      "outreach",
+      "closing",
+      "pipeline",
+      "lead",
+      "objection",
+      "offer"
+    ]
+  },
+  {
+    "slug": "negotiation-coach",
+    "title": "Negotiation Coach",
+    "group": "marketing-sales",
+    "mission": "prepare negotiation strategy, offers, concessions, BATNA, scripts, and conflict framing",
+    "skills": [
+      "negotiation",
+      "communication",
+      "psychology",
+      "sales"
+    ],
+    "keywords": [
+      "negotiate",
+      "negotiation",
+      "offer",
+      "salary",
+      "deal",
+      "terms",
+      "objection"
+    ]
+  },
+  {
+    "slug": "communications-advisor",
+    "title": "Communications Advisor",
+    "group": "marketing-sales",
+    "mission": "craft clear internal and external communication, stakeholder updates, memos, and decision framing",
+    "skills": [
+      "communication",
+      "documentation",
+      "leadership",
+      "copywriting"
+    ],
+    "keywords": [
+      "message",
+      "email",
+      "memo",
+      "communication",
+      "stakeholder",
+      "update",
+      "explain"
+    ]
+  },
+  {
+    "slug": "forex-trader",
+    "title": "Forex Trader",
+    "group": "finance-trading",
+    "mission": "analyze FX scenarios, structure trading plans, journal setups, and enforce conservative risk discipline",
+    "skills": [
+      "forex-trading",
+      "technical-analysis",
+      "risk-management",
+      "trading-journal",
+      "economics"
+    ],
+    "keywords": [
+      "forex",
+      "fx",
+      "eurusd",
+      "gbpusd",
+      "trading",
+      "trade setup",
+      "pips",
+      "price action"
+    ]
+  },
+  {
+    "slug": "quant-researcher",
+    "title": "Quantitative Researcher",
+    "group": "finance-trading",
+    "mission": "turn hypotheses into measurable backtests, statistical checks, validation plans, and robustness reviews",
+    "skills": [
+      "quantitative-analysis",
+      "python",
+      "risk-management",
+      "technical-analysis",
+      "data-engineering"
+    ],
+    "keywords": [
+      "quant",
+      "backtest",
+      "strategy test",
+      "statistics",
+      "edge",
+      "historical data"
+    ]
+  },
+  {
+    "slug": "risk-manager",
+    "title": "Risk Manager",
+    "group": "finance-trading",
+    "mission": "define risk limits, position sizing, drawdown controls, scenario analysis, and capital preservation rules",
+    "skills": [
+      "risk-management",
+      "finance",
+      "forex-trading",
+      "investing"
+    ],
+    "keywords": [
+      "risk",
+      "drawdown",
+      "position size",
+      "leverage",
+      "capital",
+      "stop loss",
+      "risk reward"
+    ]
+  },
+  {
+    "slug": "portfolio-manager",
+    "title": "Portfolio Manager",
+    "group": "finance-trading",
+    "mission": "reason about portfolio construction, diversification, allocation, scenario risk, and long-term constraints",
+    "skills": [
+      "investing",
+      "finance",
+      "risk-management",
+      "economics"
+    ],
+    "keywords": [
+      "portfolio",
+      "allocation",
+      "diversification",
+      "investment",
+      "asset",
+      "rebalance"
+    ]
+  },
+  {
+    "slug": "financial-analyst",
+    "title": "Financial Analyst",
+    "group": "finance-trading",
+    "mission": "analyze numbers, forecasts, budgets, cash flow, margins, and financial decision quality",
+    "skills": [
+      "finance",
+      "accounting",
+      "analytics",
+      "business-model"
+    ],
+    "keywords": [
+      "financial analysis",
+      "cash flow",
+      "margin",
+      "budget",
+      "forecast",
+      "p&l",
+      "profit"
+    ]
+  },
+  {
+    "slug": "macro-analyst",
+    "title": "Macro Analyst",
+    "group": "finance-trading",
+    "mission": "interpret macro drivers, rates, inflation, central banks, economic cycles, and market regime context",
+    "skills": [
+      "economics",
+      "finance",
+      "risk-management",
+      "research"
+    ],
+    "keywords": [
+      "macro",
+      "rates",
+      "inflation",
+      "central bank",
+      "fed",
+      "ecb",
+      "economy"
+    ]
+  },
+  {
+    "slug": "research-lead",
+    "title": "Research Lead",
+    "group": "research-ops",
+    "mission": "define research questions, evaluate evidence quality, synthesize findings, and separate facts from assumptions",
+    "skills": [
+      "research",
+      "core-reasoning",
+      "documentation",
+      "communication"
+    ],
+    "keywords": [
+      "research",
+      "evidence",
+      "sources",
+      "analyze article",
+      "summarize findings",
+      "compare"
+    ]
+  },
+  {
+    "slug": "technical-writer",
+    "title": "Technical Writer",
+    "group": "research-ops",
+    "mission": "create docs, READMEs, specs, tutorials, decision records, and maintainable knowledge artifacts",
+    "skills": [
+      "documentation",
+      "communication",
+      "software-architecture"
+    ],
+    "keywords": [
+      "documentation",
+      "readme",
+      "docs",
+      "guide",
+      "tutorial",
+      "spec",
+      "write docs"
+    ]
+  },
+  {
+    "slug": "project-manager",
+    "title": "Project Manager",
+    "group": "research-ops",
+    "mission": "convert objectives into milestones, tasks, dependencies, timelines, risk logs, and delivery cadence",
+    "skills": [
+      "project-management",
+      "operations",
+      "communication",
+      "documentation"
+    ],
+    "keywords": [
+      "project plan",
+      "milestone",
+      "task",
+      "timeline",
+      "delivery",
+      "sprint",
+      "roadmap"
+    ]
+  },
+  {
+    "slug": "operations-architect",
+    "title": "Operations Architect",
+    "group": "research-ops",
+    "mission": "design operating procedures, repeatable systems, intake flows, handoffs, and operational dashboards",
+    "skills": [
+      "operations",
+      "project-management",
+      "documentation",
+      "analytics"
+    ],
+    "keywords": [
+      "operations",
+      "sop",
+      "process",
+      "handoff",
+      "system",
+      "dashboard"
+    ]
+  },
+  {
+    "slug": "legal-risk-spotter",
+    "title": "Legal Risk Spotter",
+    "group": "research-ops",
+    "mission": "identify non-lawyer legal risk areas, documentation needs, compliance concerns, and escalation points",
+    "skills": [
+      "legal-basics",
+      "risk-management",
+      "documentation"
+    ],
+    "keywords": [
+      "legal",
+      "contract",
+      "terms",
+      "privacy",
+      "compliance",
+      "risk"
+    ]
+  },
+  {
+    "slug": "router",
+    "title": "Router Agent",
+    "group": "orchestration",
+    "mission": "route tasks to the right Council assets with minimal context bloat",
+    "skills": [
+      "core-reasoning",
+      "agent-design",
+      "prompt-engineering",
+      "documentation"
+    ],
+    "keywords": [
+      "route",
+      "routing",
+      "orchestrator",
+      "council",
+      "agent",
+      "skill",
+      "workflow",
+      "engine",
+      "template",
+      "codex",
+      "context"
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "name": "finance-planning-engine",
+  "title": "Finance Planning Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "finance",
+  "decisionType": "financial planning decision",
+  "purpose": "Evaluate budgets, runway, costs, unit economics, funding needs, and cash-flow risk.",
+  "ownerAgents": [
+    "cfo",
+    "financial-analyst",
+    "entrepreneur",
+    "risk-manager"
+  ],
+  "skills": [
+    "finance",
+    "accounting",
+    "business-model",
+    "risk-management",
+    "entrepreneurship"
+  ],
+  "tags": [
+    "finance",
+    "budget",
+    "runway",
+    "unit-economics"
+  ],
+  "keywords": [
+    "budget",
+    "runway",
+    "cost",
+    "cash flow",
+    "financial plan",
+    "unit economics"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "revenue assumptions",
+    "cost realism",
+    "cash-flow timing",
+    "runway",
+    "sensitivity analysis",
+    "risk reserves",
+    "decision triggers"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

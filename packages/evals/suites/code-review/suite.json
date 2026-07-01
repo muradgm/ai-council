@@ -1,0 +1,35 @@
+{
+  "name": "code-review",
+  "title": "Code Review Eval Suite",
+  "category": "engineering",
+  "threshold": 0.8,
+  "keywords": [
+    "code review",
+    "bug",
+    "refactor",
+    "test"
+  ],
+  "expectedAgents": [
+    "code-reviewer",
+    "qa-engineer"
+  ],
+  "expectedEngines": [
+    "code-review-engine",
+    "testing-strategy-engine"
+  ],
+  "expectedWorkflows": [
+    "code-review"
+  ],
+  "expectedSkills": [
+    "code-review",
+    "testing"
+  ],
+  "expectedTemplates": [
+    "code-review-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

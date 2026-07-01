@@ -1,0 +1,68 @@
+{
+  "name": "devops-engine",
+  "title": "DevOps Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "engineering",
+  "decisionType": "delivery operations decision",
+  "purpose": "Evaluate CI/CD, environments, deployment flow, observability, infrastructure reliability, and rollback plans.",
+  "ownerAgents": [
+    "devops-engineer",
+    "cto",
+    "principal-software-architect"
+  ],
+  "skills": [
+    "devops",
+    "docker"
+  ],
+  "tags": [
+    "devops",
+    "cicd",
+    "deployment",
+    "ops"
+  ],
+  "keywords": [
+    "deploy",
+    "ci",
+    "cd",
+    "docker",
+    "kubernetes",
+    "pipeline",
+    "environment",
+    "rollback"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "environment parity",
+    "deployment safety",
+    "rollback clarity",
+    "observability",
+    "secret handling",
+    "cost control",
+    "automation"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

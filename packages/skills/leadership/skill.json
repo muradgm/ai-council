@@ -1,0 +1,16 @@
+{
+  "name": "leadership",
+  "title": "Leadership",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for team direction, accountability, communication.",
+  "dependencies": [
+    "core-reasoning"
+  ],
+  "tags": [
+    "leadership",
+    "management"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

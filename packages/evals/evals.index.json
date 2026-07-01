@@ -1,0 +1,433 @@
+{
+  "name": "ai-council-evals",
+  "version": "0.9.0",
+  "phase": "09",
+  "description": "Evaluation suites and quality gates for AI Council.",
+  "suites": [
+    {
+      "name": "council-routing",
+      "title": "Council Routing Eval Suite",
+      "category": "core",
+      "threshold": 0.8,
+      "keywords": [
+        "route",
+        "orchestrator",
+        "council",
+        "agent",
+        "skill"
+      ],
+      "expectedAgents": [
+        "router",
+        "project-manager"
+      ],
+      "expectedEngines": [
+        "ai-agent-design-engine"
+      ],
+      "expectedWorkflows": [
+        "codex-session"
+      ],
+      "expectedSkills": [
+        "core-reasoning",
+        "agent-design"
+      ],
+      "expectedTemplates": [
+        "council-session-report"
+      ]
+    },
+    {
+      "name": "codex-bootstrap",
+      "title": "Codex Bootstrap Eval Suite",
+      "category": "developer-experience",
+      "threshold": 0.8,
+      "keywords": [
+        "codex",
+        "bootstrap",
+        "context",
+        "startup"
+      ],
+      "expectedAgents": [
+        "router",
+        "technical-writer"
+      ],
+      "expectedEngines": [
+        "documentation-engine"
+      ],
+      "expectedWorkflows": [
+        "codex-session"
+      ],
+      "expectedSkills": [
+        "documentation",
+        "prompt-engineering"
+      ],
+      "expectedTemplates": [
+        "codex-task-prompt"
+      ]
+    },
+    {
+      "name": "project-runtime",
+      "title": "Project Runtime Eval Suite",
+      "category": "memory",
+      "threshold": 0.8,
+      "keywords": [
+        "project",
+        "memory",
+        "context",
+        "runtime"
+      ],
+      "expectedAgents": [
+        "project-manager"
+      ],
+      "expectedEngines": [
+        "documentation-engine"
+      ],
+      "expectedWorkflows": [
+        "project-kickoff"
+      ],
+      "expectedSkills": [
+        "project-management",
+        "documentation"
+      ],
+      "expectedTemplates": [
+        "project-brief"
+      ]
+    },
+    {
+      "name": "architecture-review",
+      "title": "Architecture Review Eval Suite",
+      "category": "engineering",
+      "threshold": 0.8,
+      "keywords": [
+        "architecture",
+        "system design",
+        "database",
+        "api"
+      ],
+      "expectedAgents": [
+        "principal-software-architect",
+        "cto"
+      ],
+      "expectedEngines": [
+        "architecture-engine",
+        "database-engine"
+      ],
+      "expectedWorkflows": [
+        "architecture-review"
+      ],
+      "expectedSkills": [
+        "software-architecture",
+        "database"
+      ],
+      "expectedTemplates": [
+        "architecture-decision-record",
+        "technical-design-doc"
+      ]
+    },
+    {
+      "name": "code-review",
+      "title": "Code Review Eval Suite",
+      "category": "engineering",
+      "threshold": 0.8,
+      "keywords": [
+        "code review",
+        "bug",
+        "refactor",
+        "test"
+      ],
+      "expectedAgents": [
+        "code-reviewer",
+        "qa-engineer"
+      ],
+      "expectedEngines": [
+        "code-review-engine",
+        "testing-strategy-engine"
+      ],
+      "expectedWorkflows": [
+        "code-review"
+      ],
+      "expectedSkills": [
+        "code-review",
+        "testing"
+      ],
+      "expectedTemplates": [
+        "code-review-report"
+      ]
+    },
+    {
+      "name": "security-review",
+      "title": "Security Review Eval Suite",
+      "category": "security",
+      "threshold": 0.85,
+      "keywords": [
+        "security",
+        "privacy",
+        "auth",
+        "threat model"
+      ],
+      "expectedAgents": [
+        "cybersecurity-engineer"
+      ],
+      "expectedEngines": [
+        "security-review-engine",
+        "privacy-engine"
+      ],
+      "expectedWorkflows": [
+        "security-review"
+      ],
+      "expectedSkills": [
+        "security"
+      ],
+      "expectedTemplates": [
+        "security-review-report"
+      ]
+    },
+    {
+      "name": "product-strategy",
+      "title": "Product Strategy Eval Suite",
+      "category": "product",
+      "threshold": 0.8,
+      "keywords": [
+        "prd",
+        "feature",
+        "product",
+        "roadmap"
+      ],
+      "expectedAgents": [
+        "product-manager",
+        "cpo"
+      ],
+      "expectedEngines": [
+        "product-strategy-engine"
+      ],
+      "expectedWorkflows": [
+        "product-discovery",
+        "feature-planning"
+      ],
+      "expectedSkills": [
+        "product-management",
+        "product-strategy"
+      ],
+      "expectedTemplates": [
+        "prd",
+        "feature-spec"
+      ]
+    },
+    {
+      "name": "startup-validation",
+      "title": "Startup Validation Eval Suite",
+      "category": "business",
+      "threshold": 0.8,
+      "keywords": [
+        "startup",
+        "validation",
+        "business model",
+        "customer"
+      ],
+      "expectedAgents": [
+        "entrepreneur",
+        "startup-advisor",
+        "venture-builder"
+      ],
+      "expectedEngines": [
+        "startup-evaluation-engine",
+        "business-model-engine"
+      ],
+      "expectedWorkflows": [
+        "startup-validation",
+        "business-model-design"
+      ],
+      "expectedSkills": [
+        "entrepreneurship",
+        "startup-validation",
+        "business-model"
+      ],
+      "expectedTemplates": [
+        "startup-validation-report",
+        "business-model-canvas"
+      ]
+    },
+    {
+      "name": "brand-identity",
+      "title": "Brand Identity Eval Suite",
+      "category": "design",
+      "threshold": 0.8,
+      "keywords": [
+        "brand",
+        "logo",
+        "identity",
+        "naming"
+      ],
+      "expectedAgents": [
+        "senior-brand-designer",
+        "brand-strategist"
+      ],
+      "expectedEngines": [
+        "brand-engine",
+        "naming-engine"
+      ],
+      "expectedWorkflows": [
+        "brand-identity",
+        "naming-system"
+      ],
+      "expectedSkills": [
+        "branding",
+        "logo-design",
+        "typography"
+      ],
+      "expectedTemplates": [
+        "brand-brief",
+        "naming-report"
+      ]
+    },
+    {
+      "name": "forex-trading-risk",
+      "title": "Forex Trading Risk Eval Suite",
+      "category": "trading",
+      "threshold": 0.9,
+      "keywords": [
+        "forex",
+        "trade",
+        "risk",
+        "backtest",
+        "drawdown"
+      ],
+      "expectedAgents": [
+        "forex-trader",
+        "risk-manager",
+        "quant-researcher"
+      ],
+      "expectedEngines": [
+        "forex-trade-review-engine",
+        "trading-risk-engine",
+        "quant-research-engine"
+      ],
+      "expectedWorkflows": [
+        "forex-trade-review",
+        "trading-system-review",
+        "risk-review"
+      ],
+      "expectedSkills": [
+        "forex-trading",
+        "risk-management",
+        "technical-analysis"
+      ],
+      "expectedTemplates": [
+        "forex-trading-plan",
+        "trade-journal-entry",
+        "risk-review-report"
+      ]
+    },
+    {
+      "name": "trading-journal-product",
+      "title": "Trading Journal Product Eval Suite",
+      "category": "product-trading",
+      "threshold": 0.85,
+      "keywords": [
+        "trading journal",
+        "tradeframe",
+        "analytics",
+        "risk dashboard"
+      ],
+      "expectedAgents": [
+        "product-manager",
+        "forex-trader",
+        "risk-manager"
+      ],
+      "expectedEngines": [
+        "product-strategy-engine",
+        "trading-risk-engine"
+      ],
+      "expectedWorkflows": [
+        "feature-planning",
+        "trading-system-review"
+      ],
+      "expectedSkills": [
+        "trading-journal",
+        "product-management",
+        "risk-management"
+      ],
+      "expectedTemplates": [
+        "prd",
+        "trade-journal-entry",
+        "risk-review-report"
+      ]
+    },
+    {
+      "name": "workflow-execution",
+      "title": "Workflow Execution Eval Suite",
+      "category": "workflow",
+      "threshold": 0.8,
+      "keywords": [
+        "workflow",
+        "execute",
+        "plan",
+        "review"
+      ],
+      "expectedAgents": [
+        "project-manager"
+      ],
+      "expectedEngines": [
+        "release-readiness-engine"
+      ],
+      "expectedWorkflows": [
+        "build-execution",
+        "release-readiness"
+      ],
+      "expectedSkills": [
+        "project-management",
+        "testing"
+      ],
+      "expectedTemplates": [
+        "release-readiness-report"
+      ]
+    },
+    {
+      "name": "llm-prompt-evaluation",
+      "title": "LLM Prompt Evaluation Suite",
+      "category": "ai",
+      "threshold": 0.8,
+      "keywords": [
+        "prompt",
+        "llm",
+        "agent",
+        "evaluation"
+      ],
+      "expectedAgents": [
+        "chief-ai-officer",
+        "senior-ai-engineer"
+      ],
+      "expectedEngines": [
+        "llm-prompt-evaluation-engine",
+        "ai-agent-design-engine"
+      ],
+      "expectedWorkflows": [
+        "prompt-evaluation",
+        "ai-agent-build"
+      ],
+      "expectedSkills": [
+        "prompt-engineering",
+        "evals",
+        "agent-design"
+      ],
+      "expectedTemplates": [
+        "prompt-evaluation-report"
+      ]
+    }
+  ],
+  "qualityGates": [
+    "knowledge-integrity",
+    "routing-quality",
+    "documentation-quality",
+    "trading-risk-safety",
+    "security-baseline",
+    "codex-readiness",
+    "release-readiness",
+    "manifest-integrity"
+  ],
+  "commands": [
+    "pnpm evals:list",
+    "pnpm evals:route \"<request>\"",
+    "pnpm evals:run",
+    "pnpm gates:run",
+    "pnpm evals:report"
+  ]
+}

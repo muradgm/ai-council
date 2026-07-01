@@ -1,0 +1,14 @@
+{
+  "name": "web-search",
+  "title": "Web Search",
+  "entrypoint": "TOOL.md",
+  "description": "Retrieve current external information when allowed.",
+  "riskLevel": "medium",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

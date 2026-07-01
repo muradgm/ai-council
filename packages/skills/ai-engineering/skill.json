@@ -1,0 +1,16 @@
+{
+  "name": "ai-engineering",
+  "title": "AI Engineering",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for LLM apps, agents, retrieval, evaluation.",
+  "dependencies": [
+    "software-architecture"
+  ],
+  "tags": [
+    "ai",
+    "llm"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "bug-investigation",
+  "title": "Bug Investigation Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "engineering",
+  "description": "Investigate bugs using reproduction, trace isolation, hypothesis testing, patch planning, and regression tests.",
+  "triggers": [
+    "bug",
+    "debug",
+    "error",
+    "fails",
+    "broken",
+    "investigate"
+  ],
+  "agents": [
+    "senior-fullstack-engineer",
+    "senior-backend-engineer",
+    "qa-engineer",
+    "principal-software-architect"
+  ],
+  "skills": [
+    "testing",
+    "backend",
+    "frontend",
+    "fullstack",
+    "documentation"
+  ],
+  "decisionEngines": [
+    "code-review-engine",
+    "testing-strategy-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Bug diagnosis",
+    "Reproduction steps",
+    "Patch plan",
+    "Regression test plan"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

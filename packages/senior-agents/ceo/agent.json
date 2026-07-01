@@ -1,0 +1,28 @@
+{
+  "name": "ceo",
+  "title": "Chief Executive Officer",
+  "group": "executive",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "set company direction, prioritize opportunities, resolve tradeoffs, and maintain strategic focus",
+  "skills": [
+    "entrepreneurship",
+    "product-strategy",
+    "leadership",
+    "finance",
+    "go-to-market",
+    "risk-management"
+  ],
+  "keywords": [
+    "strategy",
+    "vision",
+    "company",
+    "ceo",
+    "direction",
+    "priority",
+    "focus",
+    "business"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

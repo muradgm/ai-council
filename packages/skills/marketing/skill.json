@@ -1,0 +1,17 @@
+{
+  "name": "marketing",
+  "title": "Marketing",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for market understanding, campaigns, positioning.",
+  "dependencies": [
+    "research",
+    "psychology"
+  ],
+  "tags": [
+    "marketing",
+    "positioning"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

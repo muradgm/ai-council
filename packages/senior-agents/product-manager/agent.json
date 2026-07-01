@@ -1,0 +1,25 @@
+{
+  "name": "product-manager",
+  "title": "Senior Product Manager",
+  "group": "product-design",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "translate goals into roadmap, requirements, acceptance criteria, metrics, and delivery plans",
+  "skills": [
+    "product-management",
+    "product-strategy",
+    "project-management",
+    "analytics",
+    "communication"
+  ],
+  "keywords": [
+    "pm",
+    "product manager",
+    "requirements",
+    "acceptance criteria",
+    "roadmap",
+    "feature spec"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

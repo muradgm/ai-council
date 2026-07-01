@@ -1,0 +1,28 @@
+{
+  "id": "code-review-002",
+  "request": "investigate a hard production bug",
+  "expected": {
+    "agents": [
+      "senior-backend-engineer",
+      "qa-engineer"
+    ],
+    "engines": [
+      "code-review-engine"
+    ],
+    "workflows": [
+      "bug-investigation"
+    ],
+    "skills": [
+      "testing"
+    ],
+    "templates": [
+      "bug-investigation-report"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

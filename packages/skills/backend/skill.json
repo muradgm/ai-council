@@ -1,0 +1,16 @@
+{
+  "name": "backend",
+  "title": "Backend Engineering",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for APIs, services, data flow, reliability.",
+  "dependencies": [
+    "software-architecture"
+  ],
+  "tags": [
+    "backend",
+    "api"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

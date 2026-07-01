@@ -1,0 +1,69 @@
+{
+  "name": "architecture-engine",
+  "title": "Architecture Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "engineering",
+  "decisionType": "technical architecture decision",
+  "purpose": "Evaluate system architecture options, tradeoffs, constraints, risks, and implementation paths.",
+  "ownerAgents": [
+    "principal-software-architect",
+    "cto",
+    "devops-engineer"
+  ],
+  "skills": [
+    "software-architecture",
+    "devops"
+  ],
+  "tags": [
+    "architecture",
+    "systems",
+    "tradeoffs",
+    "scalability",
+    "technical-decision"
+  ],
+  "keywords": [
+    "architecture",
+    "system design",
+    "monorepo",
+    "database",
+    "scalability",
+    "technical stack",
+    "microservice",
+    "backend"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "fitness to problem",
+    "simplicity",
+    "scalability",
+    "maintainability",
+    "security posture",
+    "delivery risk",
+    "cost of change"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

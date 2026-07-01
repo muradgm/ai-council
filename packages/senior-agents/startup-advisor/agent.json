@@ -1,0 +1,25 @@
+{
+  "name": "startup-advisor",
+  "title": "Startup Advisor",
+  "group": "startup",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "pressure-test startup assumptions, traction strategy, positioning, fundraising readiness, and execution sequencing",
+  "skills": [
+    "entrepreneurship",
+    "product-strategy",
+    "business-model",
+    "go-to-market",
+    "finance"
+  ],
+  "keywords": [
+    "startup advisor",
+    "traction",
+    "fundraising",
+    "pitch",
+    "investor",
+    "market entry"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "cpo",
+  "title": "Chief Product Officer",
+  "group": "executive",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "define product strategy, roadmap, user value, prioritization, and product quality standards",
+  "skills": [
+    "product-strategy",
+    "product-management",
+    "ux-research",
+    "analytics",
+    "growth"
+  ],
+  "keywords": [
+    "product",
+    "roadmap",
+    "feature",
+    "scope",
+    "mvp",
+    "user value",
+    "cpo"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

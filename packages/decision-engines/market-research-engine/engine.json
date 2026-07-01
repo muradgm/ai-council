@@ -1,0 +1,68 @@
+{
+  "name": "market-research-engine",
+  "title": "Market Research Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "business",
+  "decisionType": "market research decision",
+  "purpose": "Analyze market categories, competitors, positioning gaps, customer segments, and evidence quality.",
+  "ownerAgents": [
+    "market-researcher",
+    "startup-advisor",
+    "product-manager"
+  ],
+  "skills": [
+    "seo",
+    "product-strategy",
+    "entrepreneurship"
+  ],
+  "tags": [
+    "market",
+    "competition",
+    "research",
+    "positioning"
+  ],
+  "keywords": [
+    "market",
+    "competitor",
+    "competition",
+    "research",
+    "category",
+    "positioning",
+    "trends"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "source quality",
+    "market definition",
+    "segment clarity",
+    "competitor relevance",
+    "gap realism",
+    "timing signal",
+    "uncertainty"
+  ],
+  "guardrails": [
+    "Do not overstate confidence. Use evidence, assumptions, and escalation when stakes are material.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "sales",
+  "title": "Sales",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for pipeline, qualification, objection handling.",
+  "dependencies": [
+    "communication",
+    "negotiation"
+  ],
+  "tags": [
+    "sales",
+    "revenue"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

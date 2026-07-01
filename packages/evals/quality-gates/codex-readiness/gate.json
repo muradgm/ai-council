@@ -1,0 +1,14 @@
+{
+  "name": "codex-readiness",
+  "title": "Codex Readiness Gate",
+  "summary": "Checks Codex bootstrap, context, and CLI commands.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "medium",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "seo",
+  "title": "SEO",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for search intent, content architecture, technical SEO.",
+  "dependencies": [
+    "marketing"
+  ],
+  "tags": [
+    "seo",
+    "content"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

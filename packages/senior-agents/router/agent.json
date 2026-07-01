@@ -1,0 +1,29 @@
+{
+  "name": "router",
+  "title": "Router Agent",
+  "group": "orchestration",
+  "version": "1.0.0",
+  "phase": "09-evals-quality-gates-layer",
+  "mission": "route tasks to the right Council assets with minimal context bloat",
+  "skills": [
+    "core-reasoning",
+    "agent-design",
+    "prompt-engineering",
+    "documentation"
+  ],
+  "keywords": [
+    "route",
+    "routing",
+    "orchestrator",
+    "council",
+    "agent",
+    "skill",
+    "workflow",
+    "engine",
+    "template",
+    "codex",
+    "context"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

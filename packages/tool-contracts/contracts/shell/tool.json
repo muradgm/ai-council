@@ -1,0 +1,14 @@
+{
+  "name": "shell",
+  "title": "Shell",
+  "entrypoint": "TOOL.md",
+  "description": "Run shell commands with explicit working directory and bounded scope.",
+  "riskLevel": "high",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

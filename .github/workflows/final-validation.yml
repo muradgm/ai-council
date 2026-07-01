@@ -1,0 +1,22 @@
+name: AI Council Final Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  final-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.6.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile=false
+      - run: pnpm validate:knowledge
+      - run: pnpm final:validate
+      - run: pnpm gates:run

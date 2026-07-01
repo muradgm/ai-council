@@ -1,0 +1,28 @@
+{
+  "id": "architecture-review-001",
+  "request": "review the architecture for an AI trading app",
+  "expected": {
+    "agents": [
+      "principal-software-architect"
+    ],
+    "engines": [
+      "architecture-engine"
+    ],
+    "workflows": [
+      "architecture-review"
+    ],
+    "skills": [
+      "software-architecture"
+    ],
+    "templates": [
+      "architecture-decision-record"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

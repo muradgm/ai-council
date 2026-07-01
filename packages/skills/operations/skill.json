@@ -1,0 +1,14 @@
+{
+  "name": "operations",
+  "title": "Operations",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for process design, SOPs, delivery systems.",
+  "dependencies": [],
+  "tags": [
+    "ops",
+    "sop"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

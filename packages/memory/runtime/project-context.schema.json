@@ -1,0 +1,43 @@
+{
+  "title": "Project Context",
+  "type": "object",
+  "required": [
+    "project",
+    "purpose",
+    "stage",
+    "constraints",
+    "priorities"
+  ],
+  "properties": {
+    "project": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "wedge": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "users": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "priorities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

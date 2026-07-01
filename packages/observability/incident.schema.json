@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IncidentReport",
+  "type": "object",
+  "required": [
+    "id",
+    "timestamp",
+    "severity",
+    "summary",
+    "correctiveActions"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "severity": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "rootCause": {
+      "type": "string"
+    },
+    "correctiveActions": {
+      "type": "array"
+    },
+    "followUpChecks": {
+      "type": "array"
+    }
+  }
+}

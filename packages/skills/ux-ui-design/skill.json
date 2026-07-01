@@ -1,0 +1,13 @@
+{
+  "name": "ux-ui-design",
+  "version": "1.0.0",
+  "category": "design",
+  "owner": "senior-designer",
+  "dependencies": [],
+  "tags": [
+    "ux",
+    "ui",
+    "design",
+    "accessibility"
+  ]
+}

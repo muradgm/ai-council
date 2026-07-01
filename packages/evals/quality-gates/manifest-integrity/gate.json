@@ -1,0 +1,14 @@
+{
+  "name": "manifest-integrity",
+  "title": "Manifest Integrity Gate",
+  "summary": "Checks JSON manifests parse and reference existing assets.",
+  "entrypoint": "GATE.md",
+  "checklist": "checklist.md",
+  "severity": "medium",
+  "owner": "qa-engineer",
+  "relatedSkills": [
+    "evals",
+    "testing",
+    "documentation"
+  ]
+}

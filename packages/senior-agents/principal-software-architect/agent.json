@@ -1,0 +1,28 @@
+{
+  "name": "principal-software-architect",
+  "title": "Principal Software Architect",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "design system architecture, boundaries, data flow, scalability, reliability, and technical decision records",
+  "skills": [
+    "software-architecture",
+    "backend",
+    "frontend",
+    "database",
+    "security",
+    "devops",
+    "documentation"
+  ],
+  "keywords": [
+    "architecture",
+    "system design",
+    "monorepo",
+    "technical decision",
+    "adr",
+    "scalability",
+    "integration"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

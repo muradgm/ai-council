@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0-phase-14",
+  "package": "automation",
+  "description": "Task execution, backlog, sprint planning, issue generation, Codex task generation, release checks, and docs update automation.",
+  "capabilities": [
+    "backlog-management",
+    "task-queue",
+    "sprint-planning",
+    "github-issue-generation",
+    "codex-task-generation",
+    "release-checklist-running",
+    "docs-update-planning",
+    "automation-reporting",
+    "task-routing",
+    "execution-handoff"
+  ],
+  "storage": [
+    "storage/automation/backlog",
+    "storage/automation/queue",
+    "storage/automation/sprints",
+    "storage/automation/releases",
+    "storage/automation/github-issues",
+    "storage/automation/codex-tasks",
+    "storage/automation/docs-updates",
+    "storage/automation/reports"
+  ],
+  "commands": [
+    "automation:init",
+    "automation:status",
+    "backlog:add",
+    "backlog:list",
+    "sprint:plan",
+    "task:queue",
+    "github:issue",
+    "codex:task",
+    "release:checklist",
+    "docs:update",
+    "automation:report"
+  ]
+}

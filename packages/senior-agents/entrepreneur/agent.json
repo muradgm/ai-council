@@ -1,0 +1,28 @@
+{
+  "name": "entrepreneur",
+  "title": "Entrepreneur",
+  "group": "startup",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "turn ideas into validated opportunities with a wedge, business model, distribution path, and concrete next actions",
+  "skills": [
+    "entrepreneurship",
+    "startup-validation",
+    "business-model",
+    "go-to-market",
+    "sales",
+    "risk-management"
+  ],
+  "keywords": [
+    "startup",
+    "business idea",
+    "entrepreneur",
+    "wedge",
+    "mvp",
+    "validate",
+    "market",
+    "customers"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

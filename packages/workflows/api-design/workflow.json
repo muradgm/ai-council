@@ -1,0 +1,55 @@
+{
+  "name": "api-design",
+  "title": "API Design Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "engineering",
+  "description": "Design clear API contracts, resources, error states, auth boundaries, and versioning strategy.",
+  "triggers": [
+    "api",
+    "endpoint",
+    "contract",
+    "REST",
+    "GraphQL"
+  ],
+  "agents": [
+    "senior-backend-engineer",
+    "principal-software-architect",
+    "senior-fullstack-engineer",
+    "technical-writer"
+  ],
+  "skills": [
+    "api-design",
+    "backend",
+    "security",
+    "documentation",
+    "testing"
+  ],
+  "decisionEngines": [
+    "api-design-engine",
+    "security-review-engine",
+    "testing-strategy-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "API contract",
+    "Endpoint map",
+    "Error model",
+    "Test cases"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

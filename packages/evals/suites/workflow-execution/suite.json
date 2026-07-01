@@ -1,0 +1,34 @@
+{
+  "name": "workflow-execution",
+  "title": "Workflow Execution Eval Suite",
+  "category": "workflow",
+  "threshold": 0.8,
+  "keywords": [
+    "workflow",
+    "execute",
+    "plan",
+    "review"
+  ],
+  "expectedAgents": [
+    "project-manager"
+  ],
+  "expectedEngines": [
+    "release-readiness-engine"
+  ],
+  "expectedWorkflows": [
+    "build-execution",
+    "release-readiness"
+  ],
+  "expectedSkills": [
+    "project-management",
+    "testing"
+  ],
+  "expectedTemplates": [
+    "release-readiness-report"
+  ],
+  "entrypoint": "SUITE.md",
+  "caseDirectory": "cases",
+  "goldenDirectory": "golden",
+  "rubric": "rubric.md",
+  "checklist": "checklist.md"
+}

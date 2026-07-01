@@ -1,0 +1,1289 @@
+[
+  {
+    "name": "project-brief",
+    "title": "Project Brief",
+    "category": "project",
+    "entrypoint": "packages/templates/deliverables/project-brief/TEMPLATE.md",
+    "skills": [
+      "project-management",
+      "product-strategy",
+      "communication"
+    ],
+    "agents": [
+      "project-manager",
+      "product-manager",
+      "communications-advisor"
+    ],
+    "decisionEngines": [
+      "product-strategy-engine"
+    ],
+    "workflows": [
+      "project-kickoff",
+      "feature-planning"
+    ],
+    "keywords": [
+      "project",
+      "brief",
+      "scope",
+      "context",
+      "goal"
+    ],
+    "outputs": [
+      "Project Brief document"
+    ]
+  },
+  {
+    "name": "prd",
+    "title": "PRD",
+    "category": "product",
+    "entrypoint": "packages/templates/deliverables/prd/TEMPLATE.md",
+    "skills": [
+      "product-management",
+      "product-strategy",
+      "ux-design"
+    ],
+    "agents": [
+      "product-manager",
+      "cpo",
+      "ux-designer"
+    ],
+    "decisionEngines": [
+      "product-strategy-engine",
+      "ux-research-engine"
+    ],
+    "workflows": [
+      "product-discovery",
+      "feature-planning"
+    ],
+    "keywords": [
+      "prd",
+      "requirements",
+      "product",
+      "feature"
+    ],
+    "outputs": [
+      "PRD document"
+    ]
+  },
+  {
+    "name": "feature-spec",
+    "title": "Feature Spec",
+    "category": "product",
+    "entrypoint": "packages/templates/deliverables/feature-spec/TEMPLATE.md",
+    "skills": [
+      "product-management",
+      "software-architecture",
+      "testing"
+    ],
+    "agents": [
+      "product-manager",
+      "principal-software-architect",
+      "qa-engineer"
+    ],
+    "decisionEngines": [
+      "architecture-engine",
+      "testing-strategy-engine"
+    ],
+    "workflows": [
+      "feature-planning",
+      "build-execution"
+    ],
+    "keywords": [
+      "feature",
+      "spec",
+      "requirements",
+      "acceptance criteria"
+    ],
+    "outputs": [
+      "Feature Spec document"
+    ]
+  },
+  {
+    "name": "technical-design-doc",
+    "title": "Technical Design Doc",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/technical-design-doc/TEMPLATE.md",
+    "skills": [
+      "software-architecture",
+      "backend",
+      "database"
+    ],
+    "agents": [
+      "principal-software-architect",
+      "senior-backend-engineer",
+      "cto"
+    ],
+    "decisionEngines": [
+      "architecture-engine",
+      "api-design-engine",
+      "database-engine"
+    ],
+    "workflows": [
+      "architecture-review",
+      "api-design",
+      "data-model-design"
+    ],
+    "keywords": [
+      "technical design",
+      "tdd",
+      "architecture",
+      "implementation"
+    ],
+    "outputs": [
+      "Technical Design Doc document"
+    ]
+  },
+  {
+    "name": "architecture-decision-record",
+    "title": "Architecture Decision Record",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/architecture-decision-record/TEMPLATE.md",
+    "skills": [
+      "software-architecture",
+      "documentation",
+      "risk-management"
+    ],
+    "agents": [
+      "principal-software-architect",
+      "cto",
+      "technical-writer"
+    ],
+    "decisionEngines": [
+      "architecture-engine",
+      "documentation-engine"
+    ],
+    "workflows": [
+      "architecture-review"
+    ],
+    "keywords": [
+      "adr",
+      "architecture decision",
+      "tradeoff"
+    ],
+    "outputs": [
+      "Architecture Decision Record document"
+    ]
+  },
+  {
+    "name": "api-spec",
+    "title": "API Spec",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/api-spec/TEMPLATE.md",
+    "skills": [
+      "api-design",
+      "backend",
+      "security"
+    ],
+    "agents": [
+      "senior-backend-engineer",
+      "principal-software-architect",
+      "cybersecurity-engineer"
+    ],
+    "decisionEngines": [
+      "api-design-engine",
+      "security-review-engine"
+    ],
+    "workflows": [
+      "api-design"
+    ],
+    "keywords": [
+      "api",
+      "endpoint",
+      "contract",
+      "openapi"
+    ],
+    "outputs": [
+      "API Spec document"
+    ]
+  },
+  {
+    "name": "database-schema-spec",
+    "title": "Database Schema Spec",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/database-schema-spec/TEMPLATE.md",
+    "skills": [
+      "database",
+      "postgres",
+      "mongodb"
+    ],
+    "agents": [
+      "data-engineer",
+      "senior-backend-engineer",
+      "principal-software-architect"
+    ],
+    "decisionEngines": [
+      "database-engine",
+      "data-model-engine"
+    ],
+    "workflows": [
+      "data-model-design"
+    ],
+    "keywords": [
+      "database",
+      "schema",
+      "data model",
+      "erd"
+    ],
+    "outputs": [
+      "Database Schema Spec document"
+    ]
+  },
+  {
+    "name": "code-review-report",
+    "title": "Code Review Report",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/code-review-report/TEMPLATE.md",
+    "skills": [
+      "code-review",
+      "testing",
+      "security"
+    ],
+    "agents": [
+      "code-reviewer",
+      "qa-engineer",
+      "cybersecurity-engineer"
+    ],
+    "decisionEngines": [
+      "code-review-engine",
+      "security-review-engine",
+      "testing-strategy-engine"
+    ],
+    "workflows": [
+      "code-review"
+    ],
+    "keywords": [
+      "code review",
+      "review",
+      "quality",
+      "pull request"
+    ],
+    "outputs": [
+      "Code Review Report document"
+    ]
+  },
+  {
+    "name": "security-review-report",
+    "title": "Security Review Report",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/security-review-report/TEMPLATE.md",
+    "skills": [
+      "security",
+      "legal-basics",
+      "backend"
+    ],
+    "agents": [
+      "cybersecurity-engineer",
+      "legal-risk-spotter",
+      "senior-backend-engineer"
+    ],
+    "decisionEngines": [
+      "security-review-engine",
+      "privacy-engine",
+      "legal-compliance-engine"
+    ],
+    "workflows": [
+      "security-review"
+    ],
+    "keywords": [
+      "security",
+      "privacy",
+      "vulnerability",
+      "risk"
+    ],
+    "outputs": [
+      "Security Review Report document"
+    ]
+  },
+  {
+    "name": "performance-audit-report",
+    "title": "Performance Audit Report",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/performance-audit-report/TEMPLATE.md",
+    "skills": [
+      "performance",
+      "frontend",
+      "backend"
+    ],
+    "agents": [
+      "senior-frontend-engineer",
+      "senior-backend-engineer",
+      "qa-engineer"
+    ],
+    "decisionEngines": [
+      "performance-engine"
+    ],
+    "workflows": [
+      "performance-audit"
+    ],
+    "keywords": [
+      "performance",
+      "speed",
+      "latency",
+      "audit"
+    ],
+    "outputs": [
+      "Performance Audit Report document"
+    ]
+  },
+  {
+    "name": "bug-investigation-report",
+    "title": "Bug Investigation Report",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/bug-investigation-report/TEMPLATE.md",
+    "skills": [
+      "testing",
+      "code-review",
+      "documentation"
+    ],
+    "agents": [
+      "qa-engineer",
+      "code-reviewer",
+      "senior-fullstack-engineer"
+    ],
+    "decisionEngines": [
+      "testing-strategy-engine",
+      "code-review-engine"
+    ],
+    "workflows": [
+      "bug-investigation"
+    ],
+    "keywords": [
+      "bug",
+      "defect",
+      "investigation",
+      "root cause"
+    ],
+    "outputs": [
+      "Bug Investigation Report document"
+    ]
+  },
+  {
+    "name": "release-readiness-report",
+    "title": "Release Readiness Report",
+    "category": "engineering",
+    "entrypoint": "packages/templates/deliverables/release-readiness-report/TEMPLATE.md",
+    "skills": [
+      "testing",
+      "devops",
+      "project-management"
+    ],
+    "agents": [
+      "project-manager",
+      "qa-engineer",
+      "devops-engineer"
+    ],
+    "decisionEngines": [
+      "release-readiness-engine",
+      "testing-strategy-engine"
+    ],
+    "workflows": [
+      "release-readiness"
+    ],
+    "keywords": [
+      "release",
+      "readiness",
+      "deploy",
+      "qa"
+    ],
+    "outputs": [
+      "Release Readiness Report document"
+    ]
+  },
+  {
+    "name": "postmortem",
+    "title": "Postmortem",
+    "category": "operations",
+    "entrypoint": "packages/templates/deliverables/postmortem/TEMPLATE.md",
+    "skills": [
+      "operations",
+      "documentation",
+      "leadership"
+    ],
+    "agents": [
+      "operations-architect",
+      "project-manager",
+      "cto"
+    ],
+    "decisionEngines": [
+      "operations-engine",
+      "documentation-engine"
+    ],
+    "workflows": [
+      "learning-loop"
+    ],
+    "keywords": [
+      "postmortem",
+      "incident",
+      "failure",
+      "retrospective"
+    ],
+    "outputs": [
+      "Postmortem document"
+    ]
+  },
+  {
+    "name": "brand-brief",
+    "title": "Brand Brief",
+    "category": "brand",
+    "entrypoint": "packages/templates/deliverables/brand-brief/TEMPLATE.md",
+    "skills": [
+      "branding",
+      "logo-design",
+      "copywriting"
+    ],
+    "agents": [
+      "brand-strategist",
+      "senior-brand-designer",
+      "copywriter"
+    ],
+    "decisionEngines": [
+      "brand-engine",
+      "naming-engine"
+    ],
+    "workflows": [
+      "brand-identity",
+      "naming-system"
+    ],
+    "keywords": [
+      "brand",
+      "brief",
+      "identity",
+      "logo"
+    ],
+    "outputs": [
+      "Brand Brief document"
+    ]
+  },
+  {
+    "name": "naming-report",
+    "title": "Naming Report",
+    "category": "brand",
+    "entrypoint": "packages/templates/deliverables/naming-report/TEMPLATE.md",
+    "skills": [
+      "branding",
+      "copywriting",
+      "marketing"
+    ],
+    "agents": [
+      "brand-strategist",
+      "copywriter",
+      "market-researcher"
+    ],
+    "decisionEngines": [
+      "naming-engine",
+      "brand-engine"
+    ],
+    "workflows": [
+      "naming-system"
+    ],
+    "keywords": [
+      "name",
+      "naming",
+      "brand name"
+    ],
+    "outputs": [
+      "Naming Report document"
+    ]
+  },
+  {
+    "name": "ui-audit-report",
+    "title": "UI Audit Report",
+    "category": "design",
+    "entrypoint": "packages/templates/deliverables/ui-audit-report/TEMPLATE.md",
+    "skills": [
+      "ui-design",
+      "ux-design",
+      "accessibility"
+    ],
+    "agents": [
+      "ui-designer",
+      "ux-designer",
+      "senior-designer"
+    ],
+    "decisionEngines": [
+      "ui-review-engine",
+      "accessibility-engine"
+    ],
+    "workflows": [
+      "ui-review",
+      "ui-review"
+    ],
+    "keywords": [
+      "ui",
+      "audit",
+      "interface",
+      "visual design"
+    ],
+    "outputs": [
+      "UI Audit Report document"
+    ]
+  },
+  {
+    "name": "ux-research-plan",
+    "title": "UX Research Plan",
+    "category": "design",
+    "entrypoint": "packages/templates/deliverables/ux-research-plan/TEMPLATE.md",
+    "skills": [
+      "ux-research",
+      "psychology",
+      "product-management"
+    ],
+    "agents": [
+      "ux-researcher",
+      "product-manager",
+      "research-lead"
+    ],
+    "decisionEngines": [
+      "ux-research-engine",
+      "product-strategy-engine"
+    ],
+    "workflows": [
+      "ux-research",
+      "product-discovery"
+    ],
+    "keywords": [
+      "ux research",
+      "research plan",
+      "interviews",
+      "usability"
+    ],
+    "outputs": [
+      "UX Research Plan document"
+    ]
+  },
+  {
+    "name": "design-system-spec",
+    "title": "Design System Spec",
+    "category": "design",
+    "entrypoint": "packages/templates/deliverables/design-system-spec/TEMPLATE.md",
+    "skills": [
+      "design-systems",
+      "ui-design",
+      "frontend"
+    ],
+    "agents": [
+      "design-systems-lead",
+      "ui-designer",
+      "senior-frontend-engineer"
+    ],
+    "decisionEngines": [
+      "ui-review-engine",
+      "architecture-engine"
+    ],
+    "workflows": [
+      "ui-review"
+    ],
+    "keywords": [
+      "design system",
+      "components",
+      "tokens"
+    ],
+    "outputs": [
+      "Design System Spec document"
+    ]
+  },
+  {
+    "name": "marketing-plan",
+    "title": "Marketing Plan",
+    "category": "marketing",
+    "entrypoint": "packages/templates/deliverables/marketing-plan/TEMPLATE.md",
+    "skills": [
+      "marketing",
+      "go-to-market",
+      "growth"
+    ],
+    "agents": [
+      "growth-marketer",
+      "market-researcher",
+      "sales-strategist"
+    ],
+    "decisionEngines": [
+      "growth-engine",
+      "market-research-engine"
+    ],
+    "workflows": [
+      "growth-experiment",
+      "market-research"
+    ],
+    "keywords": [
+      "marketing",
+      "campaign",
+      "go to market"
+    ],
+    "outputs": [
+      "Marketing Plan document"
+    ]
+  },
+  {
+    "name": "seo-audit-report",
+    "title": "SEO Audit Report",
+    "category": "marketing",
+    "entrypoint": "packages/templates/deliverables/seo-audit-report/TEMPLATE.md",
+    "skills": [
+      "seo",
+      "marketing",
+      "analytics"
+    ],
+    "agents": [
+      "seo-specialist",
+      "growth-marketer",
+      "technical-writer"
+    ],
+    "decisionEngines": [
+      "seo-engine",
+      "growth-engine"
+    ],
+    "workflows": [
+      "seo-content"
+    ],
+    "keywords": [
+      "seo",
+      "search",
+      "audit",
+      "traffic"
+    ],
+    "outputs": [
+      "SEO Audit Report document"
+    ]
+  },
+  {
+    "name": "copywriting-brief",
+    "title": "Copywriting Brief",
+    "category": "marketing",
+    "entrypoint": "packages/templates/deliverables/copywriting-brief/TEMPLATE.md",
+    "skills": [
+      "copywriting",
+      "marketing",
+      "psychology"
+    ],
+    "agents": [
+      "copywriter",
+      "brand-strategist",
+      "growth-marketer"
+    ],
+    "decisionEngines": [
+      "copywriting-engine",
+      "brand-engine"
+    ],
+    "workflows": [
+      "documentation-production"
+    ],
+    "keywords": [
+      "copy",
+      "writing",
+      "landing page",
+      "message"
+    ],
+    "outputs": [
+      "Copywriting Brief document"
+    ]
+  },
+  {
+    "name": "sales-outreach-sequence",
+    "title": "Sales Outreach Sequence",
+    "category": "sales",
+    "entrypoint": "packages/templates/deliverables/sales-outreach-sequence/TEMPLATE.md",
+    "skills": [
+      "sales",
+      "copywriting",
+      "negotiation"
+    ],
+    "agents": [
+      "sales-strategist",
+      "copywriter",
+      "negotiation-coach"
+    ],
+    "decisionEngines": [
+      "sales-engine",
+      "copywriting-engine"
+    ],
+    "workflows": [
+      "sales-funnel"
+    ],
+    "keywords": [
+      "sales",
+      "outreach",
+      "email",
+      "sequence"
+    ],
+    "outputs": [
+      "Sales Outreach Sequence document"
+    ]
+  },
+  {
+    "name": "market-research-report",
+    "title": "Market Research Report",
+    "category": "business",
+    "entrypoint": "packages/templates/deliverables/market-research-report/TEMPLATE.md",
+    "skills": [
+      "research",
+      "marketing",
+      "business-model"
+    ],
+    "agents": [
+      "market-researcher",
+      "business-model-strategist",
+      "startup-advisor"
+    ],
+    "decisionEngines": [
+      "market-research-engine",
+      "business-model-engine"
+    ],
+    "workflows": [
+      "market-research"
+    ],
+    "keywords": [
+      "market",
+      "research",
+      "competitors",
+      "landscape"
+    ],
+    "outputs": [
+      "Market Research Report document"
+    ]
+  },
+  {
+    "name": "startup-validation-report",
+    "title": "Startup Validation Report",
+    "category": "business",
+    "entrypoint": "packages/templates/deliverables/startup-validation-report/TEMPLATE.md",
+    "skills": [
+      "startup-validation",
+      "entrepreneurship",
+      "business-model"
+    ],
+    "agents": [
+      "startup-advisor",
+      "entrepreneur",
+      "venture-builder"
+    ],
+    "decisionEngines": [
+      "startup-evaluation-engine",
+      "business-model-engine"
+    ],
+    "workflows": [
+      "startup-validation",
+      "business-model-design"
+    ],
+    "keywords": [
+      "startup",
+      "validation",
+      "idea",
+      "venture"
+    ],
+    "outputs": [
+      "Startup Validation Report document"
+    ]
+  },
+  {
+    "name": "business-model-canvas",
+    "title": "Business Model Canvas",
+    "category": "business",
+    "entrypoint": "packages/templates/deliverables/business-model-canvas/TEMPLATE.md",
+    "skills": [
+      "business-model",
+      "entrepreneurship",
+      "finance"
+    ],
+    "agents": [
+      "business-model-strategist",
+      "entrepreneur",
+      "cfo"
+    ],
+    "decisionEngines": [
+      "business-model-engine",
+      "finance-planning-engine"
+    ],
+    "workflows": [
+      "business-model-design"
+    ],
+    "keywords": [
+      "business model",
+      "canvas",
+      "revenue"
+    ],
+    "outputs": [
+      "Business Model Canvas document"
+    ]
+  },
+  {
+    "name": "investor-memo",
+    "title": "Investor Memo",
+    "category": "finance",
+    "entrypoint": "packages/templates/deliverables/investor-memo/TEMPLATE.md",
+    "skills": [
+      "finance",
+      "startup-validation",
+      "copywriting"
+    ],
+    "agents": [
+      "cfo",
+      "venture-builder",
+      "copywriter"
+    ],
+    "decisionEngines": [
+      "investment-analysis-engine",
+      "startup-evaluation-engine"
+    ],
+    "workflows": [
+      "investment-analysis"
+    ],
+    "keywords": [
+      "investor",
+      "memo",
+      "fundraising",
+      "pitch"
+    ],
+    "outputs": [
+      "Investor Memo document"
+    ]
+  },
+  {
+    "name": "financial-model-assumptions",
+    "title": "Financial Model Assumptions",
+    "category": "finance",
+    "entrypoint": "packages/templates/deliverables/financial-model-assumptions/TEMPLATE.md",
+    "skills": [
+      "finance",
+      "accounting",
+      "business-model"
+    ],
+    "agents": [
+      "cfo",
+      "financial-analyst",
+      "business-model-strategist"
+    ],
+    "decisionEngines": [
+      "finance-planning-engine",
+      "business-model-engine"
+    ],
+    "workflows": [
+      "investment-analysis"
+    ],
+    "keywords": [
+      "financial model",
+      "assumptions",
+      "forecast",
+      "budget"
+    ],
+    "outputs": [
+      "Financial Model Assumptions document"
+    ]
+  },
+  {
+    "name": "investment-analysis-report",
+    "title": "Investment Analysis Report",
+    "category": "finance",
+    "entrypoint": "packages/templates/deliverables/investment-analysis-report/TEMPLATE.md",
+    "skills": [
+      "investing",
+      "finance",
+      "risk-management"
+    ],
+    "agents": [
+      "financial-analyst",
+      "portfolio-manager",
+      "risk-manager"
+    ],
+    "decisionEngines": [
+      "investment-analysis-engine",
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "investment-analysis"
+    ],
+    "keywords": [
+      "investment",
+      "analysis",
+      "asset",
+      "portfolio"
+    ],
+    "outputs": [
+      "Investment Analysis Report document"
+    ]
+  },
+  {
+    "name": "forex-trading-plan",
+    "title": "Forex Trading Plan",
+    "category": "trading",
+    "entrypoint": "packages/templates/deliverables/forex-trading-plan/TEMPLATE.md",
+    "skills": [
+      "forex-trading",
+      "risk-management",
+      "technical-analysis"
+    ],
+    "agents": [
+      "forex-trader",
+      "risk-manager",
+      "macro-analyst"
+    ],
+    "decisionEngines": [
+      "forex-trade-review-engine",
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "forex-trade-review"
+    ],
+    "keywords": [
+      "forex",
+      "trading plan",
+      "currency",
+      "trade"
+    ],
+    "outputs": [
+      "Forex Trading Plan document"
+    ]
+  },
+  {
+    "name": "trade-journal-entry",
+    "title": "Trade Journal Entry",
+    "category": "trading",
+    "entrypoint": "packages/templates/deliverables/trade-journal-entry/TEMPLATE.md",
+    "skills": [
+      "trading-journal",
+      "forex-trading",
+      "risk-management"
+    ],
+    "agents": [
+      "forex-trader",
+      "risk-manager",
+      "quant-researcher"
+    ],
+    "decisionEngines": [
+      "forex-trade-review-engine",
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "forex-trade-review"
+    ],
+    "keywords": [
+      "journal",
+      "trade journal",
+      "trade entry",
+      "review"
+    ],
+    "outputs": [
+      "Trade Journal Entry document"
+    ]
+  },
+  {
+    "name": "risk-review-report",
+    "title": "Risk Review Report",
+    "category": "risk",
+    "entrypoint": "packages/templates/deliverables/risk-review-report/TEMPLATE.md",
+    "skills": [
+      "risk-management",
+      "finance",
+      "security"
+    ],
+    "agents": [
+      "risk-manager",
+      "cfo",
+      "cybersecurity-engineer"
+    ],
+    "decisionEngines": [
+      "trading-risk-engine",
+      "finance-planning-engine",
+      "security-review-engine"
+    ],
+    "workflows": [
+      "risk-review"
+    ],
+    "keywords": [
+      "risk",
+      "risk review",
+      "exposure"
+    ],
+    "outputs": [
+      "Risk Review Report document"
+    ]
+  },
+  {
+    "name": "backtest-report",
+    "title": "Backtest Report",
+    "category": "trading",
+    "entrypoint": "packages/templates/deliverables/backtest-report/TEMPLATE.md",
+    "skills": [
+      "quantitative-analysis",
+      "technical-analysis",
+      "risk-management"
+    ],
+    "agents": [
+      "quant-researcher",
+      "forex-trader",
+      "risk-manager"
+    ],
+    "decisionEngines": [
+      "quant-research-engine",
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "trading-system-review"
+    ],
+    "keywords": [
+      "backtest",
+      "strategy",
+      "quant",
+      "trading"
+    ],
+    "outputs": [
+      "Backtest Report document"
+    ]
+  },
+  {
+    "name": "prompt-evaluation-report",
+    "title": "Prompt Evaluation Report",
+    "category": "ai",
+    "entrypoint": "packages/templates/deliverables/prompt-evaluation-report/TEMPLATE.md",
+    "skills": [
+      "prompt-engineering",
+      "evals",
+      "agent-design"
+    ],
+    "agents": [
+      "chief-ai-officer",
+      "ai-engineer",
+      "research-lead"
+    ],
+    "decisionEngines": [
+      "llm-prompt-evaluation-engine",
+      "ai-agent-design-engine"
+    ],
+    "workflows": [
+      "prompt-evaluation"
+    ],
+    "keywords": [
+      "prompt",
+      "eval",
+      "llm",
+      "quality"
+    ],
+    "outputs": [
+      "Prompt Evaluation Report document"
+    ]
+  },
+  {
+    "name": "agent-spec",
+    "title": "Agent Spec",
+    "category": "ai",
+    "entrypoint": "packages/templates/deliverables/agent-spec/TEMPLATE.md",
+    "skills": [
+      "agent-design",
+      "ai-engineering",
+      "prompt-engineering"
+    ],
+    "agents": [
+      "chief-ai-officer",
+      "senior-ai-engineer",
+      "ai-engineer"
+    ],
+    "decisionEngines": [
+      "ai-agent-design-engine",
+      "ai-safety-engine"
+    ],
+    "workflows": [
+      "ai-agent-build"
+    ],
+    "keywords": [
+      "agent",
+      "ai agent",
+      "persona",
+      "instructions"
+    ],
+    "outputs": [
+      "Agent Spec document"
+    ]
+  },
+  {
+    "name": "rag-evaluation-report",
+    "title": "RAG Evaluation Report",
+    "category": "ai",
+    "entrypoint": "packages/templates/deliverables/rag-evaluation-report/TEMPLATE.md",
+    "skills": [
+      "rag",
+      "evals",
+      "data-engineering"
+    ],
+    "agents": [
+      "senior-ai-engineer",
+      "data-engineer",
+      "research-lead"
+    ],
+    "decisionEngines": [
+      "llm-prompt-evaluation-engine",
+      "data-model-engine"
+    ],
+    "workflows": [
+      "rag-system-build"
+    ],
+    "keywords": [
+      "rag",
+      "retrieval",
+      "knowledge base",
+      "evaluation"
+    ],
+    "outputs": [
+      "RAG Evaluation Report document"
+    ]
+  },
+  {
+    "name": "codex-task-prompt",
+    "title": "Codex Task Prompt",
+    "category": "ai",
+    "entrypoint": "packages/templates/deliverables/codex-task-prompt/TEMPLATE.md",
+    "skills": [
+      "prompt-engineering",
+      "software-architecture",
+      "documentation"
+    ],
+    "agents": [
+      "principal-software-architect",
+      "senior-ai-engineer",
+      "technical-writer"
+    ],
+    "decisionEngines": [
+      "architecture-engine",
+      "llm-prompt-evaluation-engine"
+    ],
+    "workflows": [
+      "codex-session",
+      "build-execution"
+    ],
+    "keywords": [
+      "codex",
+      "task prompt",
+      "implementation prompt"
+    ],
+    "outputs": [
+      "Codex Task Prompt document"
+    ]
+  },
+  {
+    "name": "council-session-report",
+    "title": "Council Session Report",
+    "category": "operations",
+    "entrypoint": "packages/templates/deliverables/council-session-report/TEMPLATE.md",
+    "skills": [
+      "documentation",
+      "project-management",
+      "communication"
+    ],
+    "agents": [
+      "project-manager",
+      "communications-advisor",
+      "technical-writer"
+    ],
+    "decisionEngines": [
+      "documentation-engine",
+      "operations-engine"
+    ],
+    "workflows": [
+      "codex-session",
+      "learning-loop"
+    ],
+    "keywords": [
+      "council",
+      "session",
+      "summary",
+      "report"
+    ],
+    "outputs": [
+      "Council Session Report document"
+    ]
+  },
+  {
+    "name": "roadmap",
+    "title": "Roadmap",
+    "category": "project",
+    "entrypoint": "packages/templates/deliverables/roadmap/TEMPLATE.md",
+    "skills": [
+      "project-management",
+      "product-strategy",
+      "startup-validation"
+    ],
+    "agents": [
+      "product-manager",
+      "project-manager",
+      "cpo"
+    ],
+    "decisionEngines": [
+      "product-strategy-engine",
+      "startup-evaluation-engine"
+    ],
+    "workflows": [
+      "feature-planning",
+      "project-kickoff"
+    ],
+    "keywords": [
+      "roadmap",
+      "milestones",
+      "plan"
+    ],
+    "outputs": [
+      "Roadmap document"
+    ]
+  },
+  {
+    "name": "qa-test-plan",
+    "title": "QA Test Plan",
+    "category": "quality",
+    "entrypoint": "packages/templates/deliverables/qa-test-plan/TEMPLATE.md",
+    "skills": [
+      "testing",
+      "project-management",
+      "documentation"
+    ],
+    "agents": [
+      "qa-engineer",
+      "project-manager",
+      "technical-writer"
+    ],
+    "decisionEngines": [
+      "testing-strategy-engine",
+      "release-readiness-engine"
+    ],
+    "workflows": [
+      "release-readiness",
+      "code-review"
+    ],
+    "keywords": [
+      "qa",
+      "test plan",
+      "testing"
+    ],
+    "outputs": [
+      "QA Test Plan document"
+    ]
+  },
+  {
+    "name": "legal-risk-note",
+    "title": "Legal Risk Note",
+    "category": "risk",
+    "entrypoint": "packages/templates/deliverables/legal-risk-note/TEMPLATE.md",
+    "skills": [
+      "legal-basics",
+      "risk-management",
+      "documentation"
+    ],
+    "agents": [
+      "legal-risk-spotter",
+      "risk-manager",
+      "communications-advisor"
+    ],
+    "decisionEngines": [
+      "legal-compliance-engine",
+      "privacy-engine"
+    ],
+    "workflows": [
+      "risk-review"
+    ],
+    "keywords": [
+      "legal",
+      "compliance",
+      "risk note"
+    ],
+    "outputs": [
+      "Legal Risk Note document"
+    ]
+  }
+]

@@ -1,0 +1,2 @@
+export interface MemoryEntry { id: string; scope: "session" | "project" | "agent" | "user"; content: string; createdAt: string; }
+export class MemoryManager { private entries: MemoryEntry[] = []; add(scope: MemoryEntry["scope"], content: string) { const entry = { id: crypto.randomUUID(), scope, content, createdAt: new Date().toISOString() }; this.entries.push(entry); return entry; } search(query: string) { return this.entries.filter(e => e.content.toLowerCase().includes(query.toLowerCase())); } list() { return this.entries; } }

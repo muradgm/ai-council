@@ -1,0 +1,28 @@
+{
+  "id": "product-strategy-002",
+  "request": "prioritize the roadmap for SignalScout",
+  "expected": {
+    "agents": [
+      "cpo",
+      "product-manager"
+    ],
+    "engines": [
+      "product-strategy-engine"
+    ],
+    "workflows": [
+      "product-discovery"
+    ],
+    "skills": [
+      "product-strategy"
+    ],
+    "templates": [
+      "roadmap"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

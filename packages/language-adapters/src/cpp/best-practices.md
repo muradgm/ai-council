@@ -1,0 +1,3 @@
+# Cpp Best Practices
+
+Scaffold.

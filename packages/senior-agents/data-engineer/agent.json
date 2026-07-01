@@ -1,0 +1,26 @@
+{
+  "name": "data-engineer",
+  "title": "Data Engineer",
+  "group": "engineering",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "build data pipelines, schemas, transformations, warehouse models, and reliable analytics foundations",
+  "skills": [
+    "data-engineering",
+    "database",
+    "postgres",
+    "python",
+    "analytics"
+  ],
+  "keywords": [
+    "data pipeline",
+    "etl",
+    "warehouse",
+    "analytics",
+    "schema",
+    "postgres",
+    "data engineering"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "forex-trading-risk-002",
+  "request": "analyze drawdown in my trading journal",
+  "expected": {
+    "agents": [
+      "risk-manager",
+      "quant-researcher"
+    ],
+    "engines": [
+      "trading-risk-engine"
+    ],
+    "workflows": [
+      "risk-review"
+    ],
+    "skills": [
+      "risk-management",
+      "trading-journal"
+    ],
+    "templates": [
+      "risk-review-report"
+    ]
+  },
+  "riskLevel": "high",
+  "mustInclude": [
+    "assumptions",
+    "risks",
+    "validation"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

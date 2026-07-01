@@ -1,0 +1,20 @@
+{
+  "name": "senior-ai-engineer",
+  "version": "1.0.0",
+  "title": "Senior AI Engineer",
+  "skills": [
+    "ai-engineering",
+    "software-architecture",
+    "typescript"
+  ],
+  "decision_engines": [],
+  "entrypoint": "AGENT.md",
+  "keywords": [
+    "senior",
+    "ai",
+    "engineer",
+    "ai-engineering",
+    "software-architecture",
+    "typescript"
+  ]
+}

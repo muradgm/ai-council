@@ -1,0 +1,791 @@
+[
+  {
+    "name": "accessibility",
+    "title": "Accessibility",
+    "dependencies": [
+      "ui-design",
+      "frontend"
+    ],
+    "tags": [
+      "a11y",
+      "accessibility"
+    ]
+  },
+  {
+    "name": "accounting",
+    "title": "Accounting",
+    "dependencies": [
+      "finance"
+    ],
+    "tags": [
+      "accounting",
+      "operations"
+    ]
+  },
+  {
+    "name": "agent-design",
+    "title": "Agent Design",
+    "dependencies": [
+      "ai-engineering",
+      "prompt-engineering"
+    ],
+    "tags": [
+      "agents",
+      "orchestration"
+    ]
+  },
+  {
+    "name": "ai-engineering",
+    "title": "AI Engineering",
+    "dependencies": [
+      "software-architecture"
+    ],
+    "tags": [
+      "ai",
+      "llm"
+    ]
+  },
+  {
+    "name": "analytics",
+    "title": "Analytics",
+    "dependencies": [
+      "data-engineering",
+      "growth"
+    ],
+    "tags": [
+      "analytics",
+      "metrics"
+    ]
+  },
+  {
+    "name": "api-design",
+    "title": "API Design",
+    "dependencies": [
+      "backend"
+    ],
+    "tags": [
+      "api",
+      "contracts"
+    ]
+  },
+  {
+    "name": "backend",
+    "title": "Backend Engineering",
+    "dependencies": [
+      "software-architecture"
+    ],
+    "tags": [
+      "backend",
+      "api"
+    ]
+  },
+  {
+    "name": "branding",
+    "title": "Branding",
+    "dependencies": [
+      "marketing",
+      "psychology"
+    ],
+    "tags": [
+      "brand",
+      "identity"
+    ]
+  },
+  {
+    "name": "business-model",
+    "title": "Business Model",
+    "dependencies": [
+      "entrepreneurship"
+    ],
+    "tags": [
+      "business",
+      "pricing"
+    ]
+  },
+  {
+    "name": "cloud",
+    "title": "Cloud Architecture",
+    "dependencies": [
+      "devops",
+      "security"
+    ],
+    "tags": [
+      "cloud",
+      "infra"
+    ]
+  },
+  {
+    "name": "code-review",
+    "title": "Code Review",
+    "dependencies": [
+      "software-architecture",
+      "testing"
+    ],
+    "tags": [
+      "review",
+      "quality"
+    ]
+  },
+  {
+    "name": "color-systems",
+    "title": "Color Systems",
+    "dependencies": [
+      "branding"
+    ],
+    "tags": [
+      "color",
+      "design"
+    ]
+  },
+  {
+    "name": "communication",
+    "title": "Communication",
+    "dependencies": [],
+    "tags": [
+      "communication",
+      "writing"
+    ]
+  },
+  {
+    "name": "copywriting",
+    "title": "Copywriting",
+    "dependencies": [
+      "marketing",
+      "psychology"
+    ],
+    "tags": [
+      "copy",
+      "writing"
+    ]
+  },
+  {
+    "name": "core-reasoning",
+    "title": "Core Reasoning",
+    "dependencies": [],
+    "tags": [
+      "critical-thinking",
+      "planning"
+    ]
+  },
+  {
+    "name": "data-engineering",
+    "title": "Data Engineering",
+    "dependencies": [
+      "database",
+      "python"
+    ],
+    "tags": [
+      "data",
+      "pipelines"
+    ]
+  },
+  {
+    "name": "database",
+    "title": "Database Design",
+    "dependencies": [
+      "backend"
+    ],
+    "tags": [
+      "database",
+      "data"
+    ]
+  },
+  {
+    "name": "design-systems",
+    "title": "Design Systems",
+    "dependencies": [
+      "ui-design"
+    ],
+    "tags": [
+      "design-system",
+      "components"
+    ]
+  },
+  {
+    "name": "devops",
+    "title": "DevOps",
+    "dependencies": [
+      "backend"
+    ],
+    "tags": [
+      "devops",
+      "deployment"
+    ]
+  },
+  {
+    "name": "docker",
+    "title": "Docker",
+    "dependencies": [
+      "devops"
+    ],
+    "tags": [
+      "docker",
+      "infra"
+    ]
+  },
+  {
+    "name": "documentation",
+    "title": "Documentation",
+    "dependencies": [
+      "communication"
+    ],
+    "tags": [
+      "docs",
+      "writing"
+    ]
+  },
+  {
+    "name": "economics",
+    "title": "Economics",
+    "dependencies": [
+      "finance"
+    ],
+    "tags": [
+      "economics",
+      "macro"
+    ]
+  },
+  {
+    "name": "entrepreneurship",
+    "title": "Entrepreneurship",
+    "dependencies": [
+      "product-strategy"
+    ],
+    "tags": [
+      "startup",
+      "business"
+    ]
+  },
+  {
+    "name": "evals",
+    "title": "AI Evaluations",
+    "dependencies": [
+      "ai-engineering",
+      "testing"
+    ],
+    "tags": [
+      "evals",
+      "quality"
+    ]
+  },
+  {
+    "name": "finance",
+    "title": "Finance",
+    "dependencies": [
+      "business-model"
+    ],
+    "tags": [
+      "finance",
+      "forecasting"
+    ]
+  },
+  {
+    "name": "forex-trading",
+    "title": "Forex Trading",
+    "dependencies": [
+      "risk-management",
+      "technical-analysis"
+    ],
+    "tags": [
+      "forex",
+      "trading"
+    ]
+  },
+  {
+    "name": "frontend",
+    "title": "Frontend Engineering",
+    "dependencies": [
+      "software-architecture"
+    ],
+    "tags": [
+      "frontend",
+      "web"
+    ]
+  },
+  {
+    "name": "fullstack",
+    "title": "Full-Stack Engineering",
+    "dependencies": [
+      "frontend",
+      "backend"
+    ],
+    "tags": [
+      "fullstack",
+      "engineering"
+    ]
+  },
+  {
+    "name": "go-to-market",
+    "title": "Go To Market",
+    "dependencies": [
+      "marketing",
+      "sales"
+    ],
+    "tags": [
+      "gtm",
+      "growth"
+    ]
+  },
+  {
+    "name": "growth",
+    "title": "Growth",
+    "dependencies": [
+      "marketing",
+      "product-strategy"
+    ],
+    "tags": [
+      "growth",
+      "experiments"
+    ]
+  },
+  {
+    "name": "investing",
+    "title": "Investing",
+    "dependencies": [
+      "finance",
+      "risk-management"
+    ],
+    "tags": [
+      "investing",
+      "portfolio"
+    ]
+  },
+  {
+    "name": "javascript",
+    "title": "JavaScript",
+    "dependencies": [
+      "typescript"
+    ],
+    "tags": [
+      "javascript",
+      "code"
+    ]
+  },
+  {
+    "name": "leadership",
+    "title": "Leadership",
+    "dependencies": [
+      "core-reasoning"
+    ],
+    "tags": [
+      "leadership",
+      "management"
+    ]
+  },
+  {
+    "name": "legal-basics",
+    "title": "Legal Basics",
+    "dependencies": [
+      "risk-management"
+    ],
+    "tags": [
+      "legal",
+      "compliance"
+    ]
+  },
+  {
+    "name": "logo-design",
+    "title": "Logo Design",
+    "dependencies": [
+      "branding"
+    ],
+    "tags": [
+      "logo",
+      "design"
+    ]
+  },
+  {
+    "name": "marketing",
+    "title": "Marketing",
+    "dependencies": [
+      "research",
+      "psychology"
+    ],
+    "tags": [
+      "marketing",
+      "positioning"
+    ]
+  },
+  {
+    "name": "mongodb",
+    "title": "MongoDB",
+    "dependencies": [
+      "database"
+    ],
+    "tags": [
+      "mongodb",
+      "nosql"
+    ]
+  },
+  {
+    "name": "motion-design",
+    "title": "Motion Design",
+    "dependencies": [
+      "ui-design"
+    ],
+    "tags": [
+      "motion",
+      "animation"
+    ]
+  },
+  {
+    "name": "negotiation",
+    "title": "Negotiation",
+    "dependencies": [
+      "communication"
+    ],
+    "tags": [
+      "negotiation",
+      "sales"
+    ]
+  },
+  {
+    "name": "nextjs",
+    "title": "Next.js",
+    "dependencies": [
+      "react",
+      "backend"
+    ],
+    "tags": [
+      "nextjs",
+      "react"
+    ]
+  },
+  {
+    "name": "node",
+    "title": "Node.js",
+    "dependencies": [
+      "backend",
+      "typescript"
+    ],
+    "tags": [
+      "node",
+      "backend"
+    ]
+  },
+  {
+    "name": "operations",
+    "title": "Operations",
+    "dependencies": [],
+    "tags": [
+      "ops",
+      "sop"
+    ]
+  },
+  {
+    "name": "performance",
+    "title": "Performance",
+    "dependencies": [
+      "frontend",
+      "backend"
+    ],
+    "tags": [
+      "performance",
+      "optimization"
+    ]
+  },
+  {
+    "name": "postgres",
+    "title": "PostgreSQL",
+    "dependencies": [
+      "database"
+    ],
+    "tags": [
+      "postgres",
+      "sql"
+    ]
+  },
+  {
+    "name": "product-management",
+    "title": "product-management",
+    "dependencies": [
+      "entrepreneurship"
+    ],
+    "tags": [
+      "product",
+      "roadmap",
+      "prd"
+    ]
+  },
+  {
+    "name": "product-strategy",
+    "title": "Product Strategy",
+    "dependencies": [
+      "research"
+    ],
+    "tags": [
+      "product",
+      "strategy"
+    ]
+  },
+  {
+    "name": "project-management",
+    "title": "Project Management",
+    "dependencies": [
+      "operations",
+      "communication"
+    ],
+    "tags": [
+      "pm",
+      "delivery"
+    ]
+  },
+  {
+    "name": "prompt-engineering",
+    "title": "Prompt Engineering",
+    "dependencies": [
+      "ai-engineering"
+    ],
+    "tags": [
+      "prompt",
+      "ai"
+    ]
+  },
+  {
+    "name": "psychology",
+    "title": "Psychology",
+    "dependencies": [],
+    "tags": [
+      "psychology",
+      "behavior"
+    ]
+  },
+  {
+    "name": "python",
+    "title": "Python",
+    "dependencies": [
+      "ai-engineering"
+    ],
+    "tags": [
+      "python",
+      "automation"
+    ]
+  },
+  {
+    "name": "quantitative-analysis",
+    "title": "Quantitative Analysis",
+    "dependencies": [
+      "python",
+      "risk-management"
+    ],
+    "tags": [
+      "quant",
+      "backtest"
+    ]
+  },
+  {
+    "name": "rag",
+    "title": "RAG",
+    "dependencies": [
+      "ai-engineering",
+      "database"
+    ],
+    "tags": [
+      "rag",
+      "retrieval"
+    ]
+  },
+  {
+    "name": "react",
+    "title": "React",
+    "dependencies": [
+      "frontend",
+      "typescript"
+    ],
+    "tags": [
+      "react",
+      "frontend"
+    ]
+  },
+  {
+    "name": "redis",
+    "title": "Redis",
+    "dependencies": [
+      "backend"
+    ],
+    "tags": [
+      "redis",
+      "cache"
+    ]
+  },
+  {
+    "name": "research",
+    "title": "Research",
+    "dependencies": [
+      "core-reasoning"
+    ],
+    "tags": [
+      "research",
+      "evidence"
+    ]
+  },
+  {
+    "name": "risk-management",
+    "title": "Risk Management",
+    "dependencies": [],
+    "tags": [
+      "risk",
+      "safety"
+    ]
+  },
+  {
+    "name": "sales",
+    "title": "Sales",
+    "dependencies": [
+      "communication",
+      "negotiation"
+    ],
+    "tags": [
+      "sales",
+      "revenue"
+    ]
+  },
+  {
+    "name": "security",
+    "title": "Cybersecurity",
+    "dependencies": [
+      "software-architecture"
+    ],
+    "tags": [
+      "security",
+      "risk"
+    ]
+  },
+  {
+    "name": "seo",
+    "title": "SEO",
+    "dependencies": [
+      "marketing"
+    ],
+    "tags": [
+      "seo",
+      "content"
+    ]
+  },
+  {
+    "name": "software-architecture",
+    "title": "Software Architecture",
+    "dependencies": [
+      "core-reasoning"
+    ],
+    "tags": [
+      "architecture",
+      "engineering"
+    ]
+  },
+  {
+    "name": "startup-validation",
+    "title": "Startup Validation",
+    "dependencies": [
+      "entrepreneurship",
+      "research"
+    ],
+    "tags": [
+      "startup",
+      "validation"
+    ]
+  },
+  {
+    "name": "technical-analysis",
+    "title": "Technical Analysis",
+    "dependencies": [
+      "risk-management"
+    ],
+    "tags": [
+      "charts",
+      "analysis"
+    ]
+  },
+  {
+    "name": "testing",
+    "title": "Testing",
+    "dependencies": [
+      "software-architecture"
+    ],
+    "tags": [
+      "testing",
+      "qa"
+    ]
+  },
+  {
+    "name": "trading-journal",
+    "title": "Trading Journal",
+    "dependencies": [
+      "forex-trading",
+      "risk-management"
+    ],
+    "tags": [
+      "journal",
+      "trading"
+    ]
+  },
+  {
+    "name": "typescript",
+    "title": "TypeScript",
+    "dependencies": [
+      "frontend",
+      "backend"
+    ],
+    "tags": [
+      "typescript",
+      "code"
+    ]
+  },
+  {
+    "name": "typography",
+    "title": "Typography",
+    "dependencies": [
+      "design-systems"
+    ],
+    "tags": [
+      "type",
+      "design"
+    ]
+  },
+  {
+    "name": "ui-design",
+    "title": "UI Design",
+    "dependencies": [
+      "ux-design",
+      "design-systems"
+    ],
+    "tags": [
+      "ui",
+      "design"
+    ]
+  },
+  {
+    "name": "ux-design",
+    "title": "UX Design",
+    "dependencies": [
+      "ux-research"
+    ],
+    "tags": [
+      "ux",
+      "design"
+    ]
+  },
+  {
+    "name": "ux-research",
+    "title": "UX Research",
+    "dependencies": [
+      "research",
+      "product-strategy"
+    ],
+    "tags": [
+      "ux",
+      "research"
+    ]
+  },
+  {
+    "name": "ux-ui-design",
+    "title": "ux-ui-design",
+    "dependencies": [],
+    "tags": [
+      "ux",
+      "ui",
+      "design",
+      "accessibility"
+    ]
+  }
+]

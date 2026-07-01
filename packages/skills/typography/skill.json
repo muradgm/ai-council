@@ -1,0 +1,16 @@
+{
+  "name": "typography",
+  "title": "Typography",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for type choice, hierarchy, readability.",
+  "dependencies": [
+    "design-systems"
+  ],
+  "tags": [
+    "type",
+    "design"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

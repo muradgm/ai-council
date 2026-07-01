@@ -1,0 +1,5 @@
+# Forex Trading
+
+Reusable AI Council skill for FX market structure, setups, journaling.
+
+Start with `SKILL.md`, then use the workflow, checklist, and templates in this folder.

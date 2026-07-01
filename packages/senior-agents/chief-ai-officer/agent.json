@@ -1,0 +1,27 @@
+{
+  "name": "chief-ai-officer",
+  "title": "Chief AI Officer",
+  "group": "executive",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "own AI product strategy, agent systems, model selection, evaluation, and AI safety boundaries",
+  "skills": [
+    "ai-engineering",
+    "agent-design",
+    "evals",
+    "rag",
+    "prompt-engineering",
+    "risk-management"
+  ],
+  "keywords": [
+    "ai strategy",
+    "agent",
+    "llm",
+    "rag",
+    "models",
+    "evals",
+    "ai system"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

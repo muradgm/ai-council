@@ -1,0 +1,55 @@
+{
+  "name": "trading-system-review",
+  "title": "Trading System Review Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "trading",
+  "description": "Review a trading system for edge hypothesis, risk controls, data quality, backtest validity, and operational discipline.",
+  "triggers": [
+    "trading system",
+    "strategy",
+    "backtest",
+    "edge",
+    "signals"
+  ],
+  "agents": [
+    "quant-researcher",
+    "risk-manager",
+    "forex-trader",
+    "data-engineer"
+  ],
+  "skills": [
+    "quantitative-analysis",
+    "risk-management",
+    "technical-analysis",
+    "trading-journal",
+    "data-engineering"
+  ],
+  "decisionEngines": [
+    "quant-research-engine",
+    "trading-risk-engine",
+    "forex-trade-review-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Strategy review",
+    "Backtest critique",
+    "Risk controls",
+    "Improvement roadmap"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Research and risk-management use only. Do not present outputs as guaranteed profit systems."
+}

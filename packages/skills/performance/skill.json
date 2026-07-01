@@ -1,0 +1,17 @@
+{
+  "name": "performance",
+  "title": "Performance",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for web/backend speed, profiling, bottlenecks.",
+  "dependencies": [
+    "frontend",
+    "backend"
+  ],
+  "tags": [
+    "performance",
+    "optimization"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

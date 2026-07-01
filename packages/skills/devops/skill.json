@@ -1,0 +1,16 @@
+{
+  "name": "devops",
+  "title": "DevOps",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for CI/CD, deployment, observability.",
+  "dependencies": [
+    "backend"
+  ],
+  "tags": [
+    "devops",
+    "deployment"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

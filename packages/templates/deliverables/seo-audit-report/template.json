@@ -1,0 +1,32 @@
+{
+  "name": "seo-audit-report",
+  "title": "SEO Audit Report",
+  "category": "marketing",
+  "entrypoint": "packages/templates/deliverables/seo-audit-report/TEMPLATE.md",
+  "skills": [
+    "seo",
+    "marketing",
+    "analytics"
+  ],
+  "agents": [
+    "seo-specialist",
+    "growth-marketer",
+    "technical-writer"
+  ],
+  "decisionEngines": [
+    "seo-engine",
+    "growth-engine"
+  ],
+  "workflows": [
+    "seo-content"
+  ],
+  "keywords": [
+    "seo",
+    "search",
+    "audit",
+    "traffic"
+  ],
+  "outputs": [
+    "SEO Audit Report document"
+  ]
+}

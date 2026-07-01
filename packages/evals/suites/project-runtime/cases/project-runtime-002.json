@@ -1,0 +1,27 @@
+{
+  "id": "project-runtime-002",
+  "request": "load NAVO context for a route planner feature",
+  "expected": {
+    "agents": [
+      "project-manager"
+    ],
+    "engines": [
+      "product-strategy-engine"
+    ],
+    "workflows": [
+      "feature-planning"
+    ],
+    "skills": [
+      "product-management"
+    ],
+    "templates": [
+      "feature-spec"
+    ]
+  },
+  "riskLevel": "medium",
+  "mustInclude": [
+    "assumptions",
+    "next steps"
+  ],
+  "notes": "Deterministic routing case. Future model evals can compare generated output to the golden example."
+}

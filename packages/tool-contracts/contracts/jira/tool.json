@@ -1,0 +1,14 @@
+{
+  "name": "jira",
+  "title": "Jira",
+  "entrypoint": "TOOL.md",
+  "description": "Read or modify tickets with project-specific authorization.",
+  "riskLevel": "low",
+  "allowedByDefault": false,
+  "requiresApprovalFor": [
+    "write actions",
+    "destructive actions",
+    "external data transfer",
+    "cost-incurring actions"
+  ]
+}

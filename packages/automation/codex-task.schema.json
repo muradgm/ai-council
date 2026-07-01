@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Codex Task Prompt",
+  "type": "object",
+  "required": [
+    "id",
+    "project",
+    "task",
+    "prompt",
+    "createdAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "task": {
+      "type": "string"
+    },
+    "prompt": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}

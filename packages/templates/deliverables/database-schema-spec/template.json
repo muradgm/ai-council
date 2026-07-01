@@ -1,0 +1,32 @@
+{
+  "name": "database-schema-spec",
+  "title": "Database Schema Spec",
+  "category": "engineering",
+  "entrypoint": "packages/templates/deliverables/database-schema-spec/TEMPLATE.md",
+  "skills": [
+    "database",
+    "postgres",
+    "mongodb"
+  ],
+  "agents": [
+    "data-engineer",
+    "senior-backend-engineer",
+    "principal-software-architect"
+  ],
+  "decisionEngines": [
+    "database-engine",
+    "data-model-engine"
+  ],
+  "workflows": [
+    "data-model-design"
+  ],
+  "keywords": [
+    "database",
+    "schema",
+    "data model",
+    "erd"
+  ],
+  "outputs": [
+    "Database Schema Spec document"
+  ]
+}

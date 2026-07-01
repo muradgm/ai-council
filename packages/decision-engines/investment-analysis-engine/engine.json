@@ -1,0 +1,69 @@
+{
+  "name": "investment-analysis-engine",
+  "title": "Investment Analysis Engine",
+  "version": "1.0.0",
+  "entrypoint": "ENGINE.md",
+  "category": "finance",
+  "decisionType": "investment analysis decision",
+  "purpose": "Evaluate investment ideas through fundamentals, risk, time horizon, valuation, and portfolio fit.",
+  "ownerAgents": [
+    "financial-analyst",
+    "portfolio-manager",
+    "risk-manager",
+    "cfo"
+  ],
+  "skills": [
+    "finance",
+    "investing",
+    "risk-management"
+  ],
+  "tags": [
+    "investment",
+    "finance",
+    "valuation",
+    "risk"
+  ],
+  "keywords": [
+    "investment",
+    "stock",
+    "valuation",
+    "portfolio",
+    "financials",
+    "risk",
+    "fundamental"
+  ],
+  "inputs": [
+    "user_request",
+    "project_context",
+    "constraints",
+    "existing_evidence",
+    "candidate_options",
+    "relevant_agents",
+    "relevant_skills"
+  ],
+  "outputs": [
+    "decision_summary",
+    "recommended_option",
+    "rationale",
+    "tradeoffs",
+    "risk_register",
+    "confidence_level",
+    "next_actions",
+    "what_would_change_the_decision"
+  ],
+  "rubricCriteria": [
+    "business quality",
+    "valuation logic",
+    "balance sheet risk",
+    "cash-flow durability",
+    "time horizon",
+    "portfolio concentration",
+    "downside case"
+  ],
+  "guardrails": [
+    "Educational analysis only. Do not provide personalized financial advice.",
+    "State assumptions explicitly.",
+    "Separate facts, inference, and opinion.",
+    "Prefer reversible decisions when evidence is weak."
+  ]
+}

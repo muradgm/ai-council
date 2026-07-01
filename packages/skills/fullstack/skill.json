@@ -1,0 +1,17 @@
+{
+  "name": "fullstack",
+  "title": "Full-Stack Engineering",
+  "version": "1.0.0",
+  "phase": "02-skills-layer",
+  "description": "Reusable skill for end-to-end product implementation.",
+  "dependencies": [
+    "frontend",
+    "backend"
+  ],
+  "tags": [
+    "fullstack",
+    "engineering"
+  ],
+  "entrypoint": "SKILL.md",
+  "status": "active"
+}

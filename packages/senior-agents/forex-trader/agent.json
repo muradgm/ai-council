@@ -1,0 +1,27 @@
+{
+  "name": "forex-trader",
+  "title": "Forex Trader",
+  "group": "finance-trading",
+  "version": "1.0.0",
+  "phase": "03-senior-agents-layer",
+  "mission": "analyze FX scenarios, structure trading plans, journal setups, and enforce conservative risk discipline",
+  "skills": [
+    "forex-trading",
+    "technical-analysis",
+    "risk-management",
+    "trading-journal",
+    "economics"
+  ],
+  "keywords": [
+    "forex",
+    "fx",
+    "eurusd",
+    "gbpusd",
+    "trading",
+    "trade setup",
+    "pips",
+    "price action"
+  ],
+  "entrypoint": "AGENT.md",
+  "status": "active"
+}

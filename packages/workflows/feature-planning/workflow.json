@@ -1,0 +1,55 @@
+{
+  "name": "feature-planning",
+  "title": "Feature Planning Workflow",
+  "version": "1.0.0",
+  "entrypoint": "WORKFLOW.md",
+  "category": "product-engineering",
+  "description": "Turn a feature idea into requirements, acceptance criteria, technical plan, and implementation sequence.",
+  "triggers": [
+    "feature",
+    "user story",
+    "acceptance criteria",
+    "build feature",
+    "scope feature"
+  ],
+  "agents": [
+    "product-manager",
+    "principal-software-architect",
+    "senior-fullstack-engineer",
+    "qa-engineer"
+  ],
+  "skills": [
+    "product-management",
+    "software-architecture",
+    "fullstack",
+    "testing",
+    "documentation"
+  ],
+  "decisionEngines": [
+    "product-strategy-engine",
+    "architecture-engine",
+    "testing-strategy-engine"
+  ],
+  "phases": [
+    "01-intake",
+    "02-routing",
+    "03-analysis",
+    "04-plan",
+    "05-execute",
+    "06-review"
+  ],
+  "outputs": [
+    "Feature spec",
+    "Acceptance criteria",
+    "Implementation tasks",
+    "Test plan"
+  ],
+  "qualityGates": [
+    "scope-is-clear",
+    "references-exist",
+    "risks-are-visible",
+    "validation-is-defined",
+    "documentation-updated"
+  ],
+  "safety": "Follow project safety, privacy, security, and user-confirmation boundaries."
+}

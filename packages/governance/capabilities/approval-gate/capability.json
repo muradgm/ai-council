@@ -1,0 +1,30 @@
+{
+  "name": "approval-gate",
+  "title": "Approval Gate",
+  "entrypoint": "CAPABILITY.md",
+  "category": "approvals",
+  "riskLevel": "high",
+  "approvalRequired": true,
+  "keywords": [
+    "approval",
+    "confirm",
+    "dangerous",
+    "high risk",
+    "execute",
+    "send",
+    "delete"
+  ],
+  "inputs": [
+    "request",
+    "project",
+    "environment",
+    "dataClassification"
+  ],
+  "outputs": [
+    "decision",
+    "riskLevel",
+    "approvalRequired",
+    "auditRecommendation"
+  ],
+  "summary": "Create a structured approval request before high-impact actions are executed."
+}

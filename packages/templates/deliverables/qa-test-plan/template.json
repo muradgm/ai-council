@@ -1,0 +1,32 @@
+{
+  "name": "qa-test-plan",
+  "title": "QA Test Plan",
+  "category": "quality",
+  "entrypoint": "packages/templates/deliverables/qa-test-plan/TEMPLATE.md",
+  "skills": [
+    "testing",
+    "project-management",
+    "documentation"
+  ],
+  "agents": [
+    "qa-engineer",
+    "project-manager",
+    "technical-writer"
+  ],
+  "decisionEngines": [
+    "testing-strategy-engine",
+    "release-readiness-engine"
+  ],
+  "workflows": [
+    "release-readiness",
+    "code-review"
+  ],
+  "keywords": [
+    "qa",
+    "test plan",
+    "testing"
+  ],
+  "outputs": [
+    "QA Test Plan document"
+  ]
+}

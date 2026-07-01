@@ -1,0 +1,32 @@
+{
+  "name": "risk-review-report",
+  "title": "Risk Review Report",
+  "category": "risk",
+  "entrypoint": "packages/templates/deliverables/risk-review-report/TEMPLATE.md",
+  "skills": [
+    "risk-management",
+    "finance",
+    "security"
+  ],
+  "agents": [
+    "risk-manager",
+    "cfo",
+    "cybersecurity-engineer"
+  ],
+  "decisionEngines": [
+    "trading-risk-engine",
+    "finance-planning-engine",
+    "security-review-engine"
+  ],
+  "workflows": [
+    "risk-review"
+  ],
+  "keywords": [
+    "risk",
+    "risk review",
+    "exposure"
+  ],
+  "outputs": [
+    "Risk Review Report document"
+  ]
+}

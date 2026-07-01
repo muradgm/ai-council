@@ -1,0 +1,23 @@
+{
+  "phase": 12,
+  "name": "Apps + Web Console Layer",
+  "generatedAt": "2026-06-29",
+  "majorAdditions": [
+    "local Vite web console",
+    "enhanced local API server",
+    "catalog browsing",
+    "task routing UI",
+    "project status API",
+    "observability summary API",
+    "console scripts and documentation"
+  ],
+  "run": [
+    "pnpm dev:api",
+    "pnpm dev:web"
+  ],
+  "validate": [
+    "pnpm validate:knowledge",
+    "pnpm console:status",
+    "pnpm console:snapshot"
+  ]
+}
