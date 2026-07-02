@@ -54,6 +54,8 @@ winget install --id Ollama.Ollama -e
 ollama pull llama3.1
 ```
 
+The core Council runtime now uses a structured agent result contract for the first model-backed specialists: software architect, security architect, QA engineer, and final synthesizer. These agents return findings, risks, uncertainties, next actions, recommendations, and confidence. If a local model is unavailable or returns unusable output, the runtime falls back to a deterministic evidence-based result instead of presenting placeholder intelligence.
+
 For phone/tablet access on the same Wi-Fi network:
 
 ```bash

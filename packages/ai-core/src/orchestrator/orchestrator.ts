@@ -24,8 +24,58 @@ function compactAgentRead(agentResults: AgentResult[]) {
   return agentResults
     .filter(result => result.agentId !== "final-synthesizer")
     .slice(0, 5)
-    .map(result => `- ${titleize(result.agentId)}: ${result.summary}`)
+    .map(result => {
+      const finding = result.findings[0];
+      const evidence = finding?.evidence?.length ? ` Evidence: ${finding.evidence.join(", ")}.` : "";
+      return `- ${titleize(result.agentId)}: ${finding?.claim || result.summary}${evidence}`;
+    })
     .join("\n");
+}
+
+function severityRank(severity: string) {
+  return ({ critical: 4, high: 3, medium: 2, low: 1 } as Record<string, number>)[severity] || 0;
+}
+
+function rankedFindings(agentResults: AgentResult[]) {
+  return agentResults
+    .flatMap(result => result.findings.map(finding => ({ agentId: result.agentId, ...finding })))
+    .sort((a, b) => severityRank(b.severity) - severityRank(a.severity))
+    .slice(0, 6);
+}
+
+function consensusRead(agentResults: AgentResult[]) {
+  const active = agentResults.filter(result => result.agentId !== "final-synthesizer");
+  const withFindings = active.filter(result => result.findings.length > 0);
+  const highRisk = rankedFindings(active).some(finding => finding.severity === "high" || finding.severity === "critical");
+  return [
+    `${withFindings.length}/${active.length} specialist agents returned structured findings.`,
+    highRisk ? "At least one specialist sees high-risk work; treat the next action as approval/validation-sensitive." : "The specialists mostly point toward implementation hardening rather than more framework breadth.",
+    "The Council output is now findings-first: claim, evidence, recommendation, uncertainty, and next action."
+  ].join(" ");
+}
+
+function findingsBlock(agentResults: AgentResult[]) {
+  const findings = rankedFindings(agentResults);
+  if (!findings.length) return "- No structured findings returned by the selected agents.";
+  return findings.map((finding, index) => [
+    `${index + 1}. [${finding.severity.toUpperCase()}] ${titleize(finding.agentId)}: ${finding.claim}`,
+    finding.evidence.length ? `   Evidence: ${finding.evidence.join(", ")}` : "   Evidence: request",
+    `   Recommendation: ${finding.recommendation}`
+  ].join("\n")).join("\n");
+}
+
+function uncertaintyBlock(agentResults: AgentResult[]) {
+  const uncertainties = agentResults
+    .flatMap(result => result.uncertainties.map(item => `${titleize(result.agentId)}: ${item}`))
+    .slice(0, 6);
+  return uncertainties.length ? uncertainties.map(item => `- ${item}`).join("\n") : "- No explicit uncertainty surfaced.";
+}
+
+function nextActionBlock(agentResults: AgentResult[]) {
+  const actions = agentResults
+    .flatMap(result => result.nextActions.map(item => ({ agentId: result.agentId, item })))
+    .slice(0, 5);
+  return actions.length ? actions.map((action, index) => `${index + 1}. ${action.item} (${titleize(action.agentId)})`).join("\n") : "1. Confirm scope, make one testable change, then run validation.";
 }
 
 function strongestMove(request: CouncilRequest, councilId: string) {
@@ -84,6 +134,7 @@ function buildCouncilAnswer(params: {
     `Selected council: ${councilId}`,
     `Selected provider: ${providerId}`,
     `Agents used: ${agentResults.map(result => result.agentId).join(", ")}`,
+    `Structured findings: ${rankedFindings(agentResults).length}`,
     request.projectId ? `Project context: ${request.projectId}` : "Project context: General",
     `Privacy: ${request.privacyLevel || "local-only"}`,
     `Risk: ${request.riskLevel || "medium"}`
@@ -94,15 +145,19 @@ function buildCouncilAnswer(params: {
     strongestMove(request, councilId),
     "",
     "Why it matters:",
-    contextualRead(request, agentResults),
+    [contextualRead(request, agentResults), "", `Council consensus: ${consensusRead(agentResults)}`].join("\n"),
+    "",
+    "Findings:",
+    findingsBlock(agentResults),
     "",
     "Next move:",
-    "1. Confirm the target project and the outcome you want.",
-    "2. Decide what evidence would prove the answer is right.",
-    "3. Make the smallest useful change, then run validation immediately.",
+    nextActionBlock(agentResults),
     "",
     "Risks:",
     warnings.length ? warnings.map(warning => `- ${warning}`).join("\n") : "- No policy warnings from the local guardrail pass.\n- The answer should still be checked against source files before high-impact changes.",
+    "",
+    "Uncertainty:",
+    uncertaintyBlock(agentResults),
     "",
     "Model synthesis:",
     modelSection,
@@ -176,7 +231,7 @@ export class Orchestrator {
     if (!council) throw new Error(`Council not found: ${councilId}`);
 
     const selectedAgents = this.agents.select(council.agents);
-    const agentResults = await Promise.all(selectedAgents.map(a => a.run(request.input, { projectId: request.projectId, taskType: request.taskType })));
+    const agentResults = await Promise.all(selectedAgents.map(a => a.run(request.input, { projectId: request.projectId, taskType: request.taskType, privacyLevel: request.privacyLevel, riskLevel: request.riskLevel })));
     const provider = this.modelRouter.selectProvider(request);
     const providerResponse = await provider.call({
       prompt: [
@@ -212,7 +267,7 @@ export class Orchestrator {
     const agent = this.agents.get(agentId);
     if (!agent) throw new Error(`Agent not found: ${agentId}`);
 
-    const agentResult = await agent.run(request.input, { projectId: request.projectId, taskType: request.taskType });
+    const agentResult = await agent.run(request.input, { projectId: request.projectId, taskType: request.taskType, privacyLevel: request.privacyLevel, riskLevel: request.riskLevel });
     const provider = this.modelRouter.selectProvider(request);
     const providerResponse = await provider.call({
       prompt: [

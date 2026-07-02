@@ -1,5 +1,12 @@
-import { BaseAgent } from "../base/base-agent.js";
-export class QaEngineerAgent extends BaseAgent {
-  id = "qa-engineer"; role = "qa engineer";
-  async analyze(input: string) { return { summary: "Testing strategy, edge cases, regression checks, and quality gates.", risks: ["Scaffolded agent: replace placeholder analysis with real logic/prompt execution."], recommendations: [`Review request from qa-engineer: ${input.slice(0, 120)}`] }; }
+import { ModelBackedAgent } from "../base/model-backed-agent.js";
+
+export class QaEngineerAgent extends ModelBackedAgent {
+  constructor() {
+    super({
+      id: "qa-engineer",
+      role: "QA engineer",
+      instructionPath: "packages/ai-core/src/agents/core/qa-engineer.spec.md",
+      focus: ["behavior evals", "seeded regressions", "runtime gates", "grounding checks", "release validation"]
+    });
+  }
 }

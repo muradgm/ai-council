@@ -1047,8 +1047,10 @@ function parseAnswerSections(text: string) {
   const labels = [
     ["Read", "read"],
     ["Why it matters", "why"],
+    ["Findings", "findings"],
     ["Next move", "next"],
     ["Risks", "risks"],
+    ["Uncertainty", "uncertainty"],
     ["Evidence", "evidence"],
     ["Model synthesis", "model"],
     ["Trace", "trace"]

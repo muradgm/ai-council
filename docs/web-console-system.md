@@ -79,7 +79,7 @@ The web console is organized like a working AI coding app rather than a marketin
 - The desktop chat view includes a right Context Stack for project memory, provider readiness, runtime context, selected agents, and quick routing.
 - Mobile collapses the rail into compact navigation so the conversation remains reachable early.
 
-Conversation responses should prioritize human judgement over raw routing output. The API still returns selected council/provider/agent metadata, but the visible answer is rendered as structured sections: Read, Why it matters, Next move, and Risks. Raw Model synthesis, Evidence, and Trace sections stay behind "View details" disclosures.
+Conversation responses should prioritize human judgement over raw routing output. The API still returns selected council/provider/agent metadata, but the visible answer is rendered as structured sections such as Read, Why it matters, Findings, Next move, Risks, and Uncertainty. Raw Model synthesis, Evidence, and Trace sections stay behind "View details" disclosures.
 
 The thinking indicator shows product-level execution state with motion: route, read memory, ask model, and synthesize. It should never expose hidden chain-of-thought; it only communicates that the local Council is doing staged work.
 
