@@ -22,7 +22,7 @@ This repository is designed to be used with Codex, ChatGPT, Claude Code, Gemini 
 | `packages/project-packs` | Product-specific packs for TradeFrame, SignalScout, NAVO/Flowday, and Swimly |
 | `packages/automation` | Backlog, sprint, task, release, GitHub, and Codex task automation |
 | `packages/governance` | Permissions, approvals, security, prompt-injection defense, and trading boundaries |
-| `apps/web-console` | Local dashboard for browsing Council assets |
+| `apps/web-console` | Codex-style local console for Council conversations, data, runtime, projects, and catalog browsing |
 | `apps/api-server` | Local API for the console |
 
 ## Quick start
@@ -45,6 +45,13 @@ Open:
 
 ```text
 http://localhost:5173
+```
+
+For local model-backed answers, install Ollama and pull the default model:
+
+```bash
+winget install --id Ollama.Ollama -e
+ollama pull llama3.1
 ```
 
 For phone/tablet access on the same Wi-Fi network:

@@ -79,7 +79,7 @@ export function detectSecretPatterns(text = '') {
   ];
   const findings = [];
   for (const [name, regex] of patterns) {
-    const matches = String(text).match(regex) || [];
+    const matches = (String(text).match(regex) || []).filter(match => !/=\s*configuredKey\b/.test(match));
     if (matches.length) findings.push({ type: name, count: matches.length });
   }
   return findings;

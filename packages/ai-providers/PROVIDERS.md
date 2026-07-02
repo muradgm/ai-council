@@ -29,4 +29,11 @@ A provider route should require explicit user approval when:
 
 ## Execution state
 
-Provider adapters in this repo are safe placeholders. Real HTTP calls must be added behind explicit environment checks and safe logging.
+Local provider adapters remain the default for private repository context. Selected cloud adapters can make real HTTP calls only when:
+
+- the matching environment variable is configured;
+- the request privacy level is not `local-only`;
+- the provider request has `allowNetwork: true`;
+- prompts are redacted before the external call.
+
+Provider health checks inspect local configuration only. They do not validate keys against external APIs and do not print secret values.

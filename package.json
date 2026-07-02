@@ -67,6 +67,7 @@
     "providers:list": "node scripts/list-providers.mjs",
     "providers:route": "node scripts/route-provider.mjs",
     "providers:health": "node scripts/provider-health.mjs",
+    "providers:set-env": "node scripts/provider-env-set.mjs",
     "providers:policy": "node scripts/provider-policy.mjs",
     "providers:env": "node scripts/generate-provider-env.mjs",
     "tools:list": "node scripts/list-tool-contracts.mjs",

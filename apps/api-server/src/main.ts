@@ -179,6 +179,22 @@ function runtimeSnapshot() {
   };
 }
 
+function projectContextFor(name: string | undefined) {
+  if (!name) return "";
+  const candidates = [
+    `projects/${name}/PROJECT.md`,
+    `projects/${name}/README.md`,
+    `storage/memory/projects/${name}/project-context.md`,
+    `storage/memory/projects/${name}/project-pack.md`
+  ];
+  const sections = candidates
+    .map(candidate => ({ candidate, text: exists(candidate) ? readText(candidate).trim() : "" }))
+    .filter(item => item.text)
+    .slice(0, 3)
+    .map(item => `Source: ${item.candidate}\n${item.text.slice(0, 1800)}`);
+  return sections.join("\n\n---\n\n");
+}
+
 const server = createServer(async (req, res) => {
   try {
     if (req.method === "OPTIONS") { json(res, 204, {}); return; }
@@ -289,9 +305,12 @@ const server = createServer(async (req, res) => {
     }
     if (url.pathname === "/ask" && req.method === "POST") {
       const body = await readBody(req);
+      const projectId = body.projectId ? String(body.projectId) : undefined;
+      const context = projectContextFor(projectId);
+      const input = String(body.input ?? "No input provided");
       const request = {
-        input: body.input ?? "No input provided",
-        projectId: body.projectId,
+        input: context ? `${input}\n\nRelevant project context:\n${context}` : input,
+        projectId,
         taskType: body.taskType,
         privacyLevel: body.privacyLevel ?? "local-only",
         riskLevel: body.riskLevel ?? "medium"

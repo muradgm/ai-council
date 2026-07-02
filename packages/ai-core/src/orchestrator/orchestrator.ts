@@ -1,10 +1,165 @@
 import type { CouncilRequest, CouncilResponse } from "../../../shared/src/index.js";
 import { ModelRouter } from "../../../ai-providers/src/index.js";
+import type { ProviderResponse } from "../../../ai-providers/src/index.js";
+import type { AgentResult } from "../agents/base/agent-contract.js";
 import { AgentRegistry } from "../agents/base/agent-registry.js";
 import { getCouncil } from "../councils/council-registry.js";
 import { CouncilSelector } from "./council-selector.js";
 import { PolicyEngine } from "../guardrails/policy-engine.js";
 import { TraceLogger } from "../tracing/trace-logger.js";
+
+function titleize(id: string) {
+  return id
+    .split("-")
+    .filter(Boolean)
+    .map(part => part[0]?.toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function isUnavailableProvider(response: ProviderResponse) {
+  return response.confidence <= 0 || /not available|not reachable|placeholder/i.test(response.text);
+}
+
+function compactAgentRead(agentResults: AgentResult[]) {
+  return agentResults
+    .filter(result => result.agentId !== "final-synthesizer")
+    .slice(0, 5)
+    .map(result => `- ${titleize(result.agentId)}: ${result.summary}`)
+    .join("\n");
+}
+
+function strongestMove(request: CouncilRequest, councilId: string) {
+  const project = request.projectId ? ` for ${request.projectId}` : "";
+  const text = request.input.toLowerCase();
+  if (/intelligent|useful|response|language|human|robot/.test(text)) {
+    return "The highest-leverage improvement is the context-aware answer loop: read the right project context, form a concrete judgement, expose uncertainty, and recommend one next move in plain human language.";
+  }
+  if (/github|public|push|repo/.test(text)) {
+    return "I would treat this as release-readiness work: keep private artifacts out of Git, prove the gates are green, then push only the intentional source and docs.";
+  }
+  if (councilId.includes("architecture")) return `I would slow down just enough to make the architecture decision explicit${project}, then validate it with one small implementation slice.`;
+  if (councilId.includes("security")) return `I would treat this as a risk decision first${project}: define the sensitive assets, tighten the boundary, then test the control.`;
+  if (councilId.includes("product")) return `I would anchor this in the user workflow${project}: pick the painful moment, define the outcome, and cut anything that does not help that moment.`;
+  return `I would make the next step small and verifiable${project}: change the smallest surface that proves the idea, then run the gates.`;
+}
+
+function contextualRead(request: CouncilRequest, agentResults: AgentResult[]) {
+  const text = request.input.toLowerCase();
+  if (/intelligent|useful|response|language|human|robot/.test(text)) {
+    return [
+      "- The weak point is response quality: the system can route and validate, but the fallback answer still needs richer synthesis.",
+      "- The next useful upgrade is project-aware answer composition: cite loaded context, name the tradeoff, and make one recommendation.",
+      "- The UI should support that behavior by feeling like a working conversation, not a catalog dashboard.",
+      "- Model status must stay honest: if Ollama is missing, say so, then give the best local deterministic read instead of pretending."
+    ].join("\n");
+  }
+  if (/github|public|push|repo/.test(text)) {
+    return [
+      "- The repo has a real validation foundation, but public readiness depends on keeping generated memory and traces out of Git.",
+      "- Secrets posture matters more than cosmetic polish before the first remote push.",
+      "- The first commit should be boring and auditable: source, docs, config examples, and empty storage scaffolds only."
+    ].join("\n");
+  }
+  return compactAgentRead(agentResults) || "- The request is broad enough that the safest move is to clarify scope, then execute one testable slice.";
+}
+
+function buildCouncilAnswer(params: {
+  request: CouncilRequest;
+  councilId: string;
+  providerId: string;
+  agentResults: AgentResult[];
+  providerResponse: ProviderResponse;
+  warnings: string[];
+}) {
+  const { request, councilId, providerId, agentResults, providerResponse, warnings } = params;
+  const unavailable = isUnavailableProvider(providerResponse);
+  const modelSection = unavailable
+    ? [
+        "The local model route did not produce useful synthesis.",
+        `The local model route selected ${providerId}, but it did not produce a useful model-backed synthesis. I am using the Council's local routing and agent analysis instead.`,
+        providerResponse.text
+      ].join("\n")
+    : providerResponse.text;
+  const evidence = [
+    `Selected council: ${councilId}`,
+    `Selected provider: ${providerId}`,
+    `Agents used: ${agentResults.map(result => result.agentId).join(", ")}`,
+    request.projectId ? `Project context: ${request.projectId}` : "Project context: General",
+    `Privacy: ${request.privacyLevel || "local-only"}`,
+    `Risk: ${request.riskLevel || "medium"}`
+  ].join("\n");
+
+  return [
+    "Read:",
+    strongestMove(request, councilId),
+    "",
+    "Why it matters:",
+    contextualRead(request, agentResults),
+    "",
+    "Next move:",
+    "1. Confirm the target project and the outcome you want.",
+    "2. Decide what evidence would prove the answer is right.",
+    "3. Make the smallest useful change, then run validation immediately.",
+    "",
+    "Risks:",
+    warnings.length ? warnings.map(warning => `- ${warning}`).join("\n") : "- No policy warnings from the local guardrail pass.\n- The answer should still be checked against source files before high-impact changes.",
+    "",
+    "Model synthesis:",
+    modelSection,
+    "",
+    "Evidence:",
+    evidence,
+    "",
+    "Trace:",
+    `Selected council: ${councilId}`
+  ].join("\n");
+}
+
+function buildSingleAgentAnswer(params: {
+  request: CouncilRequest;
+  agentId: string;
+  agentResult: AgentResult;
+  providerId: string;
+  providerResponse: ProviderResponse;
+  warnings: string[];
+}) {
+  const { agentId, agentResult, providerId, providerResponse, warnings } = params;
+  const unavailable = isUnavailableProvider(providerResponse);
+  const recommendations = agentResult.recommendations
+    .filter(item => !/^Review request from/i.test(item))
+    .slice(0, 4);
+
+  return [
+    "Read:",
+    agentResult.summary,
+    "",
+    "Why it matters:",
+    `This answer is intentionally scoped to ${titleize(agentId)} rather than the full Council, so it should be treated as a specialist read.`,
+    "",
+    "Next move:",
+    ...(recommendations.length ? recommendations.map((item, index) => `${index + 1}. ${item}`) : [
+      "1. Make the decision explicit.",
+      "2. Keep the next change small enough to validate.",
+      "3. Run the relevant tests or Council gates before calling it done."
+    ]),
+    "",
+    "Risks:",
+    agentResult.risks.length ? agentResult.risks.map(risk => `- ${risk}`).join("\n") : "- No role-specific risk surfaced.",
+    "",
+    warnings.length ? warnings.map(warning => `- ${warning}`).join("\n") : "- No policy warnings from the local guardrail pass.",
+    "",
+    "Model synthesis:",
+    unavailable ? providerResponse.text : providerResponse.text,
+    "",
+    "Evidence:",
+    "Selected council: single-agent",
+    `Selected provider: ${providerId}`,
+    `Selected agent: ${agentId}`,
+    "",
+    "Trace:",
+    "Selected council: single-agent"
+  ].join("\n");
+}
 
 export class Orchestrator {
   private readonly selector = new CouncilSelector();
@@ -24,8 +179,22 @@ export class Orchestrator {
     const agentResults = await Promise.all(selectedAgents.map(a => a.run(request.input, { projectId: request.projectId, taskType: request.taskType })));
     const provider = this.modelRouter.selectProvider(request);
     const providerResponse = await provider.call({
-      prompt: [`Council: ${council.id}`, `Agents: ${agentResults.map(r => r.agentId).join(", ")}`, `Request: ${request.input}`, `Agent summaries: ${agentResults.map(r => `${r.agentId}: ${r.summary}`).join("\n")}`].join("\n\n"),
-      privacyLevel: request.privacyLevel ?? "local-only"
+      prompt: [
+        "You are AI Council, a local-first senior technical partner. Answer with judgement, not generic assistant filler.",
+        "Be natural, specific, and context-aware. Name what you inferred, what is uncertain, and the next move.",
+        "Use this structure in spirit: Read, Why it matters, Next move, Risks, Evidence. Do not over-explain.",
+        `Council: ${council.id}`,
+        `Project: ${request.projectId || "General"}`,
+        `Task type: ${request.taskType || "unspecified"}`,
+        `Risk: ${request.riskLevel || "medium"}`,
+        `Agents: ${agentResults.map(r => r.agentId).join(", ")}`,
+        `Request: ${request.input}`,
+        `Agent summaries:\n${agentResults.map(r => `${r.agentId}: ${r.summary}`).join("\n")}`
+      ].join("\n\n"),
+      privacyLevel: request.privacyLevel ?? "local-only",
+      riskLevel: request.riskLevel,
+      taskType: request.taskType,
+      allowNetwork: request.privacyLevel !== undefined && request.privacyLevel !== "local-only"
     });
 
     return {
@@ -33,7 +202,7 @@ export class Orchestrator {
       selectedProvider: provider.id,
       agentsUsed: agentResults.map(r => r.agentId),
       warnings: policyResult.warnings,
-      answer: [`Selected council: ${council.id}`, `Selected provider: ${provider.id}`, "", "Agent recommendations:", ...agentResults.flatMap(r => r.recommendations.map(x => `- ${r.agentId}: ${x}`)), "", "Provider output:", providerResponse.text].join("\n")
+      answer: buildCouncilAnswer({ request, councilId: council.id, providerId: provider.id, agentResults, providerResponse, warnings: policyResult.warnings })
     };
   }
 
@@ -46,8 +215,20 @@ export class Orchestrator {
     const agentResult = await agent.run(request.input, { projectId: request.projectId, taskType: request.taskType });
     const provider = this.modelRouter.selectProvider(request);
     const providerResponse = await provider.call({
-      prompt: [`Single-agent mode`, `Agent: ${agent.id}`, `Request: ${request.input}`, `Summary: ${agentResult.summary}`, `Risks: ${agentResult.risks.join("; ")}`].join("\n\n"),
-      privacyLevel: request.privacyLevel ?? "local-only"
+      prompt: [
+        "You are a specialist inside AI Council. Answer like a senior expert: direct, contextual, and practical.",
+        "Use this structure in spirit: Read, Why it matters, Next move, Risks, Evidence.",
+        `Single-agent mode`,
+        `Project: ${request.projectId || "General"}`,
+        `Agent: ${agent.id}`,
+        `Request: ${request.input}`,
+        `Summary: ${agentResult.summary}`,
+        `Risks: ${agentResult.risks.join("; ")}`
+      ].join("\n\n"),
+      privacyLevel: request.privacyLevel ?? "local-only",
+      riskLevel: request.riskLevel,
+      taskType: request.taskType,
+      allowNetwork: request.privacyLevel !== undefined && request.privacyLevel !== "local-only"
     });
 
     return {
@@ -55,7 +236,7 @@ export class Orchestrator {
       selectedProvider: provider.id,
       agentsUsed: [agent.id],
       warnings: policyResult.warnings,
-      answer: [`Selected council: single-agent`, `Selected provider: ${provider.id}`, `Selected agent: ${agent.id}`, "", "Agent summary:", agentResult.summary, "", "Agent recommendations:", ...agentResult.recommendations.map(x => `- ${x}`), "", "Provider output:", providerResponse.text].join("\n")
+      answer: buildSingleAgentAnswer({ request, agentId: agent.id, agentResult, providerId: provider.id, providerResponse, warnings: policyResult.warnings })
     };
   }
 }

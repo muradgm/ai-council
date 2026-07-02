@@ -10,11 +10,12 @@ The console does not replace the CLI. It makes the Council easier to inspect, ro
 2. Understand which agents, skills, engines, workflows, and templates exist.
 3. Route natural-language tasks and inspect the selected Council components.
 4. View project and memory readiness.
-5. View observability, traces, artifacts, and diagnostics.
+5. View data coverage, observability, traces, artifacts, diagnostics, provider readiness, and transcript counts.
 6. Ask local-first Council questions through the API orchestrator.
 7. Generate runtime context and runtime execution artifacts.
 8. Score runtime artifacts with the same quality gate used by final validation.
 9. Support Codex sessions with better context visibility.
+10. Attach local files and import local folders as browser-side context for review.
 
 ## Architecture
 
@@ -58,9 +59,9 @@ Open `http://<computer-lan-ip>:5173` from a phone or tablet on the same network.
 
 | Panel | Purpose |
 |---|---|
-| Overview | System health and counts |
 | Chat | Ask AI Council questions through the local API orchestrator |
-| Catalog | Browse agents, skills, engines, workflows, templates, evals, providers, tools, and projects |
+| Data | Inspect catalog coverage, runtime artifact quality, provider readiness, observability signals, and local transcript counts |
+| Knowledge | Browse agents, skills, engines, workflows, templates, evals, providers, tools, and projects |
 | Router | Route a task through the Council |
 | Projects | Inspect product folders and project memory |
 | Observability | Inspect traces, costs, artifacts, diagnostics, and reports |
@@ -68,6 +69,25 @@ Open `http://<computer-lan-ip>:5173` from a phone or tablet on the same network.
 | Evals | Inspect test suites and quality gates |
 | Runtime | Generate runtime context, run the local Council loop, score artifacts, inspect provider health, and preview latest reports |
 | Artifacts | Inspect generated outputs registered by observability |
+
+## Interaction model
+
+The web console is organized like a working AI coding app rather than a marketing dashboard:
+
+- The left rail owns navigation, project selection, catalog shortcuts, and local health.
+- The main workspace owns the conversation, composer, Data dashboard, runtime workbench, projects, or Knowledge view.
+- The desktop chat view includes a right Context Stack for project memory, provider readiness, runtime context, selected agents, and quick routing.
+- Mobile collapses the rail into compact navigation so the conversation remains reachable early.
+
+Conversation responses should prioritize human judgement over raw routing output. The API still returns selected council/provider/agent metadata, but the visible answer is rendered as structured sections: Read, Why it matters, Next move, and Risks. Raw Model synthesis, Evidence, and Trace sections stay behind "View details" disclosures.
+
+The thinking indicator shows product-level execution state with motion: route, read memory, ask model, and synthesize. It should never expose hidden chain-of-thought; it only communicates that the local Council is doing staged work.
+
+When a project is selected, the API enriches `/ask` requests with compact local project and memory previews before calling the orchestrator. This keeps answers more context-aware while preserving the local-first boundary.
+
+When a local folder is imported from the Projects view, the browser samples useful readable files and stores the resulting context in local browser storage. The API server does not receive arbitrary filesystem access from the browser. Attachments use the same local-only model: readable files are sampled into prompt context, while binary files are shown as metadata.
+
+Recent conversation messages are stored in the local browser only. This makes sent messages inspectable after reload without introducing account storage, cloud sync, or repository writes.
 
 ## Safety model
 
@@ -78,8 +98,11 @@ The console can:
 - read catalog metadata,
 - show routes,
 - display project status,
-- display observability records.
+- display observability records,
+- display Data dashboard signals,
 - answer local-first conversation requests through `/ask`,
+- attach selected local files as browser-side prompt context,
+- import selected local folders as browser-side project context,
 - run known local runtime scripts through the local API server,
 - write local runtime, eval, observability, and memory artifacts.
 

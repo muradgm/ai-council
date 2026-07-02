@@ -19,6 +19,8 @@ storage/memory/sessions/
 storage/automation/**/*.json
 storage/automation/**/*.md
 storage/memory/private/
+storage/memory/decisions/ai-council/
+storage/memory/projects/ai-council/
 
 # Keep storage documentation tracked while excluding generated contents.
 !storage/README.md

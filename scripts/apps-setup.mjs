@@ -9,6 +9,13 @@ function commandExists(command) {
     ? ['where.exe', [command]]
     : ['command', ['-v', command]];
   const result = spawnSync(shellCommand[0], shellCommand[1], { encoding: 'utf8', shell: process.platform !== 'win32' });
+  if (result.status !== 0 && process.platform === 'win32') {
+    const knownPaths = {
+      ollama: [path.join(process.env.LOCALAPPDATA || '', 'Programs', 'Ollama', 'ollama.exe')]
+    };
+    const fallbackPath = (knownPaths[command] || []).find(candidate => candidate && fs.existsSync(candidate));
+    if (fallbackPath) return { ok: true, path: fallbackPath };
+  }
   return {
     ok: result.status === 0,
     path: (result.stdout || '').split(/\r?\n/).find(Boolean) || null
@@ -21,6 +28,18 @@ async function httpCheck(name, url) {
     return { name, url, ok: response.ok, status: response.status };
   } catch (error) {
     return { name, url, ok: false, status: null, error: error instanceof Error ? error.message : String(error) };
+  }
+}
+
+async function ollamaModelCheck() {
+  try {
+    const response = await fetch('http://127.0.0.1:11434/api/tags', { signal: AbortSignal.timeout(3000) });
+    if (!response.ok) return { ok: false, models: [], status: response.status };
+    const data = await response.json();
+    const models = Array.isArray(data.models) ? data.models.map(model => model.name || model.model).filter(Boolean) : [];
+    return { ok: models.length > 0, models, status: response.status };
+  } catch (error) {
+    return { ok: false, models: [], status: null, error: error instanceof Error ? error.message : String(error) };
   }
 }
 
@@ -72,8 +91,12 @@ const checks = {
   endpoints: [
     await httpCheck('api', 'http://localhost:3333/health'),
     await httpCheck('web', 'http://localhost:5173'),
-    await httpCheck('runtime', 'http://localhost:3333/api/runtime/latest')
+    await httpCheck('runtime', 'http://localhost:3333/api/runtime/latest'),
+    await httpCheck('ollama', 'http://127.0.0.1:11434/api/tags')
   ],
+  localModels: {
+    ollama: await ollamaModelCheck()
+  },
   providerEnv: providerEnv.map(envState),
   consoleStatus: runScript('console-status.mjs'),
   providerHealth: runScript('provider-health.mjs')
@@ -88,7 +111,8 @@ const recommendations = [];
 if (missingRequired.length) recommendations.push(`Install required local command(s): ${missingRequired.join(', ')}.`);
 if (downEndpoints.length) recommendations.push('Start local services with `pnpm dev:api` and `pnpm dev:web`.');
 if (missingModelApps.includes('ollama')) recommendations.push('Install Ollama and run a local model for model-backed chat/runtime synthesis.');
-if (configuredProviders.length === 0) recommendations.push('Set provider environment variables only for providers you intend to use.');
+else if (!checks.localModels.ollama.ok) recommendations.push('Pull an Ollama model such as `ollama pull llama3.1` for model-backed chat/runtime synthesis.');
+if (configuredProviders.length === 0 && !checks.localModels.ollama.ok) recommendations.push('Set provider environment variables only for providers you intend to use.');
 if (!recommendations.length) recommendations.push('Local apps are installed, connected, and ready.');
 
 const report = {
@@ -107,6 +131,9 @@ const commandLines = Object.entries(report.commands)
   .join('\n');
 const endpointLines = report.endpoints
   .map(endpoint => `- ${endpoint.ok ? 'OK' : 'DOWN'} ${endpoint.name}: ${endpoint.url}${endpoint.status ? ` (${endpoint.status})` : ''}`)
+  .join('\n');
+const modelLines = Object.entries(report.localModels)
+  .map(([name, check]) => `- ${check.ok ? 'OK' : 'MISS'} ${name}: ${(check.models || []).join(', ') || check.error || 'no models found'}`)
   .join('\n');
 const envLines = report.providerEnv
   .map(item => `- ${item.configured ? 'SET' : 'MISS'} ${item.name}`)
@@ -128,6 +155,10 @@ ${commandLines}
 ## Endpoints
 
 ${endpointLines}
+
+## Local Models
+
+${modelLines}
 
 ## Provider Environment
 

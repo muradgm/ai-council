@@ -31,11 +31,23 @@ importers:
 
   packages/ai-providers: {}
 
+  packages/decision-engines: {}
+
   packages/language-adapters: {}
+
+  packages/memory: {}
+
+  packages/orchestrator: {}
 
   packages/project-runtime: {}
 
+  packages/senior-agents: {}
+
   packages/shared: {}
+
+  packages/skills: {}
+
+  packages/workflows: {}
 
 packages:
 
