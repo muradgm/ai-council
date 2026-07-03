@@ -101,6 +101,7 @@ pnpm runtime:context TradeFrame "build the trading journal MVP"
 pnpm runtime:run TradeFrame "review the trading journal MVP architecture"
 pnpm runtime:eval
 pnpm apps:setup
+pnpm council act ai-council "create model-backed agent hardening plan" --dry-run
 pnpm learning:feedback TradeFrame 4 "Response was grounded and actionable."
 pnpm learning:report
 pnpm council context TradeFrame "build the trading journal MVP"

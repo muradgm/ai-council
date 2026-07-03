@@ -143,6 +143,7 @@ const hardGates = [
   ['Smoke tests', process.execPath, [path.join(root, 'node_modules/tsx/dist/cli.mjs'), 'tests/smoke.test.ts']],
   ['Model-backed agent behavior', process.execPath, [path.join(root, 'node_modules/tsx/dist/cli.mjs'), 'tests/model-backed-agents.test.ts']],
   ['Repo-review context behavior', process.execPath, [path.join(root, 'node_modules/tsx/dist/cli.mjs'), 'tests/repo-review-context.test.ts']],
+  ['Action runtime dry-run behavior', process.execPath, [path.join(root, 'node_modules/tsx/dist/cli.mjs'), 'tests/action-runtime.test.ts']],
   ['Knowledge validation', process.execPath, ['scripts/validate-knowledge.mjs']],
   ['Council doctor', process.execPath, ['scripts/council-doctor.mjs']],
   ['Runtime index', process.execPath, ['scripts/runtime-index.mjs']],
