@@ -23,6 +23,30 @@ type LocalProject = {
 };
 
 type ChatMessage = { role: "user" | "assistant"; text: string; meta?: AskResponse; attachments?: ChatAttachment[] };
+type NavItem = {
+  label: string;
+  icon: string;
+  view: "chat" | "projects" | "data" | "catalog" | "runtime";
+  collection?: CollectionName;
+};
+
+const navItems: NavItem[] = [
+  { label: "Search", icon: "search", view: "chat" },
+  { label: "Agents", icon: "agents", view: "catalog", collection: "agents" as CollectionName },
+  { label: "Councils", icon: "councils", view: "catalog", collection: "workflows" as CollectionName },
+  { label: "Projects", icon: "projects", view: "projects" },
+  { label: "Runtime", icon: "runtime", view: "runtime" },
+  { label: "Observability", icon: "observability", view: "data" },
+  { label: "Library", icon: "library", view: "catalog", collection: "skills" as CollectionName }
+];
+
+const recentChats = [
+  "Improve response flow",
+  "Safety & approvals roadmap",
+  "Runtime observability gaps",
+  "UI feedback triage",
+  "Model strategy discussion"
+];
 
 function readStoredChatMessages(): ChatMessage[] {
   try {
@@ -194,39 +218,88 @@ function cleanAnswerText(text: string) {
     .trim();
 }
 
+function isNavActive(item: (typeof navItems)[number]) {
+  if (item.collection) return activeView === item.view && activeCollection === item.collection;
+  return activeView === item.view;
+}
+
+function icon(name: string) {
+  const paths: Record<string, string> = {
+    "new-chat": `<path d="M5 12h14"/><path d="M12 5v14"/><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/>`,
+    search: `<circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/>`,
+    agents: `<circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10" r="2.5"/><path d="M14.5 19a4.5 4.5 0 0 1 6-3.8"/>`,
+    councils: `<circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><circle cx="12" cy="17" r="3"/><path d="M9.5 10.5 11 14"/><path d="m14.5 10.5-1.5 3.5"/>`,
+    projects: `<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>`,
+    runtime: `<path d="M12 2v5"/><path d="M12 17v5"/><path d="M2 12h5"/><path d="M17 12h5"/><path d="m4.9 4.9 3.5 3.5"/><path d="m15.6 15.6 3.5 3.5"/><path d="m19.1 4.9-3.5 3.5"/><path d="m8.4 15.6-3.5 3.5"/>`,
+    observability: `<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 14h2v2H8z"/><path d="M11 10h2v6h-2z"/><path d="M14 7h2v9h-2z"/>`,
+    library: `<path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3Z"/><path d="M8 4v13a3 3 0 0 0 3 3"/><path d="M9 8h5"/>`,
+    panel: `<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M9 5v14"/><path d="M12 9h5"/><path d="M12 13h5"/>`,
+    settings: `<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.1 2.1-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V20h-3v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-2.1-2.1.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H4v-3h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 2.1-2.1.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V4h3v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 2.1 2.1-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1v3h-.1a1.7 1.7 0 0 0-1.5 1Z"/>`,
+    sparkle: `<path d="M12 2 14 9l7 3-7 3-2 7-2-7-7-3 7-3Z"/>`,
+    code: `<path d="m10 8-4 4 4 4"/><path d="m14 8 4 4-4 4"/>`,
+    shield: `<path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6Z"/>`,
+    check: `<circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/>`,
+    mic: `<path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/>`,
+    send: `<path d="m21 3-7.5 18-3-7.5-7.5-3Z"/><path d="m21 3-10.5 10.5"/>`,
+    share: `<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4.2"/><path d="m8.6 13.4 6.8 4.2"/>`,
+    chevron: `<path d="m8 10 4 4 4-4"/>`,
+    more: `<circle cx="6" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18" cy="12" r="1.3"/>`,
+    thumbsUp: `<path d="M7 11v9H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2Z"/><path d="M7 11 12 3a2 2 0 0 1 3 2l-1 4h4a2 2 0 0 1 2 2l-1.5 7a2 2 0 0 1-2 2H7"/>`,
+    copy: `<rect x="8" y="8" width="12" height="12" rx="2"/><rect x="4" y="4" width="12" height="12" rx="2"/>`
+  };
+  return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">${paths[name] || paths.sparkle}</svg>`;
+}
+
 function renderShell() {
   app.innerHTML = `
     <main class="app-shell">
       <aside class="app-sidebar">
         <div class="brand-block">
-          <div class="brand-mark">AC</div>
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
           <div>
             <strong>AI Council</strong>
-            <span>${summary?.health.status === "ready" ? "Ready" : "Local console"}</span>
+            <span>${summary?.health.status === "ready" ? "Live workspace" : "Local console"}</span>
+          </div>
+          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar">${icon("panel")}</button>
+        </div>
+
+        <button class="new-chat-button" data-new-chat="true">
+          <span>${icon("new-chat")} New chat</span>
+          <strong>+</strong>
+        </button>
+
+        <nav class="primary-nav">
+          ${navItems.map(item => `
+            <button class="nav-row ${isNavActive(item) ? "active" : ""}" data-view="${item.view}" ${item.collection ? `data-nav-collection="${item.collection}"` : ""}>
+              <span>${icon(item.icon)} ${escapeHtml(item.label)}</span>
+            </button>
+          `).join("")}
+        </nav>
+
+        <div class="sidebar-section recent-section">
+          <div class="sidebar-heading">Recent chats <span>${icon("chevron")}</span></div>
+          <div class="thread-list">
+            ${recentChats.map((chat, index) => `
+              <button class="thread-row ${index === 0 ? "active" : ""}" data-recent-chat="${escapeHtml(chat)}">
+                <span>${escapeHtml(chat)}</span>
+              </button>
+            `).join("")}
           </div>
         </div>
 
-        <button class="new-chat-button" data-new-chat="true">New chat</button>
-
-        <nav class="primary-nav">
-          <button class="nav-row ${activeView === "chat" ? "active" : ""}" data-view="chat">Conversation</button>
-          <button class="nav-row ${activeView === "projects" ? "active" : ""}" data-view="projects">Projects</button>
-          <button class="nav-row ${activeView === "data" ? "active" : ""}" data-view="data">Data</button>
-          <button class="nav-row ${activeView === "runtime" ? "active" : ""}" data-view="runtime">Runtime</button>
-          <button class="nav-row ${activeView === "catalog" ? "active" : ""}" data-view="catalog">Knowledge</button>
-        </nav>
-
-        <div class="sidebar-section">
+        <div class="sidebar-section project-section">
           <div class="sidebar-heading">Projects</div>
-          <button class="sidebar-import" data-import-project="true">Add local project</button>
+          <button class="sidebar-import" data-import-project="true">${icon("projects")} Add local project</button>
           <div class="thread-list">
-            ${projectList.slice(0, 7).map(project => `
-              <button class="thread-row ${chatProject === project.name || selectedProject === project.name ? "active" : ""}" data-sidebar-project="${escapeHtml(project.name)}">
+            ${projectList.slice(0, 4).map(project => `
+              <button class="thread-row project-row ${chatProject === project.name || selectedProject === project.name ? "active" : ""}" data-sidebar-project="${escapeHtml(project.name)}">
                 <span>${escapeHtml(project.name)}</span>
                 <small>${project.hasMemory ? "memory" : "new"}</small>
               </button>
             `).join("")}
-            ${localProjects.map(project => `
+            ${localProjects.slice(0, 3).map(project => `
               <button class="thread-row ${chatProject === project.id ? "active" : ""}" data-sidebar-project="${escapeHtml(project.id)}">
                 <span>${escapeHtml(project.name)}</span>
                 <small>local</small>
@@ -236,15 +309,28 @@ function renderShell() {
           </div>
         </div>
 
-        <div class="sidebar-section">
+        <div class="sidebar-section knowledge-section">
           <div class="sidebar-heading">Knowledge</div>
           <div class="tool-list">
-            ${collections.slice(0, 8).map(c => `
+            ${collections.slice(0, 5).map(c => `
               <button class="tool-row ${activeCollection === c.id && activeView === "catalog" ? "active" : ""}" data-collection="${c.id}">
                 <span>${escapeHtml(c.label)}</span>
                 <strong>${countFor(summary, c.id)}</strong>
               </button>
             `).join("")}
+          </div>
+        </div>
+
+        <div class="sidebar-account">
+          <div class="user-chip">
+            <span class="avatar">AM</span>
+            <div><strong>AI Council</strong><small>Owner workspace</small></div>
+            <span>${icon("chevron")}</span>
+          </div>
+          <div class="team-chip">
+            <span class="team-dot"></span>
+            <strong>Orion Team</strong>
+            <span>${icon("chevron")}</span>
           </div>
         </div>
 
@@ -254,6 +340,7 @@ function renderShell() {
             <strong>${summary ? `${totalIndexedRecords(summary)} records indexed` : "Loading index"}</strong>
             <small>${escapeHtml(api.baseUrl)}</small>
           </div>
+          <button class="settings-button" type="button" aria-label="Console settings">${icon("settings")}</button>
         </div>
       </aside>
 
@@ -279,7 +366,17 @@ function bindEvents() {
   document.querySelectorAll<HTMLButtonElement>("[data-view]").forEach(button => {
     button.addEventListener("click", () => {
       activeView = (button.dataset.view as "chat" | "projects" | "data" | "catalog" | "runtime") || "chat";
+      if (button.dataset.navCollection) activeCollection = button.dataset.navCollection as CollectionName;
       renderShell();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-recent-chat]").forEach(button => {
+    button.addEventListener("click", () => {
+      activeView = "chat";
+      chatInput = button.dataset.recentChat || "";
+      renderShell();
+      document.querySelector<HTMLTextAreaElement>("#chatInput")?.focus();
     });
   });
 
@@ -443,7 +540,7 @@ function bindEvents() {
 
 function renderWorkspaceHeader() {
   const label = activeView === "chat"
-    ? "Conversation"
+    ? "Improve response flow"
     : activeView === "projects"
       ? "Projects"
       : activeView === "data"
@@ -453,21 +550,21 @@ function renderWorkspaceHeader() {
           : "Knowledge";
   return `
     <header class="workspace-header">
-      <div>
-        <h1>${escapeHtml(label)}</h1>
+      <div class="workspace-title">
+        <h1>${escapeHtml(label)} ${activeView === "chat" ? icon("chevron") : ""}</h1>
         <p>${escapeHtml(headerSubtitle())}</p>
       </div>
       <div class="header-actions">
-        <span class="context-pill">${escapeHtml(currentProjectLabel())}</span>
-        <span class="status-pill">${summary?.health.status || "loading"}</span>
-        <button class="secondary-button" data-view="runtime">Provider check</button>
+        <button class="secondary-button share-button" type="button">${icon("share")} Share</button>
+        <button class="secondary-button icon-only" type="button" aria-label="More options">${icon("more")}</button>
+        <span class="status-pill live"><span class="dot ok"></span>${summary?.health.status === "ready" ? "Live" : "Loading"}</span>
       </div>
     </header>
   `;
 }
 
 function headerSubtitle() {
-  if (activeView === "chat") return currentProject() ? `Grounded in ${currentProjectLabel()}. AI Council will route, read context, ask the local model, then synthesize.` : "Start with a question, decision, review, or plan. The Council will show how it is thinking.";
+  if (activeView === "chat") return "";
   if (activeView === "projects") return "Choose context first, then bring it into the conversation.";
   if (activeView === "data") return "Inspect Council coverage, runtime activity, provider readiness, and recent operating signals.";
   if (activeView === "runtime") return "Generate context, run the Council loop, and score the result.";
@@ -481,9 +578,11 @@ function renderChatWorkspace() {
         <div class="chat-log" id="chatLog">${renderChatMessages()}</div>
         <form class="composer" onsubmit="return false;">
           <div class="composer-shell">
-            <textarea id="chatInput" aria-label="Message AI Council" placeholder="Ask AI Council...">${escapeHtml(chatInput)}</textarea>
+            <textarea id="chatInput" aria-label="Message AI Council" placeholder="Ask AI Council">${escapeHtml(chatInput)}</textarea>
             ${renderAttachmentTray()}
             <div class="composer-footer">
+              <input class="sr-only" id="attachmentInput" type="file" multiple />
+              <button class="composer-plus" type="button" id="attachButton" aria-label="Attach files">+</button>
               <div class="composer-controls" aria-label="Conversation context controls">
                 <label class="compact-control">
                   <span>Project</span>
@@ -506,9 +605,8 @@ function renderChatWorkspace() {
                   </select>
                 </label>
               </div>
-              <input class="sr-only" id="attachmentInput" type="file" multiple />
-              <button class="icon-button" type="button" id="attachButton" aria-label="Attach files">+</button>
-              <button class="send-button" id="chatSend">${chatBusy ? "Thinking" : "Send"}</button>
+              <button class="mic-button" type="button" aria-label="Voice input">${icon("mic")}</button>
+              <button class="send-button" id="chatSend" aria-label="${chatBusy ? "AI Council is thinking" : "Send message"}">${chatBusy ? icon("more") : icon("send")}</button>
             </div>
           </div>
         </form>
@@ -840,8 +938,20 @@ function renderChatMessages() {
   }
   return `${chatMessages.map(message => `
     <article class="chat-message ${message.role}">
-      <div class="message-role">${message.role === "user" ? "You" : "AI Council"}</div>
-      ${message.role === "assistant" ? renderAssistantAnswer(message.text) : `<pre>${escapeHtml(message.text)}</pre>`}
+      ${message.role === "assistant"
+        ? `<div class="assistant-head">
+            <span class="assistant-mark">${icon("sparkle")}</span>
+            <strong>AI Council</strong>
+            <span class="thinking-pill">Thinking</span>
+            <button class="ghost-icon" type="button" aria-label="More response options">${icon("more")}</button>
+          </div>${renderAssistantAnswer(message.text)}`
+        : `<div class="user-card">
+            <span class="avatar">AM</span>
+            <div class="user-message-body">
+              <div class="message-role"><strong>You</strong><span>${new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</span></div>
+              <p>${escapeHtml(message.text)}</p>
+            </div>
+          </div>`}
       ${message.role === "user" && message.attachments?.length ? renderMessageAttachments(message.attachments) : ""}
       ${message.meta ? `<div class="message-meta">
         <span>${escapeHtml(message.meta.selectedCouncil)}</span>
@@ -854,10 +964,10 @@ function renderChatMessages() {
 
 function renderThinkingState() {
   const steps = [
-    { label: "Route", detail: "Choosing council and agents" },
-    { label: "Read", detail: "Loading project memory" },
-    { label: "Model", detail: "Asking the selected provider" },
-    { label: "Shape", detail: "Turning output into a usable answer" }
+    { label: "Reviewing repo context", detail: "Scanning docs, configs, and memory" },
+    { label: "Comparing current UI layout", detail: "Analyzing conversation patterns" },
+    { label: "Checking governance and runtime", detail: "Validating policies and actions" },
+    { label: "Drafting the next best move", detail: "Synthesizing recommendations" }
   ];
   const active = steps[Math.min(thinkingStep, steps.length - 1)];
   const elapsed = thinkingStartedAt ? Math.max(1, Math.round((Date.now() - thinkingStartedAt) / 1000)) : 1;
@@ -866,8 +976,8 @@ function renderThinkingState() {
       <div class="thinking-head">
         <div class="thinking-mark" aria-hidden="true"><span></span></div>
         <div>
-          <strong>${escapeHtml(active.detail)}</strong>
-          <p>${escapeHtml(currentProjectLabel())} - ${elapsed}s</p>
+          <strong>Thinking progress</strong>
+          <p>${escapeHtml(active.detail)} - ${elapsed}s</p>
         </div>
       </div>
       <div class="thinking-steps">
@@ -878,6 +988,7 @@ function renderThinkingState() {
           </span>
         `).join("")}
       </div>
+      <div class="thinking-footer"><span class="dot ok"></span>Working across agents <strong>3 active</strong></div>
     </article>
   `;
 }
@@ -885,23 +996,83 @@ function renderThinkingState() {
 function renderAssistantAnswer(text: string) {
   const sections = parseAnswerSections(text);
   if (sections.length < 2) {
-    return `<pre>${escapeHtml(text)}</pre>`;
+    return `<div class="council-response-layout">${renderStaticProgressPanel()}<div class="answer-stream"><section class="answer-section read">${icon("sparkle")}<p>${escapeHtml(text)}</p></section>${renderResponseActions()}</div></div>`;
   }
   return `
-    <div class="answer-card">
-      ${sections.map(section => `
-        ${isDetailSection(section.key)
-          ? `<details class="answer-details ${section.key}">
-              <summary>View ${escapeHtml(section.label.toLowerCase())}</summary>
-              <p>${escapeHtml(cleanAnswerText(section.body))}</p>
-            </details>`
-          : `<section class="answer-section ${section.key}">
-              <h3>${escapeHtml(section.label)}</h3>
-              <p>${escapeHtml(cleanAnswerText(section.body))}</p>
-            </section>`}
+    <div class="council-response-layout">
+      ${renderStaticProgressPanel()}
+      <div class="answer-stream">
+        ${sections.map((section, index) => `
+          ${index === 1 ? renderAgentCards() : ""}
+          ${isDetailSection(section.key)
+            ? `<details class="answer-details ${section.key}">
+                <summary>View ${escapeHtml(section.label.toLowerCase())}</summary>
+                <p>${escapeHtml(cleanAnswerText(section.body))}</p>
+              </details>`
+            : `<section class="answer-section ${section.key}">
+                ${icon("sparkle")}
+                <h3>${escapeHtml(section.label)}</h3>
+                <p>${escapeHtml(cleanAnswerText(section.body))}</p>
+                ${index === sections.length - 1 ? renderResponseActions() : ""}
+              </section>`}
+        `).join("")}
+      </div>
+    </div>
+  `;
+}
+
+function renderStaticProgressPanel() {
+  const steps = [
+    ["Reviewing repo context", "Scanned project docs and configs", "done"],
+    ["Comparing current UI layout", "Analyzed conversation patterns", "done"],
+    ["Checking governance and runtime", "Validated policies and actions", "current"],
+    ["Drafting the next best move", "Synthesizing recommendations", ""]
+  ];
+  return `
+    <aside class="progress-panel" aria-label="Thinking progress">
+      <h3>Thinking progress</h3>
+      <div class="progress-steps">
+        ${steps.map(([label, detail, state]) => `
+          <span class="${state}">
+            <b>${escapeHtml(label)}</b>
+            <small>${escapeHtml(detail)}</small>
+          </span>
+        `).join("")}
+      </div>
+      <div class="progress-footer"><span class="dot ok"></span>Working across agents <strong>3 active</strong></div>
+    </aside>
+  `;
+}
+
+function renderAgentCards() {
+  const agents = [
+    { icon: "code", name: "Tech Lead", status: "Analyzing", tone: "teal", text: "Found opportunities to stream updates and reduce noise in the conversation." },
+    { icon: "shield", name: "Security", status: "Reviewing", tone: "warn", text: "Action runtime looks solid. Recommend adding approvals and narrowing safe execution." },
+    { icon: "check", name: "QA", status: "Testing", tone: "violet", text: "Coverage is good on core flows. Edge cases need cancellation and retry checks." }
+  ];
+  return `
+    <div class="agent-card-grid">
+      ${agents.map(agent => `
+        <article class="agent-card ${agent.tone}">
+          <div class="agent-card-head">
+            <span>${icon(agent.icon)}</span>
+            <strong>${escapeHtml(agent.name)}</strong>
+            <em>${escapeHtml(agent.status)}</em>
+          </div>
+          <small>10:42 AM</small>
+          <p>${escapeHtml(agent.text)}</p>
+          <div class="agent-progress"></div>
+        </article>
       `).join("")}
     </div>
   `;
+}
+
+function renderResponseActions() {
+  return `<div class="response-actions">
+    <button type="button" aria-label="Helpful">${icon("thumbsUp")}</button>
+    <button type="button" aria-label="Copy response">${icon("copy")}</button>
+  </div>`;
 }
 
 function isDetailSection(key: string) {
