@@ -1,4 +1,5 @@
 import type { ActionDecisionStatus, ActionIntent, ActionRiskLevel } from "./action-intent.js";
+import { isAllowedValidationCommand } from "./command-allowlist.js";
 
 export type GovernanceDecision = {
   actionId: string;
@@ -13,7 +14,6 @@ const sourcePattern = /^(apps|packages|scripts|tests|projects)\//;
 const destructiveCommand = /\b(rm|del|remove-item|format|reset --hard|clean -fd|drop|truncate)\b/i;
 const publishCommand = /\b(git push|deploy|vercel|publish|release)\b/i;
 const installCommand = /\b(pnpm add|npm install|yarn add|bun add|pip install|winget install)\b/i;
-const validationCommand = /^(pnpm|npm|node|tsx)\s+(test|final:validate|validate:knowledge|lint|build|.+test|.+validate)\b/i;
 
 function targetText(action: ActionIntent) {
   return [action.description, action.target, action.command, action.args?.join(" "), action.reason].filter(Boolean).join(" ");
@@ -56,7 +56,7 @@ export function decideAction(action: ActionIntent): GovernanceDecision {
     if (installCommand.test(command) || publishCommand.test(command)) {
       return decision("approval_required", "high", action.id, ["Command changes external, dependency, or release state."]);
     }
-    if (validationCommand.test(command)) {
+    if (isAllowedValidationCommand(command)) {
       return decision("allow_with_logging", "low", action.id, ["Validation command is allowed with audit logging."]);
     }
     return decision("approval_required", "medium", action.id, ["Unrecognized commands require approval before execution."]);

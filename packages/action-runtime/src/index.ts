@@ -1,4 +1,7 @@
 export * from "./action-intent.js";
+export * from "./approval.js";
+export * from "./backup.js";
+export * from "./command-allowlist.js";
 export * from "./governance-decision.js";
 export * from "./rollback.js";
 export * from "./file-actions.js";
