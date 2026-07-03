@@ -9,10 +9,12 @@ Production behavior must change only through evaluated, versioned, reviewable re
 The orchestrator turns a user task into a local-first Council run:
 
 1. Select a council and the relevant specialist agents.
-2. Load compact project and memory context supplied by the API or runtime scripts.
+2. Load compact project, memory, and bounded repository-review context supplied by the API or runtime scripts.
 3. Execute each agent through the shared `AgentResult` contract.
 4. Synthesize the agent outputs into a human-readable answer with evidence, findings, uncertainties, and next actions.
 5. Keep raw trace and provider details available for inspection without making them the main answer.
+
+For AI Council repo-review requests, the API adds a small known-file context pack with `Source:` labels. This is intentionally narrower than arbitrary filesystem search: it gives agents enough executable context to cite source files while keeping browser-originated requests inside a predictable local boundary.
 
 ## Model-backed specialists
 

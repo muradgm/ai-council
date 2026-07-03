@@ -78,6 +78,22 @@ function nextActionBlock(agentResults: AgentResult[]) {
   return actions.length ? actions.map((action, index) => `${index + 1}. ${action.item} (${titleize(action.agentId)})`).join("\n") : "1. Confirm scope, make one testable change, then run validation.";
 }
 
+function agentEvidenceForPrompt(agentResults: AgentResult[]) {
+  return agentResults.map(result => {
+    const findings = result.findings.slice(0, 2).map(finding => [
+      `- ${finding.severity}: ${finding.claim}`,
+      `  Evidence: ${finding.evidence.length ? finding.evidence.join(", ") : "request"}`,
+      `  Recommendation: ${finding.recommendation}`
+    ].join("\n")).join("\n");
+    const uncertainty = result.uncertainties.slice(0, 2).join("; ");
+    return [
+      `${result.agentId}: ${result.summary}`,
+      findings || "- No structured finding.",
+      uncertainty ? `Uncertainty: ${uncertainty}` : ""
+    ].filter(Boolean).join("\n");
+  }).join("\n\n");
+}
+
 function strongestMove(request: CouncilRequest, councilId: string) {
   const project = request.projectId ? ` for ${request.projectId}` : "";
   const text = request.input.toLowerCase();
@@ -244,7 +260,7 @@ export class Orchestrator {
         `Risk: ${request.riskLevel || "medium"}`,
         `Agents: ${agentResults.map(r => r.agentId).join(", ")}`,
         `Request: ${request.input}`,
-        `Agent summaries:\n${agentResults.map(r => `${r.agentId}: ${r.summary}`).join("\n")}`
+        `Agent findings and evidence:\n${agentEvidenceForPrompt(agentResults)}`
       ].join("\n\n"),
       privacyLevel: request.privacyLevel ?? "local-only",
       riskLevel: request.riskLevel,

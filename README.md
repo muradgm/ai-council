@@ -56,6 +56,8 @@ ollama pull llama3.1
 
 The core Council runtime now uses a structured agent result contract for the first model-backed specialists: software architect, security architect, QA engineer, and final synthesizer. These agents return findings, risks, uncertainties, next actions, recommendations, and confidence. If a local model is unavailable or returns unusable output, the runtime falls back to a deterministic evidence-based result instead of presenting placeholder intelligence.
 
+Repo-review requests to the local API also load a bounded set of source snippets from the AI Council repository. The orchestrator passes those `Source:` citations into specialist agents so findings can point at real files instead of only the user request.
+
 For phone/tablet access on the same Wi-Fi network:
 
 ```bash
