@@ -86,6 +86,11 @@ button:disabled {
   cursor: not-allowed;
 }
 
+button:disabled,
+button[disabled] {
+  opacity: 0.48;
+}
+
 code,
 pre {
   font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -114,6 +119,57 @@ p {
   min-height: 0;
   display: grid;
   grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+}
+
+@media (min-width: 1041px) {
+  .app-shell.sidebar-collapsed {
+    --sidebar-width: 5.25rem;
+  }
+
+  .app-shell.sidebar-collapsed .app-sidebar {
+    align-items: center;
+    padding: 1.1rem 0.75rem;
+  }
+
+  .app-shell.sidebar-collapsed .brand-block {
+    grid-template-columns: 2rem;
+    justify-items: center;
+  }
+
+  .app-shell.sidebar-collapsed .brand-block > div:not(.brand-mark),
+  .app-shell.sidebar-collapsed .new-chat-button span,
+  .app-shell.sidebar-collapsed .nav-row span,
+  .app-shell.sidebar-collapsed .recent-section,
+  .app-shell.sidebar-collapsed .project-section,
+  .app-shell.sidebar-collapsed .knowledge-section,
+  .app-shell.sidebar-collapsed .sidebar-account,
+  .app-shell.sidebar-collapsed .sidebar-status > div {
+    display: none;
+  }
+
+  .app-shell.sidebar-collapsed .new-chat-button,
+  .app-shell.sidebar-collapsed .nav-row,
+  .app-shell.sidebar-collapsed .sidebar-status {
+    width: 2.75rem;
+    min-width: 2.75rem;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .app-shell.sidebar-collapsed .primary-nav {
+    width: 100%;
+  }
+
+  .app-shell.sidebar-collapsed .sidebar-status {
+    grid-template-columns: 1fr;
+    margin-top: auto;
+    border-top: 0;
+  }
+
+  .app-shell.sidebar-collapsed .sidebar-status .dot {
+    display: none;
+  }
 }
 
 .app-sidebar {
@@ -465,6 +521,7 @@ p {
 }
 
 .workspace-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -530,6 +587,118 @@ p {
   border-color: rgba(45, 226, 209, 0.18);
   background: rgba(45, 226, 209, 0.1);
   color: var(--accent-teal);
+}
+
+.floating-panel-layer {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 0.65rem);
+  right: 2rem;
+  display: grid;
+  gap: 0.65rem;
+  justify-items: end;
+  pointer-events: none;
+}
+
+.floating-panel,
+.action-notice {
+  pointer-events: auto;
+}
+
+.floating-panel {
+  width: min(24rem, calc(100vw - 2rem));
+  display: grid;
+  gap: 0.75rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 0.95rem;
+  background: linear-gradient(180deg, rgba(17, 24, 35, 0.98), rgba(8, 12, 18, 0.98));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+  padding: 1rem;
+}
+
+.floating-panel h2 {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.floating-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.panel-field {
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted);
+  padding: 0.7rem;
+  font-size: 0.8rem;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 0.7rem;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.panel-row:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.panel-row strong {
+  min-width: 0;
+  max-width: 13rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+  text-align: right;
+  white-space: nowrap;
+}
+
+.panel-action,
+.menu-action {
+  min-height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-weight: 800;
+}
+
+.menu-action {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.65rem 0.75rem;
+}
+
+.panel-action:hover,
+.menu-action:hover {
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.action-notice {
+  max-width: min(24rem, calc(100vw - 2rem));
+  border: 1px solid rgba(45, 226, 209, 0.22);
+  border-radius: 999px;
+  background: rgba(45, 226, 209, 0.12);
+  color: var(--accent-teal);
+  padding: 0.62rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.36);
 }
 
 .conversation-layout {
