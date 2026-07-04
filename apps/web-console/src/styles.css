@@ -1009,6 +1009,134 @@ p {
   font-size: 0.78rem;
 }
 
+.event-panel {
+  display: grid;
+  gap: 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.025);
+  padding: 0.9rem;
+}
+
+.thinking-card .event-panel {
+  border-color: transparent;
+  background: transparent;
+  padding: 0;
+}
+
+.event-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.event-panel-head h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.event-panel-head span {
+  border-radius: 999px;
+  background: rgba(45, 226, 209, 0.1);
+  color: var(--accent-teal);
+  padding: 0.22rem 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.event-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.event-row {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 0.65rem;
+  border: 1px solid transparent;
+  border-radius: 0.72rem;
+  color: var(--muted);
+  padding: 0.58rem 0.65rem;
+}
+
+.event-row.active {
+  border-color: rgba(45, 226, 209, 0.2);
+  background: rgba(45, 226, 209, 0.07);
+  color: var(--text);
+}
+
+.event-row.complete,
+.event-row.skipped {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.event-row.blocked {
+  border-color: rgba(239, 68, 68, 0.28);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+.event-dot {
+  width: 0.72rem;
+  height: 0.72rem;
+  margin-top: 0.18rem;
+  border-radius: 999px;
+  background: var(--border-strong);
+}
+
+.event-row.teal .event-dot {
+  background: var(--accent-teal);
+}
+
+.event-row.blue .event-dot {
+  background: var(--accent-blue);
+}
+
+.event-row.violet .event-dot {
+  background: var(--accent-violet);
+}
+
+.event-row.warn .event-dot {
+  background: var(--accent-warning);
+}
+
+.event-row.danger .event-dot {
+  background: var(--accent-danger);
+}
+
+.event-row strong,
+.event-row small {
+  display: block;
+  min-width: 0;
+}
+
+.event-row strong {
+  color: var(--text);
+  font-size: 0.82rem;
+}
+
+.event-row small {
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  text-overflow: ellipsis;
+}
+
+.event-row em {
+  align-self: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--faint);
+  padding: 0.18rem 0.45rem;
+  font-size: 0.66rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
 .answer-section {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);

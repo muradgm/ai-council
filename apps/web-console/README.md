@@ -60,6 +60,7 @@ http://<your-computer-ip>:5173/?apiBase=http://<your-computer-ip>:3333
 - data view with catalog coverage, runtime quality, provider readiness, observability records, and local transcript counts
 - runtime context, runtime execution artifacts, and runtime artifact quality checks
 - local AI Council conversations through the API orchestrator
+- dynamic response events for agent start, context reading, findings, risks, proposed actions, approvals, validation, and final answer progress
 - local folder imports for browser-side project review context
 - file attachments in the composer for local-only prompt context
 
@@ -77,7 +78,9 @@ The console uses a Codex-style working layout:
 
 The console includes a conversation panel for local-first questions. It calls the API server's `/ask` endpoint, shows the selected council, provider, and agents used, and keeps recent message history in local browser storage so sent messages remain visible after reload.
 
-While a response is running, the UI shows a staged thinking path with an animated process indicator: route, read memory, ask model, and synthesize. This is a product state indicator, not hidden chain-of-thought.
+While a response is running, the UI shows a typed response event path: agent started, memory read, finding added, risk checked, action proposed, approval gate, validation running, and final answer streamed. This is a product state indicator, not hidden chain-of-thought.
+
+The current event lifecycle is local UI state in `apps/web-console/src/state/response-events.ts`. It gives the console a stable contract now, and can later be connected to server-sent events, WebSockets, provider traces, or runtime observability without redesigning the response surface.
 
 Assistant answers are rendered as structured judgement sections: Read, Why it matters, Next move, and Risks. Raw Model synthesis, Evidence, and Trace details are available behind "View details" disclosures so the main answer stays readable.
 

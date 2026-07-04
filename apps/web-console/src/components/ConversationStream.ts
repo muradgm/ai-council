@@ -2,11 +2,14 @@ import type { ChatAttachment, ChatMessage } from "../state/console-state.js";
 import { cleanAnswerText, escapeHtml, formatBytes } from "../ui/escape.js";
 import { icon } from "../ui/icons.js";
 import { renderAgentCards } from "./AgentCards.js";
+import { renderResponseEvents } from "./ResponseEvents.js";
 import { renderStaticProgressPanel, renderThinkingState } from "./ThinkingProgress.js";
+import type { ResponseEvent } from "../state/response-events.js";
 
 type ConversationStreamProps = {
   chatBusy: boolean;
   chatMessages: ChatMessage[];
+  responseEvents: ResponseEvent[];
   thinkingStartedAt: number;
   thinkingStep: number;
 };
@@ -43,13 +46,14 @@ export function renderChatMessages(props: ConversationStreamProps) {
             </div>
           </div>`}
       ${message.role === "user" && message.attachments?.length ? renderMessageAttachments(message.attachments) : ""}
+      ${message.role === "assistant" && message.events?.length ? renderResponseEvents({ events: message.events, title: "Response event trail" }) : ""}
       ${message.meta ? `<div class="message-meta">
         <span>${escapeHtml(message.meta.selectedCouncil)}</span>
         <span>${escapeHtml(message.meta.selectedProvider)}</span>
         <span>${escapeHtml(message.meta.agentsUsed.join(", "))}</span>
       </div>` : ""}
     </article>
-  `).join("")}${props.chatBusy ? renderThinkingState(props.thinkingStep, props.thinkingStartedAt) : ""}`;
+  `).join("")}${props.chatBusy ? renderThinkingState(props.thinkingStep, props.thinkingStartedAt, props.responseEvents) : ""}`;
 }
 
 function renderAssistantAnswer(text: string) {

@@ -1,6 +1,8 @@
 import { escapeHtml } from "../ui/escape.js";
+import type { ResponseEvent } from "../state/response-events.js";
+import { renderResponseEvents } from "./ResponseEvents.js";
 
-export function renderThinkingState(thinkingStep: number, thinkingStartedAt: number) {
+export function renderThinkingState(thinkingStep: number, thinkingStartedAt: number, responseEvents: ResponseEvent[] = []) {
   const steps = [
     { label: "Reviewing repo context", detail: "Scanning docs, configs, and memory" },
     { label: "Comparing current UI layout", detail: "Analyzing conversation patterns" },
@@ -18,14 +20,16 @@ export function renderThinkingState(thinkingStep: number, thinkingStartedAt: num
           <p>${escapeHtml(active.detail)} - ${elapsed}s</p>
         </div>
       </div>
-      <div class="thinking-steps">
-        ${steps.map((step, index) => `
-          <span class="${index < thinkingStep ? "done" : index === thinkingStep ? "current" : ""}">
-            <b>${escapeHtml(step.label)}</b>
-            <small>${escapeHtml(step.detail)}</small>
-          </span>
-        `).join("")}
-      </div>
+      ${responseEvents.length
+        ? renderResponseEvents({ events: responseEvents, title: "Live response events" })
+        : `<div class="thinking-steps">
+            ${steps.map((step, index) => `
+              <span class="${index < thinkingStep ? "done" : index === thinkingStep ? "current" : ""}">
+                <b>${escapeHtml(step.label)}</b>
+                <small>${escapeHtml(step.detail)}</small>
+              </span>
+            `).join("")}
+          </div>`}
       <div class="thinking-footer"><span class="dot ok"></span>Working across agents <strong>3 active</strong></div>
     </article>
   `;
