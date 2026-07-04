@@ -2,11 +2,14 @@ import type { ChatAttachment, ChatMessage } from "../state/console-state.js";
 import { cleanAnswerText, escapeHtml, formatBytes } from "../ui/escape.js";
 import { icon } from "../ui/icons.js";
 import { renderAgentCards } from "./AgentCards.js";
+import { renderResponseEvents } from "./ResponseEvents.js";
 import { renderStaticProgressPanel, renderThinkingState } from "./ThinkingProgress.js";
+import type { ResponseEvent } from "../state/response-events.js";
 
 type ConversationStreamProps = {
   chatBusy: boolean;
   chatMessages: ChatMessage[];
+  responseEvents: ResponseEvent[];
   thinkingStartedAt: number;
   thinkingStep: number;
 };
@@ -34,7 +37,7 @@ export function renderChatMessages(props: ConversationStreamProps) {
             <strong>AI Council</strong>
             <span class="thinking-pill">Thinking</span>
             <button class="ghost-icon" type="button" data-more-menu="true" aria-label="More response options" title="More response options">${icon("more")}</button>
-          </div>${renderAssistantAnswer(message.text)}`
+          </div>${renderAssistantAnswer(message)}`
         : `<div class="user-card">
             <span class="avatar">AM</span>
             <div class="user-message-body">
@@ -43,26 +46,28 @@ export function renderChatMessages(props: ConversationStreamProps) {
             </div>
           </div>`}
       ${message.role === "user" && message.attachments?.length ? renderMessageAttachments(message.attachments) : ""}
+      ${message.role === "assistant" && message.events?.length ? renderResponseEvents({ events: message.events, title: "Response event trail" }) : ""}
       ${message.meta ? `<div class="message-meta">
         <span>${escapeHtml(message.meta.selectedCouncil)}</span>
         <span>${escapeHtml(message.meta.selectedProvider)}</span>
         <span>${escapeHtml(message.meta.agentsUsed.join(", "))}</span>
       </div>` : ""}
     </article>
-  `).join("")}${props.chatBusy ? renderThinkingState(props.thinkingStep, props.thinkingStartedAt) : ""}`;
+  `).join("")}${props.chatBusy ? renderThinkingState(props.thinkingStep, props.thinkingStartedAt, props.responseEvents) : ""}`;
 }
 
-function renderAssistantAnswer(text: string) {
+function renderAssistantAnswer(message: ChatMessage) {
+  const text = message.text;
   const sections = parseAnswerSections(text);
   if (sections.length < 2) {
-    return `<div class="council-response-layout">${renderStaticProgressPanel()}<div class="answer-stream"><section class="answer-section read">${icon("sparkle")}<p>${escapeHtml(text)}</p></section>${renderResponseActions()}</div></div>`;
+    return `<div class="council-response-layout">${renderStaticProgressPanel(message.events, message.meta?.agentsUsed)}<div class="answer-stream"><section class="answer-section read">${icon("sparkle")}<p>${escapeHtml(text)}</p></section>${renderResponseActions()}</div></div>`;
   }
   return `
     <div class="council-response-layout">
-      ${renderStaticProgressPanel()}
+      ${renderStaticProgressPanel(message.events, message.meta?.agentsUsed)}
       <div class="answer-stream">
         ${sections.map((section, index) => `
-          ${index === 1 ? renderAgentCards() : ""}
+          ${index === 1 ? renderAgentCards(message.events, message.meta?.agentsUsed) : ""}
           ${isDetailSection(section.key)
             ? `<details class="answer-details ${section.key}">
                 <summary>View ${escapeHtml(section.label.toLowerCase())}</summary>

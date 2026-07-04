@@ -7,6 +7,7 @@ import { renderRuntime, renderRuntimeWorkspace as renderRuntimeWorkbench } from 
 import { renderSidebar } from "./components/Sidebar.js";
 import { renderWorkspaceHeader as renderWorkspaceHeaderComponent } from "./components/WorkspaceHeader.js";
 import type { ChatAttachment, ChatMessage, LocalProject, NavItem } from "./state/console-state.js";
+import { advanceResponseEvents, createResponseEvents, failResponseEvents, finalizeResponseEvents, type ResponseEvent } from "./state/response-events.js";
 import type { CatalogItem, CollectionName, ObservabilityResponse, ProjectDetailResponse, ProviderHealthResponse, RouteResponse, RuntimeActionResponse, RuntimeSnapshot, Summary } from "./types.js";
 import { copyTextToClipboard } from "./ui/copy.js";
 import { escapeHtml, formatBytes, pill } from "./ui/escape.js";
@@ -83,6 +84,8 @@ let chatBusy = false;
 let thinkingStep = 0;
 let thinkingStartedAt = 0;
 let thinkingTimer: number | undefined;
+let responseEvents: ResponseEvent[] = [];
+let responseEventTimer: number | undefined;
 let searchTerm = "";
 let runtimeProject = "TradeFrame";
 let runtimeTask = "review the trading journal MVP architecture";
@@ -127,6 +130,22 @@ function setThinking(active: boolean) {
     thinkingStep = Math.min(thinkingStep + 1, 3);
     renderShell();
   }, 900);
+}
+
+function startResponseEvents(input: string) {
+  if (responseEventTimer) window.clearInterval(responseEventTimer);
+  responseEvents = createResponseEvents(input, currentProjectLabel());
+  let eventStep = 0;
+  responseEventTimer = window.setInterval(() => {
+    eventStep = Math.min(eventStep + 1, responseEvents.length - 1);
+    responseEvents = advanceResponseEvents(responseEvents, eventStep);
+    renderShell();
+  }, 850);
+}
+
+function stopResponseEvents() {
+  if (responseEventTimer) window.clearInterval(responseEventTimer);
+  responseEventTimer = undefined;
 }
 
 function closePanels(except?: "settings" | "share" | "more") {
@@ -336,6 +355,8 @@ function bindEvents() {
 
   document.querySelector<HTMLButtonElement>("[data-new-chat]")?.addEventListener("click", () => {
     closePanels();
+    stopResponseEvents();
+    responseEvents = [];
     chatInput = "";
     setChatMessages([]);
     activeView = "chat";
@@ -551,7 +572,7 @@ function renderChatWorkspace() {
   return `
     <div class="conversation-layout">
       <section class="conversation-main">
-        <div class="chat-log" id="chatLog">${renderChatMessages({ chatBusy, chatMessages, thinkingStartedAt, thinkingStep })}</div>
+        <div class="chat-log" id="chatLog">${renderChatMessages({ chatBusy, chatMessages, responseEvents, thinkingStartedAt, thinkingStep })}</div>
         ${renderComposer({
           agentOptions,
           chatAttachments,
@@ -787,6 +808,7 @@ async function sendChatMessage() {
   const prompt = buildPrompt(input);
   chatBusy = true;
   setThinking(true);
+  startResponseEvents(input);
   setChatMessages([...chatMessages, { role: "user", text: input, attachments: outgoingAttachments }]);
   chatInput = "";
   chatAttachments = [];
@@ -796,12 +818,16 @@ async function sendChatMessage() {
     const response = await api.ask(prompt, apiProjectId(), chatMode === "agent" ? selectedAgent : undefined);
     const elapsed = Date.now() - startedAt;
     if (elapsed < 1200) await wait(1200 - elapsed);
-    setChatMessages([...chatMessages, { role: "assistant", text: response.answer, meta: response }]);
+    const finalEvents = finalizeResponseEvents(responseEvents, response);
+    setChatMessages([...chatMessages, { role: "assistant", text: response.answer, meta: response, events: finalEvents }]);
   } catch (error) {
-    setChatMessages([...chatMessages, { role: "assistant", text: `I could not reach the local Council API.\n\n${String(error)}` }]);
+    const finalEvents = failResponseEvents(responseEvents, error);
+    setChatMessages([...chatMessages, { role: "assistant", text: `I could not reach the local Council API.\n\n${String(error)}`, events: finalEvents }]);
   } finally {
     chatBusy = false;
     setThinking(false);
+    stopResponseEvents();
+    responseEvents = [];
     renderShell();
     document.querySelector<HTMLTextAreaElement>("#chatInput")?.focus();
   }

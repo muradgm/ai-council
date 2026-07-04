@@ -1,6 +1,8 @@
 # AI Council v2.0.0
 
-AI Council is a modular AI operating system for building, reviewing, and managing product work with specialist agents, reusable skills, decision engines, workflows, templates, memory, governance, automation, provider routing, observability, and a local web console.
+AI Council is an intelligent senior technical operating system for builders.
+
+It understands real project context, routes work to specialist agents, makes technical judgments, plans governed actions, validates results, and helps builders move from idea to execution safely. The value is not "many agents"; the value is trusted technical judgment plus safe execution.
 
 This repository is designed to be used with Codex, ChatGPT, Claude Code, Gemini CLI, local models, or any capable coding agent. The repository is the source of truth. The model is the reasoning engine operating on it.
 

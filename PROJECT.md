@@ -2,9 +2,11 @@
 
 ## Project Summary
 
-AI Council is a local-first, hybrid AI engineering platform for planning, designing, building, reviewing, and improving software projects through a reusable council of specialized AI agents.
+AI Council is an intelligent senior technical operating system for builders.
 
-The system is not intended to be a simple chatbot, a single coding assistant, or a wrapper around one model provider. It is designed as an AI operating layer that can support many future projects, many programming languages, many tools, and many levels of reasoning.
+It understands real project context, routes work to specialist agents, makes technical judgments, plans governed actions, validates results, and helps builders move from idea to execution safely.
+
+The system is not intended to be a simple chatbot, a roleplay agent group, a single coding assistant, an unsafe autonomous executor, or a wrapper around one model provider. It is designed as an intelligent technical operating layer that can support many future projects, many programming languages, many tools, and many levels of reasoning.
 
 Its core architecture is:
 
@@ -34,7 +36,7 @@ The goal is to create a serious AI technical partner that can help with architec
 
 ### Strong Wedge
 
-**AI Council starts as a local-first AI Tech Lead for solo builders and small teams who are building multiple serious software projects and need structured technical guidance, code review, architecture planning, and safe implementation workflows without locking themselves into one AI provider or one tech stack.**
+**AI Council starts as the local-first AI Tech Lead that understands your project, routes work to specialist agents, plans safe actions, validates results, and gives you the next best move.**
 
 This is the wedge because it is narrow enough to build, but painful enough to matter.
 
@@ -584,11 +586,11 @@ AI Council is different because it combines:
 - provider independence
 - reusable project architecture
 
-The value is not only "AI writes code."
+The value is not "many agents" and not only "AI writes code."
 
 The value is:
 
-> AI Council helps the builder make better technical decisions, avoid dangerous mistakes, and reuse intelligence across projects.
+> AI Council gives builders senior technical judgment and safe execution support across real projects.
 
 ---
 

@@ -1,4 +1,5 @@
 import type { AskResponse, CollectionName } from "../types.js";
+import type { ResponseEvent } from "./response-events.js";
 
 export type ChatAttachment = {
   name: string;
@@ -16,7 +17,13 @@ export type LocalProject = {
   importedAt: string;
 };
 
-export type ChatMessage = { role: "user" | "assistant"; text: string; meta?: AskResponse; attachments?: ChatAttachment[] };
+export type ChatMessage = {
+  role: "user" | "assistant";
+  text: string;
+  meta?: AskResponse;
+  attachments?: ChatAttachment[];
+  events?: ResponseEvent[];
+};
 
 export type NavItem = {
   label: string;
