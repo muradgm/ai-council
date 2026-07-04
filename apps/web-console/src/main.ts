@@ -107,6 +107,11 @@ let projectDetail: ProjectDetailResponse | null = null;
 let agentOptions: CatalogItem[] = [];
 let chatMode: "orchestrator" | "agent" = "orchestrator";
 let selectedAgent = "software-architect";
+let sidebarCollapsed = false;
+let settingsOpen = false;
+let shareOpen = false;
+let moreMenuOpen = false;
+let actionNotice = "";
 
 function escapeHtml(input: unknown): string {
   return String(input ?? "")
@@ -148,6 +153,75 @@ function setThinking(active: boolean) {
     thinkingStep = Math.min(thinkingStep + 1, 3);
     renderShell();
   }, 900);
+}
+
+function closePanels(except?: "settings" | "share" | "more") {
+  settingsOpen = except === "settings" ? settingsOpen : false;
+  shareOpen = except === "share" ? shareOpen : false;
+  moreMenuOpen = except === "more" ? moreMenuOpen : false;
+}
+
+function setActionNotice(message: string) {
+  actionNotice = message;
+  window.setTimeout(() => {
+    if (actionNotice === message) {
+      actionNotice = "";
+      renderShell();
+    }
+  }, 2600);
+}
+
+function latestAssistantAnswer() {
+  return [...chatMessages].reverse().find(message => message.role === "assistant")?.text || "";
+}
+
+async function copyText(text: string, success: string) {
+  if (!text.trim()) {
+    setActionNotice("Nothing available to copy yet.");
+    renderShell();
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    setActionNotice(success);
+  } catch {
+    setActionNotice(copyTextFallback(text) ? success : "Copy was blocked by the browser. Select the text and copy manually.");
+  }
+  renderShell();
+}
+
+function copyTextFallback(text: string) {
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "true");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.append(textarea);
+  textarea.select();
+  const copied = document.execCommand("copy");
+  textarea.remove();
+  return copied;
+}
+
+function exportChatJson() {
+  const payload = {
+    exportedAt: new Date().toISOString(),
+    project: currentProjectLabel(),
+    apiBase: api.baseUrl,
+    messages: chatMessages
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `ai-council-chat-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+  moreMenuOpen = false;
+  setActionNotice("Chat JSON exported.");
+  renderShell();
 }
 
 function wait(ms: number) {
@@ -252,7 +326,7 @@ function icon(name: string) {
 
 function renderShell() {
   app.innerHTML = `
-    <main class="app-shell">
+    <main class="app-shell ${sidebarCollapsed ? "sidebar-collapsed" : ""}">
       <aside class="app-sidebar">
         <div class="brand-block">
           <div class="brand-mark" aria-hidden="true">
@@ -262,7 +336,7 @@ function renderShell() {
             <strong>AI Council</strong>
             <span>${summary?.health.status === "ready" ? "Live workspace" : "Local console"}</span>
           </div>
-          <button class="sidebar-toggle" type="button" aria-label="Toggle sidebar">${icon("panel")}</button>
+          <button class="sidebar-toggle" type="button" data-sidebar-toggle="true" aria-label="${sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}" title="${sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}" aria-pressed="${sidebarCollapsed}">${icon("panel")}</button>
         </div>
 
         <button class="new-chat-button" data-new-chat="true">
@@ -340,7 +414,7 @@ function renderShell() {
             <strong>${summary ? `${totalIndexedRecords(summary)} records indexed` : "Loading index"}</strong>
             <small>${escapeHtml(api.baseUrl)}</small>
           </div>
-          <button class="settings-button" type="button" aria-label="Console settings">${icon("settings")}</button>
+          <button class="settings-button" type="button" data-open-settings="true" aria-label="Console settings" title="Console settings" aria-expanded="${settingsOpen}" aria-controls="settingsPanel">${icon("settings")}</button>
         </div>
       </aside>
 
@@ -355,7 +429,73 @@ function renderShell() {
 }
 
 function bindEvents() {
+  document.querySelector<HTMLButtonElement>("[data-sidebar-toggle]")?.addEventListener("click", () => {
+    sidebarCollapsed = !sidebarCollapsed;
+    closePanels();
+    renderShell();
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-open-settings]").forEach(button => {
+    button.addEventListener("click", () => {
+      settingsOpen = !settingsOpen;
+      closePanels(settingsOpen ? "settings" : undefined);
+      renderShell();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-share]").forEach(button => {
+    button.addEventListener("click", () => {
+      shareOpen = !shareOpen;
+      closePanels(shareOpen ? "share" : undefined);
+      renderShell();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-more-menu]").forEach(button => {
+    button.addEventListener("click", () => {
+      moreMenuOpen = !moreMenuOpen;
+      closePanels(moreMenuOpen ? "more" : undefined);
+      renderShell();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-copy-url]").forEach(button => {
+    button.addEventListener("click", () => {
+      void copyText(window.location.href, "Local console URL copied.");
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-clear-chat]").forEach(button => {
+    button.addEventListener("click", () => {
+      setChatMessages([]);
+      chatInput = "";
+      moreMenuOpen = false;
+      setActionNotice("Chat cleared.");
+      renderShell();
+      document.querySelector<HTMLTextAreaElement>("#chatInput")?.focus();
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-export-chat]").forEach(button => {
+    button.addEventListener("click", () => exportChatJson());
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-copy-latest-answer]").forEach(button => {
+    button.addEventListener("click", () => {
+      if (button.disabled) return;
+      void copyText(latestAssistantAnswer(), "Latest Council answer copied.");
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>("[data-feedback]").forEach(button => {
+    button.addEventListener("click", () => {
+      setActionNotice("Feedback saved for this session.");
+      renderShell();
+    });
+  });
+
   document.querySelector<HTMLButtonElement>("[data-new-chat]")?.addEventListener("click", () => {
+    closePanels();
     chatInput = "";
     setChatMessages([]);
     activeView = "chat";
@@ -365,6 +505,7 @@ function bindEvents() {
 
   document.querySelectorAll<HTMLButtonElement>("[data-view]").forEach(button => {
     button.addEventListener("click", () => {
+      closePanels();
       activeView = (button.dataset.view as "chat" | "projects" | "data" | "catalog" | "runtime") || "chat";
       if (button.dataset.navCollection) activeCollection = button.dataset.navCollection as CollectionName;
       renderShell();
@@ -373,6 +514,7 @@ function bindEvents() {
 
   document.querySelectorAll<HTMLButtonElement>("[data-recent-chat]").forEach(button => {
     button.addEventListener("click", () => {
+      closePanels();
       activeView = "chat";
       chatInput = button.dataset.recentChat || "";
       renderShell();
@@ -382,6 +524,7 @@ function bindEvents() {
 
   document.querySelectorAll<HTMLButtonElement>("[data-sidebar-project]").forEach(button => {
     button.addEventListener("click", async () => {
+      closePanels();
       const name = button.dataset.sidebarProject || "";
       chatProject = name;
       if (localProjects.some(project => project.id === name)) {
@@ -398,6 +541,7 @@ function bindEvents() {
 
   document.querySelectorAll<HTMLButtonElement>("[data-collection]").forEach(button => {
     button.addEventListener("click", async () => {
+      closePanels();
       activeView = "catalog";
       activeCollection = button.dataset.collection as CollectionName;
       searchTerm = "";
@@ -408,6 +552,7 @@ function bindEvents() {
 
   document.querySelectorAll<HTMLButtonElement>("[data-project-select]").forEach(button => {
     button.addEventListener("click", async () => {
+      closePanels();
       selectedProject = button.dataset.projectSelect || "";
       chatProject = selectedProject;
       if (localProjects.some(project => project.id === selectedProject)) {
@@ -422,12 +567,14 @@ function bindEvents() {
 
   document.querySelectorAll<HTMLButtonElement>("[data-import-project]").forEach(button => {
     button.addEventListener("click", () => {
+      closePanels();
       void importLocalProject();
     });
   });
 
   document.querySelectorAll<HTMLButtonElement>("[data-review-local-project]").forEach(button => {
     button.addEventListener("click", () => {
+      closePanels();
       const project = localProjects.find(item => item.id === button.dataset.reviewLocalProject);
       if (!project) return;
       chatProject = project.id;
@@ -555,11 +702,48 @@ function renderWorkspaceHeader() {
         <p>${escapeHtml(headerSubtitle())}</p>
       </div>
       <div class="header-actions">
-        <button class="secondary-button share-button" type="button">${icon("share")} Share</button>
-        <button class="secondary-button icon-only" type="button" aria-label="More options">${icon("more")}</button>
+        <button class="secondary-button share-button" type="button" data-share="true" aria-expanded="${shareOpen}" aria-controls="sharePanel">${icon("share")} Share</button>
+        <button class="secondary-button icon-only" type="button" data-more-menu="true" aria-label="More options" title="More options" aria-expanded="${moreMenuOpen}" aria-controls="moreMenu">${icon("more")}</button>
         <span class="status-pill live"><span class="dot ok"></span>${summary?.health.status === "ready" ? "Live" : "Loading"}</span>
       </div>
+      ${renderHeaderPanels()}
     </header>
+  `;
+}
+
+function renderHeaderPanels() {
+  const recordCount = summary ? totalIndexedRecords(summary) : 0;
+  const hasLatestAnswer = Boolean(latestAssistantAnswer());
+  return `
+    <div class="floating-panel-layer" aria-live="polite">
+      ${shareOpen ? `
+        <section class="floating-panel" id="sharePanel" aria-label="Share console">
+          <h2>Share local console</h2>
+          <p>This console is running against your local workspace. Share the URL only with someone who can reach this machine and API.</p>
+          <div class="panel-field">${escapeHtml(window.location.href)}</div>
+          <button class="panel-action" type="button" data-copy-url="true">${icon("copy")} Copy local URL</button>
+        </section>
+      ` : ""}
+      ${settingsOpen ? `
+        <section class="floating-panel" id="settingsPanel" aria-label="Console settings">
+          <h2>Console settings</h2>
+          <div class="panel-row"><span>API base</span><strong>${escapeHtml(api.baseUrl)}</strong></div>
+          <div class="panel-row"><span>Health</span><strong>${escapeHtml(summary?.health.status || "loading")}</strong></div>
+          <div class="panel-row"><span>Theme</span><strong>Dark Council</strong></div>
+          <div class="panel-row"><span>Indexed records</span><strong>${recordCount}</strong></div>
+          <div class="panel-row"><span>Provider</span><strong>${providerHealth ? "Checked" : "Pending"}</strong></div>
+        </section>
+      ` : ""}
+      ${moreMenuOpen ? `
+        <section class="floating-panel more-menu-panel" id="moreMenu" aria-label="More options">
+          <h2>Conversation actions</h2>
+          <button class="menu-action" type="button" data-clear-chat="true">${icon("new-chat")} Clear chat</button>
+          <button class="menu-action" type="button" data-export-chat="true">${icon("projects")} Export chat JSON</button>
+          <button class="menu-action" type="button" data-copy-latest-answer="true" ${hasLatestAnswer ? "" : `disabled title="No Council answer to copy yet"`}>${icon("copy")} Copy latest answer</button>
+        </section>
+      ` : ""}
+      ${actionNotice ? `<div class="action-notice" role="status">${escapeHtml(actionNotice)}</div>` : ""}
+    </div>
   `;
 }
 
@@ -605,7 +789,7 @@ function renderChatWorkspace() {
                   </select>
                 </label>
               </div>
-              <button class="mic-button" type="button" aria-label="Voice input">${icon("mic")}</button>
+              <button class="mic-button" type="button" aria-label="Voice input coming soon" title="Voice input coming soon" disabled>${icon("mic")}</button>
               <button class="send-button" id="chatSend" aria-label="${chatBusy ? "AI Council is thinking" : "Send message"}">${chatBusy ? icon("more") : icon("send")}</button>
             </div>
           </div>
@@ -943,7 +1127,7 @@ function renderChatMessages() {
             <span class="assistant-mark">${icon("sparkle")}</span>
             <strong>AI Council</strong>
             <span class="thinking-pill">Thinking</span>
-            <button class="ghost-icon" type="button" aria-label="More response options">${icon("more")}</button>
+            <button class="ghost-icon" type="button" data-more-menu="true" aria-label="More response options" title="More response options">${icon("more")}</button>
           </div>${renderAssistantAnswer(message.text)}`
         : `<div class="user-card">
             <span class="avatar">AM</span>
@@ -1070,8 +1254,8 @@ function renderAgentCards() {
 
 function renderResponseActions() {
   return `<div class="response-actions">
-    <button type="button" aria-label="Helpful">${icon("thumbsUp")}</button>
-    <button type="button" aria-label="Copy response">${icon("copy")}</button>
+    <button type="button" data-feedback="helpful" aria-label="Mark response helpful" title="Mark response helpful">${icon("thumbsUp")}</button>
+    <button type="button" data-copy-latest-answer="true" aria-label="Copy latest answer" title="Copy latest answer">${icon("copy")}</button>
   </div>`;
 }
 
