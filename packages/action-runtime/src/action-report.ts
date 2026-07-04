@@ -14,6 +14,13 @@ export type ActionReportItem = {
   rollback: RollbackPlan;
   executed: boolean;
   skippedReason: string;
+  backupPath?: string;
+  result?: {
+    ok: boolean;
+    status?: number | null;
+    stdout?: string;
+    stderr?: string;
+  };
 };
 
 export type ActionReport = {
