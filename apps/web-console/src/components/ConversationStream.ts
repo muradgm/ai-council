@@ -37,7 +37,7 @@ export function renderChatMessages(props: ConversationStreamProps) {
             <strong>AI Council</strong>
             <span class="thinking-pill">Thinking</span>
             <button class="ghost-icon" type="button" data-more-menu="true" aria-label="More response options" title="More response options">${icon("more")}</button>
-          </div>${renderAssistantAnswer(message.text)}`
+          </div>${renderAssistantAnswer(message)}`
         : `<div class="user-card">
             <span class="avatar">AM</span>
             <div class="user-message-body">
@@ -56,17 +56,18 @@ export function renderChatMessages(props: ConversationStreamProps) {
   `).join("")}${props.chatBusy ? renderThinkingState(props.thinkingStep, props.thinkingStartedAt, props.responseEvents) : ""}`;
 }
 
-function renderAssistantAnswer(text: string) {
+function renderAssistantAnswer(message: ChatMessage) {
+  const text = message.text;
   const sections = parseAnswerSections(text);
   if (sections.length < 2) {
-    return `<div class="council-response-layout">${renderStaticProgressPanel()}<div class="answer-stream"><section class="answer-section read">${icon("sparkle")}<p>${escapeHtml(text)}</p></section>${renderResponseActions()}</div></div>`;
+    return `<div class="council-response-layout">${renderStaticProgressPanel(message.events, message.meta?.agentsUsed)}<div class="answer-stream"><section class="answer-section read">${icon("sparkle")}<p>${escapeHtml(text)}</p></section>${renderResponseActions()}</div></div>`;
   }
   return `
     <div class="council-response-layout">
-      ${renderStaticProgressPanel()}
+      ${renderStaticProgressPanel(message.events, message.meta?.agentsUsed)}
       <div class="answer-stream">
         ${sections.map((section, index) => `
-          ${index === 1 ? renderAgentCards() : ""}
+          ${index === 1 ? renderAgentCards(message.events, message.meta?.agentsUsed) : ""}
           ${isDetailSection(section.key)
             ? `<details class="answer-details ${section.key}">
                 <summary>View ${escapeHtml(section.label.toLowerCase())}</summary>

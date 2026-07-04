@@ -200,29 +200,135 @@ p {
   width: 1.7rem;
   height: 1.7rem;
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 0.58rem);
-  grid-template-rows: repeat(2, 0.58rem);
-  gap: 0.22rem;
-  place-content: center;
+  display: block;
+  filter: drop-shadow(0 0 18px rgba(45, 226, 209, 0.16));
+  animation: brand-mark-reveal 1120ms cubic-bezier(0.22, 1, 0.36, 1) 140ms both;
+}
+
+.brand-mark::before {
+  content: "";
+  width: 0.88rem;
+  height: 0.88rem;
+  position: absolute;
+  left: 0.41rem;
+  top: 0.41rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 28% 22%, #ff6fb7 0 18%, transparent 38%),
+    radial-gradient(circle at 68% 24%, #8b5cf6 0 24%, transparent 45%),
+    radial-gradient(circle at 70% 60%, #2de2d1 0 28%, transparent 52%),
+    radial-gradient(circle at 42% 82%, #ffb071 0 18%, transparent 42%),
+    linear-gradient(135deg, #ff5fb7 0%, #8b5cf6 36%, #2bb7ff 68%, #f6a15d 100%);
+  box-shadow:
+    0 0 16px rgba(139, 92, 246, 0.42),
+    0 0 26px rgba(45, 226, 209, 0.22);
+  opacity: 0;
+  transform: scale(0.35);
+  animation: brand-orb-reveal 1120ms cubic-bezier(0.22, 1, 0.36, 1) 140ms both;
 }
 
 .brand-mark span {
+  width: 0.58rem;
+  height: 0.58rem;
+  position: absolute;
+  left: 0;
+  top: 0;
   border-radius: 999px;
   background: var(--accent-teal);
   box-shadow: 0 0 20px rgba(45, 226, 209, 0.35);
+  animation: brand-node-merge 1120ms cubic-bezier(0.22, 1, 0.36, 1) 140ms both;
+  transform: translate(var(--from-x), var(--from-y));
+}
+
+.brand-mark span:nth-child(1) {
+  --from-x: 0.16rem;
+  --from-y: 0.16rem;
 }
 
 .brand-mark span:nth-child(2) {
+  --from-x: 0.96rem;
+  --from-y: 0.16rem;
   background: var(--accent-blue);
 }
 
 .brand-mark span:nth-child(3) {
+  --from-x: 0.16rem;
+  --from-y: 0.96rem;
   background: #7dd3fc;
 }
 
 .brand-mark span:nth-child(4) {
+  --from-x: 0.96rem;
+  --from-y: 0.96rem;
   background: var(--accent-violet);
+}
+
+.brand-mark:hover::before {
+  animation: brand-orb-hover 680ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes brand-mark-reveal {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  74%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes brand-node-merge {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(var(--from-x), var(--from-y)) scale(1);
+  }
+
+  48% {
+    opacity: 1;
+    filter: blur(0.8px);
+    transform: translate(0.56rem, 0.56rem) scale(0.86);
+  }
+
+  72%,
+  100% {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translate(0.56rem, 0.56rem) scale(0.35);
+  }
+}
+
+@keyframes brand-orb-reveal {
+  0%,
+  48% {
+    opacity: 0;
+    transform: scale(0.38);
+  }
+
+  78% {
+    opacity: 1;
+    transform: scale(1.14);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes brand-orb-hover {
+  0% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.16) rotate(18deg);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .brand-block strong,
@@ -986,8 +1092,14 @@ p {
 }
 
 .progress-steps span.done::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
   border-color: var(--accent-teal);
   background: var(--accent-teal);
+  color: #03100f;
+  font-size: 0.68rem;
+  font-weight: 900;
   box-shadow: inset 0 0 0 3px var(--surface);
 }
 
@@ -1303,11 +1415,17 @@ p {
 .agent-progress::after {
   content: "";
   display: block;
-  width: 68%;
+  width: var(--agent-progress, 68%);
   height: 100%;
   border-radius: inherit;
   background: var(--accent-teal);
   box-shadow: 0 0 16px rgba(45, 226, 209, 0.55);
+  transition: width 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.agent-card.complete .agent-card-head em {
+  background: rgba(45, 226, 209, 0.12);
+  color: var(--accent-teal);
 }
 
 .agent-card.warn .agent-card-head > span {
@@ -1481,8 +1599,14 @@ p {
 }
 
 .thinking-steps span.done::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
   border-color: var(--accent-teal);
   background: var(--accent-teal);
+  color: #03100f;
+  font-size: 0.68rem;
+  font-weight: 900;
   box-shadow: inset 0 0 0 3px var(--surface);
 }
 
@@ -1529,6 +1653,19 @@ p {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
+  }
+
+  .brand-mark {
+    transform: none;
+  }
+
+  .brand-mark span {
+    opacity: 0;
+  }
+
+  .brand-mark::before {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 

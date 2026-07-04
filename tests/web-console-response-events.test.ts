@@ -5,6 +5,8 @@ import {
   failResponseEvents,
   finalizeResponseEvents
 } from "../apps/web-console/src/state/response-events.js";
+import { renderAgentCards } from "../apps/web-console/src/components/AgentCards.js";
+import { renderStaticProgressPanel } from "../apps/web-console/src/components/ThinkingProgress.js";
 
 const events = createResponseEvents("Review this repo and recommend the next step.", "AI Council");
 
@@ -33,5 +35,14 @@ assert.equal(finalized.find(event => event.type === "risk_detected")?.status, "s
 
 const failed = failResponseEvents(advanced, new Error("network down"));
 assert.equal(failed.some(event => event.status === "blocked"), true);
+
+const progressPanel = renderStaticProgressPanel(finalized, ["software-architect", "qa-engineer"]);
+assert.match(progressPanel, /Worked across agents/);
+assert.match(progressPanel, /2 used/);
+assert.match(progressPanel, /done/);
+
+const agentCards = renderAgentCards(finalized, ["software-architect", "qa-engineer"]);
+assert.match(agentCards, /Complete/);
+assert.match(agentCards, /--agent-progress: 100%/);
 
 console.log("Web console response event behavior passed.");
