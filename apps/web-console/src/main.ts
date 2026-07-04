@@ -1,34 +1,20 @@
 import { api } from "./api.js";
-import { collections, compactText, countFor, displayTitle } from "./state.js";
-import type { AskResponse, CatalogItem, CollectionName, ObservabilityResponse, ProjectDetailResponse, ProviderHealthResponse, RouteResponse, RuntimeActionResponse, RuntimeSnapshot, Summary } from "./types.js";
+import { collections, compactText, displayTitle } from "./state.js";
+import { renderComposer } from "./components/Composer.js";
+import { renderChatMessages } from "./components/ConversationStream.js";
+import { renderHeaderPanels } from "./components/HeaderPanels.js";
+import { renderRuntime, renderRuntimeWorkspace as renderRuntimeWorkbench } from "./components/RuntimeWorkbench.js";
+import { renderSidebar } from "./components/Sidebar.js";
+import { renderWorkspaceHeader as renderWorkspaceHeaderComponent } from "./components/WorkspaceHeader.js";
+import type { ChatAttachment, ChatMessage, LocalProject, NavItem } from "./state/console-state.js";
+import type { CatalogItem, CollectionName, ObservabilityResponse, ProjectDetailResponse, ProviderHealthResponse, RouteResponse, RuntimeActionResponse, RuntimeSnapshot, Summary } from "./types.js";
+import { copyTextToClipboard } from "./ui/copy.js";
+import { escapeHtml, formatBytes, pill } from "./ui/escape.js";
+import { icon } from "./ui/icons.js";
 
 const app = document.querySelector<HTMLDivElement>("#app")!;
 const CHAT_STORAGE_KEY = "aiCouncilChatMessages";
 const LOCAL_PROJECTS_STORAGE_KEY = "aiCouncilLocalProjects";
-
-type ChatAttachment = {
-  name: string;
-  type: string;
-  size: number;
-  text?: string;
-};
-
-type LocalProject = {
-  id: string;
-  name: string;
-  fileCount: number;
-  files: ChatAttachment[];
-  preview: string;
-  importedAt: string;
-};
-
-type ChatMessage = { role: "user" | "assistant"; text: string; meta?: AskResponse; attachments?: ChatAttachment[] };
-type NavItem = {
-  label: string;
-  icon: string;
-  view: "chat" | "projects" | "data" | "catalog" | "runtime";
-  collection?: CollectionName;
-};
 
 const navItems: NavItem[] = [
   { label: "Search", icon: "search", view: "chat" },
@@ -113,18 +99,6 @@ let shareOpen = false;
 let moreMenuOpen = false;
 let actionNotice = "";
 
-function escapeHtml(input: unknown): string {
-  return String(input ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
-}
-
-function pill(text: string): string {
-  return `<span class="pill">${escapeHtml(text)}</span>`;
-}
-
 function totalIndexedRecords(currentSummary: Summary): number {
   return Object.values(currentSummary.counts).reduce<number>((total, value) => total + Number(value || 0), 0);
 }
@@ -182,25 +156,12 @@ async function copyText(text: string, success: string) {
     return;
   }
   try {
-    await navigator.clipboard.writeText(text);
-    setActionNotice(success);
+    const copied = await copyTextToClipboard(text);
+    setActionNotice(copied ? success : "Copy was blocked by the browser. Select the text and copy manually.");
   } catch {
-    setActionNotice(copyTextFallback(text) ? success : "Copy was blocked by the browser. Select the text and copy manually.");
+    setActionNotice("Copy was blocked by the browser. Select the text and copy manually.");
   }
   renderShell();
-}
-
-function copyTextFallback(text: string) {
-  const textarea = document.createElement("textarea");
-  textarea.value = text;
-  textarea.setAttribute("readonly", "true");
-  textarea.style.position = "fixed";
-  textarea.style.left = "-9999px";
-  document.body.append(textarea);
-  textarea.select();
-  const copied = document.execCommand("copy");
-  textarea.remove();
-  return copied;
 }
 
 function exportChatJson() {
@@ -278,149 +239,28 @@ function apiProjectId() {
   return currentLocalProject() ? undefined : currentProject().trim() || undefined;
 }
 
-function formatBytes(bytes: number) {
-  if (!Number.isFinite(bytes) || bytes <= 0) return "0 B";
-  const units = ["B", "KB", "MB", "GB"];
-  const power = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), units.length - 1);
-  return `${(bytes / 1024 ** power).toFixed(power ? 1 : 0)} ${units[power]}`;
-}
-
-function cleanAnswerText(text: string) {
-  return text
-    .replace(/\*\*(.*?)\*\*/g, "$1")
-    .replace(/^\s*[-*]\s+/gm, "- ")
-    .trim();
-}
-
-function isNavActive(item: (typeof navItems)[number]) {
-  if (item.collection) return activeView === item.view && activeCollection === item.collection;
-  return activeView === item.view;
-}
-
-function icon(name: string) {
-  const paths: Record<string, string> = {
-    "new-chat": `<path d="M5 12h14"/><path d="M12 5v14"/><path d="M7 4h10a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Z"/>`,
-    search: `<circle cx="11" cy="11" r="7"/><path d="m20 20-4.2-4.2"/>`,
-    agents: `<circle cx="9" cy="8" r="3"/><path d="M3.5 19a5.5 5.5 0 0 1 11 0"/><circle cx="17" cy="10" r="2.5"/><path d="M14.5 19a4.5 4.5 0 0 1 6-3.8"/>`,
-    councils: `<circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><circle cx="12" cy="17" r="3"/><path d="M9.5 10.5 11 14"/><path d="m14.5 10.5-1.5 3.5"/>`,
-    projects: `<path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/>`,
-    runtime: `<path d="M12 2v5"/><path d="M12 17v5"/><path d="M2 12h5"/><path d="M17 12h5"/><path d="m4.9 4.9 3.5 3.5"/><path d="m15.6 15.6 3.5 3.5"/><path d="m19.1 4.9-3.5 3.5"/><path d="m8.4 15.6-3.5 3.5"/>`,
-    observability: `<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 14h2v2H8z"/><path d="M11 10h2v6h-2z"/><path d="M14 7h2v9h-2z"/>`,
-    library: `<path d="M5 4h10a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3Z"/><path d="M8 4v13a3 3 0 0 0 3 3"/><path d="M9 8h5"/>`,
-    panel: `<rect x="4" y="5" width="16" height="14" rx="2"/><path d="M9 5v14"/><path d="M12 9h5"/><path d="M12 13h5"/>`,
-    settings: `<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.1 2.1-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V20h-3v-.1a1.7 1.7 0 0 0-1-1.5 1.7 1.7 0 0 0-1.9.3l-.1.1-2.1-2.1.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H4v-3h.1a1.7 1.7 0 0 0 1.5-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1 2.1-2.1.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.5V4h3v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.9-.3l.1-.1 2.1 2.1-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.5 1h.1v3h-.1a1.7 1.7 0 0 0-1.5 1Z"/>`,
-    sparkle: `<path d="M12 2 14 9l7 3-7 3-2 7-2-7-7-3 7-3Z"/>`,
-    code: `<path d="m10 8-4 4 4 4"/><path d="m14 8 4 4-4 4"/>`,
-    shield: `<path d="M12 3 20 6v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6Z"/>`,
-    check: `<circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/>`,
-    mic: `<path d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3Z"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/>`,
-    send: `<path d="m21 3-7.5 18-3-7.5-7.5-3Z"/><path d="m21 3-10.5 10.5"/>`,
-    share: `<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 10.6 6.8-4.2"/><path d="m8.6 13.4 6.8 4.2"/>`,
-    chevron: `<path d="m8 10 4 4 4-4"/>`,
-    more: `<circle cx="6" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="18" cy="12" r="1.3"/>`,
-    thumbsUp: `<path d="M7 11v9H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2Z"/><path d="M7 11 12 3a2 2 0 0 1 3 2l-1 4h4a2 2 0 0 1 2 2l-1.5 7a2 2 0 0 1-2 2H7"/>`,
-    copy: `<rect x="8" y="8" width="12" height="12" rx="2"/><rect x="4" y="4" width="12" height="12" rx="2"/>`
-  };
-  return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">${paths[name] || paths.sparkle}</svg>`;
-}
-
 function renderShell() {
   app.innerHTML = `
     <main class="app-shell ${sidebarCollapsed ? "sidebar-collapsed" : ""}">
-      <aside class="app-sidebar">
-        <div class="brand-block">
-          <div class="brand-mark" aria-hidden="true">
-            <span></span><span></span><span></span><span></span>
-          </div>
-          <div>
-            <strong>AI Council</strong>
-            <span>${summary?.health.status === "ready" ? "Live workspace" : "Local console"}</span>
-          </div>
-          <button class="sidebar-toggle" type="button" data-sidebar-toggle="true" aria-label="${sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}" title="${sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}" aria-pressed="${sidebarCollapsed}">${icon("panel")}</button>
-        </div>
-
-        <button class="new-chat-button" data-new-chat="true">
-          <span>${icon("new-chat")} New chat</span>
-          <strong>+</strong>
-        </button>
-
-        <nav class="primary-nav">
-          ${navItems.map(item => `
-            <button class="nav-row ${isNavActive(item) ? "active" : ""}" data-view="${item.view}" ${item.collection ? `data-nav-collection="${item.collection}"` : ""}>
-              <span>${icon(item.icon)} ${escapeHtml(item.label)}</span>
-            </button>
-          `).join("")}
-        </nav>
-
-        <div class="sidebar-section recent-section">
-          <div class="sidebar-heading">Recent chats <span>${icon("chevron")}</span></div>
-          <div class="thread-list">
-            ${recentChats.map((chat, index) => `
-              <button class="thread-row ${index === 0 ? "active" : ""}" data-recent-chat="${escapeHtml(chat)}">
-                <span>${escapeHtml(chat)}</span>
-              </button>
-            `).join("")}
-          </div>
-        </div>
-
-        <div class="sidebar-section project-section">
-          <div class="sidebar-heading">Projects</div>
-          <button class="sidebar-import" data-import-project="true">${icon("projects")} Add local project</button>
-          <div class="thread-list">
-            ${projectList.slice(0, 4).map(project => `
-              <button class="thread-row project-row ${chatProject === project.name || selectedProject === project.name ? "active" : ""}" data-sidebar-project="${escapeHtml(project.name)}">
-                <span>${escapeHtml(project.name)}</span>
-                <small>${project.hasMemory ? "memory" : "new"}</small>
-              </button>
-            `).join("")}
-            ${localProjects.slice(0, 3).map(project => `
-              <button class="thread-row ${chatProject === project.id ? "active" : ""}" data-sidebar-project="${escapeHtml(project.id)}">
-                <span>${escapeHtml(project.name)}</span>
-                <small>local</small>
-              </button>
-            `).join("")}
-            ${projectList.length || localProjects.length ? "" : `<p class="sidebar-empty">No projects found.</p>`}
-          </div>
-        </div>
-
-        <div class="sidebar-section knowledge-section">
-          <div class="sidebar-heading">Knowledge</div>
-          <div class="tool-list">
-            ${collections.slice(0, 5).map(c => `
-              <button class="tool-row ${activeCollection === c.id && activeView === "catalog" ? "active" : ""}" data-collection="${c.id}">
-                <span>${escapeHtml(c.label)}</span>
-                <strong>${countFor(summary, c.id)}</strong>
-              </button>
-            `).join("")}
-          </div>
-        </div>
-
-        <div class="sidebar-account">
-          <div class="user-chip">
-            <span class="avatar">AM</span>
-            <div><strong>AI Council</strong><small>Owner workspace</small></div>
-            <span>${icon("chevron")}</span>
-          </div>
-          <div class="team-chip">
-            <span class="team-dot"></span>
-            <strong>Orion Team</strong>
-            <span>${icon("chevron")}</span>
-          </div>
-        </div>
-
-        <div class="sidebar-status">
-          <span class="dot ${summary?.health.status === "ready" ? "ok" : "warn"}"></span>
-          <div>
-            <strong>${summary ? `${totalIndexedRecords(summary)} records indexed` : "Loading index"}</strong>
-            <small>${escapeHtml(api.baseUrl)}</small>
-          </div>
-          <button class="settings-button" type="button" data-open-settings="true" aria-label="Console settings" title="Console settings" aria-expanded="${settingsOpen}" aria-controls="settingsPanel">${icon("settings")}</button>
-        </div>
-      </aside>
+      ${renderSidebar({
+        activeCollection,
+        activeView,
+        apiBase: api.baseUrl,
+        chatProject,
+        localProjects,
+        navItems,
+        projectList,
+        recentChats,
+        selectedProject,
+        sidebarCollapsed,
+        settingsOpen,
+        summary,
+        totalRecords: summary ? totalIndexedRecords(summary) : 0
+      })}
 
       <section class="workspace">
         ${renderWorkspaceHeader()}
-        ${activeView === "chat" ? renderChatWorkspace() : activeView === "projects" ? renderProjectsWorkspace() : activeView === "data" ? renderDataWorkspace() : activeView === "runtime" ? renderRuntimeWorkspace() : renderCatalogWorkspace()}
+        ${activeView === "chat" ? renderChatWorkspace() : activeView === "projects" ? renderProjectsWorkspace() : activeView === "data" ? renderDataWorkspace() : activeView === "runtime" ? renderRuntimeWorkbench({ lastRuntimeAction, providerHealth, runtime, runtimeProject, runtimeTask }) : renderCatalogWorkspace()}
       </section>
     </main>
   `;
@@ -669,7 +509,7 @@ function bindEvents() {
         if (action === "eval") lastRuntimeAction = await api.runtimeEval(runtime?.latestArtifact);
         if (action === "provider") providerHealth = await api.providerHealth();
         if (action !== "provider") runtime = lastRuntimeAction?.runtime || await api.runtimeLatest();
-        output.innerHTML = renderRuntime();
+        output.innerHTML = renderRuntime({ lastRuntimeAction, providerHealth, runtime });
       } catch (error) {
         output.innerHTML = `<pre class="error">${escapeHtml(error)}</pre>`;
       }
@@ -686,114 +526,42 @@ function bindEvents() {
 }
 
 function renderWorkspaceHeader() {
-  const label = activeView === "chat"
-    ? "Improve response flow"
-    : activeView === "projects"
-      ? "Projects"
-      : activeView === "data"
-        ? "Data"
-        : activeView === "runtime"
-          ? "Runtime Workbench"
-          : "Knowledge";
-  return `
-    <header class="workspace-header">
-      <div class="workspace-title">
-        <h1>${escapeHtml(label)} ${activeView === "chat" ? icon("chevron") : ""}</h1>
-        <p>${escapeHtml(headerSubtitle())}</p>
-      </div>
-      <div class="header-actions">
-        <button class="secondary-button share-button" type="button" data-share="true" aria-expanded="${shareOpen}" aria-controls="sharePanel">${icon("share")} Share</button>
-        <button class="secondary-button icon-only" type="button" data-more-menu="true" aria-label="More options" title="More options" aria-expanded="${moreMenuOpen}" aria-controls="moreMenu">${icon("more")}</button>
-        <span class="status-pill live"><span class="dot ok"></span>${summary?.health.status === "ready" ? "Live" : "Loading"}</span>
-      </div>
-      ${renderHeaderPanels()}
-    </header>
-  `;
-}
-
-function renderHeaderPanels() {
-  const recordCount = summary ? totalIndexedRecords(summary) : 0;
-  const hasLatestAnswer = Boolean(latestAssistantAnswer());
-  return `
-    <div class="floating-panel-layer" aria-live="polite">
-      ${shareOpen ? `
-        <section class="floating-panel" id="sharePanel" aria-label="Share console">
-          <h2>Share local console</h2>
-          <p>This console is running against your local workspace. Share the URL only with someone who can reach this machine and API.</p>
-          <div class="panel-field">${escapeHtml(window.location.href)}</div>
-          <button class="panel-action" type="button" data-copy-url="true">${icon("copy")} Copy local URL</button>
-        </section>
-      ` : ""}
-      ${settingsOpen ? `
-        <section class="floating-panel" id="settingsPanel" aria-label="Console settings">
-          <h2>Console settings</h2>
-          <div class="panel-row"><span>API base</span><strong>${escapeHtml(api.baseUrl)}</strong></div>
-          <div class="panel-row"><span>Health</span><strong>${escapeHtml(summary?.health.status || "loading")}</strong></div>
-          <div class="panel-row"><span>Theme</span><strong>Dark Council</strong></div>
-          <div class="panel-row"><span>Indexed records</span><strong>${recordCount}</strong></div>
-          <div class="panel-row"><span>Provider</span><strong>${providerHealth ? "Checked" : "Pending"}</strong></div>
-        </section>
-      ` : ""}
-      ${moreMenuOpen ? `
-        <section class="floating-panel more-menu-panel" id="moreMenu" aria-label="More options">
-          <h2>Conversation actions</h2>
-          <button class="menu-action" type="button" data-clear-chat="true">${icon("new-chat")} Clear chat</button>
-          <button class="menu-action" type="button" data-export-chat="true">${icon("projects")} Export chat JSON</button>
-          <button class="menu-action" type="button" data-copy-latest-answer="true" ${hasLatestAnswer ? "" : `disabled title="No Council answer to copy yet"`}>${icon("copy")} Copy latest answer</button>
-        </section>
-      ` : ""}
-      ${actionNotice ? `<div class="action-notice" role="status">${escapeHtml(actionNotice)}</div>` : ""}
-    </div>
-  `;
-}
-
-function headerSubtitle() {
-  if (activeView === "chat") return "";
-  if (activeView === "projects") return "Choose context first, then bring it into the conversation.";
-  if (activeView === "data") return "Inspect Council coverage, runtime activity, provider readiness, and recent operating signals.";
-  if (activeView === "runtime") return "Generate context, run the Council loop, and score the result.";
-  return collections.find(c => c.id === activeCollection)?.description || "Browse the local Council knowledge base.";
+  return renderWorkspaceHeaderComponent({
+    activeCollection,
+    activeView,
+    moreMenuOpen,
+    panelsHtml: renderHeaderPanels({
+      actionNotice,
+      apiBase: api.baseUrl,
+      currentUrl: window.location.href,
+      hasLatestAnswer: Boolean(latestAssistantAnswer()),
+      moreMenuOpen,
+      providerHealth,
+      recordCount: summary ? totalIndexedRecords(summary) : 0,
+      settingsOpen,
+      shareOpen,
+      summary
+    }),
+    shareOpen,
+    summary
+  });
 }
 
 function renderChatWorkspace() {
   return `
     <div class="conversation-layout">
       <section class="conversation-main">
-        <div class="chat-log" id="chatLog">${renderChatMessages()}</div>
-        <form class="composer" onsubmit="return false;">
-          <div class="composer-shell">
-            <textarea id="chatInput" aria-label="Message AI Council" placeholder="Ask AI Council">${escapeHtml(chatInput)}</textarea>
-            ${renderAttachmentTray()}
-            <div class="composer-footer">
-              <input class="sr-only" id="attachmentInput" type="file" multiple />
-              <button class="composer-plus" type="button" id="attachButton" aria-label="Attach files">+</button>
-              <div class="composer-controls" aria-label="Conversation context controls">
-                <label class="compact-control">
-                  <span>Project</span>
-                  <select id="chatProject" aria-label="Project context">
-                    <option value="">General</option>
-                    ${projectOptions().map(project => `<option value="${escapeHtml(project.id)}" ${currentProject() === project.id ? "selected" : ""}>${escapeHtml(project.name)}${project.source === "local" ? " - local" : ""}</option>`).join("")}
-                  </select>
-                </label>
-                <label class="compact-control">
-                  <span>Mode</span>
-                  <select id="chatMode" aria-label="Conversation mode">
-                    <option value="orchestrator" ${chatMode === "orchestrator" ? "selected" : ""}>Orchestrator</option>
-                    <option value="agent" ${chatMode === "agent" ? "selected" : ""}>Single agent</option>
-                  </select>
-                </label>
-                <label class="compact-control">
-                  <span>Agent</span>
-                  <select id="chatAgent" aria-label="Selected agent" ${chatMode === "agent" ? "" : "disabled"}>
-                    ${agentOptions.map(agent => `<option value="${escapeHtml(agent.id)}" ${selectedAgent === agent.id ? "selected" : ""}>${escapeHtml(displayTitle(agent))}</option>`).join("")}
-                  </select>
-                </label>
-              </div>
-              <button class="mic-button" type="button" aria-label="Voice input coming soon" title="Voice input coming soon" disabled>${icon("mic")}</button>
-              <button class="send-button" id="chatSend" aria-label="${chatBusy ? "AI Council is thinking" : "Send message"}">${chatBusy ? icon("more") : icon("send")}</button>
-            </div>
-          </div>
-        </form>
+        <div class="chat-log" id="chatLog">${renderChatMessages({ chatBusy, chatMessages, thinkingStartedAt, thinkingStep })}</div>
+        ${renderComposer({
+          agentOptions,
+          chatAttachments,
+          chatBusy,
+          chatInput,
+          chatMode,
+          currentProject: currentProject(),
+          projectOptions: projectOptions(),
+          selectedAgent
+        })}
       </section>
       <aside class="context-rail">
         <h2>Context Stack</h2>
@@ -927,30 +695,6 @@ function renderDataWorkspace() {
           <pre class="compact-output">${escapeHtml(providerText)}</pre>
         </article>
       </div>
-    </section>
-  `;
-}
-
-function renderRuntimeWorkspace() {
-  return `
-    <section class="surface runtime-surface">
-      <div class="runtime-form">
-        <label>
-          <span>Project</span>
-          <input id="runtimeProject" value="${escapeHtml(runtimeProject)}" />
-        </label>
-        <label>
-          <span>Task</span>
-          <textarea id="runtimeTask">${escapeHtml(runtimeTask)}</textarea>
-        </label>
-      </div>
-      <div class="button-row">
-        <button class="secondary-button" data-runtime-action="context">Generate context</button>
-        <button class="primary-button" data-runtime-action="run">Run Council loop</button>
-        <button class="secondary-button" data-runtime-action="eval">Score artifact</button>
-        <button class="secondary-button" data-runtime-action="provider">Provider health</button>
-      </div>
-      <div class="runtime-output">${renderRuntime()}</div>
     </section>
   `;
 }
@@ -1105,192 +849,6 @@ function renderRoute(route: RouteResponse) {
   `;
 }
 
-function renderChatMessages() {
-  if (!chatMessages.length) {
-    return `
-      <div class="welcome-message">
-        <h2>What decision are we making?</h2>
-        <p>Ask for a review, plan, architecture call, debugging pass, or product judgement. AI Council will route the work, read the available context, use the local model, and synthesize the next move.</p>
-        <div class="prompt-row">
-          <button class="prompt-chip" data-prompt="Review this repo and tell me the highest-leverage next step.">Review the repo</button>
-          <button class="prompt-chip" data-prompt="What should this console understand about my current project before it answers?">Improve context awareness</button>
-          <button class="prompt-chip" data-prompt="Plan the next AI Council runtime improvement with risks, evidence, and validation.">Plan runtime work</button>
-          <button class="prompt-chip" data-prompt="What should be fixed before this goes public on GitHub?">GitHub readiness</button>
-        </div>
-      </div>
-    `;
-  }
-  return `${chatMessages.map(message => `
-    <article class="chat-message ${message.role}">
-      ${message.role === "assistant"
-        ? `<div class="assistant-head">
-            <span class="assistant-mark">${icon("sparkle")}</span>
-            <strong>AI Council</strong>
-            <span class="thinking-pill">Thinking</span>
-            <button class="ghost-icon" type="button" data-more-menu="true" aria-label="More response options" title="More response options">${icon("more")}</button>
-          </div>${renderAssistantAnswer(message.text)}`
-        : `<div class="user-card">
-            <span class="avatar">AM</span>
-            <div class="user-message-body">
-              <div class="message-role"><strong>You</strong><span>${new Date().toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}</span></div>
-              <p>${escapeHtml(message.text)}</p>
-            </div>
-          </div>`}
-      ${message.role === "user" && message.attachments?.length ? renderMessageAttachments(message.attachments) : ""}
-      ${message.meta ? `<div class="message-meta">
-        <span>${escapeHtml(message.meta.selectedCouncil)}</span>
-        <span>${escapeHtml(message.meta.selectedProvider)}</span>
-        <span>${escapeHtml(message.meta.agentsUsed.join(", "))}</span>
-      </div>` : ""}
-    </article>
-  `).join("")}${chatBusy ? renderThinkingState() : ""}`;
-}
-
-function renderThinkingState() {
-  const steps = [
-    { label: "Reviewing repo context", detail: "Scanning docs, configs, and memory" },
-    { label: "Comparing current UI layout", detail: "Analyzing conversation patterns" },
-    { label: "Checking governance and runtime", detail: "Validating policies and actions" },
-    { label: "Drafting the next best move", detail: "Synthesizing recommendations" }
-  ];
-  const active = steps[Math.min(thinkingStep, steps.length - 1)];
-  const elapsed = thinkingStartedAt ? Math.max(1, Math.round((Date.now() - thinkingStartedAt) / 1000)) : 1;
-  return `
-    <article class="thinking-card" aria-live="polite" aria-label="AI Council is thinking">
-      <div class="thinking-head">
-        <div class="thinking-mark" aria-hidden="true"><span></span></div>
-        <div>
-          <strong>Thinking progress</strong>
-          <p>${escapeHtml(active.detail)} - ${elapsed}s</p>
-        </div>
-      </div>
-      <div class="thinking-steps">
-        ${steps.map((step, index) => `
-          <span class="${index < thinkingStep ? "done" : index === thinkingStep ? "current" : ""}">
-            <b>${escapeHtml(step.label)}</b>
-            <small>${escapeHtml(step.detail)}</small>
-          </span>
-        `).join("")}
-      </div>
-      <div class="thinking-footer"><span class="dot ok"></span>Working across agents <strong>3 active</strong></div>
-    </article>
-  `;
-}
-
-function renderAssistantAnswer(text: string) {
-  const sections = parseAnswerSections(text);
-  if (sections.length < 2) {
-    return `<div class="council-response-layout">${renderStaticProgressPanel()}<div class="answer-stream"><section class="answer-section read">${icon("sparkle")}<p>${escapeHtml(text)}</p></section>${renderResponseActions()}</div></div>`;
-  }
-  return `
-    <div class="council-response-layout">
-      ${renderStaticProgressPanel()}
-      <div class="answer-stream">
-        ${sections.map((section, index) => `
-          ${index === 1 ? renderAgentCards() : ""}
-          ${isDetailSection(section.key)
-            ? `<details class="answer-details ${section.key}">
-                <summary>View ${escapeHtml(section.label.toLowerCase())}</summary>
-                <p>${escapeHtml(cleanAnswerText(section.body))}</p>
-              </details>`
-            : `<section class="answer-section ${section.key}">
-                ${icon("sparkle")}
-                <h3>${escapeHtml(section.label)}</h3>
-                <p>${escapeHtml(cleanAnswerText(section.body))}</p>
-                ${index === sections.length - 1 ? renderResponseActions() : ""}
-              </section>`}
-        `).join("")}
-      </div>
-    </div>
-  `;
-}
-
-function renderStaticProgressPanel() {
-  const steps = [
-    ["Reviewing repo context", "Scanned project docs and configs", "done"],
-    ["Comparing current UI layout", "Analyzed conversation patterns", "done"],
-    ["Checking governance and runtime", "Validated policies and actions", "current"],
-    ["Drafting the next best move", "Synthesizing recommendations", ""]
-  ];
-  return `
-    <aside class="progress-panel" aria-label="Thinking progress">
-      <h3>Thinking progress</h3>
-      <div class="progress-steps">
-        ${steps.map(([label, detail, state]) => `
-          <span class="${state}">
-            <b>${escapeHtml(label)}</b>
-            <small>${escapeHtml(detail)}</small>
-          </span>
-        `).join("")}
-      </div>
-      <div class="progress-footer"><span class="dot ok"></span>Working across agents <strong>3 active</strong></div>
-    </aside>
-  `;
-}
-
-function renderAgentCards() {
-  const agents = [
-    { icon: "code", name: "Tech Lead", status: "Analyzing", tone: "teal", text: "Found opportunities to stream updates and reduce noise in the conversation." },
-    { icon: "shield", name: "Security", status: "Reviewing", tone: "warn", text: "Action runtime looks solid. Recommend adding approvals and narrowing safe execution." },
-    { icon: "check", name: "QA", status: "Testing", tone: "violet", text: "Coverage is good on core flows. Edge cases need cancellation and retry checks." }
-  ];
-  return `
-    <div class="agent-card-grid">
-      ${agents.map(agent => `
-        <article class="agent-card ${agent.tone}">
-          <div class="agent-card-head">
-            <span>${icon(agent.icon)}</span>
-            <strong>${escapeHtml(agent.name)}</strong>
-            <em>${escapeHtml(agent.status)}</em>
-          </div>
-          <small>10:42 AM</small>
-          <p>${escapeHtml(agent.text)}</p>
-          <div class="agent-progress"></div>
-        </article>
-      `).join("")}
-    </div>
-  `;
-}
-
-function renderResponseActions() {
-  return `<div class="response-actions">
-    <button type="button" data-feedback="helpful" aria-label="Mark response helpful" title="Mark response helpful">${icon("thumbsUp")}</button>
-    <button type="button" data-copy-latest-answer="true" aria-label="Copy latest answer" title="Copy latest answer">${icon("copy")}</button>
-  </div>`;
-}
-
-function isDetailSection(key: string) {
-  return ["model", "trace", "evidence"].includes(key);
-}
-
-function renderAttachmentTray() {
-  if (!chatAttachments.length) return "";
-  return `
-    <div class="attachment-tray" aria-label="Attached files">
-      ${chatAttachments.map((file, index) => `
-        <span class="attachment-chip">
-          <strong>${escapeHtml(file.name)}</strong>
-          <small>${escapeHtml(formatBytes(file.size))}</small>
-          <button type="button" data-remove-attachment="${index}" aria-label="Remove ${escapeHtml(file.name)}">x</button>
-        </span>
-      `).join("")}
-    </div>
-  `;
-}
-
-function renderMessageAttachments(attachments: ChatAttachment[]) {
-  return `
-    <div class="message-attachments">
-      ${attachments.map(file => `
-        <span>
-          <strong>${escapeHtml(file.name)}</strong>
-          <small>${escapeHtml(formatBytes(file.size))}</small>
-        </span>
-      `).join("")}
-    </div>
-  `;
-}
-
 async function attachFiles(files: FileList | null) {
   if (!files?.length) return;
   const attachments = await Promise.all(Array.from(files).slice(0, 8).map(fileToAttachment));
@@ -1396,63 +954,6 @@ function projectFilePriority(name: string) {
   if (/(src|app|pages)\//.test(lower)) return 2;
   if (/docs?\//.test(lower)) return 3;
   return 4;
-}
-
-function parseAnswerSections(text: string) {
-  const labels = [
-    ["Read", "read"],
-    ["Why it matters", "why"],
-    ["Findings", "findings"],
-    ["Next move", "next"],
-    ["Risks", "risks"],
-    ["Uncertainty", "uncertainty"],
-    ["Evidence", "evidence"],
-    ["Model synthesis", "model"],
-    ["Trace", "trace"]
-  ] as const;
-  const escaped = labels.map(([label]) => label.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("|");
-  const pattern = new RegExp(`(^|\\n)(${escaped}):\\n`, "g");
-  const matches = Array.from(text.matchAll(pattern));
-  if (!matches.length) return [{ label: "Read", key: "read", body: text }];
-  return matches.map((match, index) => {
-    const label = match[2];
-    const start = (match.index || 0) + match[0].length;
-    const end = matches[index + 1]?.index ?? text.length;
-    const key = labels.find(([known]) => known === label)?.[1] || "read";
-    return { label, key, body: text.slice(start, end).trim() };
-  }).filter(section => section.body);
-}
-
-function renderRuntime() {
-  const context = runtime?.latestContext;
-  const evalReport = runtime?.latestEval;
-  const artifactText = runtime?.artifactText || "";
-  const checks = evalReport?.checks || [];
-  return `
-    <div class="runtime-grid">
-      <div class="mini-panel">
-        <h3>Latest context</h3>
-        <p><strong>Project:</strong> ${escapeHtml(context?.project || "n/a")}</p>
-        <p><strong>Workflow:</strong> ${escapeHtml(context?.recommendedWorkflow || "n/a")}</p>
-        <p><strong>Engine:</strong> ${escapeHtml(context?.recommendedEngine || "n/a")}</p>
-        <p><strong>Agents:</strong> ${escapeHtml((context?.recommendedAgents || []).join(", ") || "n/a")}</p>
-      </div>
-      <div class="mini-panel">
-        <h3>Artifact quality</h3>
-        <p><strong>Artifact:</strong> ${escapeHtml(runtime?.latestArtifact || "n/a")}</p>
-        <p><strong>Score:</strong> ${escapeHtml(evalReport?.score ?? "n/a")} / threshold ${escapeHtml(evalReport?.threshold ?? "n/a")}</p>
-        <div class="check-list">
-          ${checks.slice(0, 8).map(check => `<div class="check-row ${check.passed ? "pass" : "fail"}"><span>${check.passed ? "PASS" : "FAIL"}</span>${escapeHtml(check.label)}</div>`).join("") || `<p class="muted">Run artifact scoring to populate checks.</p>`}
-        </div>
-      </div>
-    </div>
-    ${lastRuntimeAction ? `<pre class="console-output">${escapeHtml(lastRuntimeAction.command)}\n\n${escapeHtml(lastRuntimeAction.stdout || lastRuntimeAction.stderr || lastRuntimeAction.error || "")}</pre>` : ""}
-    ${providerHealth ? `<pre class="console-output">${escapeHtml(providerHealth.command)}\n\n${escapeHtml(providerHealth.stdout || providerHealth.stderr || providerHealth.error || "")}</pre>` : ""}
-    <details class="artifact-preview" ${artifactText ? "open" : ""}>
-      <summary>Latest runtime artifact preview</summary>
-      <pre>${escapeHtml(artifactText || "No runtime artifact has been generated yet.")}</pre>
-    </details>
-  `;
 }
 
 async function loadCollection(collection: CollectionName) {
