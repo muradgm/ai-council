@@ -23,6 +23,9 @@ assert.ok(result.answer.includes("Findings:"));
 assert.ok(result.answer.includes("Structured findings:"));
 assert.ok(result.answer.includes("Uncertainty:"));
 assert.ok(!result.answer.includes("Scaffolded agent"));
+assert.ok(result.events?.some(event => event.type === "context_read" && event.status === "complete"));
+assert.ok(result.events?.some(event => event.type === "agent_started" && event.detail.includes(result.selectedCouncil)));
+assert.ok(result.events?.some(event => event.type === "final_answer_streamed" && event.status === "complete"));
 
 const single = await orchestrator.runSingleAgent({
   input: "Source: packages/ai-core/src/agents/core/security-architect.agent.ts\nReview privacy and provider routing.",
@@ -33,5 +36,6 @@ const single = await orchestrator.runSingleAgent({
 assert.equal(single.selectedCouncil, "single-agent");
 assert.equal(single.agentsUsed[0], "security-architect");
 assert.ok(!single.answer.includes("Scaffolded agent"));
+assert.ok(single.events?.some(event => event.type === "agent_started" && event.detail.includes("single-agent")));
 
 console.log("Model-backed agent behavior passed.");

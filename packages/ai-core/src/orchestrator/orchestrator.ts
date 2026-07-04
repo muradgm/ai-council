@@ -1,4 +1,4 @@
-import type { CouncilRequest, CouncilResponse } from "../../../shared/src/index.js";
+import type { CouncilRequest, CouncilResponse, CouncilResponseEvent, CouncilResponseEventType } from "../../../shared/src/index.js";
 import { ModelRouter } from "../../../ai-providers/src/index.js";
 import type { ProviderResponse } from "../../../ai-providers/src/index.js";
 import type { AgentResult } from "../agents/base/agent-contract.js";
@@ -76,6 +76,55 @@ function nextActionBlock(agentResults: AgentResult[]) {
     .flatMap(result => result.nextActions.map(item => ({ agentId: result.agentId, item })))
     .slice(0, 5);
   return actions.length ? actions.map((action, index) => `${index + 1}. ${action.item} (${titleize(action.agentId)})`).join("\n") : "1. Confirm scope, make one testable change, then run validation.";
+}
+
+function firstNextAction(agentResults: AgentResult[]) {
+  return agentResults.flatMap(result => result.nextActions).find(Boolean);
+}
+
+function responseEvent(
+  type: CouncilResponseEventType,
+  label: string,
+  detail: string,
+  status: CouncilResponseEvent["status"],
+  tone: CouncilResponseEvent["tone"],
+  createdAt: string
+): CouncilResponseEvent {
+  return {
+    id: `${type}-${createdAt}`,
+    type,
+    label,
+    detail,
+    status,
+    tone,
+    createdAt
+  };
+}
+
+function buildResponseEvents(params: {
+  request: CouncilRequest;
+  selectedCouncil: string;
+  selectedProvider: string;
+  agentsUsed: string[];
+  agentResults: AgentResult[];
+  warnings: string[];
+}): CouncilResponseEvent[] {
+  const { request, selectedCouncil, selectedProvider, agentsUsed, agentResults, warnings } = params;
+  const createdAt = new Date().toISOString();
+  const findingCount = rankedFindings(agentResults).length;
+  const action = firstNextAction(agentResults);
+  const project = request.projectId || "General";
+
+  return [
+    responseEvent("context_read", "Context loaded", `Loaded ${project} context, task type ${request.taskType || "unspecified"}, and ${request.privacyLevel || "local-only"} privacy policy.`, "complete", "blue", createdAt),
+    responseEvent("agent_started", "Agents routed", `Selected ${selectedCouncil} with ${agentsUsed.join(", ") || "no agents"} via ${selectedProvider}.`, "complete", "violet", createdAt),
+    responseEvent("agent_finding_added", "Findings collected", findingCount ? `${findingCount} structured findings were returned by the selected agents.` : "No structured findings were returned; answer falls back to scoped synthesis.", findingCount ? "complete" : "skipped", "teal", createdAt),
+    responseEvent("risk_detected", "Risk checked", warnings.length ? warnings.join(" ") : "No policy warnings were returned by the guardrail pass.", warnings.length ? "complete" : "skipped", "warn", createdAt),
+    responseEvent("action_proposed", "Action proposed", action || "No explicit action was proposed; final answer recommends the smallest useful next move.", action ? "complete" : "skipped", "teal", createdAt),
+    responseEvent("approval_required", "Approval gate", warnings.length ? "Warnings are present; review before high-impact changes." : "No external action approval was required for this answer.", warnings.length ? "complete" : "skipped", "warn", createdAt),
+    responseEvent("validation_running", "Response validated", "Response was shaped into Council sections with evidence, risks, uncertainty, and next move.", "complete", "blue", createdAt),
+    responseEvent("final_answer_streamed", "Final answer ready", "Final synthesis is ready for the conversation.", "complete", "violet", createdAt)
+  ];
 }
 
 function agentEvidenceForPrompt(agentResults: AgentResult[]) {
@@ -268,12 +317,21 @@ export class Orchestrator {
       allowNetwork: request.privacyLevel !== undefined && request.privacyLevel !== "local-only"
     });
 
+    const agentsUsed = agentResults.map(r => r.agentId);
     return {
       selectedCouncil: council.id,
       selectedProvider: provider.id,
-      agentsUsed: agentResults.map(r => r.agentId),
+      agentsUsed,
       warnings: policyResult.warnings,
-      answer: buildCouncilAnswer({ request, councilId: council.id, providerId: provider.id, agentResults, providerResponse, warnings: policyResult.warnings })
+      answer: buildCouncilAnswer({ request, councilId: council.id, providerId: provider.id, agentResults, providerResponse, warnings: policyResult.warnings }),
+      events: buildResponseEvents({
+        request,
+        selectedCouncil: council.id,
+        selectedProvider: provider.id,
+        agentsUsed,
+        agentResults,
+        warnings: policyResult.warnings
+      })
     };
   }
 
@@ -302,12 +360,21 @@ export class Orchestrator {
       allowNetwork: request.privacyLevel !== undefined && request.privacyLevel !== "local-only"
     });
 
+    const agentsUsed = [agent.id];
     return {
       selectedCouncil: "single-agent",
       selectedProvider: provider.id,
-      agentsUsed: [agent.id],
+      agentsUsed,
       warnings: policyResult.warnings,
-      answer: buildSingleAgentAnswer({ request, agentId: agent.id, agentResult, providerId: provider.id, providerResponse, warnings: policyResult.warnings })
+      answer: buildSingleAgentAnswer({ request, agentId: agent.id, agentResult, providerId: provider.id, providerResponse, warnings: policyResult.warnings }),
+      events: buildResponseEvents({
+        request,
+        selectedCouncil: "single-agent",
+        selectedProvider: provider.id,
+        agentsUsed,
+        agentResults: [agentResult],
+        warnings: policyResult.warnings
+      })
     };
   }
 }

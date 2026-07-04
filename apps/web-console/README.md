@@ -80,7 +80,7 @@ The console includes a conversation panel for local-first questions. It calls th
 
 While a response is running, the UI shows a typed response event path: agent started, memory read, finding added, risk checked, action proposed, approval gate, validation running, and final answer streamed. This is a product state indicator, not hidden chain-of-thought.
 
-The current event lifecycle is local UI state in `apps/web-console/src/state/response-events.ts`. It gives the console a stable contract now, and can later be connected to server-sent events, WebSockets, provider traces, or runtime observability without redesigning the response surface.
+The in-flight animation starts in local UI state, then completed assistant messages use the event trail returned by the API orchestrator. The shared response contract lives in `packages/shared/src/index.ts`, the orchestrator emits completed response events from `packages/ai-core/src/orchestrator/orchestrator.ts`, and the browser renders them with `apps/web-console/src/state/response-events.ts`. This keeps the response surface stable for future server-sent events, WebSockets, provider traces, or runtime observability.
 
 Assistant answers are rendered as structured judgement sections: Read, Why it matters, Next move, and Risks. Raw Model synthesis, Evidence, and Trace details are available behind "View details" disclosures so the main answer stays readable.
 

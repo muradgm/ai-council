@@ -81,7 +81,9 @@ The web console is organized like a working AI coding app rather than a marketin
 
 Conversation responses should prioritize human judgement over raw routing output. The API still returns selected council/provider/agent metadata, but the visible answer is rendered as structured sections such as Read, Why it matters, Findings, Next move, Risks, and Uncertainty. Raw Model synthesis, Evidence, and Trace sections stay behind "View details" disclosures.
 
-The thinking indicator shows product-level execution state with motion: route, read memory, ask model, and synthesize. It should never expose hidden chain-of-thought; it only communicates that the local Council is doing staged work.
+The thinking indicator shows product-level execution state with motion: context loading, agent routing, finding collection, governance/risk checks, response validation, and final synthesis. It should never expose hidden chain-of-thought; it only communicates that the local Council is doing staged work.
+
+The browser starts a local in-flight event animation immediately so the user gets responsive feedback. Once `/ask` returns, completed assistant messages render the response event trail emitted by the orchestrator. Those events are part of the shared response contract, so later SSE/WebSocket streaming can reuse the same UI surface instead of inventing a second progress model.
 
 When a project is selected, the API enriches `/ask` requests with compact local project and memory previews before calling the orchestrator. This keeps answers more context-aware while preserving the local-first boundary.
 
