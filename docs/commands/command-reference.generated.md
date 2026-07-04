@@ -23,6 +23,7 @@ Generated from `package.json`.
 | `pnpm console:snapshot` | `node scripts/console-snapshot.mjs` |
 | `pnpm console:status` | `node scripts/console-status.mjs` |
 | `pnpm council` | `node scripts/council.mjs` |
+| `pnpm council:act` | `node scripts/council-act.mjs` |
 | `pnpm council:automation` | `node scripts/council.mjs automation:status` |
 | `pnpm council:bootstrap` | `node scripts/codex-bootstrap.mjs` |
 | `pnpm council:console` | `node scripts/council.mjs console` |
@@ -98,6 +99,7 @@ Generated from `package.json`.
 | `pnpm providers:list` | `node scripts/list-providers.mjs` |
 | `pnpm providers:policy` | `node scripts/provider-policy.mjs` |
 | `pnpm providers:route` | `node scripts/route-provider.mjs` |
+| `pnpm providers:set-env` | `node scripts/provider-env-set.mjs` |
 | `pnpm release:checklist` | `node scripts/release-checklist.mjs` |
 | `pnpm release:notes` | `node scripts/release-notes.mjs` |
 | `pnpm release:status` | `node scripts/release-status.mjs` |
@@ -113,7 +115,7 @@ Generated from `package.json`.
 | `pnpm task:queue` | `node scripts/task-queue.mjs` |
 | `pnpm templates:list` | `node scripts/list-templates.mjs` |
 | `pnpm templates:route` | `node scripts/route-template.mjs` |
-| `pnpm test` | `tsx tests/smoke.test.ts` |
+| `pnpm test` | `tsx tests/smoke.test.ts && tsx tests/model-backed-agents.test.ts && tsx tests/repo-review-context.test.ts && tsx tests/action-runtime.test.ts` |
 | `pnpm tools:check` | `node scripts/check-tool-boundaries.mjs` |
 | `pnpm tools:list` | `node scripts/list-tool-contracts.mjs` |
 | `pnpm trace:artifact` | `node scripts/trace-artifact.mjs` |

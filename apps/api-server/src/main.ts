@@ -3,6 +3,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { Orchestrator } from "../../../packages/ai-core/src/index.js";
+import { buildRepoReviewContext } from "./repo-context.js";
 
 const root = process.cwd();
 const orchestrator = new Orchestrator();
@@ -306,8 +307,11 @@ const server = createServer(async (req, res) => {
     if (url.pathname === "/ask" && req.method === "POST") {
       const body = await readBody(req);
       const projectId = body.projectId ? String(body.projectId) : undefined;
-      const context = projectContextFor(projectId);
       const input = String(body.input ?? "No input provided");
+      const context = [
+        projectContextFor(projectId),
+        buildRepoReviewContext(root, projectId, input)
+      ].filter(Boolean).join("\n\n---\n\n");
       const request = {
         input: context ? `${input}\n\nRelevant project context:\n${context}` : input,
         projectId,

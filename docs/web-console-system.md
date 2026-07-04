@@ -85,6 +85,8 @@ The thinking indicator shows product-level execution state with motion: route, r
 
 When a project is selected, the API enriches `/ask` requests with compact local project and memory previews before calling the orchestrator. This keeps answers more context-aware while preserving the local-first boundary.
 
+When the selected project is `ai-council`, or the request is clearly a repo/runtime review, the API also adds a bounded repository context pack made from known source files. These snippets are labeled with `Source:` lines so agent findings can cite concrete files without giving the browser arbitrary filesystem access.
+
 When a local folder is imported from the Projects view, the browser samples useful readable files and stores the resulting context in local browser storage. The API server does not receive arbitrary filesystem access from the browser. Attachments use the same local-only model: readable files are sampled into prompt context, while binary files are shown as metadata.
 
 Recent conversation messages are stored in the local browser only. This makes sent messages inspectable after reload without introducing account storage, cloud sync, or repository writes.

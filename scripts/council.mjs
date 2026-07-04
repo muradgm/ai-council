@@ -99,6 +99,7 @@ Automation:
 Governance:
   governance:init                      Initialize governance storage
   governance:status                    Show governance counts
+  act <project> "request" --dry-run    Plan governed actions and write an action report
   permissions:check "action"          Classify action permission and approval need
   approvals:request <project> "action" Create approval request
   approvals:list                       List approval requests
@@ -223,6 +224,7 @@ switch (command) {
   case 'automation:report': run('automation-report.mjs', args); break;
   case 'governance:init': run('governance-init.mjs', args); break;
   case 'governance:status': run('governance-status.mjs', args); break;
+  case 'act': run('council-act.mjs', args); break;
   case 'permissions:check': run('permissions-check.mjs', args); break;
   case 'approvals:request': run('approvals-request.mjs', args); break;
   case 'approvals:list': run('approvals-list.mjs', args); break;

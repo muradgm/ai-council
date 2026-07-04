@@ -56,6 +56,8 @@ ollama pull llama3.1
 
 The core Council runtime now uses a structured agent result contract for the first model-backed specialists: software architect, security architect, QA engineer, and final synthesizer. These agents return findings, risks, uncertainties, next actions, recommendations, and confidence. If a local model is unavailable or returns unusable output, the runtime falls back to a deterministic evidence-based result instead of presenting placeholder intelligence.
 
+Repo-review requests to the local API also load a bounded set of source snippets from the AI Council repository. The orchestrator passes those `Source:` citations into specialist agents so findings can point at real files instead of only the user request.
+
 For phone/tablet access on the same Wi-Fi network:
 
 ```bash
@@ -99,6 +101,7 @@ pnpm runtime:context TradeFrame "build the trading journal MVP"
 pnpm runtime:run TradeFrame "review the trading journal MVP architecture"
 pnpm runtime:eval
 pnpm apps:setup
+pnpm council act ai-council "create model-backed agent hardening plan" --dry-run
 pnpm learning:feedback TradeFrame 4 "Response was grounded and actionable."
 pnpm learning:report
 pnpm council context TradeFrame "build the trading journal MVP"
