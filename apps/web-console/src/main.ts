@@ -818,7 +818,7 @@ async function sendChatMessage() {
     const response = await api.ask(prompt, apiProjectId(), chatMode === "agent" ? selectedAgent : undefined);
     const elapsed = Date.now() - startedAt;
     if (elapsed < 1200) await wait(1200 - elapsed);
-    const finalEvents = finalizeResponseEvents(responseEvents, response);
+    const finalEvents = response.events?.length ? response.events : finalizeResponseEvents(responseEvents, response);
     setChatMessages([...chatMessages, { role: "assistant", text: response.answer, meta: response, events: finalEvents }]);
   } catch (error) {
     const finalEvents = failResponseEvents(responseEvents, error);
