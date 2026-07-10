@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { createActionPlan, executeActionPlan } from "../packages/action-runtime/src/index.js";
+import { appendActionLedger, createActionPlan, executeActionPlan } from "../packages/action-runtime/src/index.js";
 import { classifyCouncilRoute, Orchestrator } from "../packages/ai-core/src/index.js";
 
 type ProofResult = {
@@ -23,6 +23,10 @@ type ProofResult = {
     approvalRequired: number;
     blocked: number;
     executed: number;
+  };
+  ledger?: {
+    path: string;
+    entries: number;
   };
 };
 
@@ -89,6 +93,7 @@ function proofSummary(result: ProofResult) {
     `- Approval required: ${result.actionReport.approvalRequired}`,
     `- Blocked: ${result.actionReport.blocked}`,
     `- Executed: ${result.actionReport.executed}`,
+    result.ledger ? `- Ledger: ${result.ledger.entries} entries appended to ${result.ledger.path}` : "- Ledger: skipped for test mode",
     ""
   ].join("\n");
 }
@@ -143,6 +148,8 @@ export async function runE2eProof(writeReport = true): Promise<ProofResult> {
   assert.ok(actionReport.summary.approvalRequired > 0);
   assert.ok(actionReport.summary.allowed > 0);
 
+  const ledger = writeReport ? appendActionLedger(actionReport) : undefined;
+
   const result: ProofResult = {
     ok: true,
     prompt,
@@ -161,7 +168,8 @@ export async function runE2eProof(writeReport = true): Promise<ProofResult> {
       approvalRequired: actionReport.summary.approvalRequired,
       blocked: actionReport.summary.blocked,
       executed: actionReport.summary.executed
-    }
+    },
+    ledger: ledger ? { path: ledger.path, entries: ledger.entries.length } : undefined
   };
 
   if (writeReport) {
