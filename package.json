@@ -13,7 +13,7 @@
     "dev:api:lan": "tsx apps/api-server/src/main.ts",
     "council": "node scripts/council.mjs",
     "build": "tsc -p tsconfig.json",
-    "test": "tsx tests/smoke.test.ts && tsx tests/model-backed-agents.test.ts && tsx tests/repo-review-context.test.ts && tsx tests/action-runtime.test.ts && tsx tests/web-console-response-events.test.ts && tsx tests/agent-mention-parser.test.ts && tsx tests/routing-classifier.test.ts && tsx tests/e2e-proof.test.ts",
+    "test": "tsx tests/smoke.test.ts && tsx tests/model-backed-agents.test.ts && tsx tests/repo-review-context.test.ts && tsx tests/action-runtime.test.ts && tsx tests/action-ledger.test.ts && tsx tests/web-console-response-events.test.ts && tsx tests/agent-mention-parser.test.ts && tsx tests/routing-classifier.test.ts && tsx tests/e2e-proof.test.ts",
     "lint": "tsc -p tsconfig.json --noEmit",
     "format": "node scripts/format-check.mjs",
     "council:init": "node scripts/council.mjs init",
