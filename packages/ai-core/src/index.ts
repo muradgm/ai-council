@@ -1,6 +1,7 @@
 export * from "./orchestrator/orchestrator.js";
 export * from "./orchestrator/council-selector.js";
 export * from "./orchestrator/agent-mention-parser.js";
+export * from "./orchestrator/routing-classifier.js";
 export * from "./agents/base/agent-contract.js";
 export * from "./agents/base/agent-registry.js";
 export * from "./councils/council-registry.js";

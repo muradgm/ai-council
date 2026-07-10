@@ -4,8 +4,8 @@ import type { ProviderResponse } from "../../../ai-providers/src/index.js";
 import type { AgentResult } from "../agents/base/agent-contract.js";
 import { AgentRegistry } from "../agents/base/agent-registry.js";
 import { getCouncil } from "../councils/council-registry.js";
-import { agentMentionHelp, parseAgentMentions } from "./agent-mention-parser.js";
-import { CouncilSelector } from "./council-selector.js";
+import { agentMentionHelp } from "./agent-mention-parser.js";
+import { classifyCouncilRoute } from "./routing-classifier.js";
 import { PolicyEngine } from "../guardrails/policy-engine.js";
 import { TraceLogger } from "../tracing/trace-logger.js";
 
@@ -318,13 +318,12 @@ function buildMentionControlResponse(intent: "help" | "list-agents"): CouncilRes
   };
 }
 
-function orderAgentsWithRequestedLead(agentIds: string[], requestedLeadAgent?: string) {
-  if (!requestedLeadAgent) return agentIds;
-  return [requestedLeadAgent, ...agentIds.filter(agentId => agentId !== requestedLeadAgent)];
+function orderAgentsForRoute(agentIds: string[], leadAgent: string, supportAgents: string[]) {
+  const ordered = [leadAgent, ...supportAgents, ...agentIds];
+  return [...new Set(ordered)];
 }
 
 export class Orchestrator {
-  private readonly selector = new CouncilSelector();
   private readonly agents = new AgentRegistry();
   private readonly modelRouter = new ModelRouter();
   private readonly policy = new PolicyEngine();
@@ -332,22 +331,23 @@ export class Orchestrator {
 
   async run(request: CouncilRequest): Promise<CouncilResponse> {
     this.traces.log("request", request.input);
-    const mentionRoute = parseAgentMentions(request.input);
+    const route = classifyCouncilRoute(request);
+    const mentionRoute = route.mention;
     if (mentionRoute.controlIntent) return buildMentionControlResponse(mentionRoute.controlIntent);
 
     const policyResult = this.policy.validate(request);
     const mentionWarnings = mentionRoute.unknownTokens.length
       ? [`Unknown @agent mention ignored: ${mentionRoute.unknownTokens.join(", ")}. Use @help for supported mentions.`]
       : [];
-    const warnings = [...policyResult.warnings, ...mentionWarnings];
-    const councilId = this.selector.select(request);
-    const council = getCouncil(councilId);
-    if (!council) throw new Error(`Council not found: ${councilId}`);
+    const routeWarnings = route.riskFlags.length ? [`Routing risk flags: ${route.riskFlags.join(", ")}.`] : [];
+    const warnings = [...policyResult.warnings, ...mentionWarnings, ...routeWarnings];
+    const council = getCouncil(route.councilId);
+    if (!council) throw new Error(`Council not found: ${route.councilId}`);
 
-    const requestedLeadAgent = mentionRoute.requestedLeadAgent && this.agents.get(mentionRoute.requestedLeadAgent)
-      ? mentionRoute.requestedLeadAgent
+    const requestedLeadAgent = route.leadAgent && this.agents.get(route.leadAgent)
+      ? route.leadAgent
       : undefined;
-    const selectedAgents = this.agents.select(orderAgentsWithRequestedLead(council.agents, requestedLeadAgent));
+    const selectedAgents = this.agents.select(orderAgentsForRoute(council.agents, requestedLeadAgent || council.agents[0], route.supportAgents));
     const agentResults = await Promise.all(selectedAgents.map(a => a.run(request.input, { projectId: request.projectId, taskType: request.taskType, privacyLevel: request.privacyLevel, riskLevel: request.riskLevel })));
     const provider = this.modelRouter.selectProvider(request);
     const providerResponse = await provider.call({
@@ -383,7 +383,7 @@ export class Orchestrator {
         agentsUsed,
         agentResults,
         warnings,
-        requestedLeadLabel: requestedLeadAgent ? mentionRoute.requestedLeadLabel : undefined
+        requestedLeadLabel: route.source === "mention" && requestedLeadAgent ? mentionRoute.requestedLeadLabel : undefined
       })
     };
   }
