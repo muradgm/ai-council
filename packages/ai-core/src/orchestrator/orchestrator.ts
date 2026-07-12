@@ -4,6 +4,7 @@ import type { ProviderResponse } from "../../../ai-providers/src/index.js";
 import type { AgentResult } from "../agents/base/agent-contract.js";
 import { AgentRegistry } from "../agents/base/agent-registry.js";
 import { getCouncil } from "../councils/council-registry.js";
+import { agentMentionHelp, parseAgentMentions } from "./agent-mention-parser.js";
 import { CouncilSelector } from "./council-selector.js";
 import { PolicyEngine } from "../guardrails/policy-engine.js";
 import { TraceLogger } from "../tracing/trace-logger.js";
@@ -108,16 +109,18 @@ function buildResponseEvents(params: {
   agentsUsed: string[];
   agentResults: AgentResult[];
   warnings: string[];
+  requestedLeadLabel?: string;
 }): CouncilResponseEvent[] {
-  const { request, selectedCouncil, selectedProvider, agentsUsed, agentResults, warnings } = params;
+  const { request, selectedCouncil, selectedProvider, agentsUsed, agentResults, warnings, requestedLeadLabel } = params;
   const createdAt = new Date().toISOString();
   const findingCount = rankedFindings(agentResults).length;
   const action = firstNextAction(agentResults);
   const project = request.projectId || "General";
+  const leadNote = requestedLeadLabel ? `Explicit @agent lead: ${requestedLeadLabel}. ` : "";
 
   return [
     responseEvent("context_read", "Context loaded", `Loaded ${project} context, task type ${request.taskType || "unspecified"}, and ${request.privacyLevel || "local-only"} privacy policy.`, "complete", "blue", createdAt),
-    responseEvent("agent_started", "Agents routed", `Selected ${selectedCouncil} with ${agentsUsed.join(", ") || "no agents"} via ${selectedProvider}.`, "complete", "violet", createdAt),
+    responseEvent("agent_started", "Agents routed", `${leadNote}Selected ${selectedCouncil} with ${agentsUsed.join(", ") || "no agents"} via ${selectedProvider}.`, "complete", "violet", createdAt),
     responseEvent("agent_finding_added", "Findings collected", findingCount ? `${findingCount} structured findings were returned by the selected agents.` : "No structured findings were returned; answer falls back to scoped synthesis.", findingCount ? "complete" : "skipped", "teal", createdAt),
     responseEvent("risk_detected", "Risk checked", warnings.length ? warnings.join(" ") : "No policy warnings were returned by the guardrail pass.", warnings.length ? "complete" : "skipped", "warn", createdAt),
     responseEvent("action_proposed", "Action proposed", action || "No explicit action was proposed; final answer recommends the smallest useful next move.", action ? "complete" : "skipped", "teal", createdAt),
@@ -281,6 +284,45 @@ function buildSingleAgentAnswer(params: {
   ].join("\n");
 }
 
+function buildMentionControlResponse(intent: "help" | "list-agents"): CouncilResponse {
+  const createdAt = new Date().toISOString();
+  const intro = intent === "help"
+    ? "Use an @agent mention at the start or anywhere in the prompt to select the lead specialist. The orchestrator still owns context loading, support-agent routing, governance, validation, and final synthesis."
+    : "Available deterministic @agent mentions:";
+  const answer = [
+    "Read:",
+    intro,
+    "",
+    "Available mentions:",
+    agentMentionHelp(),
+    "",
+    "Examples:",
+    "@stl review this repo and recommend the next move.",
+    "@sec review provider routing and approval gates.",
+    "@qa check validation coverage for the runtime loop.",
+    "",
+    "Trace:",
+    `Mention control: ${intent}`
+  ].join("\n");
+
+  return {
+    selectedCouncil: "mention-help",
+    selectedProvider: "local-rule",
+    agentsUsed: [],
+    warnings: [],
+    answer,
+    events: [
+      responseEvent("context_read", "Mention help loaded", "Loaded the deterministic @agent mention registry.", "complete", "blue", createdAt),
+      responseEvent("final_answer_streamed", "Mention help ready", "Returned local mention help without model routing.", "complete", "violet", createdAt)
+    ]
+  };
+}
+
+function orderAgentsWithRequestedLead(agentIds: string[], requestedLeadAgent?: string) {
+  if (!requestedLeadAgent) return agentIds;
+  return [requestedLeadAgent, ...agentIds.filter(agentId => agentId !== requestedLeadAgent)];
+}
+
 export class Orchestrator {
   private readonly selector = new CouncilSelector();
   private readonly agents = new AgentRegistry();
@@ -290,12 +332,22 @@ export class Orchestrator {
 
   async run(request: CouncilRequest): Promise<CouncilResponse> {
     this.traces.log("request", request.input);
+    const mentionRoute = parseAgentMentions(request.input);
+    if (mentionRoute.controlIntent) return buildMentionControlResponse(mentionRoute.controlIntent);
+
     const policyResult = this.policy.validate(request);
+    const mentionWarnings = mentionRoute.unknownTokens.length
+      ? [`Unknown @agent mention ignored: ${mentionRoute.unknownTokens.join(", ")}. Use @help for supported mentions.`]
+      : [];
+    const warnings = [...policyResult.warnings, ...mentionWarnings];
     const councilId = this.selector.select(request);
     const council = getCouncil(councilId);
     if (!council) throw new Error(`Council not found: ${councilId}`);
 
-    const selectedAgents = this.agents.select(council.agents);
+    const requestedLeadAgent = mentionRoute.requestedLeadAgent && this.agents.get(mentionRoute.requestedLeadAgent)
+      ? mentionRoute.requestedLeadAgent
+      : undefined;
+    const selectedAgents = this.agents.select(orderAgentsWithRequestedLead(council.agents, requestedLeadAgent));
     const agentResults = await Promise.all(selectedAgents.map(a => a.run(request.input, { projectId: request.projectId, taskType: request.taskType, privacyLevel: request.privacyLevel, riskLevel: request.riskLevel })));
     const provider = this.modelRouter.selectProvider(request);
     const providerResponse = await provider.call({
@@ -322,15 +374,16 @@ export class Orchestrator {
       selectedCouncil: council.id,
       selectedProvider: provider.id,
       agentsUsed,
-      warnings: policyResult.warnings,
-      answer: buildCouncilAnswer({ request, councilId: council.id, providerId: provider.id, agentResults, providerResponse, warnings: policyResult.warnings }),
+      warnings,
+      answer: buildCouncilAnswer({ request, councilId: council.id, providerId: provider.id, agentResults, providerResponse, warnings }),
       events: buildResponseEvents({
         request,
         selectedCouncil: council.id,
         selectedProvider: provider.id,
         agentsUsed,
         agentResults,
-        warnings: policyResult.warnings
+        warnings,
+        requestedLeadLabel: requestedLeadAgent ? mentionRoute.requestedLeadLabel : undefined
       })
     };
   }
