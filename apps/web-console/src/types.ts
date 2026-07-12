@@ -119,21 +119,27 @@ export type AskResponse = {
   agentsUsed: string[];
   warnings: string[];
   answer: string;
-  events?: Array<{
-    id: string;
-    type:
-      | "agent_started"
-      | "context_read"
-      | "agent_finding_added"
-      | "risk_detected"
-      | "action_proposed"
-      | "approval_required"
-      | "validation_running"
-      | "final_answer_streamed";
-    label: string;
-    detail: string;
-    status: "pending" | "active" | "complete" | "blocked" | "skipped";
-    tone: "teal" | "blue" | "violet" | "warn" | "danger";
-    createdAt: string;
-  }>;
+  events?: ResponseEvent[];
+};
+
+export type ResponseEvent = {
+  id: string;
+  type:
+    | "agent_started"
+    | "context_read"
+    | "agent_finding_added"
+    | "risk_detected"
+    | "action_proposed"
+    | "approval_required"
+    | "validation_running"
+    | "final_answer_streamed";
+  label: string;
+  detail: string;
+  status: "pending" | "active" | "complete" | "blocked" | "skipped";
+  tone: "teal" | "blue" | "violet" | "warn" | "danger";
+  createdAt: string;
+};
+
+export type ResponseEventsResponse = {
+  events: ResponseEvent[];
 };

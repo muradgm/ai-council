@@ -130,6 +130,31 @@ function buildResponseEvents(params: {
   ];
 }
 
+function buildPlannedResponseEvents(params: {
+  request: CouncilRequest;
+  selectedCouncil: string;
+  selectedProvider: string;
+  agentsUsed: string[];
+  warnings: string[];
+  requestedLeadLabel?: string;
+}): CouncilResponseEvent[] {
+  const { request, selectedCouncil, selectedProvider, agentsUsed, warnings, requestedLeadLabel } = params;
+  const createdAt = new Date().toISOString();
+  const project = request.projectId || "General";
+  const leadNote = requestedLeadLabel ? `Explicit @agent lead: ${requestedLeadLabel}. ` : "";
+
+  return [
+    responseEvent("context_read", "Context loading", `Reading ${project} context, task type ${request.taskType || "unspecified"}, and ${request.privacyLevel || "local-only"} privacy policy.`, "active", "blue", createdAt),
+    responseEvent("agent_started", "Agents queued", `${leadNote}Preparing ${selectedCouncil} with ${agentsUsed.join(", ") || "no agents"} via ${selectedProvider}.`, "pending", "violet", createdAt),
+    responseEvent("agent_finding_added", "Findings pending", "Waiting for specialist findings to become available.", "pending", "teal", createdAt),
+    responseEvent("risk_detected", "Risk pending", warnings.length ? `Initial warnings detected: ${warnings.join(" ")}` : "No initial routing or policy warning detected yet.", "pending", "warn", createdAt),
+    responseEvent("action_proposed", "Action pending", "Waiting for the Council to propose the smallest useful next move.", "pending", "teal", createdAt),
+    responseEvent("approval_required", "Approval pending", warnings.length ? "Initial warnings may require review before execution." : "Checking whether the proposed action needs explicit approval.", "pending", "warn", createdAt),
+    responseEvent("validation_running", "Validation pending", "Waiting to validate the response shape, evidence, and safety notes.", "pending", "blue", createdAt),
+    responseEvent("final_answer_streamed", "Final answer pending", "Waiting for final Council synthesis.", "pending", "violet", createdAt)
+  ];
+}
+
 function agentEvidenceForPrompt(agentResults: AgentResult[]) {
   return agentResults.map(result => {
     const findings = result.findings.slice(0, 2).map(finding => [
@@ -328,6 +353,55 @@ export class Orchestrator {
   private readonly modelRouter = new ModelRouter();
   private readonly policy = new PolicyEngine();
   private readonly traces = new TraceLogger();
+
+  planResponseEvents(request: CouncilRequest, agentId?: string): CouncilResponseEvent[] {
+    this.traces.log("event-plan", request.input);
+    const policyResult = this.policy.validate(request);
+    const provider = this.modelRouter.selectProvider(request);
+
+    if (agentId) {
+      const agent = this.agents.get(agentId);
+      return buildPlannedResponseEvents({
+        request,
+        selectedCouncil: "single-agent",
+        selectedProvider: provider.id,
+        agentsUsed: agent ? [agent.id] : [],
+        warnings: agent ? policyResult.warnings : [...policyResult.warnings, `Agent not found: ${agentId}`]
+      });
+    }
+
+    const route = classifyCouncilRoute(request);
+    const mentionRoute = route.mention;
+    if (mentionRoute.controlIntent) {
+      const createdAt = new Date().toISOString();
+      return [
+        responseEvent("context_read", "Mention registry queued", "Preparing deterministic @agent mention help.", "active", "blue", createdAt),
+        responseEvent("final_answer_streamed", "Mention answer pending", "Waiting to return local mention help without model routing.", "pending", "violet", createdAt)
+      ];
+    }
+
+    const mentionWarnings = mentionRoute.unknownTokens.length
+      ? [`Unknown @agent mention ignored: ${mentionRoute.unknownTokens.join(", ")}. Use @help for supported mentions.`]
+      : [];
+    const routeWarnings = route.riskFlags.length ? [`Routing risk flags: ${route.riskFlags.join(", ")}.`] : [];
+    const warnings = [...policyResult.warnings, ...mentionWarnings, ...routeWarnings];
+    const council = getCouncil(route.councilId);
+    const requestedLeadAgent = route.leadAgent && this.agents.get(route.leadAgent)
+      ? route.leadAgent
+      : undefined;
+    const agentsUsed = council
+      ? this.agents.select(orderAgentsForRoute(council.agents, requestedLeadAgent || council.agents[0], route.supportAgents)).map(agent => agent.id)
+      : [];
+
+    return buildPlannedResponseEvents({
+      request,
+      selectedCouncil: council?.id || route.councilId,
+      selectedProvider: provider.id,
+      agentsUsed,
+      warnings,
+      requestedLeadLabel: route.source === "mention" && requestedLeadAgent ? mentionRoute.requestedLeadLabel : undefined
+    });
+  }
 
   async run(request: CouncilRequest): Promise<CouncilResponse> {
     this.traces.log("request", request.input);
