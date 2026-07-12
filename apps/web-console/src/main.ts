@@ -101,6 +101,7 @@ let settingsOpen = false;
 let shareOpen = false;
 let moreMenuOpen = false;
 let actionNotice = "";
+let brandMotionActive = true;
 
 function totalIndexedRecords(currentSummary: Summary): number {
   return Object.values(currentSummary.counts).reduce<number>((total, value) => total + Number(value || 0), 0);
@@ -265,12 +266,15 @@ function apiProjectId() {
 }
 
 function renderShell() {
+  const shouldAnimateBrand = brandMotionActive;
+  brandMotionActive = false;
   app.innerHTML = `
     <main class="app-shell ${sidebarCollapsed ? "sidebar-collapsed" : ""}">
       ${renderSidebar({
         activeCollection,
         activeView,
         apiBase: api.baseUrl,
+        brandMotionActive: shouldAnimateBrand,
         chatProject,
         localProjects,
         navItems,
