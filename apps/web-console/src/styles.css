@@ -216,6 +216,10 @@ p {
   position: relative;
   display: block;
   filter: drop-shadow(0 0 18px rgba(0, 212, 200, 0.18));
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.brand-mark.is-activating {
   animation: council-core-activate 1040ms var(--motion-standard) 120ms both;
 }
 
@@ -240,6 +244,9 @@ p {
   width: 0.46rem;
   height: 0.46rem;
   box-shadow: 0 0 18px currentColor;
+}
+
+.brand-mark.is-activating .core-node {
   animation: council-node-settle 1040ms var(--motion-standard) 120ms both;
 }
 
@@ -281,11 +288,15 @@ p {
   box-shadow:
     0 0 16px rgba(120, 92, 255, 0.42),
     0 0 24px rgba(0, 212, 200, 0.22);
+}
+
+.brand-mark.is-activating .core-center {
   animation: council-core-settle 1040ms var(--motion-standard) 120ms both;
 }
 
 .brand-mark:hover {
-  animation: council-core-hover 520ms var(--motion-standard) both;
+  filter: drop-shadow(0 0 20px rgba(0, 212, 200, 0.24));
+  transform: scale(1.04);
 }
 
 @keyframes council-core-activate {
@@ -339,20 +350,6 @@ p {
   100% {
     opacity: 1;
     transform: scale(1);
-  }
-}
-
-@keyframes council-core-hover {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-
-  55% {
-    transform: rotate(26deg) scale(1.08);
-  }
-
-  100% {
-    transform: rotate(0deg) scale(1);
   }
 }
 

@@ -8,6 +8,7 @@ type SidebarProps = {
   activeCollection: CollectionName;
   activeView: "chat" | "projects" | "data" | "catalog" | "runtime";
   apiBase: string;
+  brandMotionActive: boolean;
   chatProject: string;
   localProjects: LocalProject[];
   navItems: NavItem[];
@@ -24,7 +25,7 @@ export function renderSidebar(props: SidebarProps) {
   return `
     <aside class="app-sidebar">
       <div class="brand-block">
-        <div class="brand-mark council-core is-dormant" aria-hidden="true">
+        <div class="brand-mark council-core ${props.brandMotionActive ? "is-activating" : "is-settled"}" aria-hidden="true">
           <span class="core-node top"></span>
           <span class="core-node left"></span>
           <span class="core-node right"></span>
