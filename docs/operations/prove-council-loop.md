@@ -22,6 +22,7 @@ It verifies:
 - A governed dry-run action plan is created.
 - Dry-run execution performs no writes or commands.
 - Governance marks actions as allowed/logged or approval-required.
+- Action ledger entries are appended when the proof is run as a command.
 
 The script writes the latest human-readable proof to:
 
@@ -29,4 +30,8 @@ The script writes the latest human-readable proof to:
 storage/runtime/proofs/latest-e2e-proof.md
 ```
 
-The persistent action ledger is a separate milestone and should be added after this proof script.
+The action ledger is written to:
+
+```txt
+storage/governance/action-ledger/actions.jsonl
+```
