@@ -4,7 +4,7 @@ title: AI Council Logo Design Brief
 category: brand
 owner: AI Council
 status: ready-for-vector-exploration
-version: 0.1
+version: 0.2
 scope: logo-and-mark-system
 date: 2026-07-12
 prepared_by: Senior Brand Designer / Art Director
@@ -52,6 +52,32 @@ The product should not feel like:
 - A random agent swarm.
 - A cold enterprise compliance product.
 - A decorative neural-network poster.
+
+## Brand DNA
+
+The logo should be built from one brand idea:
+
+```txt
+Orchestrated Intelligence
+```
+
+This is the north star for the identity. The logo should not simply say "AI," "council," or "nodes." It should make intelligence feel coordinated, governed, and useful.
+
+Brand pyramid:
+
+```txt
+Mission: Help builders make better technical decisions.
+Promise: Every decision is evaluated.
+Personality: Calm, precise, confident.
+Visual language: Geometry, alignment, motion, proof.
+Logo: Council Core.
+```
+
+Memorability goal:
+
+- The mark should be remembered as a coordinated system moving toward one shared center.
+- The silhouette should be distinctive before color, glow, or gradients are added.
+- The central Council Core should become the most ownable part of the identity.
 
 ## Design Decision Memo
 
@@ -175,6 +201,48 @@ Avoid making the mark look like:
 - A spaceship cockpit.
 - A glowing neural explosion.
 
+## Brand Physics
+
+The mark should obey a small set of visual laws. These laws should eventually inform icons, loaders, product motion, and illustration.
+
+The brand always moves toward:
+
+- **Equilibrium:** separated parts align into a stable system.
+- **Symmetry:** compositions are mathematically or optically balanced.
+- **Minimum viable detail:** remove anything that does not improve recognition.
+- **Governed motion:** movement feels deliberate, not energetic for its own sake.
+- **Settled confidence:** the final state should feel resolved and calm.
+
+Do not use motion, shape, or effects that imply chaos, magic, speed, explosion, or uncontrolled autonomy.
+
+## Shape Grammar
+
+Use a restricted shape vocabulary so the logo, icons, and product states feel related.
+
+Allowed shapes:
+
+- Circles.
+- Rings.
+- Partial arcs.
+- Orbits.
+- Intersections.
+- Compass-like axes.
+- Aperture-like cores.
+- Clean circular cuts and negative space.
+
+Avoid shapes:
+
+- Hexagons.
+- Lightning bolts.
+- Explosions.
+- Neural webs.
+- Random polygons.
+- Decorative stars.
+- Organic tendrils.
+- Complex particle fields.
+
+The first draft should show discipline. If a shape does not support orchestration, alignment, or council behavior, remove it.
+
 ## Logo Structure
 
 ### Primary Mark
@@ -190,6 +258,8 @@ The primary logo mark should be a balanced circular-triangular system:
 ### Council Core
 
 The central glyph is the most important distinctiveness opportunity.
+
+Spend the majority of exploration time here. The Council Core may eventually become the favicon, loader, runtime icon, approval icon, evaluation icon, and memory symbol. It deserves more precision than a decorative sparkle.
 
 Design requirements:
 
@@ -207,6 +277,16 @@ Possible directions:
 - A sharp but calm decision star derived from three intersecting paths.
 
 Do not use a complex illustrated burst, lightning crack, or lens flare.
+
+Future symbol family:
+
+- **Orbital Core:** the full three-node logo system.
+- **Council Core:** the central coordination glyph.
+- **Agent Core:** a simplified node variant for specialist agents.
+- **Runtime Core:** an active/process variant for execution states.
+- **Approval Core:** a governed pause/authorization variant.
+
+Do not design the full family in draft one, but make sure the Council Core can support it later.
 
 ### Wordmark
 
@@ -299,6 +379,13 @@ Rules:
 - Do not give each node a different 3D style.
 - Do not let node highlights overpower the flat mark.
 
+Optical correction:
+
+- The nodes should be optically equal, not blindly mathematical.
+- The top node may be adjusted by `2-3%` if needed to appear visually equal.
+- Any optical correction must be documented in the geometry notes.
+- Do not use optical correction as an excuse for inconsistent styling.
+
 ### Arcs
 
 The arcs should imply a council loop without becoming a closed ring.
@@ -323,6 +410,12 @@ Rules:
 - Use a simple filled or cutout shape.
 - Avoid hairline strokes.
 - Avoid tiny internal sparks.
+
+Optical correction:
+
+- Align the core mathematically first, then adjust optically only if the mark appears off-center.
+- Preserve the feeling that all three nodes resolve into the same center.
+- The core must remain readable after rasterization at `24 x 24 px`.
 
 ### Stroke Consistency
 
@@ -379,6 +472,60 @@ At `16 px`, use a simplified symbol:
 - Central Council Core only, if the full mark becomes muddy.
 
 Do not force the full detailed mark into favicon size.
+
+## Recognition And Trademark Readiness
+
+The first draft must pass basic recognition stress tests before it is considered production-ready.
+
+### Trademark Stress Test
+
+Test the symbol in this sequence:
+
+```txt
+Remove gradients -> Remove glow -> Fill black -> Shrink -> Blur slightly -> Compare silhouette
+```
+
+The mark should still feel identifiable as AI Council. If it fails, simplify the silhouette or strengthen the Council Core.
+
+### 300 Millisecond Test
+
+Show the symbol for `300ms`, then hide it.
+
+Ask:
+
+- Did the viewer remember the three-part council structure?
+- Did the viewer notice a central core?
+- Could the viewer sketch the rough silhouette from memory?
+- Did it feel like a serious AI product rather than a generic network mark?
+
+If the answer is no, the logo is not distinctive enough yet.
+
+### Competitive Audit
+
+Before finalizing the first vector direction, compare the mark against these brands to avoid subconscious imitation:
+
+- OpenAI.
+- Anthropic.
+- Claude.
+- Cursor.
+- Raycast.
+- Linear.
+- GitHub.
+- Notion.
+- Slack.
+- Figma.
+- Cisco.
+
+Audit for:
+
+- Similar silhouette.
+- Similar knot/orbit structure.
+- Similar central sparkle.
+- Similar color rhythm.
+- Similar app icon framing.
+- Similar motion metaphor.
+
+The goal is not to avoid all category cues. The goal is to keep AI Council recognizably its own.
 
 ## Spacing And Lockup Rules
 
@@ -455,6 +602,44 @@ Avoid as primary tagline:
 - The future of intelligence.
 - Magical agent orchestration.
 
+Brand DNA phrase for internal direction:
+
+> Orchestrated Intelligence
+
+Use this as the creative north star. It does not need to appear as the public tagline in every lockup.
+
+## Motion Direction
+
+Motion is not required for the static first logo draft, but the mark should be designed so it can animate cleanly later.
+
+Motion principle:
+
+```txt
+Separate -> Align -> Evaluate -> Settle
+```
+
+Motion should communicate:
+
+- Alignment.
+- Synchronization.
+- Evaluation.
+- Decision.
+- Settling into confidence.
+
+Motion should not communicate:
+
+- Energy for its own sake.
+- Excitement.
+- Speed.
+- Magic.
+- Endless thinking.
+
+Design implication:
+
+- The three nodes should have clear paths toward the Council Core.
+- The arcs should be able to reveal or align without changing shape language.
+- The final resting state should be the most important frame.
+
 ## Identity Applications To Consider
 
 The first draft should preview the logo in practical contexts:
@@ -503,6 +688,10 @@ The first draft is successful if:
 - The wordmark reads naturally as `AI Council`.
 - The logo feels like a serious AI product for builders.
 - The identity does not depend on glow, blur, or dark background effects.
+- The silhouette is recognizable after the trademark stress test.
+- The mark is memorable in a `300ms` recognition test.
+- The Council Core can plausibly become a reusable product symbol.
+- The shape grammar avoids hexagons, neural webs, lightning, explosions, and random polygons.
 
 ## Quality Gates
 
@@ -515,6 +704,8 @@ Before calling the draft complete, check:
 - **Reproduction:** confirm it can be recreated as clean vector paths.
 - **Differentiation:** compare mentally against generic AI network/spark logos and simplify or sharpen if it feels too familiar.
 - **Product fit:** place it in a sidebar, app icon, and documentation header.
+- **Competitive audit:** compare against OpenAI, Anthropic, Claude, Cursor, Raycast, Linear, GitHub, Notion, Slack, Figma, and Cisco.
+- **Recognition:** run the black-fill, shrink, blur, and `300ms` tests before approving the silhouette.
 
 ## Risks And Watchouts
 
@@ -526,6 +717,8 @@ Before calling the draft complete, check:
 | All-caps over-spacing | Can feel cinematic rather than operational | Use title-case wordmark as primary |
 | Complex favicon | Full symbol may become muddy at 16 px | Create a dedicated simplified favicon |
 | Inconsistent icon style | Logo, UI icons, and app icon may feel from different systems | Use shared stroke, radius, and color rules |
+| Subconscious competitor similarity | AI, developer, and infrastructure marks share common geometry | Run a competitive silhouette audit before approval |
+| Over-specified draft | Too many rules can slow exploration | Treat this brief as constraints for one focused vector direction, not a full identity constitution |
 
 ## Open Questions
 
@@ -544,6 +737,8 @@ Design the first logo draft for AI Council, a local-first AI Tech Lead that coor
 
 Create one focused identity direction called Structured Council Core.
 
+Use the brand DNA phrase "Orchestrated Intelligence" as the creative north star. The logo should feel like separate intelligent parts aligning around a governed center.
+
 The symbol should show three equal circular nodes arranged around a central Council Core. Use partial circular arcs to imply coordination and routing. The design must feel intelligent, precise, calm, premium, collaborative, governed, and technical.
 
 Use title-case wordmark: AI Council. Avoid wide all-caps tracking as the primary lockup.
@@ -557,13 +752,16 @@ Use this color order consistently:
 - Text: #E6EAF2 or #FFFFFF.
 
 Keep geometry consistent:
-- Three equal node circles.
+- Three optically equal node circles.
 - Consistent arc thickness.
 - Equal visual gaps between arc segments.
 - Central Council Core aligned exactly to center.
 - No organic tendrils, no lens flare, no excessive glow, no random extra colors.
+- No hexagons, neural webs, lightning, explosions, or random polygons.
 
 The central Council Core must be more ownable than a generic AI sparkle. It can be a simple aperture, decision compass, or geometric core derived from the same circular/triangular system.
+
+Design for future motion: separate -> align -> evaluate -> settle. The static logo should represent the final settled state.
 
 Deliver:
 1. Primary horizontal logo.
@@ -577,6 +775,8 @@ Deliver:
 9. Geometry notes for size, spacing, and clear space.
 
 The logo must work at 24 px and have a simplified 16 px favicon. It must also work without gradients, glow, or dark background effects.
+
+Before approval, test the symbol by removing gradients, removing glow, filling it black, shrinking it, blurring it slightly, and checking whether the silhouette remains recognizable.
 ```
 
 ## Handoff Recommendation

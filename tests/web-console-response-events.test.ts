@@ -37,7 +37,8 @@ const failed = failResponseEvents(advanced, new Error("network down"));
 assert.equal(failed.some(event => event.status === "blocked"), true);
 
 const progressPanel = renderStaticProgressPanel(finalized, ["software-architect", "qa-engineer"]);
-assert.match(progressPanel, /Worked across agents/);
+assert.match(progressPanel, /Proof loop/);
+assert.match(progressPanel, /Coordinated agents/);
 assert.match(progressPanel, /2 used/);
 assert.match(progressPanel, /done/);
 
