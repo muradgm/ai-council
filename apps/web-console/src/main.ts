@@ -143,6 +143,12 @@ function startResponseEvents(input: string) {
   }, 850);
 }
 
+function applyResponseEventPlan(events: ResponseEvent[]) {
+  if (!events.length || !chatBusy) return;
+  responseEvents = events;
+  renderShell();
+}
+
 function stopResponseEvents() {
   if (responseEventTimer) window.clearInterval(responseEventTimer);
   responseEventTimer = undefined;
@@ -813,6 +819,9 @@ async function sendChatMessage() {
   chatInput = "";
   chatAttachments = [];
   renderShell();
+  void api.responseEvents(prompt, apiProjectId(), chatMode === "agent" ? selectedAgent : undefined)
+    .then(result => applyResponseEventPlan(result.events))
+    .catch(() => undefined);
   const startedAt = Date.now();
   try {
     const response = await api.ask(prompt, apiProjectId(), chatMode === "agent" ? selectedAgent : undefined);

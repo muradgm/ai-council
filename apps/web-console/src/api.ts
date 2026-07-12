@@ -6,6 +6,7 @@ import type {
   ProjectDetailResponse,
   ProjectResponse,
   ProviderHealthResponse,
+  ResponseEventsResponse,
   RouteResponse,
   RuntimeActionResponse,
   RuntimeSnapshot,
@@ -53,6 +54,10 @@ export const api = {
     body: JSON.stringify({ input })
   }),
   ask: (input: string, projectId?: string, agentId?: string) => requestJson<AskResponse>("/ask", {
+    method: "POST",
+    body: JSON.stringify({ input, projectId, agentId, privacyLevel: "local-only", riskLevel: "medium" })
+  }),
+  responseEvents: (input: string, projectId?: string, agentId?: string) => requestJson<ResponseEventsResponse>("/api/response-events", {
     method: "POST",
     body: JSON.stringify({ input, projectId, agentId, privacyLevel: "local-only", riskLevel: "medium" })
   }),

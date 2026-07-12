@@ -26,8 +26,8 @@ export function createResponseEvents(input: string, projectLabel: string): Respo
   const now = new Date().toISOString();
   const shortInput = input.trim().replace(/\s+/g, " ").slice(0, 96);
   return [
-    event("agent_started", "Agent started", `Routing ${projectLabel || "General"} request: ${shortInput}`, "active", "violet", now),
-    event("context_read", "Read memory", `Loading project, provider, and runtime context for ${projectLabel || "General"}.`, "pending", "blue", now),
+    event("context_read", "Context loading", `Loading project, provider, and runtime context for ${projectLabel || "General"}.`, "active", "blue", now),
+    event("agent_started", "Agents queued", `Routing ${projectLabel || "General"} request: ${shortInput}`, "pending", "violet", now),
     event("agent_finding_added", "Finding added", "Waiting for the Council to identify the most useful signal.", "pending", "teal", now),
     event("risk_detected", "Risk checked", "Checking warnings, uncertainty, and safety boundaries.", "pending", "warn", now),
     event("action_proposed", "Action proposed", "Preparing a concrete next move instead of a generic answer.", "pending", "teal", now),

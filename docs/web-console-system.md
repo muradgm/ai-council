@@ -83,7 +83,9 @@ Conversation responses should prioritize human judgement over raw routing output
 
 The thinking indicator shows product-level execution state with motion: context loading, agent routing, finding collection, governance/risk checks, response validation, and final synthesis. It should never expose hidden chain-of-thought; it only communicates that the local Council is doing staged work.
 
-The browser starts a local in-flight event animation immediately so the user gets responsive feedback. Once `/ask` returns, completed assistant messages render the response event trail emitted by the orchestrator. Those events are part of the shared response contract, so later SSE/WebSocket streaming can reuse the same UI surface instead of inventing a second progress model.
+The browser starts a local in-flight event fallback immediately so the user gets responsive feedback, then asks `/api/response-events` for a route-aware backend event plan. Once `/ask` returns, completed assistant messages render the completed response event trail emitted by the orchestrator. Those events are part of the shared response contract, so later SSE/WebSocket streaming can reuse the same UI surface instead of inventing a second progress model.
+
+The response-event API is intentionally non-executing: it performs routing, provider selection, and policy classification, but it does not call a model or run actions. It exists to make the visible proof loop truthful before the final answer is ready.
 
 When a project is selected, the API enriches `/ask` requests with compact local project and memory previews before calling the orchestrator. This keeps answers more context-aware while preserving the local-first boundary.
 

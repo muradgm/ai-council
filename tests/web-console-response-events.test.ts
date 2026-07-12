@@ -11,7 +11,7 @@ import { renderStaticProgressPanel } from "../apps/web-console/src/components/Th
 const events = createResponseEvents("Review this repo and recommend the next step.", "AI Council");
 
 assert.equal(events.length, 8);
-assert.equal(events[0].type, "agent_started");
+assert.equal(events[0].type, "context_read");
 assert.equal(events[0].status, "active");
 assert.equal(events.some(event => event.type === "approval_required"), true);
 assert.equal(events.some(event => event.type === "final_answer_streamed"), true);

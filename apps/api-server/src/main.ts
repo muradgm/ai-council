@@ -304,6 +304,24 @@ const server = createServer(async (req, res) => {
       });
       return;
     }
+    if (url.pathname === "/api/response-events" && req.method === "POST") {
+      const body = await readBody(req);
+      const projectId = body.projectId ? String(body.projectId) : undefined;
+      const input = String(body.input ?? "No input provided");
+      const context = [
+        projectContextFor(projectId),
+        buildRepoReviewContext(root, projectId, input)
+      ].filter(Boolean).join("\n\n---\n\n");
+      const request = {
+        input: context ? `${input}\n\nRelevant project context:\n${context}` : input,
+        projectId,
+        taskType: body.taskType,
+        privacyLevel: body.privacyLevel ?? "local-only",
+        riskLevel: body.riskLevel ?? "medium"
+      };
+      json(res, 200, { events: orchestrator.planResponseEvents(request, body.agentId ? String(body.agentId) : undefined) });
+      return;
+    }
     if (url.pathname === "/ask" && req.method === "POST") {
       const body = await readBody(req);
       const projectId = body.projectId ? String(body.projectId) : undefined;

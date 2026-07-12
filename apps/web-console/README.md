@@ -78,9 +78,9 @@ The console uses a Codex-style working layout:
 
 The console includes a conversation panel for local-first questions. It calls the API server's `/ask` endpoint, shows the selected council, provider, and agents used, and keeps recent message history in local browser storage so sent messages remain visible after reload.
 
-While a response is running, the UI shows a typed response event path: agent started, memory read, finding added, risk checked, action proposed, approval gate, validation running, and final answer streamed. This is a product state indicator, not hidden chain-of-thought.
+While a response is running, the UI shows a typed proof-loop event path: context loading, agents queued, finding added, risk checked, action proposed, approval gate, validation running, and final answer streamed. This is a product state indicator, not hidden chain-of-thought.
 
-The in-flight animation starts in local UI state, then completed assistant messages use the event trail returned by the API orchestrator. The shared response contract lives in `packages/shared/src/index.ts`, the orchestrator emits completed response events from `packages/ai-core/src/orchestrator/orchestrator.ts`, and the browser renders them with `apps/web-console/src/state/response-events.ts`. This keeps the response surface stable for future server-sent events, WebSockets, provider traces, or runtime observability.
+The in-flight animation starts with a local UI fallback, then the browser asks `/api/response-events` for the route-aware backend event plan. Completed assistant messages use the final event trail returned by the API orchestrator. The shared response contract lives in `packages/shared/src/index.ts`, the orchestrator emits planned and completed response events from `packages/ai-core/src/orchestrator/orchestrator.ts`, and the browser renders them with `apps/web-console/src/state/response-events.ts`. This keeps the response surface stable for future server-sent events, WebSockets, provider traces, or runtime observability.
 
 Assistant answers are rendered as structured judgement sections: Read, Why it matters, Next move, and Risks. Raw Model synthesis, Evidence, and Trace details are available behind "View details" disclosures so the main answer stays readable.
 
