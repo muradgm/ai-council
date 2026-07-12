@@ -7,16 +7,16 @@ export function renderThinkingState(thinkingStep: number, thinkingStartedAt: num
   const elapsed = thinkingStartedAt ? Math.max(1, Math.round((Date.now() - thinkingStartedAt) / 1000)) : 1;
   const activeAgents = Math.max(1, responseEvents.filter(event => event.status === "active").length);
   return `
-    <article class="thinking-card" aria-live="polite" aria-label="AI Council is thinking">
+    <article class="thinking-card proof-loop-panel council-core-state is-coordinating" aria-live="polite" aria-label="AI Council proof loop is active">
       <div class="thinking-head">
         <div class="thinking-mark" aria-hidden="true"><span></span></div>
         <div>
-          <strong>Thinking progress</strong>
+          <strong>Proof loop</strong>
           <p>${escapeHtml(active.detail)} - ${elapsed}s</p>
         </div>
       </div>
       ${renderProgressSteps(steps, "thinking-steps")}
-      <div class="thinking-footer"><span class="dot ok"></span>Working across agents <strong title="Live council phases currently active">${activeAgents} active</strong></div>
+      <div class="thinking-footer"><span class="dot ok"></span>Coordinating agents <strong title="Live council phases currently active">${activeAgents} active</strong></div>
     </article>
   `;
 }
@@ -27,10 +27,10 @@ export function renderStaticProgressPanel(responseEvents: ResponseEvent[] = [], 
   const agentCount = agentsUsed.length || 3;
   const agentTitle = agentsUsed.length ? agentsUsed.join(", ") : "Tech Lead, Security, QA";
   return `
-    <aside class="progress-panel" aria-label="Thinking progress">
-      <h3>Thinking progress</h3>
+    <aside class="progress-panel proof-loop-panel council-core-state ${completed ? "is-verified" : "is-coordinating"}" aria-label="Proof loop progress">
+      <h3>Proof loop</h3>
       ${renderProgressSteps(steps, "progress-steps")}
-      <div class="progress-footer"><span class="dot ok"></span>${completed ? "Worked across agents" : "Working across agents"} <strong title="${escapeHtml(agentTitle)}">${agentCount} ${completed ? "used" : "active"}</strong></div>
+      <div class="progress-footer"><span class="dot ok"></span>${completed ? "Coordinated agents" : "Coordinating agents"} <strong title="${escapeHtml(agentTitle)}">${agentCount} ${completed ? "used" : "active"}</strong></div>
     </aside>
   `;
 }
@@ -45,34 +45,46 @@ type ProgressStep = {
 function buildProgressSteps(responseEvents: ResponseEvent[], fallbackStep: number): ProgressStep[] {
   const steps: ProgressStep[] = [
     {
-      label: "Reading project context",
+      label: "Context",
       detail: detailFor(responseEvents, ["context_read"], "Scanning docs, configs, and memory"),
       state: "",
       types: ["context_read"]
     },
     {
-      label: "Selecting specialist agents",
+      label: "Coordinate",
       detail: detailFor(responseEvents, ["agent_started"], "Choosing the smallest useful Council team"),
       state: "",
       types: ["agent_started"]
     },
     {
-      label: "Collecting findings",
+      label: "Evaluate",
       detail: detailFor(responseEvents, ["agent_finding_added"], "Turning agent signals into usable findings"),
       state: "",
       types: ["agent_finding_added"]
     },
     {
-      label: "Checking risk and governance",
+      label: "Approve",
       detail: detailFor(responseEvents, ["risk_detected", "approval_required"], "Classifying warnings, approval needs, and safe actions"),
       state: "",
       types: ["risk_detected", "approval_required"]
     },
     {
-      label: "Preparing final answer",
-      detail: detailFor(responseEvents, ["validation_running", "final_answer_streamed"], "Validating shape and synthesizing the next move"),
+      label: "Execute",
+      detail: detailFor(responseEvents, ["action_proposed"], "Preparing the governed action plan"),
       state: "",
-      types: ["validation_running", "final_answer_streamed"]
+      types: ["action_proposed"]
+    },
+    {
+      label: "Verify",
+      detail: detailFor(responseEvents, ["validation_running"], "Checking evidence, validation, and safety"),
+      state: "",
+      types: ["validation_running"]
+    },
+    {
+      label: "Remember",
+      detail: detailFor(responseEvents, ["final_answer_streamed"], "Synthesizing the final answer and trace"),
+      state: "",
+      types: ["final_answer_streamed"]
     }
   ];
 

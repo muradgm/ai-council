@@ -24,8 +24,11 @@ export function renderSidebar(props: SidebarProps) {
   return `
     <aside class="app-sidebar">
       <div class="brand-block">
-        <div class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
+        <div class="brand-mark council-core is-dormant" aria-hidden="true">
+          <span class="core-node top"></span>
+          <span class="core-node left"></span>
+          <span class="core-node right"></span>
+          <span class="core-center"></span>
         </div>
         <div>
           <strong>AI Council</strong>

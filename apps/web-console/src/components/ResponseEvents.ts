@@ -10,12 +10,12 @@ export function renderResponseEvents(props: ResponseEventsProps) {
   if (!props.events.length) return "";
   const activeCount = props.events.filter(event => event.status === "active").length;
   const completeCount = props.events.filter(event => event.status === "complete").length;
-  const statusSummary = activeCount ? `${activeCount} active` : `${completeCount} done`;
+  const statusSummary = activeCount ? `${activeCount} active` : `${completeCount} verified`;
 
   return `
     <aside class="event-panel" aria-label="${escapeHtml(props.title || "Response events")}">
       <div class="event-panel-head">
-        <h3>${escapeHtml(props.title || "Response flow")}</h3>
+        <h3>${escapeHtml(props.title || "Proof event trail")}</h3>
         <span>${escapeHtml(statusSummary)}</span>
       </div>
       <div class="event-list">
@@ -35,9 +35,9 @@ export function renderResponseEvents(props: ResponseEventsProps) {
 }
 
 function statusLabel(status: ResponseEvent["status"]) {
-  if (status === "complete") return "done";
-  if (status === "active") return "now";
+  if (status === "complete") return "verified";
+  if (status === "active") return "active";
   if (status === "blocked") return "blocked";
-  if (status === "skipped") return "clear";
+  if (status === "skipped") return "not needed";
   return "queued";
 }
