@@ -40,6 +40,16 @@ assert.equal(simpleQuestion.confidence, "low");
 assert.equal(simpleQuestion.councilId, "coding-council");
 assert.deepEqual(simpleQuestion.supportAgents, []);
 
+const modelComparison = classifyCouncilRoute({
+  input: "Compare ChatGPT, Claude, and DeepSeek for everyday writing.",
+  projectId: "ai-council",
+  privacyLevel: "local-only"
+});
+
+assert.equal(modelComparison.taskType, "general");
+assert.equal(modelComparison.confidence, "low");
+assert.deepEqual(modelComparison.supportAgents, []);
+
 const risky = classifyCouncilRoute({
   input: "Push to GitHub after editing .env handling.",
   riskLevel: "high",

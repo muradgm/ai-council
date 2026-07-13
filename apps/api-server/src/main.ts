@@ -3,11 +3,13 @@ import fs from "node:fs";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { Orchestrator } from "../../../packages/ai-core/src/index.js";
+import { ProviderRegistry } from "../../../packages/ai-providers/src/index.js";
 import { buildRepoReviewContext } from "./repo-context.js";
 import type { CouncilResponse, CouncilResponseEvent } from "../../../packages/shared/src/index.js";
 
 const root = process.cwd();
 const orchestrator = new Orchestrator();
+const providerRegistry = new ProviderRegistry();
 const port = Number(process.env.AI_COUNCIL_API_PORT || 3333);
 
 function json(res: ServerResponse, status: number, payload: unknown) {
@@ -205,6 +207,10 @@ function shouldAttachProjectContext(input: string, projectId: string | undefined
   return Boolean(projectId) && isCouncilContextRequest(input);
 }
 
+function isDirectGeneralRequest(input: string) {
+  return !isCouncilContextRequest(input);
+}
+
 function weatherLocationFrom(input: string) {
   const text = input.trim();
   if (!/\b(weather|temperature|forecast|rain|snow|wind|sunny|cloudy)\b/i.test(text)) return null;
@@ -235,6 +241,94 @@ function directEvent(label: string, detail: string, status: CouncilResponseEvent
     status,
     tone: "blue",
     createdAt
+  };
+}
+
+function configuredProviderIds() {
+  const envByProvider: Record<string, string[]> = {
+    "gemini-free": ["GEMINI_API_KEY"],
+    mistral: ["MISTRAL_API_KEY"],
+    deepseek: ["DEEPSEEK_API_KEY"],
+    grok: ["XAI_API_KEY"],
+    openai: ["OPENAI_API_KEY"]
+  };
+  return Object.entries(envByProvider)
+    .filter(([, names]) => names.some(name => Boolean(process.env[name]?.trim())))
+    .map(([id]) => id);
+}
+
+function isUnavailableProviderText(text: string, confidence: number) {
+  return confidence <= 0 || /not configured|not available|not reachable|blocked|placeholder/i.test(text);
+}
+
+async function isOllamaReachable() {
+  const baseUrl = (process.env.OLLAMA_BASE_URL || "http://127.0.0.1:11434").replace(/\/$/, "");
+  try {
+    const response = await fetch(`${baseUrl}/api/tags`, { signal: AbortSignal.timeout(1200) });
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+async function answerGeneral(input: string): Promise<CouncilResponse> {
+  const providerIds = configuredProviderIds();
+  if (await isOllamaReachable()) providerIds.push("ollama");
+
+  const prompt = [
+    "You are AI Council in direct assistant mode.",
+    "Answer the user's general question naturally and concisely, like a capable everyday AI assistant.",
+    "Prefer short paragraphs or a few bullets. Do not produce a Council report.",
+    "Do not mention repo context, agents, councils, governance, runtime, traces, or implementation plans unless the user asks about them.",
+    "If the question may depend on current facts and you do not have live browsing, say that briefly before answering from general knowledge.",
+    "Do not invent product ownership, release details, prices, or current capabilities.",
+    "",
+    `User question: ${input}`
+  ].join("\n");
+
+  const attempts: string[] = [];
+  for (const providerId of [...new Set(providerIds)]) {
+    const provider = providerRegistry.get(providerId);
+    if (!provider) continue;
+    const response = await provider.call({
+      prompt,
+      privacyLevel: provider.tier === "local" ? "local-only" : "sanitized-external",
+      riskLevel: "low",
+      taskType: "general",
+      allowNetwork: provider.tier !== "local"
+    });
+    attempts.push(`${response.provider}:${response.model}`);
+    if (!isUnavailableProviderText(response.text, response.confidence)) {
+      return {
+        selectedCouncil: "direct-answer",
+        selectedProvider: response.provider,
+        agentsUsed: [],
+        warnings: [
+          ...(response.warnings || []),
+          "Direct assistant mode used; no project context or Council agents were attached."
+        ],
+        answer: response.text.trim(),
+        events: [
+          directEvent("Direct answer", `Answered with ${response.provider}.`),
+          directEvent("Final answer", "Returned a general assistant response without Council routing.")
+        ]
+      };
+    }
+  }
+
+  return {
+    selectedCouncil: "direct-answer",
+    selectedProvider: attempts[0] || "none",
+    agentsUsed: [],
+    warnings: ["No configured or reachable general model provider was available."],
+    answer: [
+      "I understood this as a general question, so I did not route it through the project Council.",
+      "A direct model provider is not available in the current API process yet. Configure Ollama or one cloud provider key, then I can answer normal questions directly."
+    ].join("\n"),
+    events: [
+      directEvent("Direct answer", "General question detected; no project context was attached.", "blocked"),
+      directEvent("Final answer", "Returned a short provider setup note.")
+    ]
   };
 }
 
@@ -435,6 +529,10 @@ const server = createServer(async (req, res) => {
         json(res, 200, { events: [directEvent("Weather lookup", `Preparing current weather for ${directWeather}.`, "active"), directEvent("Final answer", "A short direct answer will be returned.", "pending")] });
         return;
       }
+      if (!body.agentId && isDirectGeneralRequest(input)) {
+        json(res, 200, { events: [directEvent("Direct answer", "Preparing a general assistant response without project context.", "active"), directEvent("Final answer", "A short direct answer will be returned.", "pending")] });
+        return;
+      }
       const context = shouldAttachProjectContext(input, projectId) ? [
         projectContextFor(projectId),
         buildRepoReviewContext(root, projectId, input)
@@ -456,6 +554,10 @@ const server = createServer(async (req, res) => {
       const directWeather = await answerWeather(input);
       if (directWeather) {
         json(res, 200, directWeather);
+        return;
+      }
+      if (!body.agentId && isDirectGeneralRequest(input)) {
+        json(res, 200, await answerGeneral(input));
         return;
       }
       const context = shouldAttachProjectContext(input, projectId) ? [
