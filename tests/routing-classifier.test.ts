@@ -29,6 +29,17 @@ assert.equal(runtime.leadAgent, "software-architect");
 assert.ok(runtime.supportAgents.includes("ai-engineer"));
 assert.ok(runtime.requiredContext.includes("response-events"));
 
+const simpleQuestion = classifyCouncilRoute({
+  input: "what is the weather in Basel?",
+  projectId: "ai-council",
+  privacyLevel: "local-only"
+});
+
+assert.equal(simpleQuestion.taskType, "general");
+assert.equal(simpleQuestion.confidence, "low");
+assert.equal(simpleQuestion.councilId, "coding-council");
+assert.deepEqual(simpleQuestion.supportAgents, []);
+
 const risky = classifyCouncilRoute({
   input: "Push to GitHub after editing .env handling.",
   riskLevel: "high",

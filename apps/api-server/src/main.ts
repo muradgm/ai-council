@@ -4,6 +4,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { Orchestrator } from "../../../packages/ai-core/src/index.js";
 import { buildRepoReviewContext } from "./repo-context.js";
+import type { CouncilResponse, CouncilResponseEvent } from "../../../packages/shared/src/index.js";
 
 const root = process.cwd();
 const orchestrator = new Orchestrator();
@@ -196,6 +197,127 @@ function projectContextFor(name: string | undefined) {
   return sections.join("\n\n---\n\n");
 }
 
+function isCouncilContextRequest(input: string) {
+  return /\b(repo|repository|codebase|review|architecture|runtime|orchestrator|agent|provider|validation|eval|console|api|security|qa|docs|documentation|project|memory|github|push|implement|build|fix|debug|bug|ui|ux|frontend|backend|database|governance)\b/i.test(input);
+}
+
+function shouldAttachProjectContext(input: string, projectId: string | undefined) {
+  return Boolean(projectId) && isCouncilContextRequest(input);
+}
+
+function weatherLocationFrom(input: string) {
+  const text = input.trim();
+  if (!/\b(weather|temperature|forecast|rain|snow|wind|sunny|cloudy)\b/i.test(text)) return null;
+  const match = text.match(/\b(?:in|for|at|near)\s+([a-zA-ZÀ-ÿ][a-zA-ZÀ-ÿ\s.'-]{1,60})(?:[?.!,]|$)/i)
+    || text.match(/^([a-zA-ZÀ-ÿ][a-zA-ZÀ-ÿ\s.'-]{1,60})\s+weather\b/i);
+  const location = match?.[1]?.replace(/\b(today|tomorrow|now|please)\b/gi, "").trim();
+  return location || null;
+}
+
+function weatherCodeLabel(code: number) {
+  if (code === 0) return "Clear";
+  if ([1, 2, 3].includes(code)) return "Partly cloudy";
+  if ([45, 48].includes(code)) return "Fog";
+  if ([51, 53, 55, 56, 57].includes(code)) return "Drizzle";
+  if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return "Rain";
+  if ([71, 73, 75, 77, 85, 86].includes(code)) return "Snow";
+  if ([95, 96, 99].includes(code)) return "Thunderstorm";
+  return "Weather update";
+}
+
+function directEvent(label: string, detail: string, status: CouncilResponseEvent["status"] = "complete"): CouncilResponseEvent {
+  const createdAt = new Date().toISOString();
+  return {
+    id: `${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-${createdAt}`,
+    type: label === "Final answer" ? "final_answer_streamed" : "context_read",
+    label,
+    detail,
+    status,
+    tone: "blue",
+    createdAt
+  };
+}
+
+async function answerWeather(input: string): Promise<CouncilResponse | null> {
+  const location = weatherLocationFrom(input);
+  if (!location) return null;
+
+  try {
+    const geoUrl = new URL("https://geocoding-api.open-meteo.com/v1/search");
+    geoUrl.searchParams.set("name", location);
+    geoUrl.searchParams.set("count", "1");
+    geoUrl.searchParams.set("language", "en");
+    geoUrl.searchParams.set("format", "json");
+    const geoResponse = await fetch(geoUrl);
+    if (!geoResponse.ok) throw new Error(`geocoding failed: ${geoResponse.status}`);
+    const geo = await geoResponse.json() as { results?: Array<{ name: string; country?: string; latitude: number; longitude: number; timezone?: string }> };
+    const place = geo.results?.[0];
+    if (!place) {
+      return {
+        selectedCouncil: "direct-answer",
+        selectedProvider: "open-meteo",
+        agentsUsed: [],
+        warnings: [],
+        answer: `I could not find a weather location for "${location}". Try a city plus country, for example "weather in Basel, Switzerland."`,
+        events: [directEvent("Weather lookup", `No matching location found for ${location}.`), directEvent("Final answer", "Returned a short direct answer.")]
+      };
+    }
+
+    const forecastUrl = new URL("https://api.open-meteo.com/v1/forecast");
+    forecastUrl.searchParams.set("latitude", String(place.latitude));
+    forecastUrl.searchParams.set("longitude", String(place.longitude));
+    forecastUrl.searchParams.set("current", "temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m");
+    forecastUrl.searchParams.set("timezone", place.timezone || "auto");
+    const forecastResponse = await fetch(forecastUrl);
+    if (!forecastResponse.ok) throw new Error(`forecast failed: ${forecastResponse.status}`);
+    const forecast = await forecastResponse.json() as {
+      current?: {
+        time?: string;
+        temperature_2m?: number;
+        apparent_temperature?: number;
+        relative_humidity_2m?: number;
+        precipitation?: number;
+        weather_code?: number;
+        wind_speed_10m?: number;
+      };
+      current_units?: Record<string, string>;
+    };
+    const current = forecast.current;
+    if (!current) throw new Error("forecast missing current weather");
+
+    const units = forecast.current_units || {};
+    const placeName = [place.name, place.country].filter(Boolean).join(", ");
+    const summary = weatherCodeLabel(Number(current.weather_code ?? -1));
+    const answer = [
+      `${place.name} weather right now: ${summary}, ${current.temperature_2m}${units.temperature_2m || "°C"} feels like ${current.apparent_temperature}${units.apparent_temperature || "°C"}.`,
+      `Humidity is ${current.relative_humidity_2m}${units.relative_humidity_2m || "%"}, wind is ${current.wind_speed_10m}${units.wind_speed_10m || " km/h"}, and precipitation is ${current.precipitation}${units.precipitation || " mm"}.`,
+      "",
+      `Location used: ${placeName}. Updated: ${current.time || "current Open-Meteo reading"}.`
+    ].join("\n");
+
+    return {
+      selectedCouncil: "direct-answer",
+      selectedProvider: "open-meteo",
+      agentsUsed: [],
+      warnings: ["Public weather lookup used; no project context was sent."],
+      answer,
+      events: [
+        directEvent("Weather lookup", `Checked current public weather for ${placeName}.`),
+        directEvent("Final answer", "Returned a short direct answer without Council routing.")
+      ]
+    };
+  } catch (error: any) {
+    return {
+      selectedCouncil: "direct-answer",
+      selectedProvider: "open-meteo",
+      agentsUsed: [],
+      warnings: [`Weather lookup failed: ${error?.message || String(error)}`],
+      answer: `I understood this as a weather question for ${location}, but the live weather lookup failed. I did not route it through the repo-review Council.`,
+      events: [directEvent("Weather lookup", `Tried to check weather for ${location}.`, "blocked"), directEvent("Final answer", "Returned a short fallback answer.")]
+    };
+  }
+}
+
 const server = createServer(async (req, res) => {
   try {
     if (req.method === "OPTIONS") { json(res, 204, {}); return; }
@@ -308,10 +430,15 @@ const server = createServer(async (req, res) => {
       const body = await readBody(req);
       const projectId = body.projectId ? String(body.projectId) : undefined;
       const input = String(body.input ?? "No input provided");
-      const context = [
+      const directWeather = weatherLocationFrom(input);
+      if (directWeather) {
+        json(res, 200, { events: [directEvent("Weather lookup", `Preparing current weather for ${directWeather}.`, "active"), directEvent("Final answer", "A short direct answer will be returned.", "pending")] });
+        return;
+      }
+      const context = shouldAttachProjectContext(input, projectId) ? [
         projectContextFor(projectId),
         buildRepoReviewContext(root, projectId, input)
-      ].filter(Boolean).join("\n\n---\n\n");
+      ].filter(Boolean).join("\n\n---\n\n") : "";
       const request = {
         input: context ? `${input}\n\nRelevant project context:\n${context}` : input,
         projectId,
@@ -326,10 +453,15 @@ const server = createServer(async (req, res) => {
       const body = await readBody(req);
       const projectId = body.projectId ? String(body.projectId) : undefined;
       const input = String(body.input ?? "No input provided");
-      const context = [
+      const directWeather = await answerWeather(input);
+      if (directWeather) {
+        json(res, 200, directWeather);
+        return;
+      }
+      const context = shouldAttachProjectContext(input, projectId) ? [
         projectContextFor(projectId),
         buildRepoReviewContext(root, projectId, input)
-      ].filter(Boolean).join("\n\n---\n\n");
+      ].filter(Boolean).join("\n\n---\n\n") : "";
       const request = {
         input: context ? `${input}\n\nRelevant project context:\n${context}` : input,
         projectId,

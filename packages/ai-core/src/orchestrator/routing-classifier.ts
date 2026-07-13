@@ -63,7 +63,7 @@ const VALID_TASK_TYPES = new Set<RoutingTaskType>([
 const VALID_CONFIDENCE = new Set<RoutingConfidence>(["high", "medium", "low"]);
 
 function textFor(request: CouncilRequest) {
-  return `${request.taskType || ""} ${request.projectId || ""} ${request.input}`.toLowerCase();
+  return `${request.taskType || ""} ${request.input}`.toLowerCase();
 }
 
 function inferTaskType(text: string): RoutingTaskType {
